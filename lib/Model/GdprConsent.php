@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse4031
+ * GdprConsent
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * InlineResponse4031 Class Doc Comment
+ * GdprConsent Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class InlineResponse4031 implements ModelInterface, ArrayAccess
+class GdprConsent implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_403_1';
+    protected static $openAPIModelName = 'GdprConsent';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'http_code' => 'int',
-        'access_token_expired' => '\OpenAPI\Client\Model\InlineResponse4031AccessTokenExpired',
-        'http_status' => 'string'
+        'key' => 'string',
+        'val' => 'bool'
     ];
 
     /**
@@ -68,9 +67,8 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'http_code' => null,
-        'access_token_expired' => null,
-        'http_status' => null
+        'key' => null,
+        'val' => null
     ];
 
     /**
@@ -100,9 +98,8 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'http_code' => 'http_code',
-        'access_token_expired' => 'access_token_expired',
-        'http_status' => 'http_status'
+        'key' => 'key',
+        'val' => 'val'
     ];
 
     /**
@@ -111,9 +108,8 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'http_code' => 'setHttpCode',
-        'access_token_expired' => 'setAccessTokenExpired',
-        'http_status' => 'setHttpStatus'
+        'key' => 'setKey',
+        'val' => 'setVal'
     ];
 
     /**
@@ -122,9 +118,8 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'http_code' => 'getHttpCode',
-        'access_token_expired' => 'getAccessTokenExpired',
-        'http_status' => 'getHttpStatus'
+        'key' => 'getKey',
+        'val' => 'getVal'
     ];
 
     /**
@@ -168,21 +163,8 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const HTTP_STATUS_FORBIDDEN = 'Forbidden';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getHttpStatusAllowableValues()
-    {
-        return [
-            self::HTTP_STATUS_FORBIDDEN,
-        ];
-    }
     
 
     /**
@@ -200,9 +182,8 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['http_code'] = isset($data['http_code']) ? $data['http_code'] : null;
-        $this->container['access_token_expired'] = isset($data['access_token_expired']) ? $data['access_token_expired'] : null;
-        $this->container['http_status'] = isset($data['http_status']) ? $data['http_status'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['val'] = isset($data['val']) ? $data['val'] : null;
     }
 
     /**
@@ -214,14 +195,12 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getHttpStatusAllowableValues();
-        if (!is_null($this->container['http_status']) && !in_array($this->container['http_status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'http_status', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
         }
-
+        if ($this->container['val'] === null) {
+            $invalidProperties[] = "'val' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -238,82 +217,49 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets http_code
+     * Gets key
      *
-     * @return int|null
+     * @return string
      */
-    public function getHttpCode()
+    public function getKey()
     {
-        return $this->container['http_code'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets http_code
+     * Sets key
      *
-     * @param int|null $http_code http_code
+     * @param string $key key
      *
      * @return $this
      */
-    public function setHttpCode($http_code)
+    public function setKey($key)
     {
-        $this->container['http_code'] = $http_code;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets access_token_expired
+     * Gets val
      *
-     * @return \OpenAPI\Client\Model\InlineResponse4031AccessTokenExpired|null
+     * @return bool
      */
-    public function getAccessTokenExpired()
+    public function getVal()
     {
-        return $this->container['access_token_expired'];
+        return $this->container['val'];
     }
 
     /**
-     * Sets access_token_expired
+     * Sets val
      *
-     * @param \OpenAPI\Client\Model\InlineResponse4031AccessTokenExpired|null $access_token_expired access_token_expired
+     * @param bool $val val
      *
      * @return $this
      */
-    public function setAccessTokenExpired($access_token_expired)
+    public function setVal($val)
     {
-        $this->container['access_token_expired'] = $access_token_expired;
-
-        return $this;
-    }
-
-    /**
-     * Gets http_status
-     *
-     * @return string|null
-     */
-    public function getHttpStatus()
-    {
-        return $this->container['http_status'];
-    }
-
-    /**
-     * Sets http_status
-     *
-     * @param string|null $http_status http_status
-     *
-     * @return $this
-     */
-    public function setHttpStatus($http_status)
-    {
-        $allowedValues = $this->getHttpStatusAllowableValues();
-        if (!is_null($http_status) && !in_array($http_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'http_status', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['http_status'] = $http_status;
+        $this->container['val'] = $val;
 
         return $this;
     }

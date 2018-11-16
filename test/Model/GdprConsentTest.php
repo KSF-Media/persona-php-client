@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse4032OauthFailedTest
+ * GdprConsentTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace OpenAPI\Client;
 
 /**
- * InlineResponse4032OauthFailedTest Class Doc Comment
+ * GdprConsentTest Class Doc Comment
  *
  * @category    Class
- * @description InlineResponse4032OauthFailed
+ * @description GdprConsent
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class InlineResponse4032OauthFailedTest extends \PHPUnit_Framework_TestCase
+class GdprConsentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,23 @@ class InlineResponse4032OauthFailedTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse4032OauthFailed"
+     * Test "GdprConsent"
      */
-    public function testInlineResponse4032OauthFailed()
+    public function testGdprConsent()
     {
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "key"
      */
-    public function testPropertyDescription()
+    public function testPropertyKey()
+    {
+    }
+
+    /**
+     * Test attribute "val"
+     */
+    public function testPropertyVal()
     {
     }
 }
