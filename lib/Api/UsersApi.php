@@ -429,14 +429,15 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  string $authorization authorization (optional)
+     * @param  string $cache_control cache_control (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\User
      */
-    public function usersUuidGet($uuid, $authorization = null)
+    public function usersUuidGet($uuid, $authorization = null, $cache_control = null)
     {
-        list($response) = $this->usersUuidGetWithHttpInfo($uuid, $authorization);
+        list($response) = $this->usersUuidGetWithHttpInfo($uuid, $authorization, $cache_control);
         return $response;
     }
 
@@ -447,14 +448,15 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  string $cache_control (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidGetWithHttpInfo($uuid, $authorization = null)
+    public function usersUuidGetWithHttpInfo($uuid, $authorization = null, $cache_control = null)
     {
-        $request = $this->usersUuidGetRequest($uuid, $authorization);
+        $request = $this->usersUuidGetRequest($uuid, $authorization, $cache_control);
 
         try {
             $options = $this->createHttpClientOption();
@@ -536,13 +538,14 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidGetAsync($uuid, $authorization = null)
+    public function usersUuidGetAsync($uuid, $authorization = null, $cache_control = null)
     {
-        return $this->usersUuidGetAsyncWithHttpInfo($uuid, $authorization)
+        return $this->usersUuidGetAsyncWithHttpInfo($uuid, $authorization, $cache_control)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -557,14 +560,15 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidGetAsyncWithHttpInfo($uuid, $authorization = null)
+    public function usersUuidGetAsyncWithHttpInfo($uuid, $authorization = null, $cache_control = null)
     {
         $returnType = '\OpenAPI\Client\Model\User';
-        $request = $this->usersUuidGetRequest($uuid, $authorization);
+        $request = $this->usersUuidGetRequest($uuid, $authorization, $cache_control);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -605,11 +609,12 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidGetRequest($uuid, $authorization = null)
+    protected function usersUuidGetRequest($uuid, $authorization = null, $cache_control = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -628,6 +633,10 @@ class UsersApi
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
+        }
+        // header params
+        if ($cache_control !== null) {
+            $headerParams['Cache-Control'] = ObjectSerializer::toHeaderValue($cache_control);
         }
 
         // path params

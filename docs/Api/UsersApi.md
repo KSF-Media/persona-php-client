@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersUuidGet**
-> \OpenAPI\Client\Model\User usersUuidGet($uuid, $authorization)
+> \OpenAPI\Client\Model\User usersUuidGet($uuid, $authorization, $cache_control)
 
 Get user by UUID.
 
@@ -80,9 +80,10 @@ $apiInstance = new OpenAPI\Client\Api\UsersApi(
 );
 $uuid = 'uuid_example'; // string | 
 $authorization = 'authorization_example'; // string | 
+$cache_control = 'cache_control_example'; // string | 
 
 try {
-    $result = $apiInstance->usersUuidGet($uuid, $authorization);
+    $result = $apiInstance->usersUuidGet($uuid, $authorization, $cache_control);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUuidGet: ', $e->getMessage(), PHP_EOL;
@@ -96,6 +97,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **authorization** | **string**|  | [optional]
+ **cache_control** | **string**|  | [optional]
 
 ### Return type
 
