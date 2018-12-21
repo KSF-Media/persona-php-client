@@ -100,4 +100,14 @@ class LoginApiTest extends \PHPUnit_Framework_TestCase
     public function testLoginSsoPost()
     {
     }
+
+    /**
+     * Test case for loginUuidDelete
+     *
+     * Logout.
+     *
+     */
+    public function testLoginUuidDelete()
+    {
+    }
 }

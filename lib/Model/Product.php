@@ -60,7 +60,8 @@ class Product implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'active' => '\OpenAPI\Client\Model\ActiveDays',
-        'next_delivery' => '\DateTime'
+        'next_delivery' => '\DateTime',
+        'paper' => '\OpenAPI\Client\Model\Paper'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Product implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'active' => null,
-        'next_delivery' => 'date'
+        'next_delivery' => 'date',
+        'paper' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class Product implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'active' => 'active',
-        'next_delivery' => 'nextDelivery'
+        'next_delivery' => 'nextDelivery',
+        'paper' => 'paper'
     ];
 
     /**
@@ -117,7 +120,8 @@ class Product implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'active' => 'setActive',
-        'next_delivery' => 'setNextDelivery'
+        'next_delivery' => 'setNextDelivery',
+        'paper' => 'setPaper'
     ];
 
     /**
@@ -129,7 +133,8 @@ class Product implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'active' => 'getActive',
-        'next_delivery' => 'getNextDelivery'
+        'next_delivery' => 'getNextDelivery',
+        'paper' => 'getPaper'
     ];
 
     /**
@@ -196,6 +201,7 @@ class Product implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['next_delivery'] = isset($data['next_delivery']) ? $data['next_delivery'] : null;
+        $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
     }
 
     /**
@@ -215,6 +221,9 @@ class Product implements ModelInterface, ArrayAccess
         }
         if ($this->container['active'] === null) {
             $invalidProperties[] = "'active' can't be null";
+        }
+        if ($this->container['paper'] === null) {
+            $invalidProperties[] = "'paper' can't be null";
         }
         return $invalidProperties;
     }
@@ -323,6 +332,30 @@ class Product implements ModelInterface, ArrayAccess
     public function setNextDelivery($next_delivery)
     {
         $this->container['next_delivery'] = $next_delivery;
+
+        return $this;
+    }
+
+    /**
+     * Gets paper
+     *
+     * @return \OpenAPI\Client\Model\Paper
+     */
+    public function getPaper()
+    {
+        return $this->container['paper'];
+    }
+
+    /**
+     * Sets paper
+     *
+     * @param \OpenAPI\Client\Model\Paper $paper paper
+     *
+     * @return $this
+     */
+    public function setPaper($paper)
+    {
+        $this->container['paper'] = $paper;
 
         return $this;
     }

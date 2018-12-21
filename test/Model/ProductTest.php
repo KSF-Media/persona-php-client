@@ -103,4 +103,11 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     public function testPropertyNextDelivery()
     {
     }
+
+    /**
+     * Test attribute "paper"
+     */
+    public function testPropertyPaper()
+    {
+    }
 }

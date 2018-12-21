@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**loginPost**](LoginApi.md#loginPost) | **POST** /login | Login with email and password
 [**loginSomePost**](LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
 [**loginSsoPost**](LoginApi.md#loginSsoPost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
+[**loginUuidDelete**](LoginApi.md#loginUuidDelete) | **DELETE** /login/{uuid} | Logout
 
 
 # **loginPost**
@@ -146,6 +147,57 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **loginUuidDelete**
+> object[] loginUuidDelete($uuid, $authorization)
+
+Logout
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new OpenAPI\Client\Api\LoginApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uuid = 'uuid_example'; // string | 
+$authorization = 'authorization_example'; // string | 
+
+try {
+    $result = $apiInstance->loginUuidDelete($uuid, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LoginApi->loginUuidDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**string**](../Model/.md)|  |
+ **authorization** | **string**|  | [optional]
+
+### Return type
+
+**object[]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
