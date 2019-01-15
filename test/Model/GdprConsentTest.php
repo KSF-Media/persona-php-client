@@ -77,6 +77,13 @@ class GdprConsentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "brand"
+     */
+    public function testPropertyBrand()
+    {
+    }
+
+    /**
      * Test attribute "key"
      */
     public function testPropertyKey()

@@ -124,4 +124,11 @@ class UserTest extends \PHPUnit_Framework_TestCase
     public function testPropertySubs()
     {
     }
+
+    /**
+     * Test attribute "consent"
+     */
+    public function testPropertyConsent()
+    {
+    }
 }

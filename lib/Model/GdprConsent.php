@@ -57,6 +57,7 @@ class GdprConsent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'brand' => 'string',
         'key' => 'string',
         'val' => 'bool'
     ];
@@ -67,6 +68,7 @@ class GdprConsent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'brand' => null,
         'key' => null,
         'val' => null
     ];
@@ -98,6 +100,7 @@ class GdprConsent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'brand' => 'brand',
         'key' => 'key',
         'val' => 'val'
     ];
@@ -108,6 +111,7 @@ class GdprConsent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'brand' => 'setBrand',
         'key' => 'setKey',
         'val' => 'setVal'
     ];
@@ -118,6 +122,7 @@ class GdprConsent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'brand' => 'getBrand',
         'key' => 'getKey',
         'val' => 'getVal'
     ];
@@ -182,6 +187,7 @@ class GdprConsent implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
         $this->container['val'] = isset($data['val']) ? $data['val'] : null;
     }
@@ -195,6 +201,9 @@ class GdprConsent implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['brand'] === null) {
+            $invalidProperties[] = "'brand' can't be null";
+        }
         if ($this->container['key'] === null) {
             $invalidProperties[] = "'key' can't be null";
         }
@@ -215,6 +224,30 @@ class GdprConsent implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets brand
+     *
+     * @return string
+     */
+    public function getBrand()
+    {
+        return $this->container['brand'];
+    }
+
+    /**
+     * Sets brand
+     *
+     * @param string $brand brand
+     *
+     * @return $this
+     */
+    public function setBrand($brand)
+    {
+        $this->container['brand'] = $brand;
+
+        return $this;
+    }
 
     /**
      * Gets key

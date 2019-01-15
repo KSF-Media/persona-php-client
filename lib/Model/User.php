@@ -63,7 +63,8 @@ class User implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'address' => '\OpenAPI\Client\Model\Address',
         'cusno' => 'string',
-        'subs' => '\OpenAPI\Client\Model\Subscription[]'
+        'subs' => '\OpenAPI\Client\Model\Subscription[]',
+        'consent' => '\OpenAPI\Client\Model\GdprConsent[]'
     ];
 
     /**
@@ -78,7 +79,8 @@ class User implements ModelInterface, ArrayAccess
         'last_name' => null,
         'address' => null,
         'cusno' => null,
-        'subs' => null
+        'subs' => null,
+        'consent' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class User implements ModelInterface, ArrayAccess
         'last_name' => 'lastName',
         'address' => 'address',
         'cusno' => 'cusno',
-        'subs' => 'subs'
+        'subs' => 'subs',
+        'consent' => 'consent'
     ];
 
     /**
@@ -129,7 +132,8 @@ class User implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'address' => 'setAddress',
         'cusno' => 'setCusno',
-        'subs' => 'setSubs'
+        'subs' => 'setSubs',
+        'consent' => 'setConsent'
     ];
 
     /**
@@ -144,7 +148,8 @@ class User implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'address' => 'getAddress',
         'cusno' => 'getCusno',
-        'subs' => 'getSubs'
+        'subs' => 'getSubs',
+        'consent' => 'getConsent'
     ];
 
     /**
@@ -214,6 +219,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['cusno'] = isset($data['cusno']) ? $data['cusno'] : null;
         $this->container['subs'] = isset($data['subs']) ? $data['subs'] : null;
+        $this->container['consent'] = isset($data['consent']) ? $data['consent'] : null;
     }
 
     /**
@@ -236,6 +242,9 @@ class User implements ModelInterface, ArrayAccess
         }
         if ($this->container['subs'] === null) {
             $invalidProperties[] = "'subs' can't be null";
+        }
+        if ($this->container['consent'] === null) {
+            $invalidProperties[] = "'consent' can't be null";
         }
         return $invalidProperties;
     }
@@ -416,6 +425,30 @@ class User implements ModelInterface, ArrayAccess
     public function setSubs($subs)
     {
         $this->container['subs'] = $subs;
+
+        return $this;
+    }
+
+    /**
+     * Gets consent
+     *
+     * @return \OpenAPI\Client\Model\GdprConsent[]
+     */
+    public function getConsent()
+    {
+        return $this->container['consent'];
+    }
+
+    /**
+     * Sets consent
+     *
+     * @param \OpenAPI\Client\Model\GdprConsent[] $consent consent
+     *
+     * @return $this
+     */
+    public function setConsent($consent)
+    {
+        $this->container['consent'] = $consent;
 
         return $this;
     }
