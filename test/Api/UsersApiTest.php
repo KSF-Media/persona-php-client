@@ -72,6 +72,16 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for usersPost
+     *
+     * Create a new user..
+     *
+     */
+    public function testUsersPost()
+    {
+    }
+
+    /**
      * Test case for usersUuidGdprPut
      *
      * Updates the GDPR consent settings for a given user..
