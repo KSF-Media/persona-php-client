@@ -58,8 +58,8 @@ class GdprConsent implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'brand' => 'string',
-        'key' => 'string',
-        'val' => 'bool'
+        'consent_key' => 'string',
+        'value' => 'bool'
     ];
 
     /**
@@ -69,8 +69,8 @@ class GdprConsent implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'brand' => null,
-        'key' => null,
-        'val' => null
+        'consent_key' => null,
+        'value' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class GdprConsent implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'brand' => 'brand',
-        'key' => 'key',
-        'val' => 'val'
+        'consent_key' => 'consentKey',
+        'value' => 'value'
     ];
 
     /**
@@ -112,8 +112,8 @@ class GdprConsent implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'brand' => 'setBrand',
-        'key' => 'setKey',
-        'val' => 'setVal'
+        'consent_key' => 'setConsentKey',
+        'value' => 'setValue'
     ];
 
     /**
@@ -123,8 +123,8 @@ class GdprConsent implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'brand' => 'getBrand',
-        'key' => 'getKey',
-        'val' => 'getVal'
+        'consent_key' => 'getConsentKey',
+        'value' => 'getValue'
     ];
 
     /**
@@ -188,8 +188,8 @@ class GdprConsent implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
-        $this->container['val'] = isset($data['val']) ? $data['val'] : null;
+        $this->container['consent_key'] = isset($data['consent_key']) ? $data['consent_key'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -204,11 +204,11 @@ class GdprConsent implements ModelInterface, ArrayAccess
         if ($this->container['brand'] === null) {
             $invalidProperties[] = "'brand' can't be null";
         }
-        if ($this->container['key'] === null) {
-            $invalidProperties[] = "'key' can't be null";
+        if ($this->container['consent_key'] === null) {
+            $invalidProperties[] = "'consent_key' can't be null";
         }
-        if ($this->container['val'] === null) {
-            $invalidProperties[] = "'val' can't be null";
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
         }
         return $invalidProperties;
     }
@@ -250,49 +250,49 @@ class GdprConsent implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets key
+     * Gets consent_key
      *
      * @return string
      */
-    public function getKey()
+    public function getConsentKey()
     {
-        return $this->container['key'];
+        return $this->container['consent_key'];
     }
 
     /**
-     * Sets key
+     * Sets consent_key
      *
-     * @param string $key key
+     * @param string $consent_key consent_key
      *
      * @return $this
      */
-    public function setKey($key)
+    public function setConsentKey($consent_key)
     {
-        $this->container['key'] = $key;
+        $this->container['consent_key'] = $consent_key;
 
         return $this;
     }
 
     /**
-     * Gets val
+     * Gets value
      *
      * @return bool
      */
-    public function getVal()
+    public function getValue()
     {
-        return $this->container['val'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets val
+     * Sets value
      *
-     * @param bool $val val
+     * @param bool $value value
      *
      * @return $this
      */
-    public function setVal($val)
+    public function setValue($value)
     {
-        $this->container['val'] = $val;
+        $this->container['value'] = $value;
 
         return $this;
     }
