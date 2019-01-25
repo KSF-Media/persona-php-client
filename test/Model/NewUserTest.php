@@ -105,6 +105,13 @@ class NewUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "confirm_password"
+     */
+    public function testPropertyConfirmPassword()
+    {
+    }
+
+    /**
      * Test attribute "street_address"
      */
     public function testPropertyStreetAddress()

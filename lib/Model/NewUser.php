@@ -61,6 +61,7 @@ class NewUser implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'email_address' => 'string',
         'password' => 'string',
+        'confirm_password' => 'string',
         'street_address' => 'string',
         'zip_code' => 'string',
         'city' => 'string',
@@ -78,6 +79,7 @@ class NewUser implements ModelInterface, ArrayAccess
         'last_name' => null,
         'email_address' => null,
         'password' => null,
+        'confirm_password' => null,
         'street_address' => null,
         'zip_code' => null,
         'city' => null,
@@ -116,6 +118,7 @@ class NewUser implements ModelInterface, ArrayAccess
         'last_name' => 'lastName',
         'email_address' => 'emailAddress',
         'password' => 'password',
+        'confirm_password' => 'confirmPassword',
         'street_address' => 'streetAddress',
         'zip_code' => 'zipCode',
         'city' => 'city',
@@ -133,6 +136,7 @@ class NewUser implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'email_address' => 'setEmailAddress',
         'password' => 'setPassword',
+        'confirm_password' => 'setConfirmPassword',
         'street_address' => 'setStreetAddress',
         'zip_code' => 'setZipCode',
         'city' => 'setCity',
@@ -150,6 +154,7 @@ class NewUser implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'email_address' => 'getEmailAddress',
         'password' => 'getPassword',
+        'confirm_password' => 'getConfirmPassword',
         'street_address' => 'getStreetAddress',
         'zip_code' => 'getZipCode',
         'city' => 'getCity',
@@ -221,6 +226,7 @@ class NewUser implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['confirm_password'] = isset($data['confirm_password']) ? $data['confirm_password'] : null;
         $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
         $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
@@ -248,6 +254,9 @@ class NewUser implements ModelInterface, ArrayAccess
         }
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
+        }
+        if ($this->container['confirm_password'] === null) {
+            $invalidProperties[] = "'confirm_password' can't be null";
         }
         return $invalidProperties;
     }
@@ -356,6 +365,30 @@ class NewUser implements ModelInterface, ArrayAccess
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets confirm_password
+     *
+     * @return string
+     */
+    public function getConfirmPassword()
+    {
+        return $this->container['confirm_password'];
+    }
+
+    /**
+     * Sets confirm_password
+     *
+     * @param string $confirm_password confirm_password
+     *
+     * @return $this
+     */
+    public function setConfirmPassword($confirm_password)
+    {
+        $this->container['confirm_password'] = $confirm_password;
 
         return $this;
     }
