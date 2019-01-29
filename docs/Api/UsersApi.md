@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersUuidGdprPut**
-> object[] usersUuidGdprPut($uuid, $gdpr_consent, $authorization)
+> \OpenAPI\Client\Model\User usersUuidGdprPut($uuid, $gdpr_consent, $authorization)
 
 Updates the GDPR consent settings for a given user.
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object[]**
+[**\OpenAPI\Client\Model\User**](../Model/User.md)
 
 ### Authorization
 
