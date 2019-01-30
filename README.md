@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersPost**](docs/Api/UsersApi.md#userspost) | **POST** /users | Create a new user.
 *UsersApi* | [**usersUuidGdprPut**](docs/Api/UsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *UsersApi* | [**usersUuidGet**](docs/Api/UsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
+*UsersApi* | [**usersUuidPatch**](docs/Api/UsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 
 
 ## Documentation For Models
@@ -122,6 +123,8 @@ Class | Method | HTTP request | Description
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionDates](docs/Model/SubscriptionDates.md)
  - [User](docs/Model/User.md)
+ - [UserUpdate](docs/Model/UserUpdate.md)
+ - [UserUpdateAddress](docs/Model/UserUpdateAddress.md)
 
 
 ## Documentation For Authorization
