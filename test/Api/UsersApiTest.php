@@ -112,6 +112,16 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for usersUuidLegalPut
+     *
+     * Updates the legal consent settings for a given user..
+     *
+     */
+    public function testUsersUuidLegalPut()
+    {
+    }
+
+    /**
      * Test case for usersUuidPatch
      *
      * Update a user.

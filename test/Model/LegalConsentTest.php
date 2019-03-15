@@ -1,6 +1,6 @@
 <?php
 /**
- * UserTest
+ * LegalConsentTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace OpenAPI\Client;
 
 /**
- * UserTest Class Doc Comment
+ * LegalConsentTest Class Doc Comment
  *
  * @category    Class
- * @description User
+ * @description LegalConsent
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UserTest extends \PHPUnit_Framework_TestCase
+class LegalConsentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,72 +70,30 @@ class UserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "User"
+     * Test "LegalConsent"
      */
-    public function testUser()
+    public function testLegalConsent()
     {
     }
 
     /**
-     * Test attribute "uuid"
+     * Test attribute "screen_name"
      */
-    public function testPropertyUuid()
+    public function testPropertyScreenName()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "consent_id"
      */
-    public function testPropertyEmail()
+    public function testPropertyConsentId()
     {
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "date_accepted"
      */
-    public function testPropertyFirstName()
-    {
-    }
-
-    /**
-     * Test attribute "last_name"
-     */
-    public function testPropertyLastName()
-    {
-    }
-
-    /**
-     * Test attribute "address"
-     */
-    public function testPropertyAddress()
-    {
-    }
-
-    /**
-     * Test attribute "cusno"
-     */
-    public function testPropertyCusno()
-    {
-    }
-
-    /**
-     * Test attribute "subs"
-     */
-    public function testPropertySubs()
-    {
-    }
-
-    /**
-     * Test attribute "consent"
-     */
-    public function testPropertyConsent()
-    {
-    }
-
-    /**
-     * Test attribute "legal"
-     */
-    public function testPropertyLegal()
+    public function testPropertyDateAccepted()
     {
     }
 }

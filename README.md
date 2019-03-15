@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidEntitlementGet**](docs/Api/UsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 *UsersApi* | [**usersUuidGdprPut**](docs/Api/UsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *UsersApi* | [**usersUuidGet**](docs/Api/UsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
+*UsersApi* | [**usersUuidLegalPut**](docs/Api/UsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *UsersApi* | [**usersUuidPatch**](docs/Api/UsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 
 
@@ -111,6 +112,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse415UnsupportedMediaType](docs/Model/InlineResponse415UnsupportedMediaType.md)
  - [InlineResponse500](docs/Model/InlineResponse500.md)
  - [InlineResponse500InternalServerError](docs/Model/InlineResponse500InternalServerError.md)
+ - [LegalConsent](docs/Model/LegalConsent.md)
  - [LoginData](docs/Model/LoginData.md)
  - [LoginDataSSO](docs/Model/LoginDataSSO.md)
  - [LoginDataSoMe](docs/Model/LoginDataSoMe.md)
