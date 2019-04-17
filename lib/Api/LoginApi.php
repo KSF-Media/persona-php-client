@@ -65,18 +65,46 @@ class LoginApi
     protected $headerSelector;
 
     /**
+     * @var int Host index
+     */
+    protected $hostIndex;
+
+    /**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
+     * @param int             $host_index (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
-        HeaderSelector $selector = null
+        HeaderSelector $selector = null,
+        $host_index = 0
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
         $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->hostIndex = $host_index;
+    }
+
+    /**
+     * Set the host index
+     *
+     * @param  int Host index (required)
+     */
+    public function setHostIndex($host_index)
+    {
+        $this->hostIndex = $host_index;
+    }
+
+    /**
+     * Get the host index
+     *
+     * @return Host index
+     */
+    public function getHostIndex()
+    {
+        return $this->hostIndex;
     }
 
     /**
@@ -92,15 +120,15 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $login_data login_data (required)
+     * @param  \OpenAPI\Client\Model\LoginData $body body (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse403|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500
      */
-    public function loginPost($login_data)
+    public function loginPost($body)
     {
-        list($response) = $this->loginPostWithHttpInfo($login_data);
+        list($response) = $this->loginPostWithHttpInfo($body);
         return $response;
     }
 
@@ -109,15 +137,15 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $login_data (required)
+     * @param  \OpenAPI\Client\Model\LoginData $body (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse403|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginPostWithHttpInfo($login_data)
+    public function loginPostWithHttpInfo($body)
     {
-        $request = $this->loginPostRequest($login_data);
+        $request = $this->loginPostRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -277,14 +305,14 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $login_data (required)
+     * @param  \OpenAPI\Client\Model\LoginData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginPostAsync($login_data)
+    public function loginPostAsync($body)
     {
-        return $this->loginPostAsyncWithHttpInfo($login_data)
+        return $this->loginPostAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -297,15 +325,15 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $login_data (required)
+     * @param  \OpenAPI\Client\Model\LoginData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginPostAsyncWithHttpInfo($login_data)
+    public function loginPostAsyncWithHttpInfo($body)
     {
         $returnType = '\OpenAPI\Client\Model\LoginResponse';
-        $request = $this->loginPostRequest($login_data);
+        $request = $this->loginPostRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -344,17 +372,17 @@ class LoginApi
     /**
      * Create request for operation 'loginPost'
      *
-     * @param  \OpenAPI\Client\Model\LoginData $login_data (required)
+     * @param  \OpenAPI\Client\Model\LoginData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginPostRequest($login_data)
+    protected function loginPostRequest($body)
     {
-        // verify the required parameter 'login_data' is set
-        if ($login_data === null || (is_array($login_data) && count($login_data) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $login_data when calling loginPost'
+                'Missing the required parameter $body when calling loginPost'
             );
         }
 
@@ -369,8 +397,8 @@ class LoginApi
 
         // body params
         $_tempBody = null;
-        if (isset($login_data)) {
-            $_tempBody = $login_data;
+        if (isset($body)) {
+            $_tempBody = $body;
         }
 
         if ($multipart) {
@@ -439,15 +467,15 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $login_data_so_me login_data_so_me (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body body (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4032|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500
      */
-    public function loginSomePost($login_data_so_me)
+    public function loginSomePost($body)
     {
-        list($response) = $this->loginSomePostWithHttpInfo($login_data_so_me);
+        list($response) = $this->loginSomePostWithHttpInfo($body);
         return $response;
     }
 
@@ -456,15 +484,15 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $login_data_so_me (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4032|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginSomePostWithHttpInfo($login_data_so_me)
+    public function loginSomePostWithHttpInfo($body)
     {
-        $request = $this->loginSomePostRequest($login_data_so_me);
+        $request = $this->loginSomePostRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -624,14 +652,14 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $login_data_so_me (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginSomePostAsync($login_data_so_me)
+    public function loginSomePostAsync($body)
     {
-        return $this->loginSomePostAsyncWithHttpInfo($login_data_so_me)
+        return $this->loginSomePostAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -644,15 +672,15 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $login_data_so_me (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginSomePostAsyncWithHttpInfo($login_data_so_me)
+    public function loginSomePostAsyncWithHttpInfo($body)
     {
         $returnType = '\OpenAPI\Client\Model\LoginResponse';
-        $request = $this->loginSomePostRequest($login_data_so_me);
+        $request = $this->loginSomePostRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -691,17 +719,17 @@ class LoginApi
     /**
      * Create request for operation 'loginSomePost'
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $login_data_so_me (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginSomePostRequest($login_data_so_me)
+    protected function loginSomePostRequest($body)
     {
-        // verify the required parameter 'login_data_so_me' is set
-        if ($login_data_so_me === null || (is_array($login_data_so_me) && count($login_data_so_me) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $login_data_so_me when calling loginSomePost'
+                'Missing the required parameter $body when calling loginSomePost'
             );
         }
 
@@ -716,8 +744,8 @@ class LoginApi
 
         // body params
         $_tempBody = null;
-        if (isset($login_data_so_me)) {
-            $_tempBody = $login_data_so_me;
+        if (isset($body)) {
+            $_tempBody = $body;
         }
 
         if ($multipart) {
@@ -786,15 +814,15 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $login_data_sso login_data_sso (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSSO $body body (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4031|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500
      */
-    public function loginSsoPost($login_data_sso)
+    public function loginSsoPost($body)
     {
-        list($response) = $this->loginSsoPostWithHttpInfo($login_data_sso);
+        list($response) = $this->loginSsoPostWithHttpInfo($body);
         return $response;
     }
 
@@ -803,15 +831,15 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $login_data_sso (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4031|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginSsoPostWithHttpInfo($login_data_sso)
+    public function loginSsoPostWithHttpInfo($body)
     {
-        $request = $this->loginSsoPostRequest($login_data_sso);
+        $request = $this->loginSsoPostRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -971,14 +999,14 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $login_data_sso (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginSsoPostAsync($login_data_sso)
+    public function loginSsoPostAsync($body)
     {
-        return $this->loginSsoPostAsyncWithHttpInfo($login_data_sso)
+        return $this->loginSsoPostAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -991,15 +1019,15 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $login_data_sso (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginSsoPostAsyncWithHttpInfo($login_data_sso)
+    public function loginSsoPostAsyncWithHttpInfo($body)
     {
         $returnType = '\OpenAPI\Client\Model\LoginResponse';
-        $request = $this->loginSsoPostRequest($login_data_sso);
+        $request = $this->loginSsoPostRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1038,17 +1066,17 @@ class LoginApi
     /**
      * Create request for operation 'loginSsoPost'
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $login_data_sso (required)
+     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginSsoPostRequest($login_data_sso)
+    protected function loginSsoPostRequest($body)
     {
-        // verify the required parameter 'login_data_sso' is set
-        if ($login_data_sso === null || (is_array($login_data_sso) && count($login_data_sso) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $login_data_sso when calling loginSsoPost'
+                'Missing the required parameter $body when calling loginSsoPost'
             );
         }
 
@@ -1063,8 +1091,8 @@ class LoginApi
 
         // body params
         $_tempBody = null;
-        if (isset($login_data_sso)) {
-            $_tempBody = $login_data_sso;
+        if (isset($body)) {
+            $_tempBody = $body;
         }
 
         if ($multipart) {

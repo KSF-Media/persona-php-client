@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse4032EmailAddressInUse
+ * SubscriptionPauseDates
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * InlineResponse4032EmailAddressInUse Class Doc Comment
+ * SubscriptionPauseDates Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
+class SubscriptionPauseDates implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_403_2_email_address_in_use';
+    protected static $openAPIModelName = 'SubscriptionPauseDates';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'merge_token' => 'string',
-        'description' => 'string',
-        'existing_provider' => 'string'
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -68,9 +67,8 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'merge_token' => null,
-        'description' => null,
-        'existing_provider' => null
+        'start_date' => 'date',
+        'end_date' => 'date'
     ];
 
     /**
@@ -100,9 +98,8 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merge_token' => 'merge_token',
-        'description' => 'description',
-        'existing_provider' => 'existing_provider'
+        'start_date' => 'startDate',
+        'end_date' => 'endDate'
     ];
 
     /**
@@ -111,9 +108,8 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merge_token' => 'setMergeToken',
-        'description' => 'setDescription',
-        'existing_provider' => 'setExistingProvider'
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -122,9 +118,8 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merge_token' => 'getMergeToken',
-        'description' => 'getDescription',
-        'existing_provider' => 'getExistingProvider'
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -168,21 +163,8 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const DESCRIPTION_USER_HAS_ANOTHER_RECORD_REGISTERED__PLEASE_MERGE_THE_ACCOUNTS = 'User has another record registered. Please merge the accounts.';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getDescriptionAllowableValues()
-    {
-        return [
-            self::DESCRIPTION_USER_HAS_ANOTHER_RECORD_REGISTERED__PLEASE_MERGE_THE_ACCOUNTS,
-        ];
-    }
     
 
     /**
@@ -200,9 +182,8 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merge_token'] = isset($data['merge_token']) ? $data['merge_token'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['existing_provider'] = isset($data['existing_provider']) ? $data['existing_provider'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
     }
 
     /**
@@ -214,14 +195,12 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getDescriptionAllowableValues();
-        if (!is_null($this->container['description']) && !in_array($this->container['description'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'description', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
-
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -238,82 +217,49 @@ class InlineResponse4032EmailAddressInUse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets merge_token
+     * Gets start_date
      *
-     * @return string|null
+     * @return \DateTime
      */
-    public function getMergeToken()
+    public function getStartDate()
     {
-        return $this->container['merge_token'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets merge_token
+     * Sets start_date
      *
-     * @param string|null $merge_token merge_token
+     * @param \DateTime $start_date start_date
      *
      * @return $this
      */
-    public function setMergeToken($merge_token)
+    public function setStartDate($start_date)
     {
-        $this->container['merge_token'] = $merge_token;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets end_date
      *
-     * @return string|null
+     * @return \DateTime
      */
-    public function getDescription()
+    public function getEndDate()
     {
-        return $this->container['description'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets description
+     * Sets end_date
      *
-     * @param string|null $description description
+     * @param \DateTime $end_date end_date
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setEndDate($end_date)
     {
-        $allowedValues = $this->getDescriptionAllowableValues();
-        if (!is_null($description) && !in_array($description, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'description', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets existing_provider
-     *
-     * @return string|null
-     */
-    public function getExistingProvider()
-    {
-        return $this->container['existing_provider'];
-    }
-
-    /**
-     * Sets existing_provider
-     *
-     * @param string|null $existing_provider existing_provider
-     *
-     * @return $this
-     */
-    public function setExistingProvider($existing_provider)
-    {
-        $this->container['existing_provider'] = $existing_provider;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }

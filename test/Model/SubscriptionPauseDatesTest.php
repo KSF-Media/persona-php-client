@@ -1,6 +1,6 @@
 <?php
 /**
- * PaperTest
+ * SubscriptionPauseDatesTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PaperTest Class Doc Comment
+ * SubscriptionPauseDatesTest Class Doc Comment
  *
  * @category    Class
- * @description Paper
+ * @description SubscriptionPauseDates
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PaperTest extends TestCase
+class SubscriptionPauseDatesTest extends TestCase
 {
 
     /**
@@ -72,23 +72,23 @@ class PaperTest extends TestCase
     }
 
     /**
-     * Test "Paper"
+     * Test "SubscriptionPauseDates"
      */
-    public function testPaper()
+    public function testSubscriptionPauseDates()
     {
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "start_date"
      */
-    public function testPropertyCode()
+    public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "end_date"
      */
-    public function testPropertyName()
+    public function testPropertyEndDate()
     {
     }
 }

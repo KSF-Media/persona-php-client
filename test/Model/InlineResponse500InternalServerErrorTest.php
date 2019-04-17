@@ -29,6 +29,8 @@
 
 namespace OpenAPI\Client;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * InlineResponse500InternalServerErrorTest Class Doc Comment
  *
@@ -38,7 +40,7 @@ namespace OpenAPI\Client;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class InlineResponse500InternalServerErrorTest extends \PHPUnit_Framework_TestCase
+class InlineResponse500InternalServerErrorTest extends TestCase
 {
 
     /**

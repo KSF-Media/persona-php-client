@@ -10,27 +10,32 @@ Method | HTTP request | Description
 [**usersUuidGet**](UsersApi.md#usersUuidGet) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidLegalPut**](UsersApi.md#usersUuidLegalPut) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 [**usersUuidPatch**](UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
+[**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
-# **usersPost**
-> \OpenAPI\Client\Model\LoginResponse usersPost($new_user)
+
+## usersPost
+
+> \OpenAPI\Client\Model\LoginResponse usersPost($body)
 
 Create a new user.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$new_user = new \OpenAPI\Client\Model\NewUser(); // \OpenAPI\Client\Model\NewUser | 
+$body = new \OpenAPI\Client\Model\NewUser(); // \OpenAPI\Client\Model\NewUser | 
 
 try {
-    $result = $apiInstance->usersPost($new_user);
+    $result = $apiInstance->usersPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersPost: ', $e->getMessage(), PHP_EOL;
@@ -40,9 +45,10 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **new_user** | [**\OpenAPI\Client\Model\NewUser**](../Model/NewUser.md)|  |
+ **body** | [**\OpenAPI\Client\Model\NewUser**](../Model/NewUser.md)|  |
 
 ### Return type
 
@@ -54,20 +60,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersUuidEntitlementGet**
+
+## usersUuidEntitlementGet
+
 > string[] usersUuidEntitlementGet($uuid, $authorization, $cache_control)
 
 Get users entitlements.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -89,6 +101,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
@@ -105,22 +118,28 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersUuidGdprPut**
-> \OpenAPI\Client\Model\User usersUuidGdprPut($uuid, $gdpr_consent, $authorization)
+
+## usersUuidGdprPut
+
+> \OpenAPI\Client\Model\User usersUuidGdprPut($uuid, $body, $authorization)
 
 Updates the GDPR consent settings for a given user.
 
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -128,11 +147,11 @@ $apiInstance = new OpenAPI\Client\Api\UsersApi(
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$gdpr_consent = array(new \OpenAPI\Client\Model\array()); // \OpenAPI\Client\Model\GdprConsent[] | 
+$body = array(new \OpenAPI\Client\Model\array()); // \OpenAPI\Client\Model\GdprConsent[] | 
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->usersUuidGdprPut($uuid, $gdpr_consent, $authorization);
+    $result = $apiInstance->usersUuidGdprPut($uuid, $body, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUuidGdprPut: ', $e->getMessage(), PHP_EOL;
@@ -142,10 +161,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **gdpr_consent** | [**\OpenAPI\Client\Model\GdprConsent[]**](../Model/array.md)|  |
+ **body** | [**\OpenAPI\Client\Model\GdprConsent[]**](../Model/array.md)|  |
  **authorization** | **string**|  | [optional]
 
 ### Return type
@@ -158,12 +178,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersUuidGet**
+
+## usersUuidGet
+
 > \OpenAPI\Client\Model\User usersUuidGet($uuid, $authorization, $cache_control)
 
 Get user by UUID.
@@ -171,9 +195,11 @@ Get user by UUID.
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -195,6 +221,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
@@ -211,22 +238,28 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersUuidLegalPut**
-> \OpenAPI\Client\Model\User usersUuidLegalPut($uuid, $legal_consent, $authorization)
+
+## usersUuidLegalPut
+
+> \OpenAPI\Client\Model\User usersUuidLegalPut($uuid, $body, $authorization)
 
 Updates the legal consent settings for a given user.
 
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -234,11 +267,11 @@ $apiInstance = new OpenAPI\Client\Api\UsersApi(
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$legal_consent = array(new \OpenAPI\Client\Model\array()); // \OpenAPI\Client\Model\LegalConsent[] | 
+$body = array(new \OpenAPI\Client\Model\array()); // \OpenAPI\Client\Model\LegalConsent[] | 
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->usersUuidLegalPut($uuid, $legal_consent, $authorization);
+    $result = $apiInstance->usersUuidLegalPut($uuid, $body, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUuidLegalPut: ', $e->getMessage(), PHP_EOL;
@@ -248,10 +281,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **legal_consent** | [**\OpenAPI\Client\Model\LegalConsent[]**](../Model/array.md)|  |
+ **body** | [**\OpenAPI\Client\Model\LegalConsent[]**](../Model/array.md)|  |
  **authorization** | **string**|  | [optional]
 
 ### Return type
@@ -264,22 +298,28 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersUuidPatch**
-> \OpenAPI\Client\Model\User usersUuidPatch($uuid, $user_update, $authorization)
+
+## usersUuidPatch
+
+> \OpenAPI\Client\Model\User usersUuidPatch($uuid, $body, $authorization)
 
 Update a user
 
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -287,11 +327,11 @@ $apiInstance = new OpenAPI\Client\Api\UsersApi(
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$user_update = new \OpenAPI\Client\Model\UserUpdate(); // \OpenAPI\Client\Model\UserUpdate | 
+$body = new \OpenAPI\Client\Model\UserUpdate(); // \OpenAPI\Client\Model\UserUpdate | 
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->usersUuidPatch($uuid, $user_update, $authorization);
+    $result = $apiInstance->usersUuidPatch($uuid, $body, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUuidPatch: ', $e->getMessage(), PHP_EOL;
@@ -301,10 +341,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **user_update** | [**\OpenAPI\Client\Model\UserUpdate**](../Model/UserUpdate.md)|  |
+ **body** | [**\OpenAPI\Client\Model\UserUpdate**](../Model/UserUpdate.md)|  |
  **authorization** | **string**|  | [optional]
 
 ### Return type
@@ -317,8 +358,70 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## usersUuidSubscriptionsSubsnoPausePost
+
+> \OpenAPI\Client\Model\PausedSubscription[] usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $authorization)
+
+Pause users subscription
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uuid = 'uuid_example'; // string | 
+$subsno = 56; // int | 
+$body = new \OpenAPI\Client\Model\SubscriptionPauseDates(); // \OpenAPI\Client\Model\SubscriptionPauseDates | 
+$authorization = 'authorization_example'; // string | 
+
+try {
+    $result = $apiInstance->usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoPausePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**string**](../Model/.md)|  |
+ **subsno** | **int**|  |
+ **body** | [**\OpenAPI\Client\Model\SubscriptionPauseDates**](../Model/SubscriptionPauseDates.md)|  |
+ **authorization** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\PausedSubscription[]**](../Model/PausedSubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

@@ -158,7 +158,7 @@ class InlineResponse4031AccessTokenExpired implements ModelInterface, ArrayAcces
         return self::$openAPIModelName;
     }
 
-    const DESCRIPTION_THE_ACCESS_TOKEN_YOU_PROVIDED_IS_EXPIRED_PLEASE_REAUTHENTICATE = 'The access token you provided is expired. Please reauthenticate.';
+    const DESCRIPTION_THE_ACCESS_TOKEN_YOU_PROVIDED_IS_EXPIRED__PLEASE_REAUTHENTICATE = 'The access token you provided is expired. Please reauthenticate.';
     
 
     
@@ -170,7 +170,7 @@ class InlineResponse4031AccessTokenExpired implements ModelInterface, ArrayAcces
     public function getDescriptionAllowableValues()
     {
         return [
-            self::DESCRIPTION_THE_ACCESS_TOKEN_YOU_PROVIDED_IS_EXPIRED_PLEASE_REAUTHENTICATE,
+            self::DESCRIPTION_THE_ACCESS_TOKEN_YOU_PROVIDED_IS_EXPIRED__PLEASE_REAUTHENTICATE,
         ];
     }
     

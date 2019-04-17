@@ -29,6 +29,8 @@
 
 namespace OpenAPI\Client;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * InlineResponse4031AccessTokenExpiredTest Class Doc Comment
  *
@@ -38,7 +40,7 @@ namespace OpenAPI\Client;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class InlineResponse4031AccessTokenExpiredTest extends \PHPUnit_Framework_TestCase
+class InlineResponse4031AccessTokenExpiredTest extends TestCase
 {
 
     /**
