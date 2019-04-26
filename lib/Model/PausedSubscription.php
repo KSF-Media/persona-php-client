@@ -57,19 +57,19 @@ class PausedSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paused_subscription_subsno' => 'int',
-        'paused_subscription_sleep_start_date' => '\DateTime',
-        'paused_subscription_sleep_end_date' => '\DateTime',
-        'paused_subscription_credit_type' => 'string',
-        'paused_subscription_credit_amount' => 'int',
-        'paused_subscription_sleep_type' => 'string',
-        'paused_subscription_credited' => 'bool',
-        'paused_subscription_credit_invno' => 'int',
-        'paused_subscription_booking_date' => 'string',
-        'paused_subscription_allow_webpaper' => 'bool',
-        'paused_subscription_receive_type' => 'string',
-        'paused_subscription_confirm_status' => 'string',
-        'paused_subscription_stamp_user' => 'string'
+        'subsno' => 'int',
+        'sleep_startdate' => '\DateTime',
+        'sleep_end_date' => '\DateTime',
+        'credit_type' => 'string',
+        'credit_amount' => 'int',
+        'sleep_type' => 'string',
+        'credited' => 'bool',
+        'credit_invno' => 'int',
+        'booking_date' => 'string',
+        'allow_webpaper' => 'bool',
+        'receive_type' => 'string',
+        'confirm_status' => 'string',
+        'stamp_user' => 'string'
     ];
 
     /**
@@ -78,19 +78,19 @@ class PausedSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'paused_subscription_subsno' => null,
-        'paused_subscription_sleep_start_date' => 'date',
-        'paused_subscription_sleep_end_date' => 'date',
-        'paused_subscription_credit_type' => null,
-        'paused_subscription_credit_amount' => null,
-        'paused_subscription_sleep_type' => null,
-        'paused_subscription_credited' => null,
-        'paused_subscription_credit_invno' => null,
-        'paused_subscription_booking_date' => null,
-        'paused_subscription_allow_webpaper' => null,
-        'paused_subscription_receive_type' => null,
-        'paused_subscription_confirm_status' => null,
-        'paused_subscription_stamp_user' => null
+        'subsno' => null,
+        'sleep_startdate' => 'date',
+        'sleep_end_date' => 'date',
+        'credit_type' => null,
+        'credit_amount' => null,
+        'sleep_type' => null,
+        'credited' => null,
+        'credit_invno' => null,
+        'booking_date' => null,
+        'allow_webpaper' => null,
+        'receive_type' => null,
+        'confirm_status' => null,
+        'stamp_user' => null
     ];
 
     /**
@@ -120,19 +120,19 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'paused_subscription_subsno' => 'pausedSubscriptionSubsno',
-        'paused_subscription_sleep_start_date' => 'pausedSubscriptionSleepStartDate',
-        'paused_subscription_sleep_end_date' => 'pausedSubscriptionSleepEndDate',
-        'paused_subscription_credit_type' => 'pausedSubscriptionCreditType',
-        'paused_subscription_credit_amount' => 'pausedSubscriptionCreditAmount',
-        'paused_subscription_sleep_type' => 'pausedSubscriptionSleepType',
-        'paused_subscription_credited' => 'pausedSubscriptionCredited',
-        'paused_subscription_credit_invno' => 'pausedSubscriptionCreditInvno',
-        'paused_subscription_booking_date' => 'pausedSubscriptionBookingDate',
-        'paused_subscription_allow_webpaper' => 'pausedSubscriptionAllowWebpaper',
-        'paused_subscription_receive_type' => 'pausedSubscriptionReceiveType',
-        'paused_subscription_confirm_status' => 'pausedSubscriptionConfirmStatus',
-        'paused_subscription_stamp_user' => 'pausedSubscriptionStampUser'
+        'subsno' => 'subsno',
+        'sleep_startdate' => 'sleepStartdate',
+        'sleep_end_date' => 'sleepEndDate',
+        'credit_type' => 'creditType',
+        'credit_amount' => 'creditAmount',
+        'sleep_type' => 'sleepType',
+        'credited' => 'credited',
+        'credit_invno' => 'creditInvno',
+        'booking_date' => 'bookingDate',
+        'allow_webpaper' => 'allowWebpaper',
+        'receive_type' => 'receiveType',
+        'confirm_status' => 'confirmStatus',
+        'stamp_user' => 'stampUser'
     ];
 
     /**
@@ -141,19 +141,19 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'paused_subscription_subsno' => 'setPausedSubscriptionSubsno',
-        'paused_subscription_sleep_start_date' => 'setPausedSubscriptionSleepStartDate',
-        'paused_subscription_sleep_end_date' => 'setPausedSubscriptionSleepEndDate',
-        'paused_subscription_credit_type' => 'setPausedSubscriptionCreditType',
-        'paused_subscription_credit_amount' => 'setPausedSubscriptionCreditAmount',
-        'paused_subscription_sleep_type' => 'setPausedSubscriptionSleepType',
-        'paused_subscription_credited' => 'setPausedSubscriptionCredited',
-        'paused_subscription_credit_invno' => 'setPausedSubscriptionCreditInvno',
-        'paused_subscription_booking_date' => 'setPausedSubscriptionBookingDate',
-        'paused_subscription_allow_webpaper' => 'setPausedSubscriptionAllowWebpaper',
-        'paused_subscription_receive_type' => 'setPausedSubscriptionReceiveType',
-        'paused_subscription_confirm_status' => 'setPausedSubscriptionConfirmStatus',
-        'paused_subscription_stamp_user' => 'setPausedSubscriptionStampUser'
+        'subsno' => 'setSubsno',
+        'sleep_startdate' => 'setSleepStartdate',
+        'sleep_end_date' => 'setSleepEndDate',
+        'credit_type' => 'setCreditType',
+        'credit_amount' => 'setCreditAmount',
+        'sleep_type' => 'setSleepType',
+        'credited' => 'setCredited',
+        'credit_invno' => 'setCreditInvno',
+        'booking_date' => 'setBookingDate',
+        'allow_webpaper' => 'setAllowWebpaper',
+        'receive_type' => 'setReceiveType',
+        'confirm_status' => 'setConfirmStatus',
+        'stamp_user' => 'setStampUser'
     ];
 
     /**
@@ -162,19 +162,19 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'paused_subscription_subsno' => 'getPausedSubscriptionSubsno',
-        'paused_subscription_sleep_start_date' => 'getPausedSubscriptionSleepStartDate',
-        'paused_subscription_sleep_end_date' => 'getPausedSubscriptionSleepEndDate',
-        'paused_subscription_credit_type' => 'getPausedSubscriptionCreditType',
-        'paused_subscription_credit_amount' => 'getPausedSubscriptionCreditAmount',
-        'paused_subscription_sleep_type' => 'getPausedSubscriptionSleepType',
-        'paused_subscription_credited' => 'getPausedSubscriptionCredited',
-        'paused_subscription_credit_invno' => 'getPausedSubscriptionCreditInvno',
-        'paused_subscription_booking_date' => 'getPausedSubscriptionBookingDate',
-        'paused_subscription_allow_webpaper' => 'getPausedSubscriptionAllowWebpaper',
-        'paused_subscription_receive_type' => 'getPausedSubscriptionReceiveType',
-        'paused_subscription_confirm_status' => 'getPausedSubscriptionConfirmStatus',
-        'paused_subscription_stamp_user' => 'getPausedSubscriptionStampUser'
+        'subsno' => 'getSubsno',
+        'sleep_startdate' => 'getSleepStartdate',
+        'sleep_end_date' => 'getSleepEndDate',
+        'credit_type' => 'getCreditType',
+        'credit_amount' => 'getCreditAmount',
+        'sleep_type' => 'getSleepType',
+        'credited' => 'getCredited',
+        'credit_invno' => 'getCreditInvno',
+        'booking_date' => 'getBookingDate',
+        'allow_webpaper' => 'getAllowWebpaper',
+        'receive_type' => 'getReceiveType',
+        'confirm_status' => 'getConfirmStatus',
+        'stamp_user' => 'getStampUser'
     ];
 
     /**
@@ -237,19 +237,19 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['paused_subscription_subsno'] = isset($data['paused_subscription_subsno']) ? $data['paused_subscription_subsno'] : null;
-        $this->container['paused_subscription_sleep_start_date'] = isset($data['paused_subscription_sleep_start_date']) ? $data['paused_subscription_sleep_start_date'] : null;
-        $this->container['paused_subscription_sleep_end_date'] = isset($data['paused_subscription_sleep_end_date']) ? $data['paused_subscription_sleep_end_date'] : null;
-        $this->container['paused_subscription_credit_type'] = isset($data['paused_subscription_credit_type']) ? $data['paused_subscription_credit_type'] : null;
-        $this->container['paused_subscription_credit_amount'] = isset($data['paused_subscription_credit_amount']) ? $data['paused_subscription_credit_amount'] : null;
-        $this->container['paused_subscription_sleep_type'] = isset($data['paused_subscription_sleep_type']) ? $data['paused_subscription_sleep_type'] : null;
-        $this->container['paused_subscription_credited'] = isset($data['paused_subscription_credited']) ? $data['paused_subscription_credited'] : null;
-        $this->container['paused_subscription_credit_invno'] = isset($data['paused_subscription_credit_invno']) ? $data['paused_subscription_credit_invno'] : null;
-        $this->container['paused_subscription_booking_date'] = isset($data['paused_subscription_booking_date']) ? $data['paused_subscription_booking_date'] : null;
-        $this->container['paused_subscription_allow_webpaper'] = isset($data['paused_subscription_allow_webpaper']) ? $data['paused_subscription_allow_webpaper'] : null;
-        $this->container['paused_subscription_receive_type'] = isset($data['paused_subscription_receive_type']) ? $data['paused_subscription_receive_type'] : null;
-        $this->container['paused_subscription_confirm_status'] = isset($data['paused_subscription_confirm_status']) ? $data['paused_subscription_confirm_status'] : null;
-        $this->container['paused_subscription_stamp_user'] = isset($data['paused_subscription_stamp_user']) ? $data['paused_subscription_stamp_user'] : null;
+        $this->container['subsno'] = isset($data['subsno']) ? $data['subsno'] : null;
+        $this->container['sleep_startdate'] = isset($data['sleep_startdate']) ? $data['sleep_startdate'] : null;
+        $this->container['sleep_end_date'] = isset($data['sleep_end_date']) ? $data['sleep_end_date'] : null;
+        $this->container['credit_type'] = isset($data['credit_type']) ? $data['credit_type'] : null;
+        $this->container['credit_amount'] = isset($data['credit_amount']) ? $data['credit_amount'] : null;
+        $this->container['sleep_type'] = isset($data['sleep_type']) ? $data['sleep_type'] : null;
+        $this->container['credited'] = isset($data['credited']) ? $data['credited'] : null;
+        $this->container['credit_invno'] = isset($data['credit_invno']) ? $data['credit_invno'] : null;
+        $this->container['booking_date'] = isset($data['booking_date']) ? $data['booking_date'] : null;
+        $this->container['allow_webpaper'] = isset($data['allow_webpaper']) ? $data['allow_webpaper'] : null;
+        $this->container['receive_type'] = isset($data['receive_type']) ? $data['receive_type'] : null;
+        $this->container['confirm_status'] = isset($data['confirm_status']) ? $data['confirm_status'] : null;
+        $this->container['stamp_user'] = isset($data['stamp_user']) ? $data['stamp_user'] : null;
     }
 
     /**
@@ -261,68 +261,68 @@ class PausedSubscription implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['paused_subscription_subsno'] === null) {
-            $invalidProperties[] = "'paused_subscription_subsno' can't be null";
+        if ($this->container['subsno'] === null) {
+            $invalidProperties[] = "'subsno' can't be null";
         }
-        if (($this->container['paused_subscription_subsno'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'paused_subscription_subsno', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['paused_subscription_subsno'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'paused_subscription_subsno', must be bigger than or equal to -9223372036854775808.";
+        if (($this->container['subsno'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'subsno', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if ($this->container['paused_subscription_sleep_start_date'] === null) {
-            $invalidProperties[] = "'paused_subscription_sleep_start_date' can't be null";
-        }
-        if ($this->container['paused_subscription_sleep_end_date'] === null) {
-            $invalidProperties[] = "'paused_subscription_sleep_end_date' can't be null";
-        }
-        if ($this->container['paused_subscription_credit_type'] === null) {
-            $invalidProperties[] = "'paused_subscription_credit_type' can't be null";
-        }
-        if ($this->container['paused_subscription_credit_amount'] === null) {
-            $invalidProperties[] = "'paused_subscription_credit_amount' can't be null";
-        }
-        if (($this->container['paused_subscription_credit_amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'paused_subscription_credit_amount', must be smaller than or equal to 9223372036854775807.";
+        if (($this->container['subsno'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'subsno', must be bigger than or equal to -9223372036854775808.";
         }
 
-        if (($this->container['paused_subscription_credit_amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'paused_subscription_credit_amount', must be bigger than or equal to -9223372036854775808.";
+        if ($this->container['sleep_startdate'] === null) {
+            $invalidProperties[] = "'sleep_startdate' can't be null";
+        }
+        if ($this->container['sleep_end_date'] === null) {
+            $invalidProperties[] = "'sleep_end_date' can't be null";
+        }
+        if ($this->container['credit_type'] === null) {
+            $invalidProperties[] = "'credit_type' can't be null";
+        }
+        if ($this->container['credit_amount'] === null) {
+            $invalidProperties[] = "'credit_amount' can't be null";
+        }
+        if (($this->container['credit_amount'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'credit_amount', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if ($this->container['paused_subscription_sleep_type'] === null) {
-            $invalidProperties[] = "'paused_subscription_sleep_type' can't be null";
-        }
-        if ($this->container['paused_subscription_credited'] === null) {
-            $invalidProperties[] = "'paused_subscription_credited' can't be null";
-        }
-        if ($this->container['paused_subscription_credit_invno'] === null) {
-            $invalidProperties[] = "'paused_subscription_credit_invno' can't be null";
-        }
-        if (($this->container['paused_subscription_credit_invno'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'paused_subscription_credit_invno', must be smaller than or equal to 9223372036854775807.";
+        if (($this->container['credit_amount'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'credit_amount', must be bigger than or equal to -9223372036854775808.";
         }
 
-        if (($this->container['paused_subscription_credit_invno'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'paused_subscription_credit_invno', must be bigger than or equal to -9223372036854775808.";
+        if ($this->container['sleep_type'] === null) {
+            $invalidProperties[] = "'sleep_type' can't be null";
+        }
+        if ($this->container['credited'] === null) {
+            $invalidProperties[] = "'credited' can't be null";
+        }
+        if ($this->container['credit_invno'] === null) {
+            $invalidProperties[] = "'credit_invno' can't be null";
+        }
+        if (($this->container['credit_invno'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'credit_invno', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if ($this->container['paused_subscription_booking_date'] === null) {
-            $invalidProperties[] = "'paused_subscription_booking_date' can't be null";
+        if (($this->container['credit_invno'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'credit_invno', must be bigger than or equal to -9223372036854775808.";
         }
-        if ($this->container['paused_subscription_allow_webpaper'] === null) {
-            $invalidProperties[] = "'paused_subscription_allow_webpaper' can't be null";
+
+        if ($this->container['booking_date'] === null) {
+            $invalidProperties[] = "'booking_date' can't be null";
         }
-        if ($this->container['paused_subscription_receive_type'] === null) {
-            $invalidProperties[] = "'paused_subscription_receive_type' can't be null";
+        if ($this->container['allow_webpaper'] === null) {
+            $invalidProperties[] = "'allow_webpaper' can't be null";
         }
-        if ($this->container['paused_subscription_confirm_status'] === null) {
-            $invalidProperties[] = "'paused_subscription_confirm_status' can't be null";
+        if ($this->container['receive_type'] === null) {
+            $invalidProperties[] = "'receive_type' can't be null";
         }
-        if ($this->container['paused_subscription_stamp_user'] === null) {
-            $invalidProperties[] = "'paused_subscription_stamp_user' can't be null";
+        if ($this->container['confirm_status'] === null) {
+            $invalidProperties[] = "'confirm_status' can't be null";
+        }
+        if ($this->container['stamp_user'] === null) {
+            $invalidProperties[] = "'stamp_user' can't be null";
         }
         return $invalidProperties;
     }
@@ -340,337 +340,337 @@ class PausedSubscription implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets paused_subscription_subsno
+     * Gets subsno
      *
      * @return int
      */
-    public function getPausedSubscriptionSubsno()
+    public function getSubsno()
     {
-        return $this->container['paused_subscription_subsno'];
+        return $this->container['subsno'];
     }
 
     /**
-     * Sets paused_subscription_subsno
+     * Sets subsno
      *
-     * @param int $paused_subscription_subsno paused_subscription_subsno
+     * @param int $subsno subsno
      *
      * @return $this
      */
-    public function setPausedSubscriptionSubsno($paused_subscription_subsno)
+    public function setSubsno($subsno)
     {
 
-        if (($paused_subscription_subsno > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $paused_subscription_subsno when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
+        if (($subsno > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $subsno when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($paused_subscription_subsno < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $paused_subscription_subsno when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
+        if (($subsno < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $subsno when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['paused_subscription_subsno'] = $paused_subscription_subsno;
+        $this->container['subsno'] = $subsno;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_sleep_start_date
+     * Gets sleep_startdate
      *
      * @return \DateTime
      */
-    public function getPausedSubscriptionSleepStartDate()
+    public function getSleepStartdate()
     {
-        return $this->container['paused_subscription_sleep_start_date'];
+        return $this->container['sleep_startdate'];
     }
 
     /**
-     * Sets paused_subscription_sleep_start_date
+     * Sets sleep_startdate
      *
-     * @param \DateTime $paused_subscription_sleep_start_date paused_subscription_sleep_start_date
+     * @param \DateTime $sleep_startdate sleep_startdate
      *
      * @return $this
      */
-    public function setPausedSubscriptionSleepStartDate($paused_subscription_sleep_start_date)
+    public function setSleepStartdate($sleep_startdate)
     {
-        $this->container['paused_subscription_sleep_start_date'] = $paused_subscription_sleep_start_date;
+        $this->container['sleep_startdate'] = $sleep_startdate;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_sleep_end_date
+     * Gets sleep_end_date
      *
      * @return \DateTime
      */
-    public function getPausedSubscriptionSleepEndDate()
+    public function getSleepEndDate()
     {
-        return $this->container['paused_subscription_sleep_end_date'];
+        return $this->container['sleep_end_date'];
     }
 
     /**
-     * Sets paused_subscription_sleep_end_date
+     * Sets sleep_end_date
      *
-     * @param \DateTime $paused_subscription_sleep_end_date paused_subscription_sleep_end_date
+     * @param \DateTime $sleep_end_date sleep_end_date
      *
      * @return $this
      */
-    public function setPausedSubscriptionSleepEndDate($paused_subscription_sleep_end_date)
+    public function setSleepEndDate($sleep_end_date)
     {
-        $this->container['paused_subscription_sleep_end_date'] = $paused_subscription_sleep_end_date;
+        $this->container['sleep_end_date'] = $sleep_end_date;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_credit_type
+     * Gets credit_type
      *
      * @return string
      */
-    public function getPausedSubscriptionCreditType()
+    public function getCreditType()
     {
-        return $this->container['paused_subscription_credit_type'];
+        return $this->container['credit_type'];
     }
 
     /**
-     * Sets paused_subscription_credit_type
+     * Sets credit_type
      *
-     * @param string $paused_subscription_credit_type paused_subscription_credit_type
+     * @param string $credit_type credit_type
      *
      * @return $this
      */
-    public function setPausedSubscriptionCreditType($paused_subscription_credit_type)
+    public function setCreditType($credit_type)
     {
-        $this->container['paused_subscription_credit_type'] = $paused_subscription_credit_type;
+        $this->container['credit_type'] = $credit_type;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_credit_amount
+     * Gets credit_amount
      *
      * @return int
      */
-    public function getPausedSubscriptionCreditAmount()
+    public function getCreditAmount()
     {
-        return $this->container['paused_subscription_credit_amount'];
+        return $this->container['credit_amount'];
     }
 
     /**
-     * Sets paused_subscription_credit_amount
+     * Sets credit_amount
      *
-     * @param int $paused_subscription_credit_amount paused_subscription_credit_amount
+     * @param int $credit_amount credit_amount
      *
      * @return $this
      */
-    public function setPausedSubscriptionCreditAmount($paused_subscription_credit_amount)
+    public function setCreditAmount($credit_amount)
     {
 
-        if (($paused_subscription_credit_amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $paused_subscription_credit_amount when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
+        if (($credit_amount > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $credit_amount when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($paused_subscription_credit_amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $paused_subscription_credit_amount when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
+        if (($credit_amount < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $credit_amount when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['paused_subscription_credit_amount'] = $paused_subscription_credit_amount;
+        $this->container['credit_amount'] = $credit_amount;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_sleep_type
+     * Gets sleep_type
      *
      * @return string
      */
-    public function getPausedSubscriptionSleepType()
+    public function getSleepType()
     {
-        return $this->container['paused_subscription_sleep_type'];
+        return $this->container['sleep_type'];
     }
 
     /**
-     * Sets paused_subscription_sleep_type
+     * Sets sleep_type
      *
-     * @param string $paused_subscription_sleep_type paused_subscription_sleep_type
+     * @param string $sleep_type sleep_type
      *
      * @return $this
      */
-    public function setPausedSubscriptionSleepType($paused_subscription_sleep_type)
+    public function setSleepType($sleep_type)
     {
-        $this->container['paused_subscription_sleep_type'] = $paused_subscription_sleep_type;
+        $this->container['sleep_type'] = $sleep_type;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_credited
+     * Gets credited
      *
      * @return bool
      */
-    public function getPausedSubscriptionCredited()
+    public function getCredited()
     {
-        return $this->container['paused_subscription_credited'];
+        return $this->container['credited'];
     }
 
     /**
-     * Sets paused_subscription_credited
+     * Sets credited
      *
-     * @param bool $paused_subscription_credited paused_subscription_credited
+     * @param bool $credited credited
      *
      * @return $this
      */
-    public function setPausedSubscriptionCredited($paused_subscription_credited)
+    public function setCredited($credited)
     {
-        $this->container['paused_subscription_credited'] = $paused_subscription_credited;
+        $this->container['credited'] = $credited;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_credit_invno
+     * Gets credit_invno
      *
      * @return int
      */
-    public function getPausedSubscriptionCreditInvno()
+    public function getCreditInvno()
     {
-        return $this->container['paused_subscription_credit_invno'];
+        return $this->container['credit_invno'];
     }
 
     /**
-     * Sets paused_subscription_credit_invno
+     * Sets credit_invno
      *
-     * @param int $paused_subscription_credit_invno paused_subscription_credit_invno
+     * @param int $credit_invno credit_invno
      *
      * @return $this
      */
-    public function setPausedSubscriptionCreditInvno($paused_subscription_credit_invno)
+    public function setCreditInvno($credit_invno)
     {
 
-        if (($paused_subscription_credit_invno > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $paused_subscription_credit_invno when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
+        if (($credit_invno > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $credit_invno when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($paused_subscription_credit_invno < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $paused_subscription_credit_invno when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
+        if (($credit_invno < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $credit_invno when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['paused_subscription_credit_invno'] = $paused_subscription_credit_invno;
+        $this->container['credit_invno'] = $credit_invno;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_booking_date
+     * Gets booking_date
      *
      * @return string
      */
-    public function getPausedSubscriptionBookingDate()
+    public function getBookingDate()
     {
-        return $this->container['paused_subscription_booking_date'];
+        return $this->container['booking_date'];
     }
 
     /**
-     * Sets paused_subscription_booking_date
+     * Sets booking_date
      *
-     * @param string $paused_subscription_booking_date paused_subscription_booking_date
+     * @param string $booking_date booking_date
      *
      * @return $this
      */
-    public function setPausedSubscriptionBookingDate($paused_subscription_booking_date)
+    public function setBookingDate($booking_date)
     {
-        $this->container['paused_subscription_booking_date'] = $paused_subscription_booking_date;
+        $this->container['booking_date'] = $booking_date;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_allow_webpaper
+     * Gets allow_webpaper
      *
      * @return bool
      */
-    public function getPausedSubscriptionAllowWebpaper()
+    public function getAllowWebpaper()
     {
-        return $this->container['paused_subscription_allow_webpaper'];
+        return $this->container['allow_webpaper'];
     }
 
     /**
-     * Sets paused_subscription_allow_webpaper
+     * Sets allow_webpaper
      *
-     * @param bool $paused_subscription_allow_webpaper paused_subscription_allow_webpaper
+     * @param bool $allow_webpaper allow_webpaper
      *
      * @return $this
      */
-    public function setPausedSubscriptionAllowWebpaper($paused_subscription_allow_webpaper)
+    public function setAllowWebpaper($allow_webpaper)
     {
-        $this->container['paused_subscription_allow_webpaper'] = $paused_subscription_allow_webpaper;
+        $this->container['allow_webpaper'] = $allow_webpaper;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_receive_type
+     * Gets receive_type
      *
      * @return string
      */
-    public function getPausedSubscriptionReceiveType()
+    public function getReceiveType()
     {
-        return $this->container['paused_subscription_receive_type'];
+        return $this->container['receive_type'];
     }
 
     /**
-     * Sets paused_subscription_receive_type
+     * Sets receive_type
      *
-     * @param string $paused_subscription_receive_type paused_subscription_receive_type
+     * @param string $receive_type receive_type
      *
      * @return $this
      */
-    public function setPausedSubscriptionReceiveType($paused_subscription_receive_type)
+    public function setReceiveType($receive_type)
     {
-        $this->container['paused_subscription_receive_type'] = $paused_subscription_receive_type;
+        $this->container['receive_type'] = $receive_type;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_confirm_status
+     * Gets confirm_status
      *
      * @return string
      */
-    public function getPausedSubscriptionConfirmStatus()
+    public function getConfirmStatus()
     {
-        return $this->container['paused_subscription_confirm_status'];
+        return $this->container['confirm_status'];
     }
 
     /**
-     * Sets paused_subscription_confirm_status
+     * Sets confirm_status
      *
-     * @param string $paused_subscription_confirm_status paused_subscription_confirm_status
+     * @param string $confirm_status confirm_status
      *
      * @return $this
      */
-    public function setPausedSubscriptionConfirmStatus($paused_subscription_confirm_status)
+    public function setConfirmStatus($confirm_status)
     {
-        $this->container['paused_subscription_confirm_status'] = $paused_subscription_confirm_status;
+        $this->container['confirm_status'] = $confirm_status;
 
         return $this;
     }
 
     /**
-     * Gets paused_subscription_stamp_user
+     * Gets stamp_user
      *
      * @return string
      */
-    public function getPausedSubscriptionStampUser()
+    public function getStampUser()
     {
-        return $this->container['paused_subscription_stamp_user'];
+        return $this->container['stamp_user'];
     }
 
     /**
-     * Sets paused_subscription_stamp_user
+     * Sets stamp_user
      *
-     * @param string $paused_subscription_stamp_user paused_subscription_stamp_user
+     * @param string $stamp_user stamp_user
      *
      * @return $this
      */
-    public function setPausedSubscriptionStampUser($paused_subscription_stamp_user)
+    public function setStampUser($stamp_user)
     {
-        $this->container['paused_subscription_stamp_user'] = $paused_subscription_stamp_user;
+        $this->container['stamp_user'] = $stamp_user;
 
         return $this;
     }

@@ -79,93 +79,93 @@ class PausedSubscriptionTest extends TestCase
     }
 
     /**
-     * Test attribute "paused_subscription_subsno"
+     * Test attribute "subsno"
      */
-    public function testPropertyPausedSubscriptionSubsno()
+    public function testPropertySubsno()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_sleep_start_date"
+     * Test attribute "sleep_startdate"
      */
-    public function testPropertyPausedSubscriptionSleepStartDate()
+    public function testPropertySleepStartdate()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_sleep_end_date"
+     * Test attribute "sleep_end_date"
      */
-    public function testPropertyPausedSubscriptionSleepEndDate()
+    public function testPropertySleepEndDate()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_credit_type"
+     * Test attribute "credit_type"
      */
-    public function testPropertyPausedSubscriptionCreditType()
+    public function testPropertyCreditType()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_credit_amount"
+     * Test attribute "credit_amount"
      */
-    public function testPropertyPausedSubscriptionCreditAmount()
+    public function testPropertyCreditAmount()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_sleep_type"
+     * Test attribute "sleep_type"
      */
-    public function testPropertyPausedSubscriptionSleepType()
+    public function testPropertySleepType()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_credited"
+     * Test attribute "credited"
      */
-    public function testPropertyPausedSubscriptionCredited()
+    public function testPropertyCredited()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_credit_invno"
+     * Test attribute "credit_invno"
      */
-    public function testPropertyPausedSubscriptionCreditInvno()
+    public function testPropertyCreditInvno()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_booking_date"
+     * Test attribute "booking_date"
      */
-    public function testPropertyPausedSubscriptionBookingDate()
+    public function testPropertyBookingDate()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_allow_webpaper"
+     * Test attribute "allow_webpaper"
      */
-    public function testPropertyPausedSubscriptionAllowWebpaper()
+    public function testPropertyAllowWebpaper()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_receive_type"
+     * Test attribute "receive_type"
      */
-    public function testPropertyPausedSubscriptionReceiveType()
+    public function testPropertyReceiveType()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_confirm_status"
+     * Test attribute "confirm_status"
      */
-    public function testPropertyPausedSubscriptionConfirmStatus()
+    public function testPropertyConfirmStatus()
     {
     }
 
     /**
-     * Test attribute "paused_subscription_stamp_user"
+     * Test attribute "stamp_user"
      */
-    public function testPropertyPausedSubscriptionStampUser()
+    public function testPropertyStampUser()
     {
     }
 }
