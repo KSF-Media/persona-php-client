@@ -368,7 +368,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoPausePost
 
-> \OpenAPI\Client\Model\PausedSubscription[] usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $authorization)
+> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $authorization)
 
 Pause users subscription
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\PausedSubscription[]**](../Model/PausedSubscription.md)
+[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 

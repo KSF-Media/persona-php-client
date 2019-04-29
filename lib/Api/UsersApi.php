@@ -2019,7 +2019,7 @@ class UsersApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\PausedSubscription[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $authorization = null)
     {
@@ -2039,7 +2039,7 @@ class UsersApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\PausedSubscription[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoPausePostWithHttpInfo($uuid, $subsno, $body, $authorization = null)
     {
@@ -2076,14 +2076,14 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\PausedSubscription[]' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\PausedSubscription[]', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2113,7 +2113,7 @@ class UsersApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\PausedSubscription[]';
+            $returnType = '\OpenAPI\Client\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2132,7 +2132,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\PausedSubscription[]',
+                        '\OpenAPI\Client\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2196,7 +2196,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoPausePostAsyncWithHttpInfo($uuid, $subsno, $body, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\PausedSubscription[]';
+        $returnType = '\OpenAPI\Client\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $authorization);
 
         return $this->client
