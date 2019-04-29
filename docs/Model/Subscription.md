@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **dates** | [**\OpenAPI\Client\Model\SubscriptionDates**](SubscriptionDates.md) |  | 
 **extsubsexists** | **bool** |  | 
 **campaign** | [**\OpenAPI\Client\Model\Campaign**](Campaign.md) |  | [optional] 
+**paused** | [**\OpenAPI\Client\Model\PausedSubscription[]**](PausedSubscription.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

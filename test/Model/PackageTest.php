@@ -100,6 +100,13 @@ class PackageTest extends TestCase
     }
 
     /**
+     * Test attribute "digital_only"
+     */
+    public function testPropertyDigitalOnly()
+    {
+    }
+
+    /**
      * Test attribute "products"
      */
     public function testPropertyProducts()

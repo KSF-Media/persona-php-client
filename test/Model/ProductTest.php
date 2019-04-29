@@ -112,4 +112,11 @@ class ProductTest extends TestCase
     public function testPropertyPaper()
     {
     }
+
+    /**
+     * Test attribute "digital"
+     */
+    public function testPropertyDigital()
+    {
+    }
 }

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | 
 **name** | **string** |  | 
 **paper** | [**\OpenAPI\Client\Model\Paper**](Paper.md) |  | 
+**digital_only** | **bool** |  | 
 **products** | [**\OpenAPI\Client\Model\Product[]**](Product.md) |  | 
 **offers** | [**\OpenAPI\Client\Model\PackageOffer[]**](PackageOffer.md) |  | 
 **campaigns** | [**\OpenAPI\Client\Model\Campaign[]**](Campaign.md) |  | 

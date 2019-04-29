@@ -67,7 +67,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'package' => '\OpenAPI\Client\Model\Package',
         'dates' => '\OpenAPI\Client\Model\SubscriptionDates',
         'extsubsexists' => 'bool',
-        'campaign' => '\OpenAPI\Client\Model\Campaign'
+        'campaign' => '\OpenAPI\Client\Model\Campaign',
+        'paused' => '\OpenAPI\Client\Model\PausedSubscription[]'
     ];
 
     /**
@@ -86,7 +87,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'package' => null,
         'dates' => null,
         'extsubsexists' => null,
-        'campaign' => null
+        'campaign' => null,
+        'paused' => null
     ];
 
     /**
@@ -126,7 +128,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'package' => 'package',
         'dates' => 'dates',
         'extsubsexists' => 'extsubsexists',
-        'campaign' => 'campaign'
+        'campaign' => 'campaign',
+        'paused' => 'paused'
     ];
 
     /**
@@ -145,7 +148,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'package' => 'setPackage',
         'dates' => 'setDates',
         'extsubsexists' => 'setExtsubsexists',
-        'campaign' => 'setCampaign'
+        'campaign' => 'setCampaign',
+        'paused' => 'setPaused'
     ];
 
     /**
@@ -164,7 +168,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'package' => 'getPackage',
         'dates' => 'getDates',
         'extsubsexists' => 'getExtsubsexists',
-        'campaign' => 'getCampaign'
+        'campaign' => 'getCampaign',
+        'paused' => 'getPaused'
     ];
 
     /**
@@ -238,6 +243,7 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['dates'] = isset($data['dates']) ? $data['dates'] : null;
         $this->container['extsubsexists'] = isset($data['extsubsexists']) ? $data['extsubsexists'] : null;
         $this->container['campaign'] = isset($data['campaign']) ? $data['campaign'] : null;
+        $this->container['paused'] = isset($data['paused']) ? $data['paused'] : null;
     }
 
     /**
@@ -615,6 +621,30 @@ class Subscription implements ModelInterface, ArrayAccess
     public function setCampaign($campaign)
     {
         $this->container['campaign'] = $campaign;
+
+        return $this;
+    }
+
+    /**
+     * Gets paused
+     *
+     * @return \OpenAPI\Client\Model\PausedSubscription[]|null
+     */
+    public function getPaused()
+    {
+        return $this->container['paused'];
+    }
+
+    /**
+     * Sets paused
+     *
+     * @param \OpenAPI\Client\Model\PausedSubscription[]|null $paused paused
+     *
+     * @return $this
+     */
+    public function setPaused($paused)
+    {
+        $this->container['paused'] = $paused;
 
         return $this;
     }

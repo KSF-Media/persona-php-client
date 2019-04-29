@@ -154,4 +154,11 @@ class SubscriptionTest extends TestCase
     public function testPropertyCampaign()
     {
     }
+
+    /**
+     * Test attribute "paused"
+     */
+    public function testPropertyPaused()
+    {
+    }
 }

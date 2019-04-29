@@ -79,93 +79,16 @@ class PausedSubscriptionTest extends TestCase
     }
 
     /**
-     * Test attribute "subsno"
+     * Test attribute "start_date"
      */
-    public function testPropertySubsno()
+    public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "sleep_startdate"
+     * Test attribute "end_date"
      */
-    public function testPropertySleepStartdate()
-    {
-    }
-
-    /**
-     * Test attribute "sleep_end_date"
-     */
-    public function testPropertySleepEndDate()
-    {
-    }
-
-    /**
-     * Test attribute "credit_type"
-     */
-    public function testPropertyCreditType()
-    {
-    }
-
-    /**
-     * Test attribute "credit_amount"
-     */
-    public function testPropertyCreditAmount()
-    {
-    }
-
-    /**
-     * Test attribute "sleep_type"
-     */
-    public function testPropertySleepType()
-    {
-    }
-
-    /**
-     * Test attribute "credited"
-     */
-    public function testPropertyCredited()
-    {
-    }
-
-    /**
-     * Test attribute "credit_invno"
-     */
-    public function testPropertyCreditInvno()
-    {
-    }
-
-    /**
-     * Test attribute "booking_date"
-     */
-    public function testPropertyBookingDate()
-    {
-    }
-
-    /**
-     * Test attribute "allow_webpaper"
-     */
-    public function testPropertyAllowWebpaper()
-    {
-    }
-
-    /**
-     * Test attribute "receive_type"
-     */
-    public function testPropertyReceiveType()
-    {
-    }
-
-    /**
-     * Test attribute "confirm_status"
-     */
-    public function testPropertyConfirmStatus()
-    {
-    }
-
-    /**
-     * Test attribute "stamp_user"
-     */
-    public function testPropertyStampUser()
+    public function testPropertyEndDate()
     {
     }
 }

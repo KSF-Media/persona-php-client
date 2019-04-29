@@ -60,6 +60,7 @@ class Package implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'paper' => '\OpenAPI\Client\Model\Paper',
+        'digital_only' => 'bool',
         'products' => '\OpenAPI\Client\Model\Product[]',
         'offers' => '\OpenAPI\Client\Model\PackageOffer[]',
         'campaigns' => '\OpenAPI\Client\Model\Campaign[]',
@@ -76,6 +77,7 @@ class Package implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'paper' => null,
+        'digital_only' => null,
         'products' => null,
         'offers' => null,
         'campaigns' => null,
@@ -113,6 +115,7 @@ class Package implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'paper' => 'paper',
+        'digital_only' => 'digitalOnly',
         'products' => 'products',
         'offers' => 'offers',
         'campaigns' => 'campaigns',
@@ -129,6 +132,7 @@ class Package implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'paper' => 'setPaper',
+        'digital_only' => 'setDigitalOnly',
         'products' => 'setProducts',
         'offers' => 'setOffers',
         'campaigns' => 'setCampaigns',
@@ -145,6 +149,7 @@ class Package implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'paper' => 'getPaper',
+        'digital_only' => 'getDigitalOnly',
         'products' => 'getProducts',
         'offers' => 'getOffers',
         'campaigns' => 'getCampaigns',
@@ -215,6 +220,7 @@ class Package implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
+        $this->container['digital_only'] = isset($data['digital_only']) ? $data['digital_only'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['offers'] = isset($data['offers']) ? $data['offers'] : null;
         $this->container['campaigns'] = isset($data['campaigns']) ? $data['campaigns'] : null;
@@ -239,6 +245,9 @@ class Package implements ModelInterface, ArrayAccess
         }
         if ($this->container['paper'] === null) {
             $invalidProperties[] = "'paper' can't be null";
+        }
+        if ($this->container['digital_only'] === null) {
+            $invalidProperties[] = "'digital_only' can't be null";
         }
         if ($this->container['products'] === null) {
             $invalidProperties[] = "'products' can't be null";
@@ -332,6 +341,30 @@ class Package implements ModelInterface, ArrayAccess
     public function setPaper($paper)
     {
         $this->container['paper'] = $paper;
+
+        return $this;
+    }
+
+    /**
+     * Gets digital_only
+     *
+     * @return bool
+     */
+    public function getDigitalOnly()
+    {
+        return $this->container['digital_only'];
+    }
+
+    /**
+     * Sets digital_only
+     *
+     * @param bool $digital_only digital_only
+     *
+     * @return $this
+     */
+    public function setDigitalOnly($digital_only)
+    {
+        $this->container['digital_only'] = $digital_only;
 
         return $this;
     }

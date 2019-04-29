@@ -57,19 +57,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subsno' => 'int',
-        'sleep_startdate' => '\DateTime',
-        'sleep_end_date' => '\DateTime',
-        'credit_type' => 'string',
-        'credit_amount' => 'int',
-        'sleep_type' => 'string',
-        'credited' => 'bool',
-        'credit_invno' => 'int',
-        'booking_date' => 'string',
-        'allow_webpaper' => 'bool',
-        'receive_type' => 'string',
-        'confirm_status' => 'string',
-        'stamp_user' => 'string'
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime'
     ];
 
     /**
@@ -78,19 +67,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'subsno' => null,
-        'sleep_startdate' => 'date',
-        'sleep_end_date' => 'date',
-        'credit_type' => null,
-        'credit_amount' => null,
-        'sleep_type' => null,
-        'credited' => null,
-        'credit_invno' => null,
-        'booking_date' => null,
-        'allow_webpaper' => null,
-        'receive_type' => null,
-        'confirm_status' => null,
-        'stamp_user' => null
+        'start_date' => 'date',
+        'end_date' => 'date'
     ];
 
     /**
@@ -120,19 +98,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'subsno' => 'subsno',
-        'sleep_startdate' => 'sleepStartdate',
-        'sleep_end_date' => 'sleepEndDate',
-        'credit_type' => 'creditType',
-        'credit_amount' => 'creditAmount',
-        'sleep_type' => 'sleepType',
-        'credited' => 'credited',
-        'credit_invno' => 'creditInvno',
-        'booking_date' => 'bookingDate',
-        'allow_webpaper' => 'allowWebpaper',
-        'receive_type' => 'receiveType',
-        'confirm_status' => 'confirmStatus',
-        'stamp_user' => 'stampUser'
+        'start_date' => 'startDate',
+        'end_date' => 'endDate'
     ];
 
     /**
@@ -141,19 +108,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subsno' => 'setSubsno',
-        'sleep_startdate' => 'setSleepStartdate',
-        'sleep_end_date' => 'setSleepEndDate',
-        'credit_type' => 'setCreditType',
-        'credit_amount' => 'setCreditAmount',
-        'sleep_type' => 'setSleepType',
-        'credited' => 'setCredited',
-        'credit_invno' => 'setCreditInvno',
-        'booking_date' => 'setBookingDate',
-        'allow_webpaper' => 'setAllowWebpaper',
-        'receive_type' => 'setReceiveType',
-        'confirm_status' => 'setConfirmStatus',
-        'stamp_user' => 'setStampUser'
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate'
     ];
 
     /**
@@ -162,19 +118,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subsno' => 'getSubsno',
-        'sleep_startdate' => 'getSleepStartdate',
-        'sleep_end_date' => 'getSleepEndDate',
-        'credit_type' => 'getCreditType',
-        'credit_amount' => 'getCreditAmount',
-        'sleep_type' => 'getSleepType',
-        'credited' => 'getCredited',
-        'credit_invno' => 'getCreditInvno',
-        'booking_date' => 'getBookingDate',
-        'allow_webpaper' => 'getAllowWebpaper',
-        'receive_type' => 'getReceiveType',
-        'confirm_status' => 'getConfirmStatus',
-        'stamp_user' => 'getStampUser'
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate'
     ];
 
     /**
@@ -237,19 +182,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subsno'] = isset($data['subsno']) ? $data['subsno'] : null;
-        $this->container['sleep_startdate'] = isset($data['sleep_startdate']) ? $data['sleep_startdate'] : null;
-        $this->container['sleep_end_date'] = isset($data['sleep_end_date']) ? $data['sleep_end_date'] : null;
-        $this->container['credit_type'] = isset($data['credit_type']) ? $data['credit_type'] : null;
-        $this->container['credit_amount'] = isset($data['credit_amount']) ? $data['credit_amount'] : null;
-        $this->container['sleep_type'] = isset($data['sleep_type']) ? $data['sleep_type'] : null;
-        $this->container['credited'] = isset($data['credited']) ? $data['credited'] : null;
-        $this->container['credit_invno'] = isset($data['credit_invno']) ? $data['credit_invno'] : null;
-        $this->container['booking_date'] = isset($data['booking_date']) ? $data['booking_date'] : null;
-        $this->container['allow_webpaper'] = isset($data['allow_webpaper']) ? $data['allow_webpaper'] : null;
-        $this->container['receive_type'] = isset($data['receive_type']) ? $data['receive_type'] : null;
-        $this->container['confirm_status'] = isset($data['confirm_status']) ? $data['confirm_status'] : null;
-        $this->container['stamp_user'] = isset($data['stamp_user']) ? $data['stamp_user'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
     }
 
     /**
@@ -261,68 +195,11 @@ class PausedSubscription implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['subsno'] === null) {
-            $invalidProperties[] = "'subsno' can't be null";
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
-        if (($this->container['subsno'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'subsno', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['subsno'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'subsno', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if ($this->container['sleep_startdate'] === null) {
-            $invalidProperties[] = "'sleep_startdate' can't be null";
-        }
-        if ($this->container['sleep_end_date'] === null) {
-            $invalidProperties[] = "'sleep_end_date' can't be null";
-        }
-        if ($this->container['credit_type'] === null) {
-            $invalidProperties[] = "'credit_type' can't be null";
-        }
-        if ($this->container['credit_amount'] === null) {
-            $invalidProperties[] = "'credit_amount' can't be null";
-        }
-        if (($this->container['credit_amount'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'credit_amount', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['credit_amount'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'credit_amount', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if ($this->container['sleep_type'] === null) {
-            $invalidProperties[] = "'sleep_type' can't be null";
-        }
-        if ($this->container['credited'] === null) {
-            $invalidProperties[] = "'credited' can't be null";
-        }
-        if ($this->container['credit_invno'] === null) {
-            $invalidProperties[] = "'credit_invno' can't be null";
-        }
-        if (($this->container['credit_invno'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'credit_invno', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['credit_invno'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'credit_invno', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if ($this->container['booking_date'] === null) {
-            $invalidProperties[] = "'booking_date' can't be null";
-        }
-        if ($this->container['allow_webpaper'] === null) {
-            $invalidProperties[] = "'allow_webpaper' can't be null";
-        }
-        if ($this->container['receive_type'] === null) {
-            $invalidProperties[] = "'receive_type' can't be null";
-        }
-        if ($this->container['confirm_status'] === null) {
-            $invalidProperties[] = "'confirm_status' can't be null";
-        }
-        if ($this->container['stamp_user'] === null) {
-            $invalidProperties[] = "'stamp_user' can't be null";
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -340,337 +217,49 @@ class PausedSubscription implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets subsno
-     *
-     * @return int
-     */
-    public function getSubsno()
-    {
-        return $this->container['subsno'];
-    }
-
-    /**
-     * Sets subsno
-     *
-     * @param int $subsno subsno
-     *
-     * @return $this
-     */
-    public function setSubsno($subsno)
-    {
-
-        if (($subsno > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $subsno when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($subsno < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $subsno when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['subsno'] = $subsno;
-
-        return $this;
-    }
-
-    /**
-     * Gets sleep_startdate
+     * Gets start_date
      *
      * @return \DateTime
      */
-    public function getSleepStartdate()
+    public function getStartDate()
     {
-        return $this->container['sleep_startdate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets sleep_startdate
+     * Sets start_date
      *
-     * @param \DateTime $sleep_startdate sleep_startdate
+     * @param \DateTime $start_date start_date
      *
      * @return $this
      */
-    public function setSleepStartdate($sleep_startdate)
+    public function setStartDate($start_date)
     {
-        $this->container['sleep_startdate'] = $sleep_startdate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets sleep_end_date
+     * Gets end_date
      *
      * @return \DateTime
      */
-    public function getSleepEndDate()
+    public function getEndDate()
     {
-        return $this->container['sleep_end_date'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets sleep_end_date
+     * Sets end_date
      *
-     * @param \DateTime $sleep_end_date sleep_end_date
+     * @param \DateTime $end_date end_date
      *
      * @return $this
      */
-    public function setSleepEndDate($sleep_end_date)
+    public function setEndDate($end_date)
     {
-        $this->container['sleep_end_date'] = $sleep_end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_type
-     *
-     * @return string
-     */
-    public function getCreditType()
-    {
-        return $this->container['credit_type'];
-    }
-
-    /**
-     * Sets credit_type
-     *
-     * @param string $credit_type credit_type
-     *
-     * @return $this
-     */
-    public function setCreditType($credit_type)
-    {
-        $this->container['credit_type'] = $credit_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_amount
-     *
-     * @return int
-     */
-    public function getCreditAmount()
-    {
-        return $this->container['credit_amount'];
-    }
-
-    /**
-     * Sets credit_amount
-     *
-     * @param int $credit_amount credit_amount
-     *
-     * @return $this
-     */
-    public function setCreditAmount($credit_amount)
-    {
-
-        if (($credit_amount > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $credit_amount when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($credit_amount < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $credit_amount when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['credit_amount'] = $credit_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets sleep_type
-     *
-     * @return string
-     */
-    public function getSleepType()
-    {
-        return $this->container['sleep_type'];
-    }
-
-    /**
-     * Sets sleep_type
-     *
-     * @param string $sleep_type sleep_type
-     *
-     * @return $this
-     */
-    public function setSleepType($sleep_type)
-    {
-        $this->container['sleep_type'] = $sleep_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets credited
-     *
-     * @return bool
-     */
-    public function getCredited()
-    {
-        return $this->container['credited'];
-    }
-
-    /**
-     * Sets credited
-     *
-     * @param bool $credited credited
-     *
-     * @return $this
-     */
-    public function setCredited($credited)
-    {
-        $this->container['credited'] = $credited;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_invno
-     *
-     * @return int
-     */
-    public function getCreditInvno()
-    {
-        return $this->container['credit_invno'];
-    }
-
-    /**
-     * Sets credit_invno
-     *
-     * @param int $credit_invno credit_invno
-     *
-     * @return $this
-     */
-    public function setCreditInvno($credit_invno)
-    {
-
-        if (($credit_invno > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $credit_invno when calling PausedSubscription., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($credit_invno < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $credit_invno when calling PausedSubscription., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['credit_invno'] = $credit_invno;
-
-        return $this;
-    }
-
-    /**
-     * Gets booking_date
-     *
-     * @return string
-     */
-    public function getBookingDate()
-    {
-        return $this->container['booking_date'];
-    }
-
-    /**
-     * Sets booking_date
-     *
-     * @param string $booking_date booking_date
-     *
-     * @return $this
-     */
-    public function setBookingDate($booking_date)
-    {
-        $this->container['booking_date'] = $booking_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets allow_webpaper
-     *
-     * @return bool
-     */
-    public function getAllowWebpaper()
-    {
-        return $this->container['allow_webpaper'];
-    }
-
-    /**
-     * Sets allow_webpaper
-     *
-     * @param bool $allow_webpaper allow_webpaper
-     *
-     * @return $this
-     */
-    public function setAllowWebpaper($allow_webpaper)
-    {
-        $this->container['allow_webpaper'] = $allow_webpaper;
-
-        return $this;
-    }
-
-    /**
-     * Gets receive_type
-     *
-     * @return string
-     */
-    public function getReceiveType()
-    {
-        return $this->container['receive_type'];
-    }
-
-    /**
-     * Sets receive_type
-     *
-     * @param string $receive_type receive_type
-     *
-     * @return $this
-     */
-    public function setReceiveType($receive_type)
-    {
-        $this->container['receive_type'] = $receive_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets confirm_status
-     *
-     * @return string
-     */
-    public function getConfirmStatus()
-    {
-        return $this->container['confirm_status'];
-    }
-
-    /**
-     * Sets confirm_status
-     *
-     * @param string $confirm_status confirm_status
-     *
-     * @return $this
-     */
-    public function setConfirmStatus($confirm_status)
-    {
-        $this->container['confirm_status'] = $confirm_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets stamp_user
-     *
-     * @return string
-     */
-    public function getStampUser()
-    {
-        return $this->container['stamp_user'];
-    }
-
-    /**
-     * Sets stamp_user
-     *
-     * @param string $stamp_user stamp_user
-     *
-     * @return $this
-     */
-    public function setStampUser($stamp_user)
-    {
-        $this->container['stamp_user'] = $stamp_user;
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }
