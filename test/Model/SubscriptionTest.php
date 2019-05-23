@@ -161,4 +161,18 @@ class SubscriptionTest extends TestCase
     public function testPropertyPaused()
     {
     }
+
+    /**
+     * Test attribute "delivery_address"
+     */
+    public function testPropertyDeliveryAddress()
+    {
+    }
+
+    /**
+     * Test attribute "pending_address_changes"
+     */
+    public function testPropertyPendingAddressChanges()
+    {
+    }
 }

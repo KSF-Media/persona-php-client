@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidGet**](docs/Api/UsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 *UsersApi* | [**usersUuidLegalPut**](docs/Api/UsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *UsersApi* | [**usersUuidPatch**](docs/Api/UsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+*UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
@@ -101,6 +102,7 @@ Class | Method | HTTP request | Description
  - [ActiveDays](docs/Model/ActiveDays.md)
  - [Address](docs/Model/Address.md)
  - [Campaign](docs/Model/Campaign.md)
+ - [DeliveryAddress](docs/Model/DeliveryAddress.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
  - [GdprConsent](docs/Model/GdprConsent.md)
  - [InlineResponse400](docs/Model/InlineResponse400.md)
@@ -128,10 +130,12 @@ Class | Method | HTTP request | Description
  - [PackageOffer](docs/Model/PackageOffer.md)
  - [Paper](docs/Model/Paper.md)
  - [PausedSubscription](docs/Model/PausedSubscription.md)
+ - [PendingAddressChange](docs/Model/PendingAddressChange.md)
  - [Product](docs/Model/Product.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionDates](docs/Model/SubscriptionDates.md)
  - [SubscriptionPauseDates](docs/Model/SubscriptionPauseDates.md)
+ - [TemporaryAddressChange](docs/Model/TemporaryAddressChange.md)
  - [User](docs/Model/User.md)
  - [UserUpdate](docs/Model/UserUpdate.md)
  - [UserUpdateAddress](docs/Model/UserUpdateAddress.md)

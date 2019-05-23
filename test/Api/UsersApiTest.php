@@ -133,6 +133,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidSubscriptionsSubsnoAddressChangePost
+     *
+     * Make a temporary address change for a subscription.
+     *
+     */
+    public function testUsersUuidSubscriptionsSubsnoAddressChangePost()
+    {
+    }
+
+    /**
      * Test case for usersUuidSubscriptionsSubsnoPausePost
      *
      * Pause users subscription.

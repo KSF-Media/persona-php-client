@@ -68,7 +68,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'dates' => '\OpenAPI\Client\Model\SubscriptionDates',
         'extsubsexists' => 'bool',
         'campaign' => '\OpenAPI\Client\Model\Campaign',
-        'paused' => '\OpenAPI\Client\Model\PausedSubscription[]'
+        'paused' => '\OpenAPI\Client\Model\PausedSubscription[]',
+        'delivery_address' => '\OpenAPI\Client\Model\DeliveryAddress',
+        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]'
     ];
 
     /**
@@ -88,7 +90,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'dates' => null,
         'extsubsexists' => null,
         'campaign' => null,
-        'paused' => null
+        'paused' => null,
+        'delivery_address' => null,
+        'pending_address_changes' => null
     ];
 
     /**
@@ -129,7 +133,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'dates' => 'dates',
         'extsubsexists' => 'extsubsexists',
         'campaign' => 'campaign',
-        'paused' => 'paused'
+        'paused' => 'paused',
+        'delivery_address' => 'deliveryAddress',
+        'pending_address_changes' => 'pendingAddressChanges'
     ];
 
     /**
@@ -149,7 +155,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'dates' => 'setDates',
         'extsubsexists' => 'setExtsubsexists',
         'campaign' => 'setCampaign',
-        'paused' => 'setPaused'
+        'paused' => 'setPaused',
+        'delivery_address' => 'setDeliveryAddress',
+        'pending_address_changes' => 'setPendingAddressChanges'
     ];
 
     /**
@@ -169,7 +177,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'dates' => 'getDates',
         'extsubsexists' => 'getExtsubsexists',
         'campaign' => 'getCampaign',
-        'paused' => 'getPaused'
+        'paused' => 'getPaused',
+        'delivery_address' => 'getDeliveryAddress',
+        'pending_address_changes' => 'getPendingAddressChanges'
     ];
 
     /**
@@ -244,6 +254,8 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['extsubsexists'] = isset($data['extsubsexists']) ? $data['extsubsexists'] : null;
         $this->container['campaign'] = isset($data['campaign']) ? $data['campaign'] : null;
         $this->container['paused'] = isset($data['paused']) ? $data['paused'] : null;
+        $this->container['delivery_address'] = isset($data['delivery_address']) ? $data['delivery_address'] : null;
+        $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
     }
 
     /**
@@ -645,6 +657,54 @@ class Subscription implements ModelInterface, ArrayAccess
     public function setPaused($paused)
     {
         $this->container['paused'] = $paused;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_address
+     *
+     * @return \OpenAPI\Client\Model\DeliveryAddress|null
+     */
+    public function getDeliveryAddress()
+    {
+        return $this->container['delivery_address'];
+    }
+
+    /**
+     * Sets delivery_address
+     *
+     * @param \OpenAPI\Client\Model\DeliveryAddress|null $delivery_address delivery_address
+     *
+     * @return $this
+     */
+    public function setDeliveryAddress($delivery_address)
+    {
+        $this->container['delivery_address'] = $delivery_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_address_changes
+     *
+     * @return \OpenAPI\Client\Model\PendingAddressChange[]|null
+     */
+    public function getPendingAddressChanges()
+    {
+        return $this->container['pending_address_changes'];
+    }
+
+    /**
+     * Sets pending_address_changes
+     *
+     * @param \OpenAPI\Client\Model\PendingAddressChange[]|null $pending_address_changes pending_address_changes
+     *
+     * @return $this
+     */
+    public function setPendingAddressChanges($pending_address_changes)
+    {
+        $this->container['pending_address_changes'] = $pending_address_changes;
 
         return $this;
     }
