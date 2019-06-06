@@ -59,7 +59,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'address' => '\OpenAPI\Client\Model\DeliveryAddress',
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'end_date' => '\DateTime',
+        'type' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'address' => null,
         'start_date' => 'date',
-        'end_date' => 'date'
+        'end_date' => 'date',
+        'type' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'address' => 'address',
         'start_date' => 'startDate',
-        'end_date' => 'endDate'
+        'end_date' => 'endDate',
+        'type' => 'type'
     ];
 
     /**
@@ -113,7 +116,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     protected static $setters = [
         'address' => 'setAddress',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
+        'type' => 'setType'
     ];
 
     /**
@@ -124,7 +128,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     protected static $getters = [
         'address' => 'getAddress',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
+        'type' => 'getType'
     ];
 
     /**
@@ -190,6 +195,7 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -209,6 +215,9 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         }
         if ($this->container['end_date'] === null) {
             $invalidProperties[] = "'end_date' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
         return $invalidProperties;
     }
@@ -293,6 +302,30 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

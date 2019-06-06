@@ -98,4 +98,11 @@ class PendingAddressChangeTest extends TestCase
     public function testPropertyEndDate()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

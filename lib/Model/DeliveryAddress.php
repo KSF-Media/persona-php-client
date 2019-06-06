@@ -207,9 +207,6 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
         if ($this->container['zipcode'] === null) {
             $invalidProperties[] = "'zipcode' can't be null";
         }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -276,7 +273,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -286,7 +283,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets city
      *
-     * @param string $city city
+     * @param string|null $city city
      *
      * @return $this
      */
