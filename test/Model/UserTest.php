@@ -140,4 +140,11 @@ class UserTest extends TestCase
     public function testPropertyLegal()
     {
     }
+
+    /**
+     * Test attribute "pending_address_changes"
+     */
+    public function testPropertyPendingAddressChanges()
+    {
+    }
 }

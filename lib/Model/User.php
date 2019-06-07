@@ -65,7 +65,8 @@ class User implements ModelInterface, ArrayAccess
         'cusno' => 'string',
         'subs' => '\OpenAPI\Client\Model\Subscription[]',
         'consent' => '\OpenAPI\Client\Model\GdprConsent[]',
-        'legal' => '\OpenAPI\Client\Model\LegalConsent[]'
+        'legal' => '\OpenAPI\Client\Model\LegalConsent[]',
+        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]'
     ];
 
     /**
@@ -82,7 +83,8 @@ class User implements ModelInterface, ArrayAccess
         'cusno' => null,
         'subs' => null,
         'consent' => null,
-        'legal' => null
+        'legal' => null,
+        'pending_address_changes' => null
     ];
 
     /**
@@ -120,7 +122,8 @@ class User implements ModelInterface, ArrayAccess
         'cusno' => 'cusno',
         'subs' => 'subs',
         'consent' => 'consent',
-        'legal' => 'legal'
+        'legal' => 'legal',
+        'pending_address_changes' => 'pendingAddressChanges'
     ];
 
     /**
@@ -137,7 +140,8 @@ class User implements ModelInterface, ArrayAccess
         'cusno' => 'setCusno',
         'subs' => 'setSubs',
         'consent' => 'setConsent',
-        'legal' => 'setLegal'
+        'legal' => 'setLegal',
+        'pending_address_changes' => 'setPendingAddressChanges'
     ];
 
     /**
@@ -154,7 +158,8 @@ class User implements ModelInterface, ArrayAccess
         'cusno' => 'getCusno',
         'subs' => 'getSubs',
         'consent' => 'getConsent',
-        'legal' => 'getLegal'
+        'legal' => 'getLegal',
+        'pending_address_changes' => 'getPendingAddressChanges'
     ];
 
     /**
@@ -226,6 +231,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['subs'] = isset($data['subs']) ? $data['subs'] : null;
         $this->container['consent'] = isset($data['consent']) ? $data['consent'] : null;
         $this->container['legal'] = isset($data['legal']) ? $data['legal'] : null;
+        $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
     }
 
     /**
@@ -482,6 +488,30 @@ class User implements ModelInterface, ArrayAccess
     public function setLegal($legal)
     {
         $this->container['legal'] = $legal;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_address_changes
+     *
+     * @return \OpenAPI\Client\Model\PendingAddressChange[]|null
+     */
+    public function getPendingAddressChanges()
+    {
+        return $this->container['pending_address_changes'];
+    }
+
+    /**
+     * Sets pending_address_changes
+     *
+     * @param \OpenAPI\Client\Model\PendingAddressChange[]|null $pending_address_changes pending_address_changes
+     *
+     * @return $this
+     */
+    public function setPendingAddressChanges($pending_address_changes)
+    {
+        $this->container['pending_address_changes'] = $pending_address_changes;
 
         return $this;
     }

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **subs** | [**\OpenAPI\Client\Model\Subscription[]**](Subscription.md) |  | 
 **consent** | [**\OpenAPI\Client\Model\GdprConsent[]**](GdprConsent.md) |  | 
 **legal** | [**\OpenAPI\Client\Model\LegalConsent[]**](LegalConsent.md) |  | 
+**pending_address_changes** | [**\OpenAPI\Client\Model\PendingAddressChange[]**](PendingAddressChange.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
