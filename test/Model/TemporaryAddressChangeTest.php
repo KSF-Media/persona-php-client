@@ -105,4 +105,11 @@ class TemporaryAddressChangeTest extends TestCase
     public function testPropertyEndDate()
     {
     }
+
+    /**
+     * Test attribute "temporary_name"
+     */
+    public function testPropertyTemporaryName()
+    {
+    }
 }

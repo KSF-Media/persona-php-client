@@ -105,4 +105,11 @@ class PendingAddressChangeTest extends TestCase
     public function testPropertyType()
     {
     }
+
+    /**
+     * Test attribute "temporary_name"
+     */
+    public function testPropertyTemporaryName()
+    {
+    }
 }

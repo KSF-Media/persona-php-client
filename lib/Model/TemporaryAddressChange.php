@@ -60,7 +60,8 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
         'zip_code' => 'string',
         'street_address' => 'string',
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'end_date' => '\DateTime',
+        'temporary_name' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
         'zip_code' => null,
         'street_address' => null,
         'start_date' => 'date',
-        'end_date' => 'date'
+        'end_date' => 'date',
+        'temporary_name' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
         'zip_code' => 'zipCode',
         'street_address' => 'streetAddress',
         'start_date' => 'startDate',
-        'end_date' => 'endDate'
+        'end_date' => 'endDate',
+        'temporary_name' => 'temporaryName'
     ];
 
     /**
@@ -117,7 +120,8 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
         'zip_code' => 'setZipCode',
         'street_address' => 'setStreetAddress',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
+        'temporary_name' => 'setTemporaryName'
     ];
 
     /**
@@ -129,7 +133,8 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
         'zip_code' => 'getZipCode',
         'street_address' => 'getStreetAddress',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
+        'temporary_name' => 'getTemporaryName'
     ];
 
     /**
@@ -196,6 +201,7 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
         $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['temporary_name'] = isset($data['temporary_name']) ? $data['temporary_name'] : null;
     }
 
     /**
@@ -326,6 +332,30 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets temporary_name
+     *
+     * @return string|null
+     */
+    public function getTemporaryName()
+    {
+        return $this->container['temporary_name'];
+    }
+
+    /**
+     * Sets temporary_name
+     *
+     * @param string|null $temporary_name temporary_name
+     *
+     * @return $this
+     */
+    public function setTemporaryName($temporary_name)
+    {
+        $this->container['temporary_name'] = $temporary_name;
 
         return $this;
     }

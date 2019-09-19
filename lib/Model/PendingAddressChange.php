@@ -60,7 +60,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         'address' => '\OpenAPI\Client\Model\DeliveryAddress',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'type' => 'string'
+        'type' => 'string',
+        'temporary_name' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         'address' => null,
         'start_date' => 'date',
         'end_date' => 'date',
-        'type' => null
+        'type' => null,
+        'temporary_name' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         'address' => 'address',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
-        'type' => 'type'
+        'type' => 'type',
+        'temporary_name' => 'temporaryName'
     ];
 
     /**
@@ -117,7 +120,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         'address' => 'setAddress',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'type' => 'setType'
+        'type' => 'setType',
+        'temporary_name' => 'setTemporaryName'
     ];
 
     /**
@@ -129,7 +133,8 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         'address' => 'getAddress',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'type' => 'getType'
+        'type' => 'getType',
+        'temporary_name' => 'getTemporaryName'
     ];
 
     /**
@@ -196,6 +201,7 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['temporary_name'] = isset($data['temporary_name']) ? $data['temporary_name'] : null;
     }
 
     /**
@@ -326,6 +332,30 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets temporary_name
+     *
+     * @return string|null
+     */
+    public function getTemporaryName()
+    {
+        return $this->container['temporary_name'];
+    }
+
+    /**
+     * Sets temporary_name
+     *
+     * @param string|null $temporary_name temporary_name
+     *
+     * @return $this
+     */
+    public function setTemporaryName($temporary_name)
+    {
+        $this->container['temporary_name'] = $temporary_name;
 
         return $this;
     }
