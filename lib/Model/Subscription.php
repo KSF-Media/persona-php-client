@@ -70,7 +70,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'campaign' => '\OpenAPI\Client\Model\Campaign',
         'paused' => '\OpenAPI\Client\Model\PausedSubscription[]',
         'delivery_address' => '\OpenAPI\Client\Model\DeliveryAddress',
-        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]'
+        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]',
+        'order_number' => 'string',
+        'payment_method' => 'string'
     ];
 
     /**
@@ -92,7 +94,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'campaign' => null,
         'paused' => null,
         'delivery_address' => null,
-        'pending_address_changes' => null
+        'pending_address_changes' => null,
+        'order_number' => null,
+        'payment_method' => null
     ];
 
     /**
@@ -135,7 +139,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'campaign' => 'campaign',
         'paused' => 'paused',
         'delivery_address' => 'deliveryAddress',
-        'pending_address_changes' => 'pendingAddressChanges'
+        'pending_address_changes' => 'pendingAddressChanges',
+        'order_number' => 'orderNumber',
+        'payment_method' => 'paymentMethod'
     ];
 
     /**
@@ -157,7 +163,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'campaign' => 'setCampaign',
         'paused' => 'setPaused',
         'delivery_address' => 'setDeliveryAddress',
-        'pending_address_changes' => 'setPendingAddressChanges'
+        'pending_address_changes' => 'setPendingAddressChanges',
+        'order_number' => 'setOrderNumber',
+        'payment_method' => 'setPaymentMethod'
     ];
 
     /**
@@ -179,7 +187,9 @@ class Subscription implements ModelInterface, ArrayAccess
         'campaign' => 'getCampaign',
         'paused' => 'getPaused',
         'delivery_address' => 'getDeliveryAddress',
-        'pending_address_changes' => 'getPendingAddressChanges'
+        'pending_address_changes' => 'getPendingAddressChanges',
+        'order_number' => 'getOrderNumber',
+        'payment_method' => 'getPaymentMethod'
     ];
 
     /**
@@ -256,6 +266,8 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['paused'] = isset($data['paused']) ? $data['paused'] : null;
         $this->container['delivery_address'] = isset($data['delivery_address']) ? $data['delivery_address'] : null;
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
+        $this->container['order_number'] = isset($data['order_number']) ? $data['order_number'] : null;
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
     }
 
     /**
@@ -705,6 +717,54 @@ class Subscription implements ModelInterface, ArrayAccess
     public function setPendingAddressChanges($pending_address_changes)
     {
         $this->container['pending_address_changes'] = $pending_address_changes;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_number
+     *
+     * @return string|null
+     */
+    public function getOrderNumber()
+    {
+        return $this->container['order_number'];
+    }
+
+    /**
+     * Sets order_number
+     *
+     * @param string|null $order_number order_number
+     *
+     * @return $this
+     */
+    public function setOrderNumber($order_number)
+    {
+        $this->container['order_number'] = $order_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_method
+     *
+     * @return string|null
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['payment_method'];
+    }
+
+    /**
+     * Sets payment_method
+     *
+     * @param string|null $payment_method payment_method
+     *
+     * @return $this
+     */
+    public function setPaymentMethod($payment_method)
+    {
+        $this->container['payment_method'] = $payment_method;
 
         return $this;
     }

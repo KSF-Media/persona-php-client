@@ -59,7 +59,8 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'street_address' => 'string',
         'zipcode' => 'string',
-        'city' => 'string'
+        'city' => 'string',
+        'temporary_name' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'street_address' => null,
         'zipcode' => null,
-        'city' => null
+        'city' => null,
+        'temporary_name' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'street_address' => 'streetAddress',
         'zipcode' => 'zipcode',
-        'city' => 'city'
+        'city' => 'city',
+        'temporary_name' => 'temporaryName'
     ];
 
     /**
@@ -113,7 +116,8 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     protected static $setters = [
         'street_address' => 'setStreetAddress',
         'zipcode' => 'setZipcode',
-        'city' => 'setCity'
+        'city' => 'setCity',
+        'temporary_name' => 'setTemporaryName'
     ];
 
     /**
@@ -124,7 +128,8 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     protected static $getters = [
         'street_address' => 'getStreetAddress',
         'zipcode' => 'getZipcode',
-        'city' => 'getCity'
+        'city' => 'getCity',
+        'temporary_name' => 'getTemporaryName'
     ];
 
     /**
@@ -190,6 +195,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
         $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
         $this->container['zipcode'] = isset($data['zipcode']) ? $data['zipcode'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['temporary_name'] = isset($data['temporary_name']) ? $data['temporary_name'] : null;
     }
 
     /**
@@ -287,6 +293,30 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     public function setCity($city)
     {
         $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets temporary_name
+     *
+     * @return string|null
+     */
+    public function getTemporaryName()
+    {
+        return $this->container['temporary_name'];
+    }
+
+    /**
+     * Sets temporary_name
+     *
+     * @param string|null $temporary_name temporary_name
+     *
+     * @return $this
+     */
+    public function setTemporaryName($temporary_name)
+    {
+        $this->container['temporary_name'] = $temporary_name;
 
         return $this;
     }

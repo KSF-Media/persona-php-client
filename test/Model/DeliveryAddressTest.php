@@ -98,4 +98,11 @@ class DeliveryAddressTest extends TestCase
     public function testPropertyCity()
     {
     }
+
+    /**
+     * Test attribute "temporary_name"
+     */
+    public function testPropertyTemporaryName()
+    {
+    }
 }

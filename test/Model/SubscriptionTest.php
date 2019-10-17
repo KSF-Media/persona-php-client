@@ -175,4 +175,18 @@ class SubscriptionTest extends TestCase
     public function testPropertyPendingAddressChanges()
     {
     }
+
+    /**
+     * Test attribute "order_number"
+     */
+    public function testPropertyOrderNumber()
+    {
+    }
+
+    /**
+     * Test attribute "payment_method"
+     */
+    public function testPropertyPaymentMethod()
+    {
+    }
 }
