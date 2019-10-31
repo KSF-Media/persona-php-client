@@ -201,6 +201,14 @@ class UserUpdate implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['first_name']) && (mb_strlen($this->container['first_name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'first_name', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['last_name']) && (mb_strlen($this->container['last_name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'last_name', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -235,6 +243,11 @@ class UserUpdate implements ModelInterface, ArrayAccess
      */
     public function setFirstName($first_name)
     {
+
+        if (!is_null($first_name) && (mb_strlen($first_name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $first_name when calling UserUpdate., must be bigger than or equal to 1.');
+        }
+
         $this->container['first_name'] = $first_name;
 
         return $this;
@@ -259,6 +272,11 @@ class UserUpdate implements ModelInterface, ArrayAccess
      */
     public function setLastName($last_name)
     {
+
+        if (!is_null($last_name) && (mb_strlen($last_name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $last_name when calling UserUpdate., must be bigger than or equal to 1.');
+        }
+
         $this->container['last_name'] = $last_name;
 
         return $this;
