@@ -60,17 +60,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\EntitlementsApi(
+$apiInstance = new OpenAPI\Client\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$body = new \OpenAPI\Client\Model\CodeForTokenData(); // \OpenAPI\Client\Model\CodeForTokenData | 
 
 try {
-    $result = $apiInstance->entitlementsGet();
+    $result = $apiInstance->accountCodeForTokenPost($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EntitlementsApi->entitlementsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountApi->accountCodeForTokenPost: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -82,6 +83,9 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**accountCodeForTokenPost**](docs/Api/AccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
+*AccountApi* | [**accountForgotPassPost**](docs/Api/AccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
+*AccountApi* | [**accountResetForgottenPasswordPost**](docs/Api/AccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /login | Login with email and password
 *LoginApi* | [**loginSomePost**](docs/Api/LoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
@@ -102,8 +106,11 @@ Class | Method | HTTP request | Description
  - [ActiveDays](docs/Model/ActiveDays.md)
  - [Address](docs/Model/Address.md)
  - [Campaign](docs/Model/Campaign.md)
+ - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
+ - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
+ - [ForgotPasswordResponse](docs/Model/ForgotPasswordResponse.md)
  - [GdprConsent](docs/Model/GdprConsent.md)
  - [InlineResponse400](docs/Model/InlineResponse400.md)
  - [InlineResponse400InvalidRequestBody](docs/Model/InlineResponse400InvalidRequestBody.md)
@@ -136,6 +143,8 @@ Class | Method | HTTP request | Description
  - [SubscriptionDates](docs/Model/SubscriptionDates.md)
  - [SubscriptionPauseDates](docs/Model/SubscriptionPauseDates.md)
  - [TemporaryAddressChange](docs/Model/TemporaryAddressChange.md)
+ - [TokenResponse](docs/Model/TokenResponse.md)
+ - [UpdatePasswordData](docs/Model/UpdatePasswordData.md)
  - [User](docs/Model/User.md)
  - [UserUpdate](docs/Model/UserUpdate.md)
  - [UserUpdateAddress](docs/Model/UserUpdateAddress.md)
