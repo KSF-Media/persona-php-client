@@ -59,6 +59,7 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'zip_code' => 'string',
         'street_address' => 'string',
+        'country_code' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'temporary_name' => 'string'
@@ -72,6 +73,7 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'zip_code' => null,
         'street_address' => null,
+        'country_code' => null,
         'start_date' => 'date',
         'end_date' => 'date',
         'temporary_name' => null
@@ -106,6 +108,7 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'zip_code' => 'zipCode',
         'street_address' => 'streetAddress',
+        'country_code' => 'countryCode',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
         'temporary_name' => 'temporaryName'
@@ -119,6 +122,7 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     protected static $setters = [
         'zip_code' => 'setZipCode',
         'street_address' => 'setStreetAddress',
+        'country_code' => 'setCountryCode',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'temporary_name' => 'setTemporaryName'
@@ -132,6 +136,7 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     protected static $getters = [
         'zip_code' => 'getZipCode',
         'street_address' => 'getStreetAddress',
+        'country_code' => 'getCountryCode',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'temporary_name' => 'getTemporaryName'
@@ -199,6 +204,7 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     {
         $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
         $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['temporary_name'] = isset($data['temporary_name']) ? $data['temporary_name'] : null;
@@ -218,6 +224,9 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
         }
         if ($this->container['street_address'] === null) {
             $invalidProperties[] = "'street_address' can't be null";
+        }
+        if ($this->container['country_code'] === null) {
+            $invalidProperties[] = "'country_code' can't be null";
         }
         if ($this->container['start_date'] === null) {
             $invalidProperties[] = "'start_date' can't be null";
@@ -284,6 +293,30 @@ class TemporaryAddressChange implements ModelInterface, ArrayAccess
     public function setStreetAddress($street_address)
     {
         $this->container['street_address'] = $street_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets country_code
+     *
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->container['country_code'];
+    }
+
+    /**
+     * Sets country_code
+     *
+     * @param string $country_code country_code
+     *
+     * @return $this
+     */
+    public function setCountryCode($country_code)
+    {
+        $this->container['country_code'] = $country_code;
 
         return $this;
     }

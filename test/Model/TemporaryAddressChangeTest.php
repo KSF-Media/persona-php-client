@@ -93,6 +93,13 @@ class TemporaryAddressChangeTest extends TestCase
     }
 
     /**
+     * Test attribute "country_code"
+     */
+    public function testPropertyCountryCode()
+    {
+    }
+
+    /**
      * Test attribute "start_date"
      */
     public function testPropertyStartDate()

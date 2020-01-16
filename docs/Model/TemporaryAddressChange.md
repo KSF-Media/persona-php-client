@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **zip_code** | **string** |  | 
 **street_address** | **string** |  | 
+**country_code** | **string** |  | 
 **start_date** | [**\DateTime**](\DateTime.md) |  | 
 **end_date** | [**\DateTime**](\DateTime.md) |  | 
 **temporary_name** | **string** |  | [optional] 
