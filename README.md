@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidPatch**](docs/Api/UsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
+*UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 
 
 ## Documentation For Models
@@ -109,6 +110,7 @@ Class | Method | HTTP request | Description
  - [Campaign](docs/Model/Campaign.md)
  - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)
+ - [DeliveryReclamation](docs/Model/DeliveryReclamation.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
  - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
  - [ForgotPasswordResponse](docs/Model/ForgotPasswordResponse.md)
@@ -133,6 +135,7 @@ Class | Method | HTTP request | Description
  - [LoginDataSSO](docs/Model/LoginDataSSO.md)
  - [LoginDataSoMe](docs/Model/LoginDataSoMe.md)
  - [LoginResponse](docs/Model/LoginResponse.md)
+ - [NewDeliveryReclamation](docs/Model/NewDeliveryReclamation.md)
  - [NewUser](docs/Model/NewUser.md)
  - [Package](docs/Model/Package.md)
  - [PackageDescription](docs/Model/PackageDescription.md)

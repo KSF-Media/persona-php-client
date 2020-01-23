@@ -151,4 +151,14 @@ class UsersApiTest extends TestCase
     public function testUsersUuidSubscriptionsSubsnoPausePost()
     {
     }
+
+    /**
+     * Test case for usersUuidSubscriptionsSubsnoReclamationPost
+     *
+     * Create a new delivery reclamation for a subscription.
+     *
+     */
+    public function testUsersUuidSubscriptionsSubsnoReclamationPost()
+    {
+    }
 }
