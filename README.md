@@ -101,7 +101,8 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
-*UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationReclaimnoGet**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamation/{reclaimno} | Get a delivery reclamation
+*UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
+*UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnopatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Update a delivery reclamation
 
 
 ## Documentation For Models
@@ -112,6 +113,7 @@ Class | Method | HTTP request | Description
  - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)
  - [DeliveryReclamation](docs/Model/DeliveryReclamation.md)
+ - [DeliveryReclamationUpdate](docs/Model/DeliveryReclamationUpdate.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
  - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
  - [ForgotPasswordResponse](docs/Model/ForgotPasswordResponse.md)

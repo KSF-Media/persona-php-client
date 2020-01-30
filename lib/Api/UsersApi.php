@@ -3091,7 +3091,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersUuidSubscriptionsSubsnoReclamationReclaimnoGet
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet
      *
      * Get a delivery reclamation
      *
@@ -3104,14 +3104,14 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\DeliveryReclamation
      */
-    public function usersUuidSubscriptionsSubsnoReclamationReclaimnoGet($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $authorization = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoReclamationReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $authorization);
         return $response;
     }
 
     /**
-     * Operation usersUuidSubscriptionsSubsnoReclamationReclaimnoGetWithHttpInfo
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo
      *
      * Get a delivery reclamation
      *
@@ -3124,9 +3124,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\DeliveryReclamation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoReclamationReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $authorization = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoReclamationReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3202,7 +3202,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersUuidSubscriptionsSubsnoReclamationReclaimnoGetAsync
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsync
      *
      * Get a delivery reclamation
      *
@@ -3214,9 +3214,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoReclamationReclaimnoGetAsync($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsync($uuid, $subsno, $reclaimno, $authorization = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoReclamationReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3225,7 +3225,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersUuidSubscriptionsSubsnoReclamationReclaimnoGetAsyncWithHttpInfo
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo
      *
      * Get a delivery reclamation
      *
@@ -3237,10 +3237,10 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoReclamationReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
-        $request = $this->usersUuidSubscriptionsSubsnoReclamationReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3277,7 +3277,7 @@ class UsersApi
     }
 
     /**
-     * Create request for operation 'usersUuidSubscriptionsSubsnoReclamationReclaimnoGet'
+     * Create request for operation 'usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet'
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
@@ -3287,42 +3287,42 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoReclamationReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $uuid when calling usersUuidSubscriptionsSubsnoReclamationReclaimnoGet'
+                'Missing the required parameter $uuid when calling usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet'
             );
         }
         // verify the required parameter 'subsno' is set
         if ($subsno === null || (is_array($subsno) && count($subsno) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $subsno when calling usersUuidSubscriptionsSubsnoReclamationReclaimnoGet'
+                'Missing the required parameter $subsno when calling usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet'
             );
         }
         if ($subsno > 9223372036854775807) {
-            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationReclaimnoGet, must be smaller than or equal to 9223372036854775807.');
+            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet, must be smaller than or equal to 9223372036854775807.');
         }
         if ($subsno < -9223372036854775808) {
-            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationReclaimnoGet, must be bigger than or equal to -9223372036854775808.');
+            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet, must be bigger than or equal to -9223372036854775808.');
         }
 
         // verify the required parameter 'reclaimno' is set
         if ($reclaimno === null || (is_array($reclaimno) && count($reclaimno) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $reclaimno when calling usersUuidSubscriptionsSubsnoReclamationReclaimnoGet'
+                'Missing the required parameter $reclaimno when calling usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet'
             );
         }
         if ($reclaimno > 9223372036854775807) {
-            throw new \InvalidArgumentException('invalid value for "$reclaimno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationReclaimnoGet, must be smaller than or equal to 9223372036854775807.');
+            throw new \InvalidArgumentException('invalid value for "$reclaimno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet, must be smaller than or equal to 9223372036854775807.');
         }
         if ($reclaimno < -9223372036854775808) {
-            throw new \InvalidArgumentException('invalid value for "$reclaimno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationReclaimnoGet, must be bigger than or equal to -9223372036854775808.');
+            throw new \InvalidArgumentException('invalid value for "$reclaimno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet, must be bigger than or equal to -9223372036854775808.');
         }
 
 
-        $resourcePath = '/users/{uuid}/subscriptions/{subsno}/reclamation/{reclaimno}';
+        $resourcePath = '/users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3417,6 +3417,393 @@ class UsersApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch
+     *
+     * Update a delivery reclamation
+     *
+     * @param  string $uuid uuid (required)
+     * @param  int $subsno subsno (required)
+     * @param  int $reclaimno reclaimno (required)
+     * @param  \OpenAPI\Client\Model\DeliveryReclamationUpdate $body body (required)
+     * @param  string $authorization authorization (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\DeliveryReclamation|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     */
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch($uuid, $subsno, $reclaimno, $body, $authorization = null)
+    {
+        list($response) = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchWithHttpInfo($uuid, $subsno, $reclaimno, $body, $authorization);
+        return $response;
+    }
+
+    /**
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchWithHttpInfo
+     *
+     * Update a delivery reclamation
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  int $reclaimno (required)
+     * @param  \OpenAPI\Client\Model\DeliveryReclamationUpdate $body (required)
+     * @param  string $authorization (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\DeliveryReclamation|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchWithHttpInfo($uuid, $subsno, $reclaimno, $body, $authorization = null)
+    {
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchRequest($uuid, $subsno, $reclaimno, $body, $authorization);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\DeliveryReclamation' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeliveryReclamation', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\DeliveryReclamation',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchAsync
+     *
+     * Update a delivery reclamation
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  int $reclaimno (required)
+     * @param  \OpenAPI\Client\Model\DeliveryReclamationUpdate $body (required)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchAsync($uuid, $subsno, $reclaimno, $body, $authorization = null)
+    {
+        return $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $body, $authorization)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchAsyncWithHttpInfo
+     *
+     * Update a delivery reclamation
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  int $reclaimno (required)
+     * @param  \OpenAPI\Client\Model\DeliveryReclamationUpdate $body (required)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $body, $authorization = null)
+    {
+        $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchRequest($uuid, $subsno, $reclaimno, $body, $authorization);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch'
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  int $reclaimno (required)
+     * @param  \OpenAPI\Client\Model\DeliveryReclamationUpdate $body (required)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchRequest($uuid, $subsno, $reclaimno, $body, $authorization = null)
+    {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch'
+            );
+        }
+        // verify the required parameter 'subsno' is set
+        if ($subsno === null || (is_array($subsno) && count($subsno) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $subsno when calling usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch'
+            );
+        }
+        if ($subsno > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch, must be smaller than or equal to 9223372036854775807.');
+        }
+        if ($subsno < -9223372036854775808) {
+            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch, must be bigger than or equal to -9223372036854775808.');
+        }
+
+        // verify the required parameter 'reclaimno' is set
+        if ($reclaimno === null || (is_array($reclaimno) && count($reclaimno) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reclaimno when calling usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch'
+            );
+        }
+        if ($reclaimno > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$reclaimno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch, must be smaller than or equal to 9223372036854775807.');
+        }
+        if ($reclaimno < -9223372036854775808) {
+            throw new \InvalidArgumentException('invalid value for "$reclaimno" when calling UsersApi.usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch, must be bigger than or equal to -9223372036854775808.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch'
+            );
+        }
+
+        $resourcePath = '/users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
+        }
+
+        // path params
+        if ($uuid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($subsno !== null) {
+            $resourcePath = str_replace(
+                '{' . 'subsno' . '}',
+                ObjectSerializer::toPathValue($subsno),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($reclaimno !== null) {
+            $resourcePath = str_replace(
+                '{' . 'reclaimno' . '}',
+                ObjectSerializer::toPathValue($reclaimno),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json;charset=utf-8']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json;charset=utf-8'],
+                ['application/json;charset=utf-8']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

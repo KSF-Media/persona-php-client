@@ -13,7 +13,8 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangePost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
-[**usersUuidSubscriptionsSubsnoReclamationReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamation/{reclaimno} | Get a delivery reclamation
+[**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
+[**usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Update a delivery reclamation
 
 
 
@@ -549,9 +550,9 @@ No authorization required
 [[Back to README]](../../README.md)
 
 
-## usersUuidSubscriptionsSubsnoReclamationReclaimnoGet
+## usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet
 
-> \OpenAPI\Client\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationReclaimnoGet($uuid, $subsno, $reclaimno, $authorization)
+> \OpenAPI\Client\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $authorization)
 
 Get a delivery reclamation
 
@@ -573,10 +574,10 @@ $reclaimno = 56; // int |
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->usersUuidSubscriptionsSubsnoReclamationReclaimnoGet($uuid, $subsno, $reclaimno, $authorization);
+    $result = $apiInstance->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $authorization);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoReclamationReclaimnoGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -602,6 +603,68 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch
+
+> \OpenAPI\Client\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch($uuid, $subsno, $reclaimno, $body, $authorization)
+
+Update a delivery reclamation
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uuid = 'uuid_example'; // string | 
+$subsno = 56; // int | 
+$reclaimno = 56; // int | 
+$body = new \OpenAPI\Client\Model\DeliveryReclamationUpdate(); // \OpenAPI\Client\Model\DeliveryReclamationUpdate | 
+$authorization = 'authorization_example'; // string | 
+
+try {
+    $result = $apiInstance->usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch($uuid, $subsno, $reclaimno, $body, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**string**](../Model/.md)|  |
+ **subsno** | **int**|  |
+ **reclaimno** | **int**|  |
+ **body** | [**\OpenAPI\Client\Model\DeliveryReclamationUpdate**](../Model/DeliveryReclamationUpdate.md)|  |
+ **authorization** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\DeliveryReclamation**](../Model/DeliveryReclamation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
 - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
