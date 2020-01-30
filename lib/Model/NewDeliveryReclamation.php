@@ -58,7 +58,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'publication_date' => '\DateTime',
-        'claim' => 'string'
+        'claim' => '\OpenAPI\Client\Model\DeliveryReclamationClaim'
     ];
 
     /**
@@ -243,7 +243,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Gets claim
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\DeliveryReclamationClaim
      */
     public function getClaim()
     {
@@ -253,7 +253,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets claim
      *
-     * @param string $claim claim
+     * @param \OpenAPI\Client\Model\DeliveryReclamationClaim $claim claim
      *
      * @return $this
      */

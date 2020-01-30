@@ -113,6 +113,7 @@ Class | Method | HTTP request | Description
  - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)
  - [DeliveryReclamation](docs/Model/DeliveryReclamation.md)
+ - [DeliveryReclamationClaim](docs/Model/DeliveryReclamationClaim.md)
  - [DeliveryReclamationUpdate](docs/Model/DeliveryReclamationUpdate.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
  - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
