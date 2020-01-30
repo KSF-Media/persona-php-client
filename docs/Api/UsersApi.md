@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangePost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
+[**usersUuidSubscriptionsSubsnoReclamationReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamation/{reclaimno} | Get a delivery reclamation
 
 
 
@@ -541,6 +542,66 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## usersUuidSubscriptionsSubsnoReclamationReclaimnoGet
+
+> \OpenAPI\Client\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationReclaimnoGet($uuid, $subsno, $reclaimno, $authorization)
+
+Get a delivery reclamation
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uuid = 'uuid_example'; // string | 
+$subsno = 56; // int | 
+$reclaimno = 56; // int | 
+$authorization = 'authorization_example'; // string | 
+
+try {
+    $result = $apiInstance->usersUuidSubscriptionsSubsnoReclamationReclaimnoGet($uuid, $subsno, $reclaimno, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoReclamationReclaimnoGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**string**](../Model/.md)|  |
+ **subsno** | **int**|  |
+ **reclaimno** | **int**|  |
+ **authorization** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\DeliveryReclamation**](../Model/DeliveryReclamation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

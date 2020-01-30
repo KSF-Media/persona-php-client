@@ -57,7 +57,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'number' => 'string',
+        'number' => 'int',
         'customer_number' => 'int',
         'subscription_number' => 'int',
         'date' => '\DateTime',
@@ -228,6 +228,14 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         if ($this->container['number'] === null) {
             $invalidProperties[] = "'number' can't be null";
         }
+        if (($this->container['number'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'number', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['number'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'number', must be bigger than or equal to -9223372036854775808.";
+        }
+
         if ($this->container['customer_number'] === null) {
             $invalidProperties[] = "'customer_number' can't be null";
         }
@@ -280,7 +288,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Gets number
      *
-     * @return string
+     * @return int
      */
     public function getNumber()
     {
@@ -290,12 +298,20 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param string $number number
+     * @param int $number number
      *
      * @return $this
      */
     public function setNumber($number)
     {
+
+        if (($number > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $number when calling DeliveryReclamation., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (($number < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $number when calling DeliveryReclamation., must be bigger than or equal to -9223372036854775808.');
+        }
+
         $this->container['number'] = $number;
 
         return $this;

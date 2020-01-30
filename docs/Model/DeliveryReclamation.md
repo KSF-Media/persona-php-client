@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**number** | **string** |  | 
+**number** | **int** |  | 
 **customer_number** | **int** |  | 
 **subscription_number** | **int** |  | 
 **date** | [**\DateTime**](\DateTime.md) |  | 

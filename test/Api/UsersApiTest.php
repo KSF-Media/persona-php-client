@@ -161,4 +161,14 @@ class UsersApiTest extends TestCase
     public function testUsersUuidSubscriptionsSubsnoReclamationPost()
     {
     }
+
+    /**
+     * Test case for usersUuidSubscriptionsSubsnoReclamationReclaimnoGet
+     *
+     * Get a delivery reclamation.
+     *
+     */
+    public function testUsersUuidSubscriptionsSubsnoReclamationReclaimnoGet()
+    {
+    }
 }
