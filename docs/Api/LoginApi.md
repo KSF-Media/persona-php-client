@@ -175,7 +175,7 @@ No authorization required
 
 ## loginUuidDelete
 
-> object[] loginUuidDelete($uuid, $authorization)
+> object[] loginUuidDelete($uuid, $authorization, $everywhere)
 
 Logout
 
@@ -195,9 +195,10 @@ $apiInstance = new OpenAPI\Client\Api\LoginApi(
 );
 $uuid = 'uuid_example'; // string | 
 $authorization = 'authorization_example'; // string | 
+$everywhere = false; // bool | 
 
 try {
-    $result = $apiInstance->loginUuidDelete($uuid, $authorization);
+    $result = $apiInstance->loginUuidDelete($uuid, $authorization, $everywhere);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoginApi->loginUuidDelete: ', $e->getMessage(), PHP_EOL;
@@ -212,6 +213,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **authorization** | **string**|  | [optional]
+ **everywhere** | **bool**|  | [optional] [default to false]
 
 ### Return type
 

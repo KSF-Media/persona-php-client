@@ -1163,14 +1163,15 @@ class LoginApi
      *
      * @param  string $uuid uuid (required)
      * @param  string $authorization authorization (optional)
+     * @param  bool $everywhere everywhere (optional, default to false)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object[]
      */
-    public function loginUuidDelete($uuid, $authorization = null)
+    public function loginUuidDelete($uuid, $authorization = null, $everywhere = false)
     {
-        list($response) = $this->loginUuidDeleteWithHttpInfo($uuid, $authorization);
+        list($response) = $this->loginUuidDeleteWithHttpInfo($uuid, $authorization, $everywhere);
         return $response;
     }
 
@@ -1181,14 +1182,15 @@ class LoginApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  bool $everywhere (optional, default to false)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginUuidDeleteWithHttpInfo($uuid, $authorization = null)
+    public function loginUuidDeleteWithHttpInfo($uuid, $authorization = null, $everywhere = false)
     {
-        $request = $this->loginUuidDeleteRequest($uuid, $authorization);
+        $request = $this->loginUuidDeleteRequest($uuid, $authorization, $everywhere);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1270,13 +1272,14 @@ class LoginApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  bool $everywhere (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginUuidDeleteAsync($uuid, $authorization = null)
+    public function loginUuidDeleteAsync($uuid, $authorization = null, $everywhere = false)
     {
-        return $this->loginUuidDeleteAsyncWithHttpInfo($uuid, $authorization)
+        return $this->loginUuidDeleteAsyncWithHttpInfo($uuid, $authorization, $everywhere)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1291,14 +1294,15 @@ class LoginApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  bool $everywhere (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginUuidDeleteAsyncWithHttpInfo($uuid, $authorization = null)
+    public function loginUuidDeleteAsyncWithHttpInfo($uuid, $authorization = null, $everywhere = false)
     {
         $returnType = 'object[]';
-        $request = $this->loginUuidDeleteRequest($uuid, $authorization);
+        $request = $this->loginUuidDeleteRequest($uuid, $authorization, $everywhere);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1339,11 +1343,12 @@ class LoginApi
      *
      * @param  string $uuid (required)
      * @param  string $authorization (optional)
+     * @param  bool $everywhere (optional, default to false)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginUuidDeleteRequest($uuid, $authorization = null)
+    protected function loginUuidDeleteRequest($uuid, $authorization = null, $everywhere = false)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -1359,6 +1364,10 @@ class LoginApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($everywhere !== null) {
+            $queryParams['everywhere'] = ObjectSerializer::toQueryValue($everywhere);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
