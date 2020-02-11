@@ -163,7 +163,7 @@ class InlineResponse400InvalidRequestBody implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const DESCRIPTION_COULDNT_PARSE_THE_REQUEST_BODY = 'Couldn't parse the request body.';
+    const DESCRIPTION_COULD_NOT_PARSE_THE_REQUEST_BODY = 'Could not parse the request body.';
     
 
     
@@ -175,7 +175,7 @@ class InlineResponse400InvalidRequestBody implements ModelInterface, ArrayAccess
     public function getDescriptionAllowableValues()
     {
         return [
-            self::DESCRIPTION_COULDNT_PARSE_THE_REQUEST_BODY,
+            self::DESCRIPTION_COULD_NOT_PARSE_THE_REQUEST_BODY,
         ];
     }
     
