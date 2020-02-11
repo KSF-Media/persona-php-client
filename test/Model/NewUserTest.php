@@ -79,72 +79,72 @@ class NewUserTest extends TestCase
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "new_user_first_name"
      */
-    public function testPropertyFirstName()
+    public function testPropertyNewUserFirstName()
     {
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "new_user_last_name"
      */
-    public function testPropertyLastName()
+    public function testPropertyNewUserLastName()
     {
     }
 
     /**
-     * Test attribute "email_address"
+     * Test attribute "new_user_email_address"
      */
-    public function testPropertyEmailAddress()
+    public function testPropertyNewUserEmailAddress()
     {
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "new_user_password"
      */
-    public function testPropertyPassword()
+    public function testPropertyNewUserPassword()
     {
     }
 
     /**
-     * Test attribute "confirm_password"
+     * Test attribute "new_user_confirm_password"
      */
-    public function testPropertyConfirmPassword()
+    public function testPropertyNewUserConfirmPassword()
     {
     }
 
     /**
-     * Test attribute "street_address"
+     * Test attribute "new_user_street_address"
      */
-    public function testPropertyStreetAddress()
+    public function testPropertyNewUserStreetAddress()
     {
     }
 
     /**
-     * Test attribute "zip_code"
+     * Test attribute "new_user_zip_code"
      */
-    public function testPropertyZipCode()
+    public function testPropertyNewUserZipCode()
     {
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "new_user_city"
      */
-    public function testPropertyCity()
+    public function testPropertyNewUserCity()
     {
     }
 
     /**
-     * Test attribute "country"
+     * Test attribute "new_user_country"
      */
-    public function testPropertyCountry()
+    public function testPropertyNewUserCountry()
     {
     }
 
     /**
-     * Test attribute "phone"
+     * Test attribute "new_user_phone"
      */
-    public function testPropertyPhone()
+    public function testPropertyNewUserPhone()
     {
     }
 }

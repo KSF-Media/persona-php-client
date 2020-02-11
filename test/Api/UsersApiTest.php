@@ -83,6 +83,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersTemporaryPost
+     *
+     * Create a new user with email..
+     *
+     */
+    public function testUsersTemporaryPost()
+    {
+    }
+
+    /**
      * Test case for usersUuidEntitlementGet
      *
      * Get users entitlements..
