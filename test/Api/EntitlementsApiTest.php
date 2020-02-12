@@ -83,6 +83,16 @@ class EntitlementsApiTest extends TestCase
     }
 
     /**
+     * Test case for entitlementsAllowUuidPost
+     *
+     * Grant product access to a customer.
+     *
+     */
+    public function testEntitlementsAllowUuidPost()
+    {
+    }
+
+    /**
      * Test case for entitlementsGet
      *
      * List all entitlements.

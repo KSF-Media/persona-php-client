@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountForgotPassPost**](docs/Api/AccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *AccountApi* | [**accountResetForgottenPasswordPost**](docs/Api/AccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
+*EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /login | Login with email and password
 *LoginApi* | [**loginSomePost**](docs/Api/LoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
@@ -117,10 +118,10 @@ Class | Method | HTTP request | Description
  - [DeliveryReclamationClaim](docs/Model/DeliveryReclamationClaim.md)
  - [DeliveryReclamationUpdate](docs/Model/DeliveryReclamationUpdate.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
+ - [EntitlementAccess](docs/Model/EntitlementAccess.md)
  - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
  - [ForgotPasswordResponse](docs/Model/ForgotPasswordResponse.md)
  - [GdprConsent](docs/Model/GdprConsent.md)
- - [GlobalEntitlementAccess](docs/Model/GlobalEntitlementAccess.md)
  - [InlineResponse400](docs/Model/InlineResponse400.md)
  - [InlineResponse400InvalidRequestBody](docs/Model/InlineResponse400InvalidRequestBody.md)
  - [InlineResponse403](docs/Model/InlineResponse403.md)

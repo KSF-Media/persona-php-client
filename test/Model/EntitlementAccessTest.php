@@ -1,6 +1,6 @@
 <?php
 /**
- * GlobalEntitlementAccessTest
+ * EntitlementAccessTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GlobalEntitlementAccessTest Class Doc Comment
+ * EntitlementAccessTest Class Doc Comment
  *
  * @category    Class
- * @description GlobalEntitlementAccess
+ * @description EntitlementAccess
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GlobalEntitlementAccessTest extends TestCase
+class EntitlementAccessTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class GlobalEntitlementAccessTest extends TestCase
     }
 
     /**
-     * Test "GlobalEntitlementAccess"
+     * Test "EntitlementAccess"
      */
-    public function testGlobalEntitlementAccess()
+    public function testEntitlementAccess()
     {
     }
 

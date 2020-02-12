@@ -1,6 +1,6 @@
 <?php
 /**
- * GlobalEntitlementAccess
+ * EntitlementAccess
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * GlobalEntitlementAccess Class Doc Comment
+ * EntitlementAccess Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GlobalEntitlementAccess implements ModelInterface, ArrayAccess
+class EntitlementAccess implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GlobalEntitlementAccess implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GlobalEntitlementAccess';
+    protected static $openAPIModelName = 'EntitlementAccess';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
