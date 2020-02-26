@@ -57,16 +57,16 @@ class NewUser implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'new_user_first_name' => 'string',
-        'new_user_last_name' => 'string',
-        'new_user_email_address' => 'string',
-        'new_user_password' => 'string',
-        'new_user_confirm_password' => 'string',
-        'new_user_street_address' => 'string',
-        'new_user_zip_code' => 'string',
-        'new_user_city' => 'string',
-        'new_user_country' => 'string',
-        'new_user_phone' => 'string'
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'email_address' => 'string',
+        'password' => 'string',
+        'confirm_password' => 'string',
+        'street_address' => 'string',
+        'zip_code' => 'string',
+        'city' => 'string',
+        'country' => 'string',
+        'phone' => 'string'
     ];
 
     /**
@@ -75,16 +75,16 @@ class NewUser implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'new_user_first_name' => null,
-        'new_user_last_name' => null,
-        'new_user_email_address' => null,
-        'new_user_password' => null,
-        'new_user_confirm_password' => null,
-        'new_user_street_address' => null,
-        'new_user_zip_code' => null,
-        'new_user_city' => null,
-        'new_user_country' => null,
-        'new_user_phone' => null
+        'first_name' => null,
+        'last_name' => null,
+        'email_address' => null,
+        'password' => null,
+        'confirm_password' => null,
+        'street_address' => null,
+        'zip_code' => null,
+        'city' => null,
+        'country' => null,
+        'phone' => null
     ];
 
     /**
@@ -114,16 +114,16 @@ class NewUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'new_user_first_name' => 'newUserFirstName',
-        'new_user_last_name' => 'newUserLastName',
-        'new_user_email_address' => 'newUserEmailAddress',
-        'new_user_password' => 'newUserPassword',
-        'new_user_confirm_password' => 'newUserConfirmPassword',
-        'new_user_street_address' => 'newUserStreetAddress',
-        'new_user_zip_code' => 'newUserZipCode',
-        'new_user_city' => 'newUserCity',
-        'new_user_country' => 'newUserCountry',
-        'new_user_phone' => 'newUserPhone'
+        'first_name' => 'firstName',
+        'last_name' => 'lastName',
+        'email_address' => 'emailAddress',
+        'password' => 'password',
+        'confirm_password' => 'confirmPassword',
+        'street_address' => 'streetAddress',
+        'zip_code' => 'zipCode',
+        'city' => 'city',
+        'country' => 'country',
+        'phone' => 'phone'
     ];
 
     /**
@@ -132,16 +132,16 @@ class NewUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'new_user_first_name' => 'setNewUserFirstName',
-        'new_user_last_name' => 'setNewUserLastName',
-        'new_user_email_address' => 'setNewUserEmailAddress',
-        'new_user_password' => 'setNewUserPassword',
-        'new_user_confirm_password' => 'setNewUserConfirmPassword',
-        'new_user_street_address' => 'setNewUserStreetAddress',
-        'new_user_zip_code' => 'setNewUserZipCode',
-        'new_user_city' => 'setNewUserCity',
-        'new_user_country' => 'setNewUserCountry',
-        'new_user_phone' => 'setNewUserPhone'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'email_address' => 'setEmailAddress',
+        'password' => 'setPassword',
+        'confirm_password' => 'setConfirmPassword',
+        'street_address' => 'setStreetAddress',
+        'zip_code' => 'setZipCode',
+        'city' => 'setCity',
+        'country' => 'setCountry',
+        'phone' => 'setPhone'
     ];
 
     /**
@@ -150,16 +150,16 @@ class NewUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'new_user_first_name' => 'getNewUserFirstName',
-        'new_user_last_name' => 'getNewUserLastName',
-        'new_user_email_address' => 'getNewUserEmailAddress',
-        'new_user_password' => 'getNewUserPassword',
-        'new_user_confirm_password' => 'getNewUserConfirmPassword',
-        'new_user_street_address' => 'getNewUserStreetAddress',
-        'new_user_zip_code' => 'getNewUserZipCode',
-        'new_user_city' => 'getNewUserCity',
-        'new_user_country' => 'getNewUserCountry',
-        'new_user_phone' => 'getNewUserPhone'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'email_address' => 'getEmailAddress',
+        'password' => 'getPassword',
+        'confirm_password' => 'getConfirmPassword',
+        'street_address' => 'getStreetAddress',
+        'zip_code' => 'getZipCode',
+        'city' => 'getCity',
+        'country' => 'getCountry',
+        'phone' => 'getPhone'
     ];
 
     /**
@@ -222,16 +222,16 @@ class NewUser implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['new_user_first_name'] = isset($data['new_user_first_name']) ? $data['new_user_first_name'] : null;
-        $this->container['new_user_last_name'] = isset($data['new_user_last_name']) ? $data['new_user_last_name'] : null;
-        $this->container['new_user_email_address'] = isset($data['new_user_email_address']) ? $data['new_user_email_address'] : null;
-        $this->container['new_user_password'] = isset($data['new_user_password']) ? $data['new_user_password'] : null;
-        $this->container['new_user_confirm_password'] = isset($data['new_user_confirm_password']) ? $data['new_user_confirm_password'] : null;
-        $this->container['new_user_street_address'] = isset($data['new_user_street_address']) ? $data['new_user_street_address'] : null;
-        $this->container['new_user_zip_code'] = isset($data['new_user_zip_code']) ? $data['new_user_zip_code'] : null;
-        $this->container['new_user_city'] = isset($data['new_user_city']) ? $data['new_user_city'] : null;
-        $this->container['new_user_country'] = isset($data['new_user_country']) ? $data['new_user_country'] : null;
-        $this->container['new_user_phone'] = isset($data['new_user_phone']) ? $data['new_user_phone'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['confirm_password'] = isset($data['confirm_password']) ? $data['confirm_password'] : null;
+        $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
+        $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
     }
 
     /**
@@ -243,14 +243,14 @@ class NewUser implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['new_user_email_address'] === null) {
-            $invalidProperties[] = "'new_user_email_address' can't be null";
+        if ($this->container['email_address'] === null) {
+            $invalidProperties[] = "'email_address' can't be null";
         }
-        if ($this->container['new_user_password'] === null) {
-            $invalidProperties[] = "'new_user_password' can't be null";
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
         }
-        if ($this->container['new_user_confirm_password'] === null) {
-            $invalidProperties[] = "'new_user_confirm_password' can't be null";
+        if ($this->container['confirm_password'] === null) {
+            $invalidProperties[] = "'confirm_password' can't be null";
         }
         return $invalidProperties;
     }
@@ -268,241 +268,241 @@ class NewUser implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets new_user_first_name
+     * Gets first_name
      *
      * @return string|null
      */
-    public function getNewUserFirstName()
+    public function getFirstName()
     {
-        return $this->container['new_user_first_name'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets new_user_first_name
+     * Sets first_name
      *
-     * @param string|null $new_user_first_name new_user_first_name
+     * @param string|null $first_name first_name
      *
      * @return $this
      */
-    public function setNewUserFirstName($new_user_first_name)
+    public function setFirstName($first_name)
     {
-        $this->container['new_user_first_name'] = $new_user_first_name;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets new_user_last_name
+     * Gets last_name
      *
      * @return string|null
      */
-    public function getNewUserLastName()
+    public function getLastName()
     {
-        return $this->container['new_user_last_name'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets new_user_last_name
+     * Sets last_name
      *
-     * @param string|null $new_user_last_name new_user_last_name
+     * @param string|null $last_name last_name
      *
      * @return $this
      */
-    public function setNewUserLastName($new_user_last_name)
+    public function setLastName($last_name)
     {
-        $this->container['new_user_last_name'] = $new_user_last_name;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
 
     /**
-     * Gets new_user_email_address
+     * Gets email_address
      *
      * @return string
      */
-    public function getNewUserEmailAddress()
+    public function getEmailAddress()
     {
-        return $this->container['new_user_email_address'];
+        return $this->container['email_address'];
     }
 
     /**
-     * Sets new_user_email_address
+     * Sets email_address
      *
-     * @param string $new_user_email_address new_user_email_address
+     * @param string $email_address email_address
      *
      * @return $this
      */
-    public function setNewUserEmailAddress($new_user_email_address)
+    public function setEmailAddress($email_address)
     {
-        $this->container['new_user_email_address'] = $new_user_email_address;
+        $this->container['email_address'] = $email_address;
 
         return $this;
     }
 
     /**
-     * Gets new_user_password
+     * Gets password
      *
      * @return string
      */
-    public function getNewUserPassword()
+    public function getPassword()
     {
-        return $this->container['new_user_password'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets new_user_password
+     * Sets password
      *
-     * @param string $new_user_password new_user_password
+     * @param string $password password
      *
      * @return $this
      */
-    public function setNewUserPassword($new_user_password)
+    public function setPassword($password)
     {
-        $this->container['new_user_password'] = $new_user_password;
+        $this->container['password'] = $password;
 
         return $this;
     }
 
     /**
-     * Gets new_user_confirm_password
+     * Gets confirm_password
      *
      * @return string
      */
-    public function getNewUserConfirmPassword()
+    public function getConfirmPassword()
     {
-        return $this->container['new_user_confirm_password'];
+        return $this->container['confirm_password'];
     }
 
     /**
-     * Sets new_user_confirm_password
+     * Sets confirm_password
      *
-     * @param string $new_user_confirm_password new_user_confirm_password
+     * @param string $confirm_password confirm_password
      *
      * @return $this
      */
-    public function setNewUserConfirmPassword($new_user_confirm_password)
+    public function setConfirmPassword($confirm_password)
     {
-        $this->container['new_user_confirm_password'] = $new_user_confirm_password;
+        $this->container['confirm_password'] = $confirm_password;
 
         return $this;
     }
 
     /**
-     * Gets new_user_street_address
+     * Gets street_address
      *
      * @return string|null
      */
-    public function getNewUserStreetAddress()
+    public function getStreetAddress()
     {
-        return $this->container['new_user_street_address'];
+        return $this->container['street_address'];
     }
 
     /**
-     * Sets new_user_street_address
+     * Sets street_address
      *
-     * @param string|null $new_user_street_address new_user_street_address
+     * @param string|null $street_address street_address
      *
      * @return $this
      */
-    public function setNewUserStreetAddress($new_user_street_address)
+    public function setStreetAddress($street_address)
     {
-        $this->container['new_user_street_address'] = $new_user_street_address;
+        $this->container['street_address'] = $street_address;
 
         return $this;
     }
 
     /**
-     * Gets new_user_zip_code
+     * Gets zip_code
      *
      * @return string|null
      */
-    public function getNewUserZipCode()
+    public function getZipCode()
     {
-        return $this->container['new_user_zip_code'];
+        return $this->container['zip_code'];
     }
 
     /**
-     * Sets new_user_zip_code
+     * Sets zip_code
      *
-     * @param string|null $new_user_zip_code new_user_zip_code
+     * @param string|null $zip_code zip_code
      *
      * @return $this
      */
-    public function setNewUserZipCode($new_user_zip_code)
+    public function setZipCode($zip_code)
     {
-        $this->container['new_user_zip_code'] = $new_user_zip_code;
+        $this->container['zip_code'] = $zip_code;
 
         return $this;
     }
 
     /**
-     * Gets new_user_city
+     * Gets city
      *
      * @return string|null
      */
-    public function getNewUserCity()
+    public function getCity()
     {
-        return $this->container['new_user_city'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets new_user_city
+     * Sets city
      *
-     * @param string|null $new_user_city new_user_city
+     * @param string|null $city city
      *
      * @return $this
      */
-    public function setNewUserCity($new_user_city)
+    public function setCity($city)
     {
-        $this->container['new_user_city'] = $new_user_city;
+        $this->container['city'] = $city;
 
         return $this;
     }
 
     /**
-     * Gets new_user_country
+     * Gets country
      *
      * @return string|null
      */
-    public function getNewUserCountry()
+    public function getCountry()
     {
-        return $this->container['new_user_country'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets new_user_country
+     * Sets country
      *
-     * @param string|null $new_user_country new_user_country
+     * @param string|null $country country
      *
      * @return $this
      */
-    public function setNewUserCountry($new_user_country)
+    public function setCountry($country)
     {
-        $this->container['new_user_country'] = $new_user_country;
+        $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets new_user_phone
+     * Gets phone
      *
      * @return string|null
      */
-    public function getNewUserPhone()
+    public function getPhone()
     {
-        return $this->container['new_user_phone'];
+        return $this->container['phone'];
     }
 
     /**
-     * Sets new_user_phone
+     * Sets phone
      *
-     * @param string|null $new_user_phone new_user_phone
+     * @param string|null $phone phone
      *
      * @return $this
      */
-    public function setNewUserPhone($new_user_phone)
+    public function setPhone($phone)
     {
-        $this->container['new_user_phone'] = $new_user_phone;
+        $this->container['phone'] = $phone;
 
         return $this;
     }
