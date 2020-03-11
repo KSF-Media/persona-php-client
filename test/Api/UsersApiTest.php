@@ -133,6 +133,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidPasswordPut
+     *
+     * Set / Change user password.
+     *
+     */
+    public function testUsersUuidPasswordPut()
+    {
+    }
+
+    /**
      * Test case for usersUuidPatch
      *
      * Update a user.

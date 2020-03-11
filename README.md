@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidGdprPut**](docs/Api/UsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *UsersApi* | [**usersUuidGet**](docs/Api/UsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 *UsersApi* | [**usersUuidLegalPut**](docs/Api/UsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
+*UsersApi* | [**usersUuidPasswordPut**](docs/Api/UsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 *UsersApi* | [**usersUuidPatch**](docs/Api/UsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
@@ -120,7 +121,6 @@ Class | Method | HTTP request | Description
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
  - [EntitlementAccess](docs/Model/EntitlementAccess.md)
  - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
- - [ForgotPasswordResponse](docs/Model/ForgotPasswordResponse.md)
  - [GdprConsent](docs/Model/GdprConsent.md)
  - [InlineResponse400](docs/Model/InlineResponse400.md)
  - [InlineResponse400InvalidRequestBody](docs/Model/InlineResponse400InvalidRequestBody.md)
@@ -160,6 +160,7 @@ Class | Method | HTTP request | Description
  - [User](docs/Model/User.md)
  - [UserUpdate](docs/Model/UserUpdate.md)
  - [UserUpdateAddress](docs/Model/UserUpdateAddress.md)
+ - [UserUpdatePassword](docs/Model/UserUpdatePassword.md)
 
 
 ## Documentation For Authorization

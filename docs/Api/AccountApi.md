@@ -66,7 +66,7 @@ No authorization required
 
 ## accountForgotPassPost
 
-> \OpenAPI\Client\Model\ForgotPasswordResponse accountForgotPassPost($body)
+> object[] accountForgotPassPost($body)
 
 Forgot Password
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ForgotPasswordResponse**](../Model/ForgotPasswordResponse.md)
+**object[]**
 
 ### Authorization
 
@@ -120,7 +120,7 @@ No authorization required
 
 ## accountResetForgottenPasswordPost
 
-> \OpenAPI\Client\Model\ForgotPasswordResponse accountResetForgottenPasswordPost($body)
+> object[] accountResetForgottenPasswordPost($body)
 
 Reset a forgotten password with a token
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ForgotPasswordResponse**](../Model/ForgotPasswordResponse.md)
+**object[]**
 
 ### Authorization
 

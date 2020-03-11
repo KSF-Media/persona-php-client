@@ -1,6 +1,6 @@
 <?php
 /**
- * ForgotPasswordResponse
+ * UserUpdatePassword
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ForgotPasswordResponse Class Doc Comment
+ * UserUpdatePassword Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ForgotPasswordResponse implements ModelInterface, ArrayAccess
+class UserUpdatePassword implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ForgotPasswordResponse';
+    protected static $openAPIModelName = 'UserUpdatePassword';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string'
+        'password' => 'string',
+        'confirm_password' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'status' => null
+        'password' => null,
+        'confirm_password' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status'
+        'password' => 'password',
+        'confirm_password' => 'confirmPassword'
     ];
 
     /**
@@ -105,7 +108,8 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus'
+        'password' => 'setPassword',
+        'confirm_password' => 'setConfirmPassword'
     ];
 
     /**
@@ -114,7 +118,8 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus'
+        'password' => 'getPassword',
+        'confirm_password' => 'getConfirmPassword'
     ];
 
     /**
@@ -177,7 +182,8 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['confirm_password'] = isset($data['confirm_password']) ? $data['confirm_password'] : null;
     }
 
     /**
@@ -189,8 +195,11 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
+        }
+        if ($this->container['confirm_password'] === null) {
+            $invalidProperties[] = "'confirm_password' can't be null";
         }
         return $invalidProperties;
     }
@@ -208,25 +217,49 @@ class ForgotPasswordResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets status
+     * Gets password
      *
      * @return string
      */
-    public function getStatus()
+    public function getPassword()
     {
-        return $this->container['status'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets status
+     * Sets password
      *
-     * @param string $status status
+     * @param string $password password
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setPassword($password)
     {
-        $this->container['status'] = $status;
+        $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets confirm_password
+     *
+     * @return string
+     */
+    public function getConfirmPassword()
+    {
+        return $this->container['confirm_password'];
+    }
+
+    /**
+     * Sets confirm_password
+     *
+     * @param string $confirm_password confirm_password
+     *
+     * @return $this
+     */
+    public function setConfirmPassword($confirm_password)
+    {
+        $this->container['confirm_password'] = $confirm_password;
 
         return $this;
     }

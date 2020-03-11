@@ -431,7 +431,7 @@ class AccountApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ForgotPasswordResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
     public function accountForgotPassPost($body)
     {
@@ -448,7 +448,7 @@ class AccountApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ForgotPasswordResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function accountForgotPassPostWithHttpInfo($body)
     {
@@ -485,14 +485,14 @@ class AccountApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ForgotPasswordResponse' === '\SplFileObject') {
+                    if ('object[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForgotPasswordResponse', []),
+                        ObjectSerializer::deserialize($content, 'object[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -522,7 +522,7 @@ class AccountApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ForgotPasswordResponse';
+            $returnType = 'object[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -541,7 +541,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ForgotPasswordResponse',
+                        'object[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -599,7 +599,7 @@ class AccountApi
      */
     public function accountForgotPassPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\ForgotPasswordResponse';
+        $returnType = 'object[]';
         $request = $this->accountForgotPassPostRequest($body);
 
         return $this->client
@@ -738,7 +738,7 @@ class AccountApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ForgotPasswordResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
     public function accountResetForgottenPasswordPost($body)
     {
@@ -755,7 +755,7 @@ class AccountApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ForgotPasswordResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function accountResetForgottenPasswordPostWithHttpInfo($body)
     {
@@ -792,14 +792,14 @@ class AccountApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ForgotPasswordResponse' === '\SplFileObject') {
+                    if ('object[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForgotPasswordResponse', []),
+                        ObjectSerializer::deserialize($content, 'object[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -829,7 +829,7 @@ class AccountApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ForgotPasswordResponse';
+            $returnType = 'object[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -848,7 +848,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ForgotPasswordResponse',
+                        'object[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -906,7 +906,7 @@ class AccountApi
      */
     public function accountResetForgottenPasswordPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\ForgotPasswordResponse';
+        $returnType = 'object[]';
         $request = $this->accountResetForgottenPasswordPostRequest($body);
 
         return $this->client

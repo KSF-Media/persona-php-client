@@ -1,6 +1,6 @@
 <?php
 /**
- * ForgotPasswordResponseTest
+ * UserUpdatePasswordTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ForgotPasswordResponseTest Class Doc Comment
+ * UserUpdatePasswordTest Class Doc Comment
  *
  * @category    Class
- * @description ForgotPasswordResponse
+ * @description UserUpdatePassword
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ForgotPasswordResponseTest extends TestCase
+class UserUpdatePasswordTest extends TestCase
 {
 
     /**
@@ -72,16 +72,23 @@ class ForgotPasswordResponseTest extends TestCase
     }
 
     /**
-     * Test "ForgotPasswordResponse"
+     * Test "UserUpdatePassword"
      */
-    public function testForgotPasswordResponse()
+    public function testUserUpdatePassword()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "password"
      */
-    public function testPropertyStatus()
+    public function testPropertyPassword()
+    {
+    }
+
+    /**
+     * Test attribute "confirm_password"
+     */
+    public function testPropertyConfirmPassword()
     {
     }
 }
