@@ -66,7 +66,8 @@ class User implements ModelInterface, ArrayAccess
         'subs' => '\OpenAPI\Client\Model\Subscription[]',
         'consent' => '\OpenAPI\Client\Model\GdprConsent[]',
         'legal' => '\OpenAPI\Client\Model\LegalConsent[]',
-        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]'
+        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]',
+        'has_completed_registration' => 'bool'
     ];
 
     /**
@@ -84,7 +85,8 @@ class User implements ModelInterface, ArrayAccess
         'subs' => null,
         'consent' => null,
         'legal' => null,
-        'pending_address_changes' => null
+        'pending_address_changes' => null,
+        'has_completed_registration' => null
     ];
 
     /**
@@ -123,7 +125,8 @@ class User implements ModelInterface, ArrayAccess
         'subs' => 'subs',
         'consent' => 'consent',
         'legal' => 'legal',
-        'pending_address_changes' => 'pendingAddressChanges'
+        'pending_address_changes' => 'pendingAddressChanges',
+        'has_completed_registration' => 'hasCompletedRegistration'
     ];
 
     /**
@@ -141,7 +144,8 @@ class User implements ModelInterface, ArrayAccess
         'subs' => 'setSubs',
         'consent' => 'setConsent',
         'legal' => 'setLegal',
-        'pending_address_changes' => 'setPendingAddressChanges'
+        'pending_address_changes' => 'setPendingAddressChanges',
+        'has_completed_registration' => 'setHasCompletedRegistration'
     ];
 
     /**
@@ -159,7 +163,8 @@ class User implements ModelInterface, ArrayAccess
         'subs' => 'getSubs',
         'consent' => 'getConsent',
         'legal' => 'getLegal',
-        'pending_address_changes' => 'getPendingAddressChanges'
+        'pending_address_changes' => 'getPendingAddressChanges',
+        'has_completed_registration' => 'getHasCompletedRegistration'
     ];
 
     /**
@@ -232,6 +237,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['consent'] = isset($data['consent']) ? $data['consent'] : null;
         $this->container['legal'] = isset($data['legal']) ? $data['legal'] : null;
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
+        $this->container['has_completed_registration'] = isset($data['has_completed_registration']) ? $data['has_completed_registration'] : null;
     }
 
     /**
@@ -260,6 +266,9 @@ class User implements ModelInterface, ArrayAccess
         }
         if ($this->container['legal'] === null) {
             $invalidProperties[] = "'legal' can't be null";
+        }
+        if ($this->container['has_completed_registration'] === null) {
+            $invalidProperties[] = "'has_completed_registration' can't be null";
         }
         return $invalidProperties;
     }
@@ -512,6 +521,30 @@ class User implements ModelInterface, ArrayAccess
     public function setPendingAddressChanges($pending_address_changes)
     {
         $this->container['pending_address_changes'] = $pending_address_changes;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_completed_registration
+     *
+     * @return bool
+     */
+    public function getHasCompletedRegistration()
+    {
+        return $this->container['has_completed_registration'];
+    }
+
+    /**
+     * Sets has_completed_registration
+     *
+     * @param bool $has_completed_registration has_completed_registration
+     *
+     * @return $this
+     */
+    public function setHasCompletedRegistration($has_completed_registration)
+    {
+        $this->container['has_completed_registration'] = $has_completed_registration;
 
         return $this;
     }

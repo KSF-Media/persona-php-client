@@ -147,4 +147,11 @@ class UserTest extends TestCase
     public function testPropertyPendingAddressChanges()
     {
     }
+
+    /**
+     * Test attribute "has_completed_registration"
+     */
+    public function testPropertyHasCompletedRegistration()
+    {
+    }
 }
