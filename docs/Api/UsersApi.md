@@ -368,7 +368,7 @@ No authorization required
 
 ## usersUuidPasswordPut
 
-> object[] usersUuidPasswordPut($uuid, $body, $authorization)
+> \OpenAPI\Client\Model\User usersUuidPasswordPut($uuid, $body, $authorization)
 
 Set / Change user password
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object[]**
+[**\OpenAPI\Client\Model\User**](../Model/User.md)
 
 ### Authorization
 

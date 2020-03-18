@@ -1990,7 +1990,7 @@ class UsersApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
     public function usersUuidPasswordPut($uuid, $body, $authorization = null)
     {
@@ -2009,7 +2009,7 @@ class UsersApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidPasswordPutWithHttpInfo($uuid, $body, $authorization = null)
     {
@@ -2046,14 +2046,14 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('object[]' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\User' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'object[]', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2083,7 +2083,7 @@ class UsersApi
                     ];
             }
 
-            $returnType = 'object[]';
+            $returnType = '\OpenAPI\Client\Model\User';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2102,7 +2102,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object[]',
+                        '\OpenAPI\Client\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2164,7 +2164,7 @@ class UsersApi
      */
     public function usersUuidPasswordPutAsyncWithHttpInfo($uuid, $body, $authorization = null)
     {
-        $returnType = 'object[]';
+        $returnType = '\OpenAPI\Client\Model\User';
         $request = $this->usersUuidPasswordPutRequest($uuid, $body, $authorization);
 
         return $this->client
