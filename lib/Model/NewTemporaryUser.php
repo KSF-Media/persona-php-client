@@ -57,7 +57,8 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'email_address' => 'string'
+        'email_address' => 'string',
+        'legal_consents' => '\OpenAPI\Client\Model\LegalConsent[]'
     ];
 
     /**
@@ -66,7 +67,8 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'email_address' => null
+        'email_address' => null,
+        'legal_consents' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email_address' => 'emailAddress'
+        'email_address' => 'emailAddress',
+        'legal_consents' => 'legalConsents'
     ];
 
     /**
@@ -105,7 +108,8 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email_address' => 'setEmailAddress'
+        'email_address' => 'setEmailAddress',
+        'legal_consents' => 'setLegalConsents'
     ];
 
     /**
@@ -114,7 +118,8 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email_address' => 'getEmailAddress'
+        'email_address' => 'getEmailAddress',
+        'legal_consents' => 'getLegalConsents'
     ];
 
     /**
@@ -178,6 +183,7 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
+        $this->container['legal_consents'] = isset($data['legal_consents']) ? $data['legal_consents'] : null;
     }
 
     /**
@@ -191,6 +197,9 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
 
         if ($this->container['email_address'] === null) {
             $invalidProperties[] = "'email_address' can't be null";
+        }
+        if ($this->container['legal_consents'] === null) {
+            $invalidProperties[] = "'legal_consents' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,6 +236,30 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
     public function setEmailAddress($email_address)
     {
         $this->container['email_address'] = $email_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets legal_consents
+     *
+     * @return \OpenAPI\Client\Model\LegalConsent[]
+     */
+    public function getLegalConsents()
+    {
+        return $this->container['legal_consents'];
+    }
+
+    /**
+     * Sets legal_consents
+     *
+     * @param \OpenAPI\Client\Model\LegalConsent[] $legal_consents legal_consents
+     *
+     * @return $this
+     */
+    public function setLegalConsents($legal_consents)
+    {
+        $this->container['legal_consents'] = $legal_consents;
 
         return $this;
     }

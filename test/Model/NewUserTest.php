@@ -147,4 +147,11 @@ class NewUserTest extends TestCase
     public function testPropertyPhone()
     {
     }
+
+    /**
+     * Test attribute "legal_consents"
+     */
+    public function testPropertyLegalConsents()
+    {
+    }
 }

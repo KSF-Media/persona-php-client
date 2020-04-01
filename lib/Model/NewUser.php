@@ -66,7 +66,8 @@ class NewUser implements ModelInterface, ArrayAccess
         'zip_code' => 'string',
         'city' => 'string',
         'country' => 'string',
-        'phone' => 'string'
+        'phone' => 'string',
+        'legal_consents' => '\OpenAPI\Client\Model\LegalConsent[]'
     ];
 
     /**
@@ -84,7 +85,8 @@ class NewUser implements ModelInterface, ArrayAccess
         'zip_code' => null,
         'city' => null,
         'country' => null,
-        'phone' => null
+        'phone' => null,
+        'legal_consents' => null
     ];
 
     /**
@@ -123,7 +125,8 @@ class NewUser implements ModelInterface, ArrayAccess
         'zip_code' => 'zipCode',
         'city' => 'city',
         'country' => 'country',
-        'phone' => 'phone'
+        'phone' => 'phone',
+        'legal_consents' => 'legalConsents'
     ];
 
     /**
@@ -141,7 +144,8 @@ class NewUser implements ModelInterface, ArrayAccess
         'zip_code' => 'setZipCode',
         'city' => 'setCity',
         'country' => 'setCountry',
-        'phone' => 'setPhone'
+        'phone' => 'setPhone',
+        'legal_consents' => 'setLegalConsents'
     ];
 
     /**
@@ -159,7 +163,8 @@ class NewUser implements ModelInterface, ArrayAccess
         'zip_code' => 'getZipCode',
         'city' => 'getCity',
         'country' => 'getCountry',
-        'phone' => 'getPhone'
+        'phone' => 'getPhone',
+        'legal_consents' => 'getLegalConsents'
     ];
 
     /**
@@ -232,6 +237,7 @@ class NewUser implements ModelInterface, ArrayAccess
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['legal_consents'] = isset($data['legal_consents']) ? $data['legal_consents'] : null;
     }
 
     /**
@@ -251,6 +257,9 @@ class NewUser implements ModelInterface, ArrayAccess
         }
         if ($this->container['confirm_password'] === null) {
             $invalidProperties[] = "'confirm_password' can't be null";
+        }
+        if ($this->container['legal_consents'] === null) {
+            $invalidProperties[] = "'legal_consents' can't be null";
         }
         return $invalidProperties;
     }
@@ -503,6 +512,30 @@ class NewUser implements ModelInterface, ArrayAccess
     public function setPhone($phone)
     {
         $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets legal_consents
+     *
+     * @return \OpenAPI\Client\Model\LegalConsent[]
+     */
+    public function getLegalConsents()
+    {
+        return $this->container['legal_consents'];
+    }
+
+    /**
+     * Sets legal_consents
+     *
+     * @param \OpenAPI\Client\Model\LegalConsent[] $legal_consents legal_consents
+     *
+     * @return $this
+     */
+    public function setLegalConsents($legal_consents)
+    {
+        $this->container['legal_consents'] = $legal_consents;
 
         return $this;
     }

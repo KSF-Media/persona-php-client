@@ -84,4 +84,11 @@ class NewTemporaryUserTest extends TestCase
     public function testPropertyEmailAddress()
     {
     }
+
+    /**
+     * Test attribute "legal_consents"
+     */
+    public function testPropertyLegalConsents()
+    {
+    }
 }
