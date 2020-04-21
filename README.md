@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountCodeForTokenPost**](docs/Api/AccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
 *AccountApi* | [**accountForgotPassPost**](docs/Api/AccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *AccountApi* | [**accountResetForgottenPasswordPost**](docs/Api/AccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
+*AdminApi* | [**adminUuidGet**](docs/Api/AdminApi.md#adminuuidget) | **GET** /admin/{uuid} | Get user by admin credentials.
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
