@@ -57,7 +57,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'user_uuid' => 'string',
         'start_at' => 'string',
         'end_at' => 'string'
     ];
@@ -68,7 +67,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'user_uuid' => 'uuid',
         'start_at' => 'yyyy-mm-ddThh:MM:ssZ',
         'end_at' => 'yyyy-mm-ddThh:MM:ssZ'
     ];
@@ -100,7 +98,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_uuid' => 'userUuid',
         'start_at' => 'startAt',
         'end_at' => 'endAt'
     ];
@@ -111,7 +108,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_uuid' => 'setUserUuid',
         'start_at' => 'setStartAt',
         'end_at' => 'setEndAt'
     ];
@@ -122,7 +118,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_uuid' => 'getUserUuid',
         'start_at' => 'getStartAt',
         'end_at' => 'getEndAt'
     ];
@@ -187,7 +182,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_uuid'] = isset($data['user_uuid']) ? $data['user_uuid'] : null;
         $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
         $this->container['end_at'] = isset($data['end_at']) ? $data['end_at'] : null;
     }
@@ -201,9 +195,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['user_uuid'] === null) {
-            $invalidProperties[] = "'user_uuid' can't be null";
-        }
         if ($this->container['start_at'] === null) {
             $invalidProperties[] = "'start_at' can't be null";
         }
@@ -224,30 +215,6 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets user_uuid
-     *
-     * @return string
-     */
-    public function getUserUuid()
-    {
-        return $this->container['user_uuid'];
-    }
-
-    /**
-     * Sets user_uuid
-     *
-     * @param string $user_uuid user_uuid
-     *
-     * @return $this
-     */
-    public function setUserUuid($user_uuid)
-    {
-        $this->container['user_uuid'] = $user_uuid;
-
-        return $this;
-    }
 
     /**
      * Gets start_at

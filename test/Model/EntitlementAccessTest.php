@@ -79,13 +79,6 @@ class EntitlementAccessTest extends TestCase
     }
 
     /**
-     * Test attribute "user_uuid"
-     */
-    public function testPropertyUserUuid()
-    {
-    }
-
-    /**
      * Test attribute "start_at"
      */
     public function testPropertyStartAt()

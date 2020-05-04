@@ -119,15 +119,16 @@ class EntitlementsApi
      * Operation entitlementsAllowPost
      *
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function entitlementsAllowPost($body, $authorization = null)
+    public function entitlementsAllowPost($body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->entitlementsAllowPostWithHttpInfo($body, $authorization);
+        list($response) = $this->entitlementsAllowPostWithHttpInfo($body, $auth_user, $authorization);
         return $response;
     }
 
@@ -135,15 +136,16 @@ class EntitlementsApi
      * Operation entitlementsAllowPostWithHttpInfo
      *
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function entitlementsAllowPostWithHttpInfo($body, $authorization = null)
+    public function entitlementsAllowPostWithHttpInfo($body, $auth_user = null, $authorization = null)
     {
-        $request = $this->entitlementsAllowPostRequest($body, $authorization);
+        $request = $this->entitlementsAllowPostRequest($body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -264,14 +266,15 @@ class EntitlementsApi
      * 
      *
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function entitlementsAllowPostAsync($body, $authorization = null)
+    public function entitlementsAllowPostAsync($body, $auth_user = null, $authorization = null)
     {
-        return $this->entitlementsAllowPostAsyncWithHttpInfo($body, $authorization)
+        return $this->entitlementsAllowPostAsyncWithHttpInfo($body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -285,15 +288,16 @@ class EntitlementsApi
      * 
      *
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function entitlementsAllowPostAsyncWithHttpInfo($body, $authorization = null)
+    public function entitlementsAllowPostAsyncWithHttpInfo($body, $auth_user = null, $authorization = null)
     {
         $returnType = 'object[]';
-        $request = $this->entitlementsAllowPostRequest($body, $authorization);
+        $request = $this->entitlementsAllowPostRequest($body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -333,12 +337,13 @@ class EntitlementsApi
      * Create request for operation 'entitlementsAllowPost'
      *
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function entitlementsAllowPostRequest($body, $authorization = null)
+    protected function entitlementsAllowPostRequest($body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -354,6 +359,10 @@ class EntitlementsApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -434,15 +443,16 @@ class EntitlementsApi
      *
      * @param  string $uuid uuid (required)
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function entitlementsAllowUuidPost($uuid, $body, $authorization = null)
+    public function entitlementsAllowUuidPost($uuid, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->entitlementsAllowUuidPostWithHttpInfo($uuid, $body, $authorization);
+        list($response) = $this->entitlementsAllowUuidPostWithHttpInfo($uuid, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -453,15 +463,16 @@ class EntitlementsApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function entitlementsAllowUuidPostWithHttpInfo($uuid, $body, $authorization = null)
+    public function entitlementsAllowUuidPostWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->entitlementsAllowUuidPostRequest($uuid, $body, $authorization);
+        $request = $this->entitlementsAllowUuidPostRequest($uuid, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -583,14 +594,15 @@ class EntitlementsApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function entitlementsAllowUuidPostAsync($uuid, $body, $authorization = null)
+    public function entitlementsAllowUuidPostAsync($uuid, $body, $auth_user = null, $authorization = null)
     {
-        return $this->entitlementsAllowUuidPostAsyncWithHttpInfo($uuid, $body, $authorization)
+        return $this->entitlementsAllowUuidPostAsyncWithHttpInfo($uuid, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -605,15 +617,16 @@ class EntitlementsApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function entitlementsAllowUuidPostAsyncWithHttpInfo($uuid, $body, $authorization = null)
+    public function entitlementsAllowUuidPostAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
         $returnType = 'object[]';
-        $request = $this->entitlementsAllowUuidPostRequest($uuid, $body, $authorization);
+        $request = $this->entitlementsAllowUuidPostRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -654,12 +667,13 @@ class EntitlementsApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function entitlementsAllowUuidPostRequest($uuid, $body, $authorization = null)
+    protected function entitlementsAllowUuidPostRequest($uuid, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -681,6 +695,10 @@ class EntitlementsApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);

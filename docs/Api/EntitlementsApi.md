@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## entitlementsAllowPost
 
-> object[] entitlementsAllowPost($body, $authorization)
+> object[] entitlementsAllowPost($body, $auth_user, $authorization)
 
 
 
@@ -29,10 +29,11 @@ $apiInstance = new OpenAPI\Client\Api\EntitlementsApi(
     new GuzzleHttp\Client()
 );
 $body = new \OpenAPI\Client\Model\EntitlementAccess(); // \OpenAPI\Client\Model\EntitlementAccess | 
+$auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->entitlementsAllowPost($body, $authorization);
+    $result = $apiInstance->entitlementsAllowPost($body, $auth_user, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EntitlementsApi->entitlementsAllowPost: ', $e->getMessage(), PHP_EOL;
@@ -46,6 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\OpenAPI\Client\Model\EntitlementAccess**](../Model/EntitlementAccess.md)|  |
+ **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
@@ -68,7 +70,7 @@ No authorization required
 
 ## entitlementsAllowUuidPost
 
-> object[] entitlementsAllowUuidPost($uuid, $body, $authorization)
+> object[] entitlementsAllowUuidPost($uuid, $body, $auth_user, $authorization)
 
 Grant product access to a customer
 
@@ -86,10 +88,11 @@ $apiInstance = new OpenAPI\Client\Api\EntitlementsApi(
 );
 $uuid = 'uuid_example'; // string | 
 $body = new \OpenAPI\Client\Model\EntitlementAccess(); // \OpenAPI\Client\Model\EntitlementAccess | 
+$auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->entitlementsAllowUuidPost($uuid, $body, $authorization);
+    $result = $apiInstance->entitlementsAllowUuidPost($uuid, $body, $auth_user, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EntitlementsApi->entitlementsAllowUuidPost: ', $e->getMessage(), PHP_EOL;
@@ -104,6 +107,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **body** | [**\OpenAPI\Client\Model\EntitlementAccess**](../Model/EntitlementAccess.md)|  |
+ **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type

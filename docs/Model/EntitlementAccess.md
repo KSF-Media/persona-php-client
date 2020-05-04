@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_uuid** | **string** |  | 
 **start_at** | **string** |  | 
 **end_at** | **string** |  | 
 
