@@ -119,11 +119,4 @@ class DeliveryReclamationTest extends TestCase
     public function testPropertyClaim()
     {
     }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
 }

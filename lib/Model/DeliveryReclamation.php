@@ -62,8 +62,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'subscription_number' => 'int',
         'date' => '\DateTime',
         'publication_date' => '\DateTime',
-        'claim' => 'string',
-        'status' => 'string'
+        'claim' => 'string'
     ];
 
     /**
@@ -77,8 +76,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'subscription_number' => null,
         'date' => 'date',
         'publication_date' => 'date',
-        'claim' => null,
-        'status' => null
+        'claim' => null
     ];
 
     /**
@@ -113,8 +111,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'subscription_number' => 'subscriptionNumber',
         'date' => 'date',
         'publication_date' => 'publicationDate',
-        'claim' => 'claim',
-        'status' => 'status'
+        'claim' => 'claim'
     ];
 
     /**
@@ -128,8 +125,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'subscription_number' => 'setSubscriptionNumber',
         'date' => 'setDate',
         'publication_date' => 'setPublicationDate',
-        'claim' => 'setClaim',
-        'status' => 'setStatus'
+        'claim' => 'setClaim'
     ];
 
     /**
@@ -143,8 +139,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'subscription_number' => 'getSubscriptionNumber',
         'date' => 'getDate',
         'publication_date' => 'getPublicationDate',
-        'claim' => 'getClaim',
-        'status' => 'getStatus'
+        'claim' => 'getClaim'
     ];
 
     /**
@@ -213,7 +208,6 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['publication_date'] = isset($data['publication_date']) ? $data['publication_date'] : null;
         $this->container['claim'] = isset($data['claim']) ? $data['claim'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
 
     /**
@@ -266,9 +260,6 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         }
         if ($this->container['claim'] === null) {
             $invalidProperties[] = "'claim' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
         }
         return $invalidProperties;
     }
@@ -449,30 +440,6 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     public function setClaim($claim)
     {
         $this->container['claim'] = $claim;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
 
         return $this;
     }

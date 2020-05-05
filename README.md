@@ -106,7 +106,6 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-*UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnopatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Update a delivery reclamation
 
 
 ## Documentation For Models
@@ -118,7 +117,6 @@ Class | Method | HTTP request | Description
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)
  - [DeliveryReclamation](docs/Model/DeliveryReclamation.md)
  - [DeliveryReclamationClaim](docs/Model/DeliveryReclamationClaim.md)
- - [DeliveryReclamationUpdate](docs/Model/DeliveryReclamationUpdate.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
  - [EntitlementAccess](docs/Model/EntitlementAccess.md)
  - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
