@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
+[**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
 
 
 
@@ -710,6 +711,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\DeliveryReclamation**](../Model/DeliveryReclamation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## usersUuidSubscriptionsSubsnoUnpausePost
+
+> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $authorization)
+
+Pause users subscription
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uuid = 'uuid_example'; // string | 
+$subsno = 56; // int | 
+$authorization = 'authorization_example'; // string | 
+
+try {
+    $result = $apiInstance->usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoUnpausePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**string**](../Model/.md)|  |
+ **subsno** | **int**|  |
+ **authorization** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
