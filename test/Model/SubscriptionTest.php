@@ -189,4 +189,11 @@ class SubscriptionTest extends TestCase
     public function testPropertyPaymentMethod()
     {
     }
+
+    /**
+     * Test attribute "payment_method_id"
+     */
+    public function testPropertyPaymentMethodId()
+    {
+    }
 }

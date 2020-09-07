@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **pending_address_changes** | [**\OpenAPI\Client\Model\PendingAddressChange[]**](PendingAddressChange.md) |  | [optional] 
 **order_number** | **string** |  | [optional] 
 **payment_method** | **string** |  | [optional] 
+**payment_method_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -72,7 +72,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'delivery_address' => '\OpenAPI\Client\Model\DeliveryAddress',
         'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]',
         'order_number' => 'string',
-        'payment_method' => 'string'
+        'payment_method' => 'string',
+        'payment_method_id' => 'int'
     ];
 
     /**
@@ -96,7 +97,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'delivery_address' => null,
         'pending_address_changes' => null,
         'order_number' => null,
-        'payment_method' => null
+        'payment_method' => null,
+        'payment_method_id' => null
     ];
 
     /**
@@ -141,7 +143,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'delivery_address' => 'deliveryAddress',
         'pending_address_changes' => 'pendingAddressChanges',
         'order_number' => 'orderNumber',
-        'payment_method' => 'paymentMethod'
+        'payment_method' => 'paymentMethod',
+        'payment_method_id' => 'paymentMethodId'
     ];
 
     /**
@@ -165,7 +168,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'delivery_address' => 'setDeliveryAddress',
         'pending_address_changes' => 'setPendingAddressChanges',
         'order_number' => 'setOrderNumber',
-        'payment_method' => 'setPaymentMethod'
+        'payment_method' => 'setPaymentMethod',
+        'payment_method_id' => 'setPaymentMethodId'
     ];
 
     /**
@@ -189,7 +193,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'delivery_address' => 'getDeliveryAddress',
         'pending_address_changes' => 'getPendingAddressChanges',
         'order_number' => 'getOrderNumber',
-        'payment_method' => 'getPaymentMethod'
+        'payment_method' => 'getPaymentMethod',
+        'payment_method_id' => 'getPaymentMethodId'
     ];
 
     /**
@@ -268,6 +273,7 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
         $this->container['order_number'] = isset($data['order_number']) ? $data['order_number'] : null;
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
+        $this->container['payment_method_id'] = isset($data['payment_method_id']) ? $data['payment_method_id'] : null;
     }
 
     /**
@@ -338,6 +344,14 @@ class Subscription implements ModelInterface, ArrayAccess
         if ($this->container['extsubsexists'] === null) {
             $invalidProperties[] = "'extsubsexists' can't be null";
         }
+        if (!is_null($this->container['payment_method_id']) && ($this->container['payment_method_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'payment_method_id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['payment_method_id']) && ($this->container['payment_method_id'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'payment_method_id', must be bigger than or equal to -9223372036854775808.";
+        }
+
         return $invalidProperties;
     }
 
@@ -765,6 +779,38 @@ class Subscription implements ModelInterface, ArrayAccess
     public function setPaymentMethod($payment_method)
     {
         $this->container['payment_method'] = $payment_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_method_id
+     *
+     * @return int|null
+     */
+    public function getPaymentMethodId()
+    {
+        return $this->container['payment_method_id'];
+    }
+
+    /**
+     * Sets payment_method_id
+     *
+     * @param int|null $payment_method_id payment_method_id
+     *
+     * @return $this
+     */
+    public function setPaymentMethodId($payment_method_id)
+    {
+
+        if (!is_null($payment_method_id) && ($payment_method_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $payment_method_id when calling Subscription., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($payment_method_id) && ($payment_method_id < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $payment_method_id when calling Subscription., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['payment_method_id'] = $payment_method_id;
 
         return $this;
     }
