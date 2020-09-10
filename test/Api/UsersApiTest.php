@@ -153,6 +153,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidSubscriptionsSubsnoAddressChangeDelete
+     *
+     * Delete temporary address change for subscription.
+     *
+     */
+    public function testUsersUuidSubscriptionsSubsnoAddressChangeDelete()
+    {
+    }
+
+    /**
      * Test case for usersUuidSubscriptionsSubsnoAddressChangePost
      *
      * Make a temporary address change for a subscription.
