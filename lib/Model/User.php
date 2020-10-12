@@ -62,7 +62,7 @@ class User implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'address' => '\OpenAPI\Client\Model\Address',
-        'cusno' => 'string',
+        'cusno' => 'int',
         'subs' => '\OpenAPI\Client\Model\Subscription[]',
         'consent' => '\OpenAPI\Client\Model\GdprConsent[]',
         'legal' => '\OpenAPI\Client\Model\LegalConsent[]',
@@ -258,6 +258,14 @@ class User implements ModelInterface, ArrayAccess
         if ($this->container['cusno'] === null) {
             $invalidProperties[] = "'cusno' can't be null";
         }
+        if (($this->container['cusno'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'cusno', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (($this->container['cusno'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'cusno', must be bigger than or equal to -9223372036854775808.";
+        }
+
         if ($this->container['subs'] === null) {
             $invalidProperties[] = "'subs' can't be null";
         }
@@ -408,7 +416,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets cusno
      *
-     * @return string
+     * @return int
      */
     public function getCusno()
     {
@@ -418,12 +426,20 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets cusno
      *
-     * @param string $cusno cusno
+     * @param int $cusno cusno
      *
      * @return $this
      */
     public function setCusno($cusno)
     {
+
+        if (($cusno > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $cusno when calling User., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (($cusno < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $cusno when calling User., must be bigger than or equal to -9223372036854775808.');
+        }
+
         $this->container['cusno'] = $cusno;
 
         return $this;

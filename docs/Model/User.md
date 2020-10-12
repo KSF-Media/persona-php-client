@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **first_name** | **string** |  | [optional] 
 **last_name** | **string** |  | [optional] 
 **address** | [**\OpenAPI\Client\Model\Address**](Address.md) |  | [optional] 
-**cusno** | **string** |  | 
+**cusno** | **int** |  | 
 **subs** | [**\OpenAPI\Client\Model\Subscription[]**](Subscription.md) |  | 
 **consent** | [**\OpenAPI\Client\Model\GdprConsent[]**](GdprConsent.md) |  | 
 **legal** | [**\OpenAPI\Client\Model\LegalConsent[]**](LegalConsent.md) |  | 
