@@ -153,6 +153,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidPaymentsGet
+     *
+     * Get user's subscriptions and payment events.
+     *
+     */
+    public function testUsersUuidPaymentsGet()
+    {
+    }
+
+    /**
      * Test case for usersUuidSubscriptionsSubsnoAddressChangeDelete
      *
      * Delete temporary address change for subscription.

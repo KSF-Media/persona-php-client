@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidLegalPut**](docs/Api/UsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *UsersApi* | [**usersUuidPasswordPut**](docs/Api/UsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 *UsersApi* | [**usersUuidPatch**](docs/Api/UsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+*UsersApi* | [**usersUuidPaymentsGet**](docs/Api/UsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
@@ -151,11 +152,13 @@ Class | Method | HTTP request | Description
  - [PackageOffer](docs/Model/PackageOffer.md)
  - [Paper](docs/Model/Paper.md)
  - [PausedSubscription](docs/Model/PausedSubscription.md)
+ - [Payment](docs/Model/Payment.md)
  - [PendingAddressChange](docs/Model/PendingAddressChange.md)
  - [Product](docs/Model/Product.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionDates](docs/Model/SubscriptionDates.md)
  - [SubscriptionPauseDates](docs/Model/SubscriptionPauseDates.md)
+ - [SubscriptionPayments](docs/Model/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/Model/TemporaryAddressChange.md)
  - [TokenResponse](docs/Model/TokenResponse.md)
  - [UpdatePasswordData](docs/Model/UpdatePasswordData.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Campaign
+ * SubscriptionPayments
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * Campaign Class Doc Comment
+ * SubscriptionPayments Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Campaign implements ModelInterface, ArrayAccess
+class SubscriptionPayments implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Campaign implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Campaign';
+    protected static $openAPIModelName = 'SubscriptionPayments';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,11 @@ class Campaign implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'no' => 'int',
-        'id' => 'string',
+        'subsno' => 'int',
         'name' => 'string',
-        'price_eur' => 'double',
-        'length' => 'int',
-        'length_unit' => 'string'
+        'start_date' => '\DateTime',
+        'last_date' => '\DateTime',
+        'payments' => '\OpenAPI\Client\Model\Payment[]'
     ];
 
     /**
@@ -71,12 +70,11 @@ class Campaign implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'no' => null,
-        'id' => null,
+        'subsno' => null,
         'name' => null,
-        'price_eur' => 'double',
-        'length' => null,
-        'length_unit' => null
+        'start_date' => 'date',
+        'last_date' => 'date',
+        'payments' => null
     ];
 
     /**
@@ -106,12 +104,11 @@ class Campaign implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'no' => 'no',
-        'id' => 'id',
+        'subsno' => 'subsno',
         'name' => 'name',
-        'price_eur' => 'priceEur',
-        'length' => 'length',
-        'length_unit' => 'lengthUnit'
+        'start_date' => 'startDate',
+        'last_date' => 'lastDate',
+        'payments' => 'payments'
     ];
 
     /**
@@ -120,12 +117,11 @@ class Campaign implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'no' => 'setNo',
-        'id' => 'setId',
+        'subsno' => 'setSubsno',
         'name' => 'setName',
-        'price_eur' => 'setPriceEur',
-        'length' => 'setLength',
-        'length_unit' => 'setLengthUnit'
+        'start_date' => 'setStartDate',
+        'last_date' => 'setLastDate',
+        'payments' => 'setPayments'
     ];
 
     /**
@@ -134,12 +130,11 @@ class Campaign implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'no' => 'getNo',
-        'id' => 'getId',
+        'subsno' => 'getSubsno',
         'name' => 'getName',
-        'price_eur' => 'getPriceEur',
-        'length' => 'getLength',
-        'length_unit' => 'getLengthUnit'
+        'start_date' => 'getStartDate',
+        'last_date' => 'getLastDate',
+        'payments' => 'getPayments'
     ];
 
     /**
@@ -202,12 +197,11 @@ class Campaign implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['no'] = isset($data['no']) ? $data['no'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['subsno'] = isset($data['subsno']) ? $data['subsno'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['price_eur'] = isset($data['price_eur']) ? $data['price_eur'] : null;
-        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
-        $this->container['length_unit'] = isset($data['length_unit']) ? $data['length_unit'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['last_date'] = isset($data['last_date']) ? $data['last_date'] : null;
+        $this->container['payments'] = isset($data['payments']) ? $data['payments'] : null;
     }
 
     /**
@@ -219,39 +213,28 @@ class Campaign implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['no'] === null) {
-            $invalidProperties[] = "'no' can't be null";
+        if ($this->container['subsno'] === null) {
+            $invalidProperties[] = "'subsno' can't be null";
         }
-        if (($this->container['no'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'no', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['no'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'no', must be bigger than or equal to -9223372036854775808.";
+        if (($this->container['subsno'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'subsno', must be smaller than or equal to 9223372036854775807.";
         }
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if (($this->container['subsno'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'subsno', must be bigger than or equal to -9223372036854775808.";
         }
+
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['price_eur'] === null) {
-            $invalidProperties[] = "'price_eur' can't be null";
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
-        if ($this->container['length'] === null) {
-            $invalidProperties[] = "'length' can't be null";
+        if ($this->container['last_date'] === null) {
+            $invalidProperties[] = "'last_date' can't be null";
         }
-        if (($this->container['length'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'length', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['length'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'length', must be bigger than or equal to -9223372036854775808.";
-        }
-
-        if ($this->container['length_unit'] === null) {
-            $invalidProperties[] = "'length_unit' can't be null";
+        if ($this->container['payments'] === null) {
+            $invalidProperties[] = "'payments' can't be null";
         }
         return $invalidProperties;
     }
@@ -269,57 +252,33 @@ class Campaign implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets no
+     * Gets subsno
      *
      * @return int
      */
-    public function getNo()
+    public function getSubsno()
     {
-        return $this->container['no'];
+        return $this->container['subsno'];
     }
 
     /**
-     * Sets no
+     * Sets subsno
      *
-     * @param int $no no
+     * @param int $subsno subsno
      *
      * @return $this
      */
-    public function setNo($no)
+    public function setSubsno($subsno)
     {
 
-        if (($no > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $no when calling Campaign., must be smaller than or equal to 9223372036854775807.');
+        if (($subsno > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $subsno when calling SubscriptionPayments., must be smaller than or equal to 9223372036854775807.');
         }
-        if (($no < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $no when calling Campaign., must be bigger than or equal to -9223372036854775808.');
+        if (($subsno < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $subsno when calling SubscriptionPayments., must be bigger than or equal to -9223372036854775808.');
         }
 
-        $this->container['no'] = $no;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
+        $this->container['subsno'] = $subsno;
 
         return $this;
     }
@@ -349,81 +308,73 @@ class Campaign implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets price_eur
+     * Gets start_date
      *
-     * @return double
+     * @return \DateTime
      */
-    public function getPriceEur()
+    public function getStartDate()
     {
-        return $this->container['price_eur'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets price_eur
+     * Sets start_date
      *
-     * @param double $price_eur price_eur
+     * @param \DateTime $start_date start_date
      *
      * @return $this
      */
-    public function setPriceEur($price_eur)
+    public function setStartDate($start_date)
     {
-        $this->container['price_eur'] = $price_eur;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets length
+     * Gets last_date
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getLength()
+    public function getLastDate()
     {
-        return $this->container['length'];
+        return $this->container['last_date'];
     }
 
     /**
-     * Sets length
+     * Sets last_date
      *
-     * @param int $length length
+     * @param \DateTime $last_date last_date
      *
      * @return $this
      */
-    public function setLength($length)
+    public function setLastDate($last_date)
     {
-
-        if (($length > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling Campaign., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($length < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling Campaign., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['length'] = $length;
+        $this->container['last_date'] = $last_date;
 
         return $this;
     }
 
     /**
-     * Gets length_unit
+     * Gets payments
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\Payment[]
      */
-    public function getLengthUnit()
+    public function getPayments()
     {
-        return $this->container['length_unit'];
+        return $this->container['payments'];
     }
 
     /**
-     * Sets length_unit
+     * Sets payments
      *
-     * @param string $length_unit length_unit
+     * @param \OpenAPI\Client\Model\Payment[] $payments payments
      *
      * @return $this
      */
-    public function setLengthUnit($length_unit)
+    public function setPayments($payments)
     {
-        $this->container['length_unit'] = $length_unit;
+        $this->container['payments'] = $payments;
 
         return $this;
     }

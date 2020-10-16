@@ -1,6 +1,6 @@
 <?php
 /**
- * CampaignTest
+ * PaymentTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CampaignTest Class Doc Comment
+ * PaymentTest Class Doc Comment
  *
  * @category    Class
- * @description Campaign
+ * @description Payment
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CampaignTest extends TestCase
+class PaymentTest extends TestCase
 {
 
     /**
@@ -72,51 +72,93 @@ class CampaignTest extends TestCase
     }
 
     /**
-     * Test "Campaign"
+     * Test "Payment"
      */
-    public function testCampaign()
+    public function testPayment()
     {
     }
 
     /**
-     * Test attribute "no"
+     * Test attribute "invno"
      */
-    public function testPropertyNo()
+    public function testPropertyInvno()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "date"
      */
-    public function testPropertyId()
+    public function testPropertyDate()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "due_date"
      */
-    public function testPropertyName()
+    public function testPropertyDueDate()
     {
     }
 
     /**
-     * Test attribute "price_eur"
+     * Test attribute "expenses"
      */
-    public function testPropertyPriceEur()
+    public function testPropertyExpenses()
     {
     }
 
     /**
-     * Test attribute "length"
+     * Test attribute "interest"
      */
-    public function testPropertyLength()
+    public function testPropertyInterest()
     {
     }
 
     /**
-     * Test attribute "length_unit"
+     * Test attribute "vat"
      */
-    public function testPropertyLengthUnit()
+    public function testPropertyVat()
+    {
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+    }
+
+    /**
+     * Test attribute "open_amount"
+     */
+    public function testPropertyOpenAmount()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+    }
+
+    /**
+     * Test attribute "disc_percent"
+     */
+    public function testPropertyDiscPercent()
+    {
+    }
+
+    /**
+     * Test attribute "disc_amount"
+     */
+    public function testPropertyDiscAmount()
     {
     }
 }

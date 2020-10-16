@@ -1,6 +1,6 @@
 <?php
 /**
- * CampaignTest
+ * SubscriptionPaymentsTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CampaignTest Class Doc Comment
+ * SubscriptionPaymentsTest Class Doc Comment
  *
  * @category    Class
- * @description Campaign
+ * @description SubscriptionPayments
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CampaignTest extends TestCase
+class SubscriptionPaymentsTest extends TestCase
 {
 
     /**
@@ -72,23 +72,16 @@ class CampaignTest extends TestCase
     }
 
     /**
-     * Test "Campaign"
+     * Test "SubscriptionPayments"
      */
-    public function testCampaign()
+    public function testSubscriptionPayments()
     {
     }
 
     /**
-     * Test attribute "no"
+     * Test attribute "subsno"
      */
-    public function testPropertyNo()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
+    public function testPropertySubsno()
     {
     }
 
@@ -100,23 +93,23 @@ class CampaignTest extends TestCase
     }
 
     /**
-     * Test attribute "price_eur"
+     * Test attribute "start_date"
      */
-    public function testPropertyPriceEur()
+    public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "length"
+     * Test attribute "last_date"
      */
-    public function testPropertyLength()
+    public function testPropertyLastDate()
     {
     }
 
     /**
-     * Test attribute "length_unit"
+     * Test attribute "payments"
      */
-    public function testPropertyLengthUnit()
+    public function testPropertyPayments()
     {
     }
 }
