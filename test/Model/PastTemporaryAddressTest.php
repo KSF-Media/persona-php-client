@@ -1,6 +1,6 @@
 <?php
 /**
- * UserTest
+ * PastTemporaryAddressTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UserTest Class Doc Comment
+ * PastTemporaryAddressTest Class Doc Comment
  *
  * @category    Class
- * @description User
+ * @description PastTemporaryAddress
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UserTest extends TestCase
+class PastTemporaryAddressTest extends TestCase
 {
 
     /**
@@ -72,93 +72,44 @@ class UserTest extends TestCase
     }
 
     /**
-     * Test "User"
+     * Test "PastTemporaryAddress"
      */
-    public function testUser()
+    public function testPastTemporaryAddress()
     {
     }
 
     /**
-     * Test attribute "uuid"
+     * Test attribute "country_code"
      */
-    public function testPropertyUuid()
+    public function testPropertyCountryCode()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "zipcode"
      */
-    public function testPropertyEmail()
+    public function testPropertyZipcode()
     {
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "city_name"
      */
-    public function testPropertyFirstName()
+    public function testPropertyCityName()
     {
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "street"
      */
-    public function testPropertyLastName()
+    public function testPropertyStreet()
     {
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "temporary_name"
      */
-    public function testPropertyAddress()
-    {
-    }
-
-    /**
-     * Test attribute "cusno"
-     */
-    public function testPropertyCusno()
-    {
-    }
-
-    /**
-     * Test attribute "subs"
-     */
-    public function testPropertySubs()
-    {
-    }
-
-    /**
-     * Test attribute "consent"
-     */
-    public function testPropertyConsent()
-    {
-    }
-
-    /**
-     * Test attribute "legal"
-     */
-    public function testPropertyLegal()
-    {
-    }
-
-    /**
-     * Test attribute "pending_address_changes"
-     */
-    public function testPropertyPendingAddressChanges()
-    {
-    }
-
-    /**
-     * Test attribute "past_temporary_addresses"
-     */
-    public function testPropertyPastTemporaryAddresses()
-    {
-    }
-
-    /**
-     * Test attribute "has_completed_registration"
-     */
-    public function testPropertyHasCompletedRegistration()
+    public function testPropertyTemporaryName()
     {
     }
 }

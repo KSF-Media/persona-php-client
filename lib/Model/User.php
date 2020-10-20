@@ -67,6 +67,7 @@ class User implements ModelInterface, ArrayAccess
         'consent' => '\OpenAPI\Client\Model\GdprConsent[]',
         'legal' => '\OpenAPI\Client\Model\LegalConsent[]',
         'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]',
+        'past_temporary_addresses' => '\OpenAPI\Client\Model\PastTemporaryAddress[]',
         'has_completed_registration' => 'bool'
     ];
 
@@ -86,6 +87,7 @@ class User implements ModelInterface, ArrayAccess
         'consent' => null,
         'legal' => null,
         'pending_address_changes' => null,
+        'past_temporary_addresses' => null,
         'has_completed_registration' => null
     ];
 
@@ -126,6 +128,7 @@ class User implements ModelInterface, ArrayAccess
         'consent' => 'consent',
         'legal' => 'legal',
         'pending_address_changes' => 'pendingAddressChanges',
+        'past_temporary_addresses' => 'pastTemporaryAddresses',
         'has_completed_registration' => 'hasCompletedRegistration'
     ];
 
@@ -145,6 +148,7 @@ class User implements ModelInterface, ArrayAccess
         'consent' => 'setConsent',
         'legal' => 'setLegal',
         'pending_address_changes' => 'setPendingAddressChanges',
+        'past_temporary_addresses' => 'setPastTemporaryAddresses',
         'has_completed_registration' => 'setHasCompletedRegistration'
     ];
 
@@ -164,6 +168,7 @@ class User implements ModelInterface, ArrayAccess
         'consent' => 'getConsent',
         'legal' => 'getLegal',
         'pending_address_changes' => 'getPendingAddressChanges',
+        'past_temporary_addresses' => 'getPastTemporaryAddresses',
         'has_completed_registration' => 'getHasCompletedRegistration'
     ];
 
@@ -237,6 +242,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['consent'] = isset($data['consent']) ? $data['consent'] : null;
         $this->container['legal'] = isset($data['legal']) ? $data['legal'] : null;
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
+        $this->container['past_temporary_addresses'] = isset($data['past_temporary_addresses']) ? $data['past_temporary_addresses'] : null;
         $this->container['has_completed_registration'] = isset($data['has_completed_registration']) ? $data['has_completed_registration'] : null;
     }
 
@@ -274,6 +280,9 @@ class User implements ModelInterface, ArrayAccess
         }
         if ($this->container['legal'] === null) {
             $invalidProperties[] = "'legal' can't be null";
+        }
+        if ($this->container['past_temporary_addresses'] === null) {
+            $invalidProperties[] = "'past_temporary_addresses' can't be null";
         }
         if ($this->container['has_completed_registration'] === null) {
             $invalidProperties[] = "'has_completed_registration' can't be null";
@@ -537,6 +546,30 @@ class User implements ModelInterface, ArrayAccess
     public function setPendingAddressChanges($pending_address_changes)
     {
         $this->container['pending_address_changes'] = $pending_address_changes;
+
+        return $this;
+    }
+
+    /**
+     * Gets past_temporary_addresses
+     *
+     * @return \OpenAPI\Client\Model\PastTemporaryAddress[]
+     */
+    public function getPastTemporaryAddresses()
+    {
+        return $this->container['past_temporary_addresses'];
+    }
+
+    /**
+     * Sets past_temporary_addresses
+     *
+     * @param \OpenAPI\Client\Model\PastTemporaryAddress[] $past_temporary_addresses past_temporary_addresses
+     *
+     * @return $this
+     */
+    public function setPastTemporaryAddresses($past_temporary_addresses)
+    {
+        $this->container['past_temporary_addresses'] = $past_temporary_addresses;
 
         return $this;
     }
