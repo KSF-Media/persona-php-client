@@ -735,6 +735,7 @@ class UsersApi
      * Get users entitlements.
      *
      * @param  string $uuid uuid (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      * @param  string $cache_control cache_control (optional)
      *
@@ -742,9 +743,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return string[]
      */
-    public function usersUuidEntitlementGet($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidEntitlementGet($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        list($response) = $this->usersUuidEntitlementGetWithHttpInfo($uuid, $authorization, $cache_control);
+        list($response) = $this->usersUuidEntitlementGetWithHttpInfo($uuid, $auth_user, $authorization, $cache_control);
         return $response;
     }
 
@@ -754,6 +755,7 @@ class UsersApi
      * Get users entitlements.
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
@@ -761,9 +763,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidEntitlementGetWithHttpInfo($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidEntitlementGetWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        $request = $this->usersUuidEntitlementGetRequest($uuid, $authorization, $cache_control);
+        $request = $this->usersUuidEntitlementGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         try {
             $options = $this->createHttpClientOption();
@@ -844,15 +846,16 @@ class UsersApi
      * Get users entitlements.
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidEntitlementGetAsync($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidEntitlementGetAsync($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        return $this->usersUuidEntitlementGetAsyncWithHttpInfo($uuid, $authorization, $cache_control)
+        return $this->usersUuidEntitlementGetAsyncWithHttpInfo($uuid, $auth_user, $authorization, $cache_control)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -866,16 +869,17 @@ class UsersApi
      * Get users entitlements.
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidEntitlementGetAsyncWithHttpInfo($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidEntitlementGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
         $returnType = 'string[]';
-        $request = $this->usersUuidEntitlementGetRequest($uuid, $authorization, $cache_control);
+        $request = $this->usersUuidEntitlementGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -915,13 +919,14 @@ class UsersApi
      * Create request for operation 'usersUuidEntitlementGet'
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidEntitlementGetRequest($uuid, $authorization = null, $cache_control = null)
+    protected function usersUuidEntitlementGetRequest($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -937,6 +942,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -1026,15 +1035,16 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  \OpenAPI\Client\Model\GdprConsent[] $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidGdprPut($uuid, $body, $authorization = null)
+    public function usersUuidGdprPut($uuid, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidGdprPutWithHttpInfo($uuid, $body, $authorization);
+        list($response) = $this->usersUuidGdprPutWithHttpInfo($uuid, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -1045,15 +1055,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidGdprPutWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidGdprPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidGdprPutRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidGdprPutRequest($uuid, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1175,14 +1186,15 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidGdprPutAsync($uuid, $body, $authorization = null)
+    public function usersUuidGdprPutAsync($uuid, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidGdprPutAsyncWithHttpInfo($uuid, $body, $authorization)
+        return $this->usersUuidGdprPutAsyncWithHttpInfo($uuid, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1197,15 +1209,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidGdprPutAsyncWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidGdprPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\User';
-        $request = $this->usersUuidGdprPutRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidGdprPutRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1246,12 +1259,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidGdprPutRequest($uuid, $body, $authorization = null)
+    protected function usersUuidGdprPutRequest($uuid, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -1273,6 +1287,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -1360,6 +1378,7 @@ class UsersApi
      * Get user by UUID.
      *
      * @param  string $uuid uuid (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      * @param  string $cache_control cache_control (optional)
      *
@@ -1367,9 +1386,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\User
      */
-    public function usersUuidGet($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidGet($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        list($response) = $this->usersUuidGetWithHttpInfo($uuid, $authorization, $cache_control);
+        list($response) = $this->usersUuidGetWithHttpInfo($uuid, $auth_user, $authorization, $cache_control);
         return $response;
     }
 
@@ -1379,6 +1398,7 @@ class UsersApi
      * Get user by UUID.
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
@@ -1386,9 +1406,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidGetWithHttpInfo($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidGetWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        $request = $this->usersUuidGetRequest($uuid, $authorization, $cache_control);
+        $request = $this->usersUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1469,15 +1489,16 @@ class UsersApi
      * Get user by UUID.
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidGetAsync($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidGetAsync($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        return $this->usersUuidGetAsyncWithHttpInfo($uuid, $authorization, $cache_control)
+        return $this->usersUuidGetAsyncWithHttpInfo($uuid, $auth_user, $authorization, $cache_control)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1491,16 +1512,17 @@ class UsersApi
      * Get user by UUID.
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidGetAsyncWithHttpInfo($uuid, $authorization = null, $cache_control = null)
+    public function usersUuidGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
         $returnType = '\OpenAPI\Client\Model\User';
-        $request = $this->usersUuidGetRequest($uuid, $authorization, $cache_control);
+        $request = $this->usersUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1540,13 +1562,14 @@ class UsersApi
      * Create request for operation 'usersUuidGet'
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidGetRequest($uuid, $authorization = null, $cache_control = null)
+    protected function usersUuidGetRequest($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -1562,6 +1585,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -1651,15 +1678,16 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  \OpenAPI\Client\Model\LegalConsent[] $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidLegalPut($uuid, $body, $authorization = null)
+    public function usersUuidLegalPut($uuid, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidLegalPutWithHttpInfo($uuid, $body, $authorization);
+        list($response) = $this->usersUuidLegalPutWithHttpInfo($uuid, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -1670,15 +1698,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidLegalPutWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidLegalPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidLegalPutRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidLegalPutRequest($uuid, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1800,14 +1829,15 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidLegalPutAsync($uuid, $body, $authorization = null)
+    public function usersUuidLegalPutAsync($uuid, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidLegalPutAsyncWithHttpInfo($uuid, $body, $authorization)
+        return $this->usersUuidLegalPutAsyncWithHttpInfo($uuid, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1822,15 +1852,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidLegalPutAsyncWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidLegalPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\User';
-        $request = $this->usersUuidLegalPutRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidLegalPutRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1871,12 +1902,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidLegalPutRequest($uuid, $body, $authorization = null)
+    protected function usersUuidLegalPutRequest($uuid, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -1898,6 +1930,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -1986,15 +2022,16 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdatePassword $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidPasswordPut($uuid, $body, $authorization = null)
+    public function usersUuidPasswordPut($uuid, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidPasswordPutWithHttpInfo($uuid, $body, $authorization);
+        list($response) = $this->usersUuidPasswordPutWithHttpInfo($uuid, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -2005,15 +2042,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidPasswordPutWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidPasswordPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidPasswordPutRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidPasswordPutRequest($uuid, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2135,14 +2173,15 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidPasswordPutAsync($uuid, $body, $authorization = null)
+    public function usersUuidPasswordPutAsync($uuid, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidPasswordPutAsyncWithHttpInfo($uuid, $body, $authorization)
+        return $this->usersUuidPasswordPutAsyncWithHttpInfo($uuid, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2157,15 +2196,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidPasswordPutAsyncWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidPasswordPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\User';
-        $request = $this->usersUuidPasswordPutRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidPasswordPutRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2206,12 +2246,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidPasswordPutRequest($uuid, $body, $authorization = null)
+    protected function usersUuidPasswordPutRequest($uuid, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -2233,6 +2274,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -2321,15 +2366,16 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdate $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidPatch($uuid, $body, $authorization = null)
+    public function usersUuidPatch($uuid, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidPatchWithHttpInfo($uuid, $body, $authorization);
+        list($response) = $this->usersUuidPatchWithHttpInfo($uuid, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -2340,15 +2386,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidPatchWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidPatchWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidPatchRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidPatchRequest($uuid, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2470,14 +2517,15 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidPatchAsync($uuid, $body, $authorization = null)
+    public function usersUuidPatchAsync($uuid, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidPatchAsyncWithHttpInfo($uuid, $body, $authorization)
+        return $this->usersUuidPatchAsyncWithHttpInfo($uuid, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2492,15 +2540,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidPatchAsyncWithHttpInfo($uuid, $body, $authorization = null)
+    public function usersUuidPatchAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\User';
-        $request = $this->usersUuidPatchRequest($uuid, $body, $authorization);
+        $request = $this->usersUuidPatchRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2541,12 +2590,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidPatchRequest($uuid, $body, $authorization = null)
+    protected function usersUuidPatchRequest($uuid, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -2568,6 +2618,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -2655,15 +2709,16 @@ class UsersApi
      * Get user's subscriptions and payment events
      *
      * @param  string $uuid uuid (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SubscriptionPayments[]
      */
-    public function usersUuidPaymentsGet($uuid, $authorization = null)
+    public function usersUuidPaymentsGet($uuid, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidPaymentsGetWithHttpInfo($uuid, $authorization);
+        list($response) = $this->usersUuidPaymentsGetWithHttpInfo($uuid, $auth_user, $authorization);
         return $response;
     }
 
@@ -2673,15 +2728,16 @@ class UsersApi
      * Get user's subscriptions and payment events
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SubscriptionPayments[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidPaymentsGetWithHttpInfo($uuid, $authorization = null)
+    public function usersUuidPaymentsGetWithHttpInfo($uuid, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidPaymentsGetRequest($uuid, $authorization);
+        $request = $this->usersUuidPaymentsGetRequest($uuid, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2762,14 +2818,15 @@ class UsersApi
      * Get user's subscriptions and payment events
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidPaymentsGetAsync($uuid, $authorization = null)
+    public function usersUuidPaymentsGetAsync($uuid, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidPaymentsGetAsyncWithHttpInfo($uuid, $authorization)
+        return $this->usersUuidPaymentsGetAsyncWithHttpInfo($uuid, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2783,15 +2840,16 @@ class UsersApi
      * Get user's subscriptions and payment events
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidPaymentsGetAsyncWithHttpInfo($uuid, $authorization = null)
+    public function usersUuidPaymentsGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\SubscriptionPayments[]';
-        $request = $this->usersUuidPaymentsGetRequest($uuid, $authorization);
+        $request = $this->usersUuidPaymentsGetRequest($uuid, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2831,12 +2889,13 @@ class UsersApi
      * Create request for operation 'usersUuidPaymentsGet'
      *
      * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidPaymentsGetRequest($uuid, $authorization = null)
+    protected function usersUuidPaymentsGetRequest($uuid, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -2852,6 +2911,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -2938,15 +3001,16 @@ class UsersApi
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
      * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangeDelete($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangeDelete($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteWithHttpInfo($uuid, $subsno, $body, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -2958,15 +3022,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangeDeleteWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangeDeleteWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3089,14 +3154,15 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangeDeleteAsync($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangeDeleteAsync($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteAsyncWithHttpInfo($uuid, $subsno, $body, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3112,15 +3178,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangeDeleteAsyncWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangeDeleteAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\Subscription';
-        $request = $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3162,12 +3229,13 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoAddressChangeDeleteRequest($uuid, $subsno, $body, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoAddressChangeDeleteRequest($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -3202,6 +3270,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -3299,15 +3371,16 @@ class UsersApi
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
      * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangePost($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangePost($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoAddressChangePostWithHttpInfo($uuid, $subsno, $body, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoAddressChangePostWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -3319,15 +3392,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangePostWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangePostWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoAddressChangePostRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoAddressChangePostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3450,14 +3524,15 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangePostAsync($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangePostAsync($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoAddressChangePostAsyncWithHttpInfo($uuid, $subsno, $body, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoAddressChangePostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3473,15 +3548,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoAddressChangePostAsyncWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoAddressChangePostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\Subscription';
-        $request = $this->usersUuidSubscriptionsSubsnoAddressChangePostRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoAddressChangePostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3523,12 +3599,13 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoAddressChangePostRequest($uuid, $subsno, $body, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoAddressChangePostRequest($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -3563,6 +3640,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -3660,15 +3741,16 @@ class UsersApi
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
      * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoPausePostWithHttpInfo($uuid, $subsno, $body, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoPausePostWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -3680,15 +3762,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoPausePostWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoPausePostWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3811,14 +3894,15 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoPausePostAsync($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoPausePostAsync($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoPausePostAsyncWithHttpInfo($uuid, $subsno, $body, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoPausePostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3834,15 +3918,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoPausePostAsyncWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoPausePostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\Subscription';
-        $request = $this->usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3884,12 +3969,13 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -3924,6 +4010,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -4021,15 +4111,16 @@ class UsersApi
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
      * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body body (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\DeliveryReclamation|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
      */
-    public function usersUuidSubscriptionsSubsnoReclamationPost($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationPost($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoReclamationPostWithHttpInfo($uuid, $subsno, $body, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoReclamationPostWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization);
         return $response;
     }
 
@@ -4041,15 +4132,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\DeliveryReclamation|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoReclamationPostWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationPostWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoReclamationPostRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationPostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4172,14 +4264,15 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoReclamationPostAsync($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationPostAsync($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoReclamationPostAsyncWithHttpInfo($uuid, $subsno, $body, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoReclamationPostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4195,15 +4288,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoReclamationPostAsyncWithHttpInfo($uuid, $subsno, $body, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationPostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
-        $request = $this->usersUuidSubscriptionsSubsnoReclamationPostRequest($uuid, $subsno, $body, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationPostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4245,12 +4339,13 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoReclamationPostRequest($uuid, $subsno, $body, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoReclamationPostRequest($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -4285,6 +4380,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -4382,15 +4481,16 @@ class UsersApi
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
      * @param  int $reclaimno reclaimno (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\DeliveryReclamation
      */
-    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $auth_user, $authorization);
         return $response;
     }
 
@@ -4402,15 +4502,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  int $reclaimno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\DeliveryReclamation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4493,14 +4594,15 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  int $reclaimno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsync($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsync($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4516,15 +4618,16 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  int $reclaimno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
-        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4566,12 +4669,13 @@ class UsersApi
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  int $reclaimno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -4613,6 +4717,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
@@ -4714,15 +4822,16 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
+     * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Subscription
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $auth_user, $authorization);
         return $response;
     }
 
@@ -4733,15 +4842,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4823,14 +4933,15 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePostAsync($uuid, $subsno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePostAsync($uuid, $subsno, $auth_user = null, $authorization = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4845,15 +4956,16 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null)
     {
         $returnType = '\OpenAPI\Client\Model\Subscription';
-        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4894,12 +5006,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
+     * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -4928,6 +5041,10 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
         // header params
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
