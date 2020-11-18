@@ -73,6 +73,16 @@ class AdminApiTest extends TestCase
     }
 
     /**
+     * Test case for adminSearchGet
+     *
+     * Search for users.
+     *
+     */
+    public function testAdminSearchGet()
+    {
+    }
+
+    /**
      * Test case for adminUuidGet
      *
      * Get user by admin credentials..

@@ -116,22 +116,308 @@ class AdminApi
     }
 
     /**
+     * Operation adminSearchGet
+     *
+     * Search for users
+     *
+     * @param  string $query query (required)
+     * @param  string $auth_user auth_user (optional)
+     * @param  string $authorization authorization (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\User[]
+     */
+    public function adminSearchGet($query, $auth_user = null, $authorization = null)
+    {
+        list($response) = $this->adminSearchGetWithHttpInfo($query, $auth_user, $authorization);
+        return $response;
+    }
+
+    /**
+     * Operation adminSearchGetWithHttpInfo
+     *
+     * Search for users
+     *
+     * @param  string $query (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\User[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function adminSearchGetWithHttpInfo($query, $auth_user = null, $authorization = null)
+    {
+        $request = $this->adminSearchGetRequest($query, $auth_user, $authorization);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\User[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\User[]';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\User[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation adminSearchGetAsync
+     *
+     * Search for users
+     *
+     * @param  string $query (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adminSearchGetAsync($query, $auth_user = null, $authorization = null)
+    {
+        return $this->adminSearchGetAsyncWithHttpInfo($query, $auth_user, $authorization)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation adminSearchGetAsyncWithHttpInfo
+     *
+     * Search for users
+     *
+     * @param  string $query (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adminSearchGetAsyncWithHttpInfo($query, $auth_user = null, $authorization = null)
+    {
+        $returnType = '\OpenAPI\Client\Model\User[]';
+        $request = $this->adminSearchGetRequest($query, $auth_user, $authorization);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'adminSearchGet'
+     *
+     * @param  string $query (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function adminSearchGetRequest($query, $auth_user = null, $authorization = null)
+    {
+        // verify the required parameter 'query' is set
+        if ($query === null || (is_array($query) && count($query) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $query when calling adminSearchGet'
+            );
+        }
+
+        $resourcePath = '/admin/search';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($query !== null) {
+            $queryParams['query'] = ObjectSerializer::toQueryValue($query);
+        }
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json;charset=utf-8']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json;charset=utf-8'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation adminUuidGet
      *
      * Get user by admin credentials.
      *
      * @param  string $uuid uuid (required)
-     * @param  string $authorization authorization (optional)
      * @param  string $auth_user auth_user (optional)
+     * @param  string $authorization authorization (optional)
      * @param  string $cache_control cache_control (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\User
      */
-    public function adminUuidGet($uuid, $authorization = null, $auth_user = null, $cache_control = null)
+    public function adminUuidGet($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        list($response) = $this->adminUuidGetWithHttpInfo($uuid, $authorization, $auth_user, $cache_control);
+        list($response) = $this->adminUuidGetWithHttpInfo($uuid, $auth_user, $authorization, $cache_control);
         return $response;
     }
 
@@ -141,17 +427,17 @@ class AdminApi
      * Get user by admin credentials.
      *
      * @param  string $uuid (required)
-     * @param  string $authorization (optional)
      * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function adminUuidGetWithHttpInfo($uuid, $authorization = null, $auth_user = null, $cache_control = null)
+    public function adminUuidGetWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        $request = $this->adminUuidGetRequest($uuid, $authorization, $auth_user, $cache_control);
+        $request = $this->adminUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         try {
             $options = $this->createHttpClientOption();
@@ -232,16 +518,16 @@ class AdminApi
      * Get user by admin credentials.
      *
      * @param  string $uuid (required)
-     * @param  string $authorization (optional)
      * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminUuidGetAsync($uuid, $authorization = null, $auth_user = null, $cache_control = null)
+    public function adminUuidGetAsync($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        return $this->adminUuidGetAsyncWithHttpInfo($uuid, $authorization, $auth_user, $cache_control)
+        return $this->adminUuidGetAsyncWithHttpInfo($uuid, $auth_user, $authorization, $cache_control)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -255,17 +541,17 @@ class AdminApi
      * Get user by admin credentials.
      *
      * @param  string $uuid (required)
-     * @param  string $authorization (optional)
      * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminUuidGetAsyncWithHttpInfo($uuid, $authorization = null, $auth_user = null, $cache_control = null)
+    public function adminUuidGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
         $returnType = '\OpenAPI\Client\Model\User';
-        $request = $this->adminUuidGetRequest($uuid, $authorization, $auth_user, $cache_control);
+        $request = $this->adminUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -305,14 +591,14 @@ class AdminApi
      * Create request for operation 'adminUuidGet'
      *
      * @param  string $uuid (required)
-     * @param  string $authorization (optional)
      * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function adminUuidGetRequest($uuid, $authorization = null, $auth_user = null, $cache_control = null)
+    protected function adminUuidGetRequest($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -329,12 +615,12 @@ class AdminApi
         $multipart = false;
 
         // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
-        }
-        // header params
         if ($auth_user !== null) {
             $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
         }
         // header params
         if ($cache_control !== null) {

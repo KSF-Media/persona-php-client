@@ -198,6 +198,9 @@ class PausedSubscription implements ModelInterface, ArrayAccess
         if ($this->container['start_date'] === null) {
             $invalidProperties[] = "'start_date' can't be null";
         }
+        if ($this->container['end_date'] === null) {
+            $invalidProperties[] = "'end_date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -240,7 +243,7 @@ class PausedSubscription implements ModelInterface, ArrayAccess
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return \DateTime
      */
     public function getEndDate()
     {
@@ -250,7 +253,7 @@ class PausedSubscription implements ModelInterface, ArrayAccess
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param \DateTime $end_date end_date
      *
      * @return $this
      */
