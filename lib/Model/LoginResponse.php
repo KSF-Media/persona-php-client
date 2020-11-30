@@ -59,7 +59,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'token' => 'string',
         'sso_code' => 'string',
-        'uuid' => 'string'
+        'uuid' => 'string',
+        'is_admin' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'token' => null,
         'sso_code' => null,
-        'uuid' => 'uuid'
+        'uuid' => 'uuid',
+        'is_admin' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'token' => 'token',
         'sso_code' => 'ssoCode',
-        'uuid' => 'uuid'
+        'uuid' => 'uuid',
+        'is_admin' => 'isAdmin'
     ];
 
     /**
@@ -113,7 +116,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
     protected static $setters = [
         'token' => 'setToken',
         'sso_code' => 'setSsoCode',
-        'uuid' => 'setUuid'
+        'uuid' => 'setUuid',
+        'is_admin' => 'setIsAdmin'
     ];
 
     /**
@@ -124,7 +128,8 @@ class LoginResponse implements ModelInterface, ArrayAccess
     protected static $getters = [
         'token' => 'getToken',
         'sso_code' => 'getSsoCode',
-        'uuid' => 'getUuid'
+        'uuid' => 'getUuid',
+        'is_admin' => 'getIsAdmin'
     ];
 
     /**
@@ -190,6 +195,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
         $this->container['token'] = isset($data['token']) ? $data['token'] : null;
         $this->container['sso_code'] = isset($data['sso_code']) ? $data['sso_code'] : null;
         $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['is_admin'] = isset($data['is_admin']) ? $data['is_admin'] : null;
     }
 
     /**
@@ -206,6 +212,9 @@ class LoginResponse implements ModelInterface, ArrayAccess
         }
         if ($this->container['uuid'] === null) {
             $invalidProperties[] = "'uuid' can't be null";
+        }
+        if ($this->container['is_admin'] === null) {
+            $invalidProperties[] = "'is_admin' can't be null";
         }
         return $invalidProperties;
     }
@@ -290,6 +299,30 @@ class LoginResponse implements ModelInterface, ArrayAccess
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_admin
+     *
+     * @return bool
+     */
+    public function getIsAdmin()
+    {
+        return $this->container['is_admin'];
+    }
+
+    /**
+     * Sets is_admin
+     *
+     * @param bool $is_admin is_admin
+     *
+     * @return $this
+     */
+    public function setIsAdmin($is_admin)
+    {
+        $this->container['is_admin'] = $is_admin;
 
         return $this;
     }

@@ -98,4 +98,11 @@ class LoginResponseTest extends TestCase
     public function testPropertyUuid()
     {
     }
+
+    /**
+     * Test attribute "is_admin"
+     */
+    public function testPropertyIsAdmin()
+    {
+    }
 }
