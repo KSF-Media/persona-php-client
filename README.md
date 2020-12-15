@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidPaymentsGet**](docs/Api/UsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
+*UsersApi* | [**usersUuidSubscriptionsSubsnoCancelPut**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnocancelput) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
@@ -117,6 +118,7 @@ Class | Method | HTTP request | Description
  - [ActiveDays](docs/Model/ActiveDays.md)
  - [Address](docs/Model/Address.md)
  - [Campaign](docs/Model/Campaign.md)
+ - [CancelSubscriptionReason](docs/Model/CancelSubscriptionReason.md)
  - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeleteTempAddressChangeDates](docs/Model/DeleteTempAddressChangeDates.md)
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)

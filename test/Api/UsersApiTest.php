@@ -193,6 +193,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidSubscriptionsSubsnoCancelPut
+     *
+     * Cancels user subscription.
+     *
+     */
+    public function testUsersUuidSubscriptionsSubsnoCancelPut()
+    {
+    }
+
+    /**
      * Test case for usersUuidSubscriptionsSubsnoPausePost
      *
      * Pause users subscription.
