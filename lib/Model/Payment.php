@@ -68,7 +68,8 @@ class Payment implements ModelInterface, ArrayAccess
         'type' => 'string',
         'state' => 'string',
         'disc_percent' => 'double',
-        'disc_amount' => 'double'
+        'disc_amount' => 'double',
+        'reference' => 'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class Payment implements ModelInterface, ArrayAccess
         'type' => null,
         'state' => null,
         'disc_percent' => 'double',
-        'disc_amount' => 'double'
+        'disc_amount' => 'double',
+        'reference' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class Payment implements ModelInterface, ArrayAccess
         'type' => 'type',
         'state' => 'state',
         'disc_percent' => 'discPercent',
-        'disc_amount' => 'discAmount'
+        'disc_amount' => 'discAmount',
+        'reference' => 'reference'
     ];
 
     /**
@@ -149,7 +152,8 @@ class Payment implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'state' => 'setState',
         'disc_percent' => 'setDiscPercent',
-        'disc_amount' => 'setDiscAmount'
+        'disc_amount' => 'setDiscAmount',
+        'reference' => 'setReference'
     ];
 
     /**
@@ -169,7 +173,8 @@ class Payment implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'state' => 'getState',
         'disc_percent' => 'getDiscPercent',
-        'disc_amount' => 'getDiscAmount'
+        'disc_amount' => 'getDiscAmount',
+        'reference' => 'getReference'
     ];
 
     /**
@@ -244,6 +249,7 @@ class Payment implements ModelInterface, ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['disc_percent'] = isset($data['disc_percent']) ? $data['disc_percent'] : null;
         $this->container['disc_amount'] = isset($data['disc_amount']) ? $data['disc_amount'] : null;
+        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
     }
 
     /**
@@ -600,6 +606,30 @@ class Payment implements ModelInterface, ArrayAccess
     public function setDiscAmount($disc_amount)
     {
         $this->container['disc_amount'] = $disc_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference
+     *
+     * @return string|null
+     */
+    public function getReference()
+    {
+        return $this->container['reference'];
+    }
+
+    /**
+     * Sets reference
+     *
+     * @param string|null $reference reference
+     *
+     * @return $this
+     */
+    public function setReference($reference)
+    {
+        $this->container['reference'] = $reference;
 
         return $this;
     }

@@ -161,4 +161,11 @@ class PaymentTest extends TestCase
     public function testPropertyDiscAmount()
     {
     }
+
+    /**
+     * Test attribute "reference"
+     */
+    public function testPropertyReference()
+    {
+    }
 }

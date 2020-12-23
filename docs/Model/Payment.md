@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **state** | **string** |  | 
 **disc_percent** | **double** |  | [optional] 
 **disc_amount** | **double** |  | [optional] 
+**reference** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
