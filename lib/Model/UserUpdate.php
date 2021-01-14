@@ -59,7 +59,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'address' => '\OpenAPI\Client\Model\UserUpdateAddress'
+        'address' => '\OpenAPI\Client\Model\UserUpdateAddress',
+        'pending_address_changes' => 'object[]'
     ];
 
     /**
@@ -70,7 +71,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'address' => null
+        'address' => null,
+        'pending_address_changes' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'firstName',
         'last_name' => 'lastName',
-        'address' => 'address'
+        'address' => 'address',
+        'pending_address_changes' => 'pendingAddressChanges'
     ];
 
     /**
@@ -113,7 +116,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'address' => 'setAddress'
+        'address' => 'setAddress',
+        'pending_address_changes' => 'setPendingAddressChanges'
     ];
 
     /**
@@ -124,7 +128,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'address' => 'getAddress'
+        'address' => 'getAddress',
+        'pending_address_changes' => 'getPendingAddressChanges'
     ];
 
     /**
@@ -190,6 +195,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
     }
 
     /**
@@ -302,6 +308,30 @@ class UserUpdate implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_address_changes
+     *
+     * @return object[]|null
+     */
+    public function getPendingAddressChanges()
+    {
+        return $this->container['pending_address_changes'];
+    }
+
+    /**
+     * Sets pending_address_changes
+     *
+     * @param object[]|null $pending_address_changes pending_address_changes
+     *
+     * @return $this
+     */
+    public function setPendingAddressChanges($pending_address_changes)
+    {
+        $this->container['pending_address_changes'] = $pending_address_changes;
 
         return $this;
     }

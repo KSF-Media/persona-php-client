@@ -98,4 +98,11 @@ class UserUpdateTest extends TestCase
     public function testPropertyAddress()
     {
     }
+
+    /**
+     * Test attribute "pending_address_changes"
+     */
+    public function testPropertyPendingAddressChanges()
+    {
+    }
 }
