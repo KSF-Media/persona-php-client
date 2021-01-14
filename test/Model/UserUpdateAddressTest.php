@@ -98,4 +98,11 @@ class UserUpdateAddressTest extends TestCase
     public function testPropertyStreetAddress()
     {
     }
+
+    /**
+     * Test attribute "valid_from"
+     */
+    public function testPropertyValidFrom()
+    {
+    }
 }

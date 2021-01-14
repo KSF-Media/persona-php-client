@@ -59,7 +59,8 @@ class UserUpdateAddress implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'country_code' => 'string',
         'zip_code' => 'string',
-        'street_address' => 'string'
+        'street_address' => 'string',
+        'valid_from' => '\DateTime'
     ];
 
     /**
@@ -70,7 +71,8 @@ class UserUpdateAddress implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'country_code' => null,
         'zip_code' => null,
-        'street_address' => null
+        'street_address' => null,
+        'valid_from' => 'date'
     ];
 
     /**
@@ -102,7 +104,8 @@ class UserUpdateAddress implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'country_code' => 'countryCode',
         'zip_code' => 'zipCode',
-        'street_address' => 'streetAddress'
+        'street_address' => 'streetAddress',
+        'valid_from' => 'validFrom'
     ];
 
     /**
@@ -113,7 +116,8 @@ class UserUpdateAddress implements ModelInterface, ArrayAccess
     protected static $setters = [
         'country_code' => 'setCountryCode',
         'zip_code' => 'setZipCode',
-        'street_address' => 'setStreetAddress'
+        'street_address' => 'setStreetAddress',
+        'valid_from' => 'setValidFrom'
     ];
 
     /**
@@ -124,7 +128,8 @@ class UserUpdateAddress implements ModelInterface, ArrayAccess
     protected static $getters = [
         'country_code' => 'getCountryCode',
         'zip_code' => 'getZipCode',
-        'street_address' => 'getStreetAddress'
+        'street_address' => 'getStreetAddress',
+        'valid_from' => 'getValidFrom'
     ];
 
     /**
@@ -190,6 +195,7 @@ class UserUpdateAddress implements ModelInterface, ArrayAccess
         $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
         $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
         $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
     }
 
     /**
@@ -293,6 +299,30 @@ class UserUpdateAddress implements ModelInterface, ArrayAccess
     public function setStreetAddress($street_address)
     {
         $this->container['street_address'] = $street_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_from
+     *
+     * @return \DateTime|null
+     */
+    public function getValidFrom()
+    {
+        return $this->container['valid_from'];
+    }
+
+    /**
+     * Sets valid_from
+     *
+     * @param \DateTime|null $valid_from valid_from
+     *
+     * @return $this
+     */
+    public function setValidFrom($valid_from)
+    {
+        $this->container['valid_from'] = $valid_from;
 
         return $this;
     }
