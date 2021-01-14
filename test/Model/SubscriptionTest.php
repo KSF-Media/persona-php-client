@@ -163,6 +163,13 @@ class SubscriptionTest extends TestCase
     }
 
     /**
+     * Test attribute "receiver"
+     */
+    public function testPropertyReceiver()
+    {
+    }
+
+    /**
      * Test attribute "delivery_address"
      */
     public function testPropertyDeliveryAddress()

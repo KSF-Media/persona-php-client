@@ -69,6 +69,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'extsubsexists' => 'bool',
         'campaign' => '\OpenAPI\Client\Model\Campaign',
         'paused' => '\OpenAPI\Client\Model\PausedSubscription[]',
+        'receiver' => 'string',
         'delivery_address' => '\OpenAPI\Client\Model\DeliveryAddress',
         'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]',
         'order_number' => 'string',
@@ -94,6 +95,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'extsubsexists' => null,
         'campaign' => null,
         'paused' => null,
+        'receiver' => null,
         'delivery_address' => null,
         'pending_address_changes' => null,
         'order_number' => null,
@@ -140,6 +142,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'extsubsexists' => 'extsubsexists',
         'campaign' => 'campaign',
         'paused' => 'paused',
+        'receiver' => 'receiver',
         'delivery_address' => 'deliveryAddress',
         'pending_address_changes' => 'pendingAddressChanges',
         'order_number' => 'orderNumber',
@@ -165,6 +168,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'extsubsexists' => 'setExtsubsexists',
         'campaign' => 'setCampaign',
         'paused' => 'setPaused',
+        'receiver' => 'setReceiver',
         'delivery_address' => 'setDeliveryAddress',
         'pending_address_changes' => 'setPendingAddressChanges',
         'order_number' => 'setOrderNumber',
@@ -190,6 +194,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'extsubsexists' => 'getExtsubsexists',
         'campaign' => 'getCampaign',
         'paused' => 'getPaused',
+        'receiver' => 'getReceiver',
         'delivery_address' => 'getDeliveryAddress',
         'pending_address_changes' => 'getPendingAddressChanges',
         'order_number' => 'getOrderNumber',
@@ -269,6 +274,7 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['extsubsexists'] = isset($data['extsubsexists']) ? $data['extsubsexists'] : null;
         $this->container['campaign'] = isset($data['campaign']) ? $data['campaign'] : null;
         $this->container['paused'] = isset($data['paused']) ? $data['paused'] : null;
+        $this->container['receiver'] = isset($data['receiver']) ? $data['receiver'] : null;
         $this->container['delivery_address'] = isset($data['delivery_address']) ? $data['delivery_address'] : null;
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
         $this->container['order_number'] = isset($data['order_number']) ? $data['order_number'] : null;
@@ -683,6 +689,30 @@ class Subscription implements ModelInterface, ArrayAccess
     public function setPaused($paused)
     {
         $this->container['paused'] = $paused;
+
+        return $this;
+    }
+
+    /**
+     * Gets receiver
+     *
+     * @return string|null
+     */
+    public function getReceiver()
+    {
+        return $this->container['receiver'];
+    }
+
+    /**
+     * Sets receiver
+     *
+     * @param string|null $receiver receiver
+     *
+     * @return $this
+     */
+    public function setReceiver($receiver)
+    {
+        $this->container['receiver'] = $receiver;
 
         return $this;
     }

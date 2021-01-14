@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **extsubsexists** | **bool** |  | 
 **campaign** | [**\OpenAPI\Client\Model\Campaign**](Campaign.md) |  | [optional] 
 **paused** | [**\OpenAPI\Client\Model\PausedSubscription[]**](PausedSubscription.md) |  | [optional] 
+**receiver** | **string** |  | [optional] 
 **delivery_address** | [**\OpenAPI\Client\Model\DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
 **pending_address_changes** | [**\OpenAPI\Client\Model\PendingAddressChange[]**](PendingAddressChange.md) |  | [optional] 
 **order_number** | **string** |  | [optional] 
