@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangeDelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangePost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoCancelPut**](UsersApi.md#usersUuidSubscriptionsSubsnoCancelPut) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
+[**usersUuidSubscriptionsSubsnoPausePatch**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/pause | Edit pause duration
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
@@ -793,6 +794,70 @@ Name | Type | Description  | Notes
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
  **body** | [**\OpenAPI\Client\Model\CancelSubscriptionReason**](../Model/CancelSubscriptionReason.md)|  |
+ **auth_user** | [**string**](../Model/.md)|  | [optional]
+ **authorization** | **string**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## usersUuidSubscriptionsSubsnoPausePatch
+
+> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoPausePatch($uuid, $subsno, $body, $auth_user, $authorization)
+
+Edit pause duration
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$uuid = 'uuid_example'; // string | 
+$subsno = 56; // int | 
+$body = new \OpenAPI\Client\Model\SubscriptionPauseEdit(); // \OpenAPI\Client\Model\SubscriptionPauseEdit | 
+$auth_user = 'auth_user_example'; // string | 
+$authorization = 'authorization_example'; // string | 
+
+try {
+    $result = $apiInstance->usersUuidSubscriptionsSubsnoPausePatch($uuid, $subsno, $body, $auth_user, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoPausePatch: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**string**](../Model/.md)|  |
+ **subsno** | **int**|  |
+ **body** | [**\OpenAPI\Client\Model\SubscriptionPauseEdit**](../Model/SubscriptionPauseEdit.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 

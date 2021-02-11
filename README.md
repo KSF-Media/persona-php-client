@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoCancelPut**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnocancelput) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
+*UsersApi* | [**usersUuidSubscriptionsSubsnoPausePatch**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/pause | Edit pause duration
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
@@ -162,6 +163,7 @@ Class | Method | HTTP request | Description
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionDates](docs/Model/SubscriptionDates.md)
  - [SubscriptionPauseDates](docs/Model/SubscriptionPauseDates.md)
+ - [SubscriptionPauseEdit](docs/Model/SubscriptionPauseEdit.md)
  - [SubscriptionPayments](docs/Model/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/Model/TemporaryAddressChange.md)
  - [TokenResponse](docs/Model/TokenResponse.md)

@@ -203,6 +203,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidSubscriptionsSubsnoPausePatch
+     *
+     * Edit pause duration.
+     *
+     */
+    public function testUsersUuidSubscriptionsSubsnoPausePatch()
+    {
+    }
+
+    /**
      * Test case for usersUuidSubscriptionsSubsnoPausePost
      *
      * Pause users subscription.
