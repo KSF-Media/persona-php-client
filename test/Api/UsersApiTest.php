@@ -183,6 +183,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidSubscriptionsSubsnoAddressChangePatch
+     *
+     * Edit temporary address change dates of a subscription.
+     *
+     */
+    public function testUsersUuidSubscriptionsSubsnoAddressChangePatch()
+    {
+    }
+
+    /**
      * Test case for usersUuidSubscriptionsSubsnoAddressChangePost
      *
      * Make a temporary address change for a subscription.

@@ -3650,6 +3650,376 @@ class UsersApi
     }
 
     /**
+     * Operation usersUuidSubscriptionsSubsnoAddressChangePatch
+     *
+     * Edit temporary address change dates of a subscription
+     *
+     * @param  string $uuid uuid (required)
+     * @param  int $subsno subsno (required)
+     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body body (required)
+     * @param  string $auth_user auth_user (optional)
+     * @param  string $authorization authorization (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     */
+    public function usersUuidSubscriptionsSubsnoAddressChangePatch($uuid, $subsno, $body, $auth_user = null, $authorization = null)
+    {
+        list($response) = $this->usersUuidSubscriptionsSubsnoAddressChangePatchWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization);
+        return $response;
+    }
+
+    /**
+     * Operation usersUuidSubscriptionsSubsnoAddressChangePatchWithHttpInfo
+     *
+     * Edit temporary address change dates of a subscription
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function usersUuidSubscriptionsSubsnoAddressChangePatchWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
+    {
+        $request = $this->usersUuidSubscriptionsSubsnoAddressChangePatchRequest($uuid, $subsno, $body, $auth_user, $authorization);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\Subscription',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation usersUuidSubscriptionsSubsnoAddressChangePatchAsync
+     *
+     * Edit temporary address change dates of a subscription
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidSubscriptionsSubsnoAddressChangePatchAsync($uuid, $subsno, $body, $auth_user = null, $authorization = null)
+    {
+        return $this->usersUuidSubscriptionsSubsnoAddressChangePatchAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user, $authorization)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation usersUuidSubscriptionsSubsnoAddressChangePatchAsyncWithHttpInfo
+     *
+     * Edit temporary address change dates of a subscription
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidSubscriptionsSubsnoAddressChangePatchAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
+    {
+        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $request = $this->usersUuidSubscriptionsSubsnoAddressChangePatchRequest($uuid, $subsno, $body, $auth_user, $authorization);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'usersUuidSubscriptionsSubsnoAddressChangePatch'
+     *
+     * @param  string $uuid (required)
+     * @param  int $subsno (required)
+     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function usersUuidSubscriptionsSubsnoAddressChangePatchRequest($uuid, $subsno, $body, $auth_user = null, $authorization = null)
+    {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling usersUuidSubscriptionsSubsnoAddressChangePatch'
+            );
+        }
+        // verify the required parameter 'subsno' is set
+        if ($subsno === null || (is_array($subsno) && count($subsno) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $subsno when calling usersUuidSubscriptionsSubsnoAddressChangePatch'
+            );
+        }
+        if ($subsno > 9223372036854775807) {
+            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoAddressChangePatch, must be smaller than or equal to 9223372036854775807.');
+        }
+        if ($subsno < -9223372036854775808) {
+            throw new \InvalidArgumentException('invalid value for "$subsno" when calling UsersApi.usersUuidSubscriptionsSubsnoAddressChangePatch, must be bigger than or equal to -9223372036854775808.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling usersUuidSubscriptionsSubsnoAddressChangePatch'
+            );
+        }
+
+        $resourcePath = '/users/{uuid}/subscriptions/{subsno}/addressChange';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
+        }
+
+        // path params
+        if ($uuid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($subsno !== null) {
+            $resourcePath = str_replace(
+                '{' . 'subsno' . '}',
+                ObjectSerializer::toPathValue($subsno),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json;charset=utf-8']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json;charset=utf-8'],
+                ['application/json;charset=utf-8']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation usersUuidSubscriptionsSubsnoAddressChangePost
      *
      * Make a temporary address change for a subscription

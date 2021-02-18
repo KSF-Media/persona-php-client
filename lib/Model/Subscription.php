@@ -67,7 +67,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'package' => '\OpenAPI\Client\Model\Package',
         'dates' => '\OpenAPI\Client\Model\SubscriptionDates',
         'extsubsexists' => 'bool',
-        'campaign' => '\OpenAPI\Client\Model\Campaign',
+        'campaign' => '\OpenAPI\Client\Model\PackageCampaign',
         'paused' => '\OpenAPI\Client\Model\PausedSubscription[]',
         'receiver' => 'string',
         'delivery_address' => '\OpenAPI\Client\Model\DeliveryAddress',
@@ -648,7 +648,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets campaign
      *
-     * @return \OpenAPI\Client\Model\Campaign|null
+     * @return \OpenAPI\Client\Model\PackageCampaign|null
      */
     public function getCampaign()
     {
@@ -658,7 +658,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets campaign
      *
-     * @param \OpenAPI\Client\Model\Campaign|null $campaign campaign
+     * @param \OpenAPI\Client\Model\PackageCampaign|null $campaign campaign
      *
      * @return $this
      */

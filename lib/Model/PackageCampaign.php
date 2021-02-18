@@ -1,6 +1,6 @@
 <?php
 /**
- * Campaign
+ * PackageCampaign
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * Campaign Class Doc Comment
+ * PackageCampaign Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Campaign implements ModelInterface, ArrayAccess
+class PackageCampaign implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Campaign implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Campaign';
+    protected static $openAPIModelName = 'PackageCampaign';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -289,10 +289,10 @@ class Campaign implements ModelInterface, ArrayAccess
     {
 
         if (($no > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $no when calling Campaign., must be smaller than or equal to 9223372036854775807.');
+            throw new \InvalidArgumentException('invalid value for $no when calling PackageCampaign., must be smaller than or equal to 9223372036854775807.');
         }
         if (($no < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $no when calling Campaign., must be bigger than or equal to -9223372036854775808.');
+            throw new \InvalidArgumentException('invalid value for $no when calling PackageCampaign., must be bigger than or equal to -9223372036854775808.');
         }
 
         $this->container['no'] = $no;
@@ -393,10 +393,10 @@ class Campaign implements ModelInterface, ArrayAccess
     {
 
         if (($length > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling Campaign., must be smaller than or equal to 9223372036854775807.');
+            throw new \InvalidArgumentException('invalid value for $length when calling PackageCampaign., must be smaller than or equal to 9223372036854775807.');
         }
         if (($length < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling Campaign., must be bigger than or equal to -9223372036854775808.');
+            throw new \InvalidArgumentException('invalid value for $length when calling PackageCampaign., must be bigger than or equal to -9223372036854775808.');
         }
 
         $this->container['length'] = $length;

@@ -1,6 +1,6 @@
 <?php
 /**
- * CampaignTest
+ * PackageCampaignTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CampaignTest Class Doc Comment
+ * PackageCampaignTest Class Doc Comment
  *
  * @category    Class
- * @description Campaign
+ * @description PackageCampaign
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CampaignTest extends TestCase
+class PackageCampaignTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class CampaignTest extends TestCase
     }
 
     /**
-     * Test "Campaign"
+     * Test "PackageCampaign"
      */
-    public function testCampaign()
+    public function testPackageCampaign()
     {
     }
 

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **package** | [**\OpenAPI\Client\Model\Package**](Package.md) |  | 
 **dates** | [**\OpenAPI\Client\Model\SubscriptionDates**](SubscriptionDates.md) |  | 
 **extsubsexists** | **bool** |  | 
-**campaign** | [**\OpenAPI\Client\Model\Campaign**](Campaign.md) |  | [optional] 
+**campaign** | [**\OpenAPI\Client\Model\PackageCampaign**](PackageCampaign.md) |  | [optional] 
 **paused** | [**\OpenAPI\Client\Model\PausedSubscription[]**](PausedSubscription.md) |  | [optional] 
 **receiver** | **string** |  | [optional] 
 **delivery_address** | [**\OpenAPI\Client\Model\DeliveryAddress**](DeliveryAddress.md) |  | [optional] 

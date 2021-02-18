@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidPatch**](docs/Api/UsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 *UsersApi* | [**usersUuidPaymentsGet**](docs/Api/UsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
+*UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePatch**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/addressChange | Edit temporary address change dates of a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoCancelPut**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnocancelput) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePatch**](docs/Api/UsersApi.md#usersuuidsubscriptionssubsnopausepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/pause | Edit pause duration
@@ -118,7 +119,6 @@ Class | Method | HTTP request | Description
 
  - [ActiveDays](docs/Model/ActiveDays.md)
  - [Address](docs/Model/Address.md)
- - [Campaign](docs/Model/Campaign.md)
  - [CancelSubscriptionReason](docs/Model/CancelSubscriptionReason.md)
  - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeleteTempAddressChangeDates](docs/Model/DeleteTempAddressChangeDates.md)
@@ -152,6 +152,7 @@ Class | Method | HTTP request | Description
  - [NewTemporaryUser](docs/Model/NewTemporaryUser.md)
  - [NewUser](docs/Model/NewUser.md)
  - [Package](docs/Model/Package.md)
+ - [PackageCampaign](docs/Model/PackageCampaign.md)
  - [PackageDescription](docs/Model/PackageDescription.md)
  - [PackageOffer](docs/Model/PackageOffer.md)
  - [Paper](docs/Model/Paper.md)
@@ -166,6 +167,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionPauseEdit](docs/Model/SubscriptionPauseEdit.md)
  - [SubscriptionPayments](docs/Model/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/Model/TemporaryAddressChange.md)
+ - [TemporaryAddressChangeDates](docs/Model/TemporaryAddressChangeDates.md)
  - [TokenResponse](docs/Model/TokenResponse.md)
  - [UpdatePasswordData](docs/Model/UpdatePasswordData.md)
  - [User](docs/Model/User.md)

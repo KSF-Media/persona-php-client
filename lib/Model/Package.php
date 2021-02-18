@@ -63,7 +63,7 @@ class Package implements ModelInterface, ArrayAccess
         'digital_only' => 'bool',
         'products' => '\OpenAPI\Client\Model\Product[]',
         'offers' => '\OpenAPI\Client\Model\PackageOffer[]',
-        'campaigns' => '\OpenAPI\Client\Model\Campaign[]',
+        'campaigns' => '\OpenAPI\Client\Model\PackageCampaign[]',
         'next_delivery' => '\DateTime',
         'description' => '\OpenAPI\Client\Model\PackageDescription'
     ];
@@ -420,7 +420,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Gets campaigns
      *
-     * @return \OpenAPI\Client\Model\Campaign[]
+     * @return \OpenAPI\Client\Model\PackageCampaign[]
      */
     public function getCampaigns()
     {
@@ -430,7 +430,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets campaigns
      *
-     * @param \OpenAPI\Client\Model\Campaign[] $campaigns campaigns
+     * @param \OpenAPI\Client\Model\PackageCampaign[] $campaigns campaigns
      *
      * @return $this
      */

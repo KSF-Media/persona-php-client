@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **digital_only** | **bool** |  | 
 **products** | [**\OpenAPI\Client\Model\Product[]**](Product.md) |  | 
 **offers** | [**\OpenAPI\Client\Model\PackageOffer[]**](PackageOffer.md) |  | 
-**campaigns** | [**\OpenAPI\Client\Model\Campaign[]**](Campaign.md) |  | 
+**campaigns** | [**\OpenAPI\Client\Model\PackageCampaign[]**](PackageCampaign.md) |  | 
 **next_delivery** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **description** | [**\OpenAPI\Client\Model\PackageDescription**](PackageDescription.md) |  | [optional] 
 
