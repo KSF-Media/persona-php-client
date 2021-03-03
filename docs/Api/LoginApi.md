@@ -1,4 +1,4 @@
-# OpenAPI\Client\LoginApi
+# PersonaClient\LoginApi
 
 All URIs are relative to *http://http:/v1*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## loginPost
 
-> \OpenAPI\Client\Model\LoginResponse loginPost($body)
+> \PersonaClient\Model\LoginResponse loginPost($body)
 
 Login with email and password
 
@@ -24,12 +24,12 @@ Login with email and password
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\LoginApi(
+$apiInstance = new PersonaClient\Api\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\LoginData(); // \OpenAPI\Client\Model\LoginData | 
+$body = new \PersonaClient\Model\LoginData(); // \PersonaClient\Model\LoginData | 
 
 try {
     $result = $apiInstance->loginPost($body);
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\LoginData**](../Model/LoginData.md)|  |
+ **body** | [**\PersonaClient\Model\LoginData**](../Model/LoginData.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\LoginResponse**](../Model/LoginResponse.md)
+[**\PersonaClient\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ No authorization required
 
 ## loginSomePost
 
-> \OpenAPI\Client\Model\LoginResponse loginSomePost($body)
+> \PersonaClient\Model\LoginResponse loginSomePost($body)
 
 Login with social media
 
@@ -78,12 +78,12 @@ Login with social media
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\LoginApi(
+$apiInstance = new PersonaClient\Api\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\LoginDataSoMe(); // \OpenAPI\Client\Model\LoginDataSoMe | 
+$body = new \PersonaClient\Model\LoginDataSoMe(); // \PersonaClient\Model\LoginDataSoMe | 
 
 try {
     $result = $apiInstance->loginSomePost($body);
@@ -99,11 +99,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\LoginDataSoMe**](../Model/LoginDataSoMe.md)|  |
+ **body** | [**\PersonaClient\Model\LoginDataSoMe**](../Model/LoginDataSoMe.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\LoginResponse**](../Model/LoginResponse.md)
+[**\PersonaClient\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ No authorization required
 
 ## loginSsoPost
 
-> \OpenAPI\Client\Model\LoginResponse loginSsoPost($body)
+> \PersonaClient\Model\LoginResponse loginSsoPost($body)
 
 Login with the AccessToken given by the SSO auth
 
@@ -132,12 +132,12 @@ Login with the AccessToken given by the SSO auth
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\LoginApi(
+$apiInstance = new PersonaClient\Api\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\LoginDataSSO(); // \OpenAPI\Client\Model\LoginDataSSO | 
+$body = new \PersonaClient\Model\LoginDataSSO(); // \PersonaClient\Model\LoginDataSSO | 
 
 try {
     $result = $apiInstance->loginSsoPost($body);
@@ -153,11 +153,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\LoginDataSSO**](../Model/LoginDataSSO.md)|  |
+ **body** | [**\PersonaClient\Model\LoginDataSSO**](../Model/LoginDataSSO.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\LoginResponse**](../Model/LoginResponse.md)
+[**\PersonaClient\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\LoginApi(
+$apiInstance = new PersonaClient\Api\LoginApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()

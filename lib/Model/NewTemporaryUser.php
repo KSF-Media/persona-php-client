@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * NewTemporaryUser Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'email_address' => 'string',
-        'legal_consents' => '\OpenAPI\Client\Model\LegalConsent[]'
+        'legal_consents' => '\PersonaClient\Model\LegalConsent[]'
     ];
 
     /**
@@ -243,7 +243,7 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
     /**
      * Gets legal_consents
      *
-     * @return \OpenAPI\Client\Model\LegalConsent[]
+     * @return \PersonaClient\Model\LegalConsent[]
      */
     public function getLegalConsents()
     {
@@ -253,7 +253,7 @@ class NewTemporaryUser implements ModelInterface, ArrayAccess
     /**
      * Sets legal_consents
      *
-     * @param \OpenAPI\Client\Model\LegalConsent[] $legal_consents legal_consents
+     * @param \PersonaClient\Model\LegalConsent[] $legal_consents legal_consents
      *
      * @return $this
      */

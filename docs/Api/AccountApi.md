@@ -1,4 +1,4 @@
-# OpenAPI\Client\AccountApi
+# PersonaClient\AccountApi
 
 All URIs are relative to *http://http:/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## accountCodeForTokenPost
 
-> \OpenAPI\Client\Model\TokenResponse accountCodeForTokenPost($body)
+> \PersonaClient\Model\TokenResponse accountCodeForTokenPost($body)
 
 Get a password reset token
 
@@ -23,12 +23,12 @@ Get a password reset token
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\AccountApi(
+$apiInstance = new PersonaClient\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\CodeForTokenData(); // \OpenAPI\Client\Model\CodeForTokenData | 
+$body = new \PersonaClient\Model\CodeForTokenData(); // \PersonaClient\Model\CodeForTokenData | 
 
 try {
     $result = $apiInstance->accountCodeForTokenPost($body);
@@ -44,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\CodeForTokenData**](../Model/CodeForTokenData.md)|  |
+ **body** | [**\PersonaClient\Model\CodeForTokenData**](../Model/CodeForTokenData.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TokenResponse**](../Model/TokenResponse.md)
+[**\PersonaClient\Model\TokenResponse**](../Model/TokenResponse.md)
 
 ### Authorization
 
@@ -77,12 +77,12 @@ Forgot Password
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\AccountApi(
+$apiInstance = new PersonaClient\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\ForgotPasswordData(); // \OpenAPI\Client\Model\ForgotPasswordData | 
+$body = new \PersonaClient\Model\ForgotPasswordData(); // \PersonaClient\Model\ForgotPasswordData | 
 
 try {
     $result = $apiInstance->accountForgotPassPost($body);
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\ForgotPasswordData**](../Model/ForgotPasswordData.md)|  |
+ **body** | [**\PersonaClient\Model\ForgotPasswordData**](../Model/ForgotPasswordData.md)|  |
 
 ### Return type
 
@@ -131,12 +131,12 @@ Reset a forgotten password with a token
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\AccountApi(
+$apiInstance = new PersonaClient\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\UpdatePasswordData(); // \OpenAPI\Client\Model\UpdatePasswordData | 
+$body = new \PersonaClient\Model\UpdatePasswordData(); // \PersonaClient\Model\UpdatePasswordData | 
 
 try {
     $result = $apiInstance->accountResetForgottenPasswordPost($body);
@@ -152,7 +152,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\UpdatePasswordData**](../Model/UpdatePasswordData.md)|  |
+ **body** | [**\PersonaClient\Model\UpdatePasswordData**](../Model/UpdatePasswordData.md)|  |
 
 ### Return type
 

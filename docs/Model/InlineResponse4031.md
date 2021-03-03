@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **http_code** | **int** |  | [optional] 
-**access_token_expired** | [**\OpenAPI\Client\Model\InlineResponse4031AccessTokenExpired**](InlineResponse4031AccessTokenExpired.md) |  | [optional] 
+**access_token_expired** | [**\PersonaClient\Model\InlineResponse4031AccessTokenExpired**](InlineResponse4031AccessTokenExpired.md) |  | [optional] 
 **http_status** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

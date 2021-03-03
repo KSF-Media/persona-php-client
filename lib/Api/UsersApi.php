@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PersonaClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PersonaClient\ApiException;
+use PersonaClient\Configuration;
+use PersonaClient\HeaderSelector;
+use PersonaClient\ObjectSerializer;
 
 /**
  * UsersApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class UsersApi
      *
      * Create a new user.
      *
-     * @param  \OpenAPI\Client\Model\NewUser $body body (required)
+     * @param  \PersonaClient\Model\NewUser $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersPost($body)
     {
@@ -137,11 +137,11 @@ class UsersApi
      *
      * Create a new user.
      *
-     * @param  \OpenAPI\Client\Model\NewUser $body (required)
+     * @param  \PersonaClient\Model\NewUser $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersPostWithHttpInfo($body)
     {
@@ -178,44 +178,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\LoginResponse' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\LoginResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoginResponse', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\LoginResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\LoginResponse';
+            $returnType = '\PersonaClient\Model\LoginResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -234,7 +234,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\LoginResponse',
+                        '\PersonaClient\Model\LoginResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -242,7 +242,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -265,7 +265,7 @@ class UsersApi
      *
      * Create a new user.
      *
-     * @param  \OpenAPI\Client\Model\NewUser $body (required)
+     * @param  \PersonaClient\Model\NewUser $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -285,14 +285,14 @@ class UsersApi
      *
      * Create a new user.
      *
-     * @param  \OpenAPI\Client\Model\NewUser $body (required)
+     * @param  \PersonaClient\Model\NewUser $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function usersPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\LoginResponse';
+        $returnType = '\PersonaClient\Model\LoginResponse';
         $request = $this->usersPostRequest($body);
 
         return $this->client
@@ -332,7 +332,7 @@ class UsersApi
     /**
      * Create request for operation 'usersPost'
      *
-     * @param  \OpenAPI\Client\Model\NewUser $body (required)
+     * @param  \PersonaClient\Model\NewUser $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -431,9 +431,9 @@ class UsersApi
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\User[]
+     * @return \PersonaClient\Model\User[]
      */
     public function usersSearchGet($query, $auth_user = null, $authorization = null)
     {
@@ -450,9 +450,9 @@ class UsersApi
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\User[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\User[], HTTP status code, HTTP response headers (array of strings)
      */
     public function usersSearchGetWithHttpInfo($query, $auth_user = null, $authorization = null)
     {
@@ -489,20 +489,20 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\User[]' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\User[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User[]', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\User[]';
+            $returnType = '\PersonaClient\Model\User[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -521,7 +521,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\User[]',
+                        '\PersonaClient\Model\User[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -567,7 +567,7 @@ class UsersApi
      */
     public function usersSearchGetAsyncWithHttpInfo($query, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\User[]';
+        $returnType = '\PersonaClient\Model\User[]';
         $request = $this->usersSearchGetRequest($query, $auth_user, $authorization);
 
         return $this->client
@@ -713,11 +713,11 @@ class UsersApi
      *
      * Create a new user with email.
      *
-     * @param  \OpenAPI\Client\Model\NewTemporaryUser $body body (required)
+     * @param  \PersonaClient\Model\NewTemporaryUser $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersTemporaryPost($body)
     {
@@ -730,11 +730,11 @@ class UsersApi
      *
      * Create a new user with email.
      *
-     * @param  \OpenAPI\Client\Model\NewTemporaryUser $body (required)
+     * @param  \PersonaClient\Model\NewTemporaryUser $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersTemporaryPostWithHttpInfo($body)
     {
@@ -771,44 +771,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\LoginResponse' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\LoginResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoginResponse', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\LoginResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\LoginResponse';
+            $returnType = '\PersonaClient\Model\LoginResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -827,7 +827,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\LoginResponse',
+                        '\PersonaClient\Model\LoginResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -835,7 +835,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -843,7 +843,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -858,7 +858,7 @@ class UsersApi
      *
      * Create a new user with email.
      *
-     * @param  \OpenAPI\Client\Model\NewTemporaryUser $body (required)
+     * @param  \PersonaClient\Model\NewTemporaryUser $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -878,14 +878,14 @@ class UsersApi
      *
      * Create a new user with email.
      *
-     * @param  \OpenAPI\Client\Model\NewTemporaryUser $body (required)
+     * @param  \PersonaClient\Model\NewTemporaryUser $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function usersTemporaryPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\LoginResponse';
+        $returnType = '\PersonaClient\Model\LoginResponse';
         $request = $this->usersTemporaryPostRequest($body);
 
         return $this->client
@@ -925,7 +925,7 @@ class UsersApi
     /**
      * Create request for operation 'usersTemporaryPost'
      *
-     * @param  \OpenAPI\Client\Model\NewTemporaryUser $body (required)
+     * @param  \PersonaClient\Model\NewTemporaryUser $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1025,7 +1025,7 @@ class UsersApi
      * @param  string $authorization authorization (optional)
      * @param  string $cache_control cache_control (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string[]
      */
@@ -1045,7 +1045,7 @@ class UsersApi
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1320,13 +1320,13 @@ class UsersApi
      * Updates the GDPR consent settings for a given user.
      *
      * @param  string $uuid uuid (required)
-     * @param  \OpenAPI\Client\Model\GdprConsent[] $body body (required)
+     * @param  \PersonaClient\Model\GdprConsent[] $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidGdprPut($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -1340,13 +1340,13 @@ class UsersApi
      * Updates the GDPR consent settings for a given user.
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  \PersonaClient\Model\GdprConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidGdprPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -1383,44 +1383,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\User' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\User' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\User';
+            $returnType = '\PersonaClient\Model\User';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1439,7 +1439,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\User',
+                        '\PersonaClient\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1447,7 +1447,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1455,7 +1455,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1471,7 +1471,7 @@ class UsersApi
      * Updates the GDPR consent settings for a given user.
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  \PersonaClient\Model\GdprConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -1494,7 +1494,7 @@ class UsersApi
      * Updates the GDPR consent settings for a given user.
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  \PersonaClient\Model\GdprConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -1503,7 +1503,7 @@ class UsersApi
      */
     public function usersUuidGdprPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\User';
+        $returnType = '\PersonaClient\Model\User';
         $request = $this->usersUuidGdprPutRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
@@ -1544,7 +1544,7 @@ class UsersApi
      * Create request for operation 'usersUuidGdprPut'
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\GdprConsent[] $body (required)
+     * @param  \PersonaClient\Model\GdprConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -1668,9 +1668,9 @@ class UsersApi
      * @param  string $authorization authorization (optional)
      * @param  string $cache_control cache_control (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\User
+     * @return \PersonaClient\Model\User
      */
     public function usersUuidGet($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
@@ -1688,9 +1688,9 @@ class UsersApi
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidGetWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
@@ -1727,20 +1727,20 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\User' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\User' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\User';
+            $returnType = '\PersonaClient\Model\User';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1759,7 +1759,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\User',
+                        '\PersonaClient\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1807,7 +1807,7 @@ class UsersApi
      */
     public function usersUuidGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        $returnType = '\OpenAPI\Client\Model\User';
+        $returnType = '\PersonaClient\Model\User';
         $request = $this->usersUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         return $this->client
@@ -1963,13 +1963,13 @@ class UsersApi
      * Updates the legal consent settings for a given user.
      *
      * @param  string $uuid uuid (required)
-     * @param  \OpenAPI\Client\Model\LegalConsent[] $body body (required)
+     * @param  \PersonaClient\Model\LegalConsent[] $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidLegalPut($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -1983,13 +1983,13 @@ class UsersApi
      * Updates the legal consent settings for a given user.
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  \PersonaClient\Model\LegalConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidLegalPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -2026,44 +2026,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\User' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\User' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\User';
+            $returnType = '\PersonaClient\Model\User';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2082,7 +2082,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\User',
+                        '\PersonaClient\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2090,7 +2090,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2098,7 +2098,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2114,7 +2114,7 @@ class UsersApi
      * Updates the legal consent settings for a given user.
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  \PersonaClient\Model\LegalConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2137,7 +2137,7 @@ class UsersApi
      * Updates the legal consent settings for a given user.
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  \PersonaClient\Model\LegalConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2146,7 +2146,7 @@ class UsersApi
      */
     public function usersUuidLegalPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\User';
+        $returnType = '\PersonaClient\Model\User';
         $request = $this->usersUuidLegalPutRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
@@ -2187,7 +2187,7 @@ class UsersApi
      * Create request for operation 'usersUuidLegalPut'
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\LegalConsent[] $body (required)
+     * @param  \PersonaClient\Model\LegalConsent[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2307,13 +2307,13 @@ class UsersApi
      * Set / Change user password
      *
      * @param  string $uuid uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdatePassword $body body (required)
+     * @param  \PersonaClient\Model\UserUpdatePassword $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidPasswordPut($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -2327,13 +2327,13 @@ class UsersApi
      * Set / Change user password
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  \PersonaClient\Model\UserUpdatePassword $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidPasswordPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -2370,44 +2370,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\User' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\User' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\User';
+            $returnType = '\PersonaClient\Model\User';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2426,7 +2426,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\User',
+                        '\PersonaClient\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2434,7 +2434,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2442,7 +2442,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2458,7 +2458,7 @@ class UsersApi
      * Set / Change user password
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  \PersonaClient\Model\UserUpdatePassword $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2481,7 +2481,7 @@ class UsersApi
      * Set / Change user password
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  \PersonaClient\Model\UserUpdatePassword $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2490,7 +2490,7 @@ class UsersApi
      */
     public function usersUuidPasswordPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\User';
+        $returnType = '\PersonaClient\Model\User';
         $request = $this->usersUuidPasswordPutRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
@@ -2531,7 +2531,7 @@ class UsersApi
      * Create request for operation 'usersUuidPasswordPut'
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdatePassword $body (required)
+     * @param  \PersonaClient\Model\UserUpdatePassword $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2651,13 +2651,13 @@ class UsersApi
      * Update a user
      *
      * @param  string $uuid uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdate $body body (required)
+     * @param  \PersonaClient\Model\UserUpdate $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidPatch($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -2671,13 +2671,13 @@ class UsersApi
      * Update a user
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  \PersonaClient\Model\UserUpdate $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\User|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\User|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidPatchWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -2714,44 +2714,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\User' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\User' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\User';
+            $returnType = '\PersonaClient\Model\User';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2770,7 +2770,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\User',
+                        '\PersonaClient\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2778,7 +2778,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2786,7 +2786,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2802,7 +2802,7 @@ class UsersApi
      * Update a user
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  \PersonaClient\Model\UserUpdate $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2825,7 +2825,7 @@ class UsersApi
      * Update a user
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  \PersonaClient\Model\UserUpdate $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2834,7 +2834,7 @@ class UsersApi
      */
     public function usersUuidPatchAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\User';
+        $returnType = '\PersonaClient\Model\User';
         $request = $this->usersUuidPatchRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
@@ -2875,7 +2875,7 @@ class UsersApi
      * Create request for operation 'usersUuidPatch'
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\UserUpdate $body (required)
+     * @param  \PersonaClient\Model\UserUpdate $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2998,9 +2998,9 @@ class UsersApi
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\SubscriptionPayments[]
+     * @return \PersonaClient\Model\SubscriptionPayments[]
      */
     public function usersUuidPaymentsGet($uuid, $auth_user = null, $authorization = null)
     {
@@ -3017,9 +3017,9 @@ class UsersApi
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\SubscriptionPayments[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\SubscriptionPayments[], HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidPaymentsGetWithHttpInfo($uuid, $auth_user = null, $authorization = null)
     {
@@ -3056,20 +3056,20 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\SubscriptionPayments[]' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\SubscriptionPayments[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SubscriptionPayments[]', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\SubscriptionPayments[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\SubscriptionPayments[]';
+            $returnType = '\PersonaClient\Model\SubscriptionPayments[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -3088,7 +3088,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\SubscriptionPayments[]',
+                        '\PersonaClient\Model\SubscriptionPayments[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3134,7 +3134,7 @@ class UsersApi
      */
     public function usersUuidPaymentsGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\SubscriptionPayments[]';
+        $returnType = '\PersonaClient\Model\SubscriptionPayments[]';
         $request = $this->usersUuidPaymentsGetRequest($uuid, $auth_user, $authorization);
 
         return $this->client
@@ -3286,13 +3286,13 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
-     * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body body (required)
+     * @param  \PersonaClient\Model\DeleteTempAddressChangeDates $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoAddressChangeDelete($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -3307,13 +3307,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\DeleteTempAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoAddressChangeDeleteWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -3350,44 +3350,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $returnType = '\PersonaClient\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -3406,7 +3406,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Subscription',
+                        '\PersonaClient\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3414,7 +3414,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3422,7 +3422,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3439,7 +3439,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\DeleteTempAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -3463,7 +3463,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\DeleteTempAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -3472,7 +3472,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoAddressChangeDeleteAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $returnType = '\PersonaClient\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoAddressChangeDeleteRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
@@ -3514,7 +3514,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\DeleteTempAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\DeleteTempAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -3656,13 +3656,13 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChangeDates $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoAddressChangePatch($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -3677,13 +3677,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoAddressChangePatchWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -3720,44 +3720,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $returnType = '\PersonaClient\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -3776,7 +3776,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Subscription',
+                        '\PersonaClient\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3784,7 +3784,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3792,7 +3792,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3809,7 +3809,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -3833,7 +3833,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -3842,7 +3842,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoAddressChangePatchAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $returnType = '\PersonaClient\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoAddressChangePatchRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
@@ -3884,7 +3884,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChangeDates $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChangeDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4026,13 +4026,13 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChange $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoAddressChangePost($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -4047,13 +4047,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChange $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoAddressChangePostWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -4090,44 +4090,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $returnType = '\PersonaClient\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -4146,7 +4146,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Subscription',
+                        '\PersonaClient\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4154,7 +4154,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4162,7 +4162,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4179,7 +4179,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChange $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4203,7 +4203,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChange $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4212,7 +4212,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoAddressChangePostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $returnType = '\PersonaClient\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoAddressChangePostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
@@ -4254,7 +4254,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\TemporaryAddressChange $body (required)
+     * @param  \PersonaClient\Model\TemporaryAddressChange $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4396,13 +4396,13 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
-     * @param  \OpenAPI\Client\Model\CancelSubscriptionReason $body body (required)
+     * @param  \PersonaClient\Model\CancelSubscriptionReason $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoCancelPut($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -4417,13 +4417,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\CancelSubscriptionReason $body (required)
+     * @param  \PersonaClient\Model\CancelSubscriptionReason $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoCancelPutWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -4460,44 +4460,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $returnType = '\PersonaClient\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -4516,7 +4516,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Subscription',
+                        '\PersonaClient\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4524,7 +4524,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4532,7 +4532,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4549,7 +4549,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\CancelSubscriptionReason $body (required)
+     * @param  \PersonaClient\Model\CancelSubscriptionReason $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4573,7 +4573,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\CancelSubscriptionReason $body (required)
+     * @param  \PersonaClient\Model\CancelSubscriptionReason $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4582,7 +4582,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoCancelPutAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $returnType = '\PersonaClient\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoCancelPutRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
@@ -4624,7 +4624,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\CancelSubscriptionReason $body (required)
+     * @param  \PersonaClient\Model\CancelSubscriptionReason $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4766,13 +4766,13 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseEdit $body body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseEdit $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoPausePatch($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -4787,13 +4787,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseEdit $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseEdit $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoPausePatchWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -4830,44 +4830,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $returnType = '\PersonaClient\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -4886,7 +4886,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Subscription',
+                        '\PersonaClient\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4894,7 +4894,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4902,7 +4902,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4919,7 +4919,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseEdit $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseEdit $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4943,7 +4943,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseEdit $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseEdit $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -4952,7 +4952,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoPausePatchAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $returnType = '\PersonaClient\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoPausePatchRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
@@ -4994,7 +4994,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseEdit $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseEdit $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -5136,13 +5136,13 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseDates $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -5157,13 +5157,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Subscription|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Subscription|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoPausePostWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -5200,44 +5200,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $returnType = '\PersonaClient\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5256,7 +5256,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Subscription',
+                        '\PersonaClient\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5264,7 +5264,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5272,7 +5272,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5289,7 +5289,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -5313,7 +5313,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -5322,7 +5322,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoPausePostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $returnType = '\PersonaClient\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoPausePostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
@@ -5364,7 +5364,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\SubscriptionPauseDates $body (required)
+     * @param  \PersonaClient\Model\SubscriptionPauseDates $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -5506,13 +5506,13 @@ class UsersApi
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
-     * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body body (required)
+     * @param  \PersonaClient\Model\NewDeliveryReclamation $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeliveryReclamation|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\DeliveryReclamation|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidSubscriptionsSubsnoReclamationPost($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -5527,13 +5527,13 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  \PersonaClient\Model\NewDeliveryReclamation $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeliveryReclamation|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\DeliveryReclamation|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoReclamationPostWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
@@ -5570,44 +5570,44 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeliveryReclamation' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\DeliveryReclamation' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeliveryReclamation', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\DeliveryReclamation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
+            $returnType = '\PersonaClient\Model\DeliveryReclamation';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5626,7 +5626,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeliveryReclamation',
+                        '\PersonaClient\Model\DeliveryReclamation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5634,7 +5634,7 @@ class UsersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5642,7 +5642,7 @@ class UsersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5659,7 +5659,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  \PersonaClient\Model\NewDeliveryReclamation $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -5683,7 +5683,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  \PersonaClient\Model\NewDeliveryReclamation $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -5692,7 +5692,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoReclamationPostAsyncWithHttpInfo($uuid, $subsno, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
+        $returnType = '\PersonaClient\Model\DeliveryReclamation';
         $request = $this->usersUuidSubscriptionsSubsnoReclamationPostRequest($uuid, $subsno, $body, $auth_user, $authorization);
 
         return $this->client
@@ -5734,7 +5734,7 @@ class UsersApi
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
-     * @param  \OpenAPI\Client\Model\NewDeliveryReclamation $body (required)
+     * @param  \PersonaClient\Model\NewDeliveryReclamation $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -5880,9 +5880,9 @@ class UsersApi
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeliveryReclamation
+     * @return \PersonaClient\Model\DeliveryReclamation
      */
     public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
@@ -5901,9 +5901,9 @@ class UsersApi
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeliveryReclamation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\DeliveryReclamation, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithHttpInfo($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
@@ -5940,20 +5940,20 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeliveryReclamation' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\DeliveryReclamation' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeliveryReclamation', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\DeliveryReclamation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
+            $returnType = '\PersonaClient\Model\DeliveryReclamation';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5972,7 +5972,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeliveryReclamation',
+                        '\PersonaClient\Model\DeliveryReclamation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6022,7 +6022,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetAsyncWithHttpInfo($uuid, $subsno, $reclaimno, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\DeliveryReclamation';
+        $returnType = '\PersonaClient\Model\DeliveryReclamation';
         $request = $this->usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetRequest($uuid, $subsno, $reclaimno, $auth_user, $authorization);
 
         return $this->client
@@ -6221,9 +6221,9 @@ class UsersApi
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Subscription
+     * @return \PersonaClient\Model\Subscription
      */
     public function usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user = null, $authorization = null)
     {
@@ -6241,9 +6241,9 @@ class UsersApi
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null)
     {
@@ -6280,20 +6280,20 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Subscription' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Subscription' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Subscription', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Subscription', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Subscription';
+            $returnType = '\PersonaClient\Model\Subscription';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -6312,7 +6312,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Subscription',
+                        '\PersonaClient\Model\Subscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6360,7 +6360,7 @@ class UsersApi
      */
     public function usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null)
     {
-        $returnType = '\OpenAPI\Client\Model\Subscription';
+        $returnType = '\PersonaClient\Model\Subscription';
         $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user, $authorization);
 
         return $this->client

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PersonaClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PersonaClient\ApiException;
+use PersonaClient\Configuration;
+use PersonaClient\HeaderSelector;
+use PersonaClient\ObjectSerializer;
 
 /**
  * AccountApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class AccountApi
      *
      * Get a password reset token
      *
-     * @param  \OpenAPI\Client\Model\CodeForTokenData $body body (required)
+     * @param  \PersonaClient\Model\CodeForTokenData $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TokenResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return \PersonaClient\Model\TokenResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function accountCodeForTokenPost($body)
     {
@@ -137,11 +137,11 @@ class AccountApi
      *
      * Get a password reset token
      *
-     * @param  \OpenAPI\Client\Model\CodeForTokenData $body (required)
+     * @param  \PersonaClient\Model\CodeForTokenData $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TokenResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\TokenResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function accountCodeForTokenPostWithHttpInfo($body)
     {
@@ -178,44 +178,44 @@ class AccountApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TokenResponse' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\TokenResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TokenResponse', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\TokenResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\TokenResponse';
+            $returnType = '\PersonaClient\Model\TokenResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -234,7 +234,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TokenResponse',
+                        '\PersonaClient\Model\TokenResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -242,7 +242,7 @@ class AccountApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class AccountApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -265,7 +265,7 @@ class AccountApi
      *
      * Get a password reset token
      *
-     * @param  \OpenAPI\Client\Model\CodeForTokenData $body (required)
+     * @param  \PersonaClient\Model\CodeForTokenData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -285,14 +285,14 @@ class AccountApi
      *
      * Get a password reset token
      *
-     * @param  \OpenAPI\Client\Model\CodeForTokenData $body (required)
+     * @param  \PersonaClient\Model\CodeForTokenData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function accountCodeForTokenPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\TokenResponse';
+        $returnType = '\PersonaClient\Model\TokenResponse';
         $request = $this->accountCodeForTokenPostRequest($body);
 
         return $this->client
@@ -332,7 +332,7 @@ class AccountApi
     /**
      * Create request for operation 'accountCodeForTokenPost'
      *
-     * @param  \OpenAPI\Client\Model\CodeForTokenData $body (required)
+     * @param  \PersonaClient\Model\CodeForTokenData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -427,11 +427,11 @@ class AccountApi
      *
      * Forgot Password
      *
-     * @param  \OpenAPI\Client\Model\ForgotPasswordData $body body (required)
+     * @param  \PersonaClient\Model\ForgotPasswordData $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function accountForgotPassPost($body)
     {
@@ -444,11 +444,11 @@ class AccountApi
      *
      * Forgot Password
      *
-     * @param  \OpenAPI\Client\Model\ForgotPasswordData $body (required)
+     * @param  \PersonaClient\Model\ForgotPasswordData $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function accountForgotPassPostWithHttpInfo($body)
     {
@@ -497,26 +497,26 @@ class AccountApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -549,7 +549,7 @@ class AccountApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -557,7 +557,7 @@ class AccountApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -572,7 +572,7 @@ class AccountApi
      *
      * Forgot Password
      *
-     * @param  \OpenAPI\Client\Model\ForgotPasswordData $body (required)
+     * @param  \PersonaClient\Model\ForgotPasswordData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -592,7 +592,7 @@ class AccountApi
      *
      * Forgot Password
      *
-     * @param  \OpenAPI\Client\Model\ForgotPasswordData $body (required)
+     * @param  \PersonaClient\Model\ForgotPasswordData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -639,7 +639,7 @@ class AccountApi
     /**
      * Create request for operation 'accountForgotPassPost'
      *
-     * @param  \OpenAPI\Client\Model\ForgotPasswordData $body (required)
+     * @param  \PersonaClient\Model\ForgotPasswordData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -734,11 +734,11 @@ class AccountApi
      *
      * Reset a forgotten password with a token
      *
-     * @param  \OpenAPI\Client\Model\UpdatePasswordData $body body (required)
+     * @param  \PersonaClient\Model\UpdatePasswordData $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function accountResetForgottenPasswordPost($body)
     {
@@ -751,11 +751,11 @@ class AccountApi
      *
      * Reset a forgotten password with a token
      *
-     * @param  \OpenAPI\Client\Model\UpdatePasswordData $body (required)
+     * @param  \PersonaClient\Model\UpdatePasswordData $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function accountResetForgottenPasswordPostWithHttpInfo($body)
     {
@@ -804,26 +804,26 @@ class AccountApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -856,7 +856,7 @@ class AccountApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -864,7 +864,7 @@ class AccountApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -879,7 +879,7 @@ class AccountApi
      *
      * Reset a forgotten password with a token
      *
-     * @param  \OpenAPI\Client\Model\UpdatePasswordData $body (required)
+     * @param  \PersonaClient\Model\UpdatePasswordData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -899,7 +899,7 @@ class AccountApi
      *
      * Reset a forgotten password with a token
      *
-     * @param  \OpenAPI\Client\Model\UpdatePasswordData $body (required)
+     * @param  \PersonaClient\Model\UpdatePasswordData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -946,7 +946,7 @@ class AccountApi
     /**
      * Create request for operation 'accountResetForgottenPasswordPost'
      *
-     * @param  \OpenAPI\Client\Model\UpdatePasswordData $body (required)
+     * @param  \PersonaClient\Model\UpdatePasswordData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

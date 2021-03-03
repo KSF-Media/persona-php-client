@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * User Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -61,13 +61,13 @@ class User implements ModelInterface, ArrayAccess
         'email' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
-        'address' => '\OpenAPI\Client\Model\Address',
+        'address' => '\PersonaClient\Model\Address',
         'cusno' => 'int',
-        'subs' => '\OpenAPI\Client\Model\Subscription[]',
-        'consent' => '\OpenAPI\Client\Model\GdprConsent[]',
-        'legal' => '\OpenAPI\Client\Model\LegalConsent[]',
-        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]',
-        'past_temporary_addresses' => '\OpenAPI\Client\Model\PastTemporaryAddress[]',
+        'subs' => '\PersonaClient\Model\Subscription[]',
+        'consent' => '\PersonaClient\Model\GdprConsent[]',
+        'legal' => '\PersonaClient\Model\LegalConsent[]',
+        'pending_address_changes' => '\PersonaClient\Model\PendingAddressChange[]',
+        'past_temporary_addresses' => '\PersonaClient\Model\PastTemporaryAddress[]',
         'has_completed_registration' => 'bool'
     ];
 
@@ -401,7 +401,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \OpenAPI\Client\Model\Address|null
+     * @return \PersonaClient\Model\Address|null
      */
     public function getAddress()
     {
@@ -411,7 +411,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \OpenAPI\Client\Model\Address|null $address address
+     * @param \PersonaClient\Model\Address|null $address address
      *
      * @return $this
      */
@@ -457,7 +457,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets subs
      *
-     * @return \OpenAPI\Client\Model\Subscription[]
+     * @return \PersonaClient\Model\Subscription[]
      */
     public function getSubs()
     {
@@ -467,7 +467,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets subs
      *
-     * @param \OpenAPI\Client\Model\Subscription[] $subs subs
+     * @param \PersonaClient\Model\Subscription[] $subs subs
      *
      * @return $this
      */
@@ -481,7 +481,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets consent
      *
-     * @return \OpenAPI\Client\Model\GdprConsent[]
+     * @return \PersonaClient\Model\GdprConsent[]
      */
     public function getConsent()
     {
@@ -491,7 +491,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets consent
      *
-     * @param \OpenAPI\Client\Model\GdprConsent[] $consent consent
+     * @param \PersonaClient\Model\GdprConsent[] $consent consent
      *
      * @return $this
      */
@@ -505,7 +505,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets legal
      *
-     * @return \OpenAPI\Client\Model\LegalConsent[]
+     * @return \PersonaClient\Model\LegalConsent[]
      */
     public function getLegal()
     {
@@ -515,7 +515,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets legal
      *
-     * @param \OpenAPI\Client\Model\LegalConsent[] $legal legal
+     * @param \PersonaClient\Model\LegalConsent[] $legal legal
      *
      * @return $this
      */
@@ -529,7 +529,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets pending_address_changes
      *
-     * @return \OpenAPI\Client\Model\PendingAddressChange[]|null
+     * @return \PersonaClient\Model\PendingAddressChange[]|null
      */
     public function getPendingAddressChanges()
     {
@@ -539,7 +539,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets pending_address_changes
      *
-     * @param \OpenAPI\Client\Model\PendingAddressChange[]|null $pending_address_changes pending_address_changes
+     * @param \PersonaClient\Model\PendingAddressChange[]|null $pending_address_changes pending_address_changes
      *
      * @return $this
      */
@@ -553,7 +553,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets past_temporary_addresses
      *
-     * @return \OpenAPI\Client\Model\PastTemporaryAddress[]
+     * @return \PersonaClient\Model\PastTemporaryAddress[]
      */
     public function getPastTemporaryAddresses()
     {
@@ -563,7 +563,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets past_temporary_addresses
      *
-     * @param \OpenAPI\Client\Model\PastTemporaryAddress[] $past_temporary_addresses past_temporary_addresses
+     * @param \PersonaClient\Model\PastTemporaryAddress[] $past_temporary_addresses past_temporary_addresses
      *
      * @return $this
      */

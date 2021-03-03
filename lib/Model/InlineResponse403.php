@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * InlineResponse403 Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,7 +59,7 @@ class InlineResponse403 implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'http_code' => 'int',
         'http_status' => 'string',
-        'invalid_credentials' => '\OpenAPI\Client\Model\InlineResponse403InvalidCredentials'
+        'invalid_credentials' => '\PersonaClient\Model\InlineResponse403InvalidCredentials'
     ];
 
     /**
@@ -297,7 +297,7 @@ class InlineResponse403 implements ModelInterface, ArrayAccess
     /**
      * Gets invalid_credentials
      *
-     * @return \OpenAPI\Client\Model\InlineResponse403InvalidCredentials|null
+     * @return \PersonaClient\Model\InlineResponse403InvalidCredentials|null
      */
     public function getInvalidCredentials()
     {
@@ -307,7 +307,7 @@ class InlineResponse403 implements ModelInterface, ArrayAccess
     /**
      * Sets invalid_credentials
      *
-     * @param \OpenAPI\Client\Model\InlineResponse403InvalidCredentials|null $invalid_credentials invalid_credentials
+     * @param \PersonaClient\Model\InlineResponse403InvalidCredentials|null $invalid_credentials invalid_credentials
      *
      * @return $this
      */

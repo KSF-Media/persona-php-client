@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * InlineResponse400 Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class InlineResponse400 implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'http_code' => 'int',
-        'invalid_request_body' => '\OpenAPI\Client\Model\InlineResponse400InvalidRequestBody',
+        'invalid_request_body' => '\PersonaClient\Model\InlineResponse400InvalidRequestBody',
         'http_status' => 'string'
     ];
 
@@ -264,7 +264,7 @@ class InlineResponse400 implements ModelInterface, ArrayAccess
     /**
      * Gets invalid_request_body
      *
-     * @return \OpenAPI\Client\Model\InlineResponse400InvalidRequestBody|null
+     * @return \PersonaClient\Model\InlineResponse400InvalidRequestBody|null
      */
     public function getInvalidRequestBody()
     {
@@ -274,7 +274,7 @@ class InlineResponse400 implements ModelInterface, ArrayAccess
     /**
      * Sets invalid_request_body
      *
-     * @param \OpenAPI\Client\Model\InlineResponse400InvalidRequestBody|null $invalid_request_body invalid_request_body
+     * @param \PersonaClient\Model\InlineResponse400InvalidRequestBody|null $invalid_request_body invalid_request_body
      *
      * @return $this
      */

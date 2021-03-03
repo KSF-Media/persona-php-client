@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PersonaClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PersonaClient\ApiException;
+use PersonaClient\Configuration;
+use PersonaClient\HeaderSelector;
+use PersonaClient\ObjectSerializer;
 
 /**
  * AdminApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -125,9 +125,9 @@ class AdminApi
      * @param  string $authorization authorization (optional)
      * @param  string $cache_control cache_control (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\User
+     * @return \PersonaClient\Model\User
      */
     public function adminUuidGet($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
@@ -145,9 +145,9 @@ class AdminApi
      * @param  string $authorization (optional)
      * @param  string $cache_control (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
     public function adminUuidGetWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
@@ -184,20 +184,20 @@ class AdminApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\User' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\User' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\User';
+            $returnType = '\PersonaClient\Model\User';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -216,7 +216,7 @@ class AdminApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\User',
+                        '\PersonaClient\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -264,7 +264,7 @@ class AdminApi
      */
     public function adminUuidGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
     {
-        $returnType = '\OpenAPI\Client\Model\User';
+        $returnType = '\PersonaClient\Model\User';
         $request = $this->adminUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
 
         return $this->client

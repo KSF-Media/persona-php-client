@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * Subscription Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -64,14 +64,14 @@ class Subscription implements ModelInterface, ArrayAccess
         'kind' => 'string',
         'state' => 'string',
         'pricegroup' => 'string',
-        'package' => '\OpenAPI\Client\Model\Package',
-        'dates' => '\OpenAPI\Client\Model\SubscriptionDates',
+        'package' => '\PersonaClient\Model\Package',
+        'dates' => '\PersonaClient\Model\SubscriptionDates',
         'extsubsexists' => 'bool',
-        'campaign' => '\OpenAPI\Client\Model\PackageCampaign',
-        'paused' => '\OpenAPI\Client\Model\PausedSubscription[]',
+        'campaign' => '\PersonaClient\Model\PackageCampaign',
+        'paused' => '\PersonaClient\Model\PausedSubscription[]',
         'receiver' => 'string',
-        'delivery_address' => '\OpenAPI\Client\Model\DeliveryAddress',
-        'pending_address_changes' => '\OpenAPI\Client\Model\PendingAddressChange[]',
+        'delivery_address' => '\PersonaClient\Model\DeliveryAddress',
+        'pending_address_changes' => '\PersonaClient\Model\PendingAddressChange[]',
         'order_number' => 'string',
         'payment_method' => 'string',
         'payment_method_id' => 'int'
@@ -576,7 +576,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets package
      *
-     * @return \OpenAPI\Client\Model\Package
+     * @return \PersonaClient\Model\Package
      */
     public function getPackage()
     {
@@ -586,7 +586,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets package
      *
-     * @param \OpenAPI\Client\Model\Package $package package
+     * @param \PersonaClient\Model\Package $package package
      *
      * @return $this
      */
@@ -600,7 +600,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets dates
      *
-     * @return \OpenAPI\Client\Model\SubscriptionDates
+     * @return \PersonaClient\Model\SubscriptionDates
      */
     public function getDates()
     {
@@ -610,7 +610,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets dates
      *
-     * @param \OpenAPI\Client\Model\SubscriptionDates $dates dates
+     * @param \PersonaClient\Model\SubscriptionDates $dates dates
      *
      * @return $this
      */
@@ -648,7 +648,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets campaign
      *
-     * @return \OpenAPI\Client\Model\PackageCampaign|null
+     * @return \PersonaClient\Model\PackageCampaign|null
      */
     public function getCampaign()
     {
@@ -658,7 +658,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets campaign
      *
-     * @param \OpenAPI\Client\Model\PackageCampaign|null $campaign campaign
+     * @param \PersonaClient\Model\PackageCampaign|null $campaign campaign
      *
      * @return $this
      */
@@ -672,7 +672,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets paused
      *
-     * @return \OpenAPI\Client\Model\PausedSubscription[]|null
+     * @return \PersonaClient\Model\PausedSubscription[]|null
      */
     public function getPaused()
     {
@@ -682,7 +682,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets paused
      *
-     * @param \OpenAPI\Client\Model\PausedSubscription[]|null $paused paused
+     * @param \PersonaClient\Model\PausedSubscription[]|null $paused paused
      *
      * @return $this
      */
@@ -720,7 +720,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets delivery_address
      *
-     * @return \OpenAPI\Client\Model\DeliveryAddress|null
+     * @return \PersonaClient\Model\DeliveryAddress|null
      */
     public function getDeliveryAddress()
     {
@@ -730,7 +730,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets delivery_address
      *
-     * @param \OpenAPI\Client\Model\DeliveryAddress|null $delivery_address delivery_address
+     * @param \PersonaClient\Model\DeliveryAddress|null $delivery_address delivery_address
      *
      * @return $this
      */
@@ -744,7 +744,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets pending_address_changes
      *
-     * @return \OpenAPI\Client\Model\PendingAddressChange[]|null
+     * @return \PersonaClient\Model\PendingAddressChange[]|null
      */
     public function getPendingAddressChanges()
     {
@@ -754,7 +754,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets pending_address_changes
      *
-     * @param \OpenAPI\Client\Model\PendingAddressChange[]|null $pending_address_changes pending_address_changes
+     * @param \PersonaClient\Model\PendingAddressChange[]|null $pending_address_changes pending_address_changes
      *
      * @return $this
      */

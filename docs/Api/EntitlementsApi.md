@@ -1,4 +1,4 @@
-# OpenAPI\Client\EntitlementsApi
+# PersonaClient\EntitlementsApi
 
 All URIs are relative to *http://http:/v1*
 
@@ -23,12 +23,12 @@ Method | HTTP request | Description
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\EntitlementsApi(
+$apiInstance = new PersonaClient\Api\EntitlementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\EntitlementAccess(); // \OpenAPI\Client\Model\EntitlementAccess | 
+$body = new \PersonaClient\Model\EntitlementAccess(); // \PersonaClient\Model\EntitlementAccess | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\EntitlementAccess**](../Model/EntitlementAccess.md)|  |
+ **body** | [**\PersonaClient\Model\EntitlementAccess**](../Model/EntitlementAccess.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
@@ -81,13 +81,13 @@ Grant product access to a customer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\EntitlementsApi(
+$apiInstance = new PersonaClient\Api\EntitlementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$body = new \OpenAPI\Client\Model\EntitlementAccess(); // \OpenAPI\Client\Model\EntitlementAccess | 
+$body = new \PersonaClient\Model\EntitlementAccess(); // \PersonaClient\Model\EntitlementAccess | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -106,7 +106,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **body** | [**\OpenAPI\Client\Model\EntitlementAccess**](../Model/EntitlementAccess.md)|  |
+ **body** | [**\PersonaClient\Model\EntitlementAccess**](../Model/EntitlementAccess.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
@@ -141,7 +141,7 @@ List all entitlements
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\EntitlementsApi(
+$apiInstance = new PersonaClient\Api\EntitlementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()

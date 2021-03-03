@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * Package Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,13 +59,13 @@ class Package implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'paper' => '\OpenAPI\Client\Model\Paper',
+        'paper' => '\PersonaClient\Model\Paper',
         'digital_only' => 'bool',
-        'products' => '\OpenAPI\Client\Model\Product[]',
-        'offers' => '\OpenAPI\Client\Model\PackageOffer[]',
-        'campaigns' => '\OpenAPI\Client\Model\PackageCampaign[]',
+        'products' => '\PersonaClient\Model\Product[]',
+        'offers' => '\PersonaClient\Model\PackageOffer[]',
+        'campaigns' => '\PersonaClient\Model\PackageCampaign[]',
         'next_delivery' => '\DateTime',
-        'description' => '\OpenAPI\Client\Model\PackageDescription'
+        'description' => '\PersonaClient\Model\PackageDescription'
     ];
 
     /**
@@ -324,7 +324,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Gets paper
      *
-     * @return \OpenAPI\Client\Model\Paper
+     * @return \PersonaClient\Model\Paper
      */
     public function getPaper()
     {
@@ -334,7 +334,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets paper
      *
-     * @param \OpenAPI\Client\Model\Paper $paper paper
+     * @param \PersonaClient\Model\Paper $paper paper
      *
      * @return $this
      */
@@ -372,7 +372,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Gets products
      *
-     * @return \OpenAPI\Client\Model\Product[]
+     * @return \PersonaClient\Model\Product[]
      */
     public function getProducts()
     {
@@ -382,7 +382,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets products
      *
-     * @param \OpenAPI\Client\Model\Product[] $products products
+     * @param \PersonaClient\Model\Product[] $products products
      *
      * @return $this
      */
@@ -396,7 +396,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Gets offers
      *
-     * @return \OpenAPI\Client\Model\PackageOffer[]
+     * @return \PersonaClient\Model\PackageOffer[]
      */
     public function getOffers()
     {
@@ -406,7 +406,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets offers
      *
-     * @param \OpenAPI\Client\Model\PackageOffer[] $offers offers
+     * @param \PersonaClient\Model\PackageOffer[] $offers offers
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Gets campaigns
      *
-     * @return \OpenAPI\Client\Model\PackageCampaign[]
+     * @return \PersonaClient\Model\PackageCampaign[]
      */
     public function getCampaigns()
     {
@@ -430,7 +430,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets campaigns
      *
-     * @param \OpenAPI\Client\Model\PackageCampaign[] $campaigns campaigns
+     * @param \PersonaClient\Model\PackageCampaign[] $campaigns campaigns
      *
      * @return $this
      */
@@ -468,7 +468,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Gets description
      *
-     * @return \OpenAPI\Client\Model\PackageDescription|null
+     * @return \PersonaClient\Model\PackageDescription|null
      */
     public function getDescription()
     {
@@ -478,7 +478,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param \OpenAPI\Client\Model\PackageDescription|null $description description
+     * @param \PersonaClient\Model\PackageDescription|null $description description
      *
      * @return $this
      */

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PersonaClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PersonaClient\ApiException;
+use PersonaClient\Configuration;
+use PersonaClient\HeaderSelector;
+use PersonaClient\ObjectSerializer;
 
 /**
  * EntitlementsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -118,13 +118,13 @@ class EntitlementsApi
     /**
      * Operation entitlementsAllowPost
      *
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function entitlementsAllowPost($body, $auth_user = null, $authorization = null)
     {
@@ -135,13 +135,13 @@ class EntitlementsApi
     /**
      * Operation entitlementsAllowPostWithHttpInfo
      *
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function entitlementsAllowPostWithHttpInfo($body, $auth_user = null, $authorization = null)
     {
@@ -190,26 +190,26 @@ class EntitlementsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -242,7 +242,7 @@ class EntitlementsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class EntitlementsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -265,7 +265,7 @@ class EntitlementsApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -287,7 +287,7 @@ class EntitlementsApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -336,7 +336,7 @@ class EntitlementsApi
     /**
      * Create request for operation 'entitlementsAllowPost'
      *
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -442,13 +442,13 @@ class EntitlementsApi
      * Grant product access to a customer
      *
      * @param  string $uuid uuid (required)
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415
+     * @return object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function entitlementsAllowUuidPost($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -462,13 +462,13 @@ class EntitlementsApi
      * Grant product access to a customer
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object[]|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function entitlementsAllowUuidPostWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -517,26 +517,26 @@ class EntitlementsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -569,7 +569,7 @@ class EntitlementsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -577,7 +577,7 @@ class EntitlementsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -593,7 +593,7 @@ class EntitlementsApi
      * Grant product access to a customer
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -616,7 +616,7 @@ class EntitlementsApi
      * Grant product access to a customer
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -666,7 +666,7 @@ class EntitlementsApi
      * Create request for operation 'entitlementsAllowUuidPost'
      *
      * @param  string $uuid (required)
-     * @param  \OpenAPI\Client\Model\EntitlementAccess $body (required)
+     * @param  \PersonaClient\Model\EntitlementAccess $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -786,7 +786,7 @@ class EntitlementsApi
      * List all entitlements
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,string[]]
      */
@@ -802,7 +802,7 @@ class EntitlementsApi
      * List all entitlements
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,string[]], HTTP status code, HTTP response headers (array of strings)
      */

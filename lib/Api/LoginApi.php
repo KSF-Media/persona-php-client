@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PersonaClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PersonaClient\ApiException;
+use PersonaClient\Configuration;
+use PersonaClient\HeaderSelector;
+use PersonaClient\ObjectSerializer;
 
 /**
  * LoginApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $body body (required)
+     * @param  \PersonaClient\Model\LoginData $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse403|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500
+     * @return \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse403|\PersonaClient\Model\InlineResponse415|\PersonaClient\Model\InlineResponse500
      */
     public function loginPost($body)
     {
@@ -137,11 +137,11 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $body (required)
+     * @param  \PersonaClient\Model\LoginData $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse403|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse403|\PersonaClient\Model\InlineResponse415|\PersonaClient\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function loginPostWithHttpInfo($body)
     {
@@ -178,68 +178,68 @@ class LoginApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\LoginResponse' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\LoginResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoginResponse', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\LoginResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\OpenAPI\Client\Model\InlineResponse403' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse403' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse403', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse403', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\OpenAPI\Client\Model\InlineResponse500' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse500' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse500', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse500', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\LoginResponse';
+            $returnType = '\PersonaClient\Model\LoginResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -258,7 +258,7 @@ class LoginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\LoginResponse',
+                        '\PersonaClient\Model\LoginResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -266,7 +266,7 @@ class LoginApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class LoginApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse403',
+                        '\PersonaClient\Model\InlineResponse403',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -282,7 +282,7 @@ class LoginApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -290,7 +290,7 @@ class LoginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse500',
+                        '\PersonaClient\Model\InlineResponse500',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -305,7 +305,7 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $body (required)
+     * @param  \PersonaClient\Model\LoginData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -325,14 +325,14 @@ class LoginApi
      *
      * Login with email and password
      *
-     * @param  \OpenAPI\Client\Model\LoginData $body (required)
+     * @param  \PersonaClient\Model\LoginData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function loginPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\LoginResponse';
+        $returnType = '\PersonaClient\Model\LoginResponse';
         $request = $this->loginPostRequest($body);
 
         return $this->client
@@ -372,7 +372,7 @@ class LoginApi
     /**
      * Create request for operation 'loginPost'
      *
-     * @param  \OpenAPI\Client\Model\LoginData $body (required)
+     * @param  \PersonaClient\Model\LoginData $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -467,11 +467,11 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body body (required)
+     * @param  \PersonaClient\Model\LoginDataSoMe $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4032|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500
+     * @return \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse4032|\PersonaClient\Model\InlineResponse415|\PersonaClient\Model\InlineResponse500
      */
     public function loginSomePost($body)
     {
@@ -484,11 +484,11 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
+     * @param  \PersonaClient\Model\LoginDataSoMe $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4032|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse4032|\PersonaClient\Model\InlineResponse415|\PersonaClient\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function loginSomePostWithHttpInfo($body)
     {
@@ -525,68 +525,68 @@ class LoginApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\LoginResponse' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\LoginResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoginResponse', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\LoginResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\OpenAPI\Client\Model\InlineResponse4032' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse4032' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse4032', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse4032', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\OpenAPI\Client\Model\InlineResponse500' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse500' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse500', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse500', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\LoginResponse';
+            $returnType = '\PersonaClient\Model\LoginResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -605,7 +605,7 @@ class LoginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\LoginResponse',
+                        '\PersonaClient\Model\LoginResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -613,7 +613,7 @@ class LoginApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -621,7 +621,7 @@ class LoginApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse4032',
+                        '\PersonaClient\Model\InlineResponse4032',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -629,7 +629,7 @@ class LoginApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -637,7 +637,7 @@ class LoginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse500',
+                        '\PersonaClient\Model\InlineResponse500',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -652,7 +652,7 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
+     * @param  \PersonaClient\Model\LoginDataSoMe $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -672,14 +672,14 @@ class LoginApi
      *
      * Login with social media
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
+     * @param  \PersonaClient\Model\LoginDataSoMe $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function loginSomePostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\LoginResponse';
+        $returnType = '\PersonaClient\Model\LoginResponse';
         $request = $this->loginSomePostRequest($body);
 
         return $this->client
@@ -719,7 +719,7 @@ class LoginApi
     /**
      * Create request for operation 'loginSomePost'
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSoMe $body (required)
+     * @param  \PersonaClient\Model\LoginDataSoMe $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -814,11 +814,11 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $body body (required)
+     * @param  \PersonaClient\Model\LoginDataSSO $body body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4031|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500
+     * @return \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse4031|\PersonaClient\Model\InlineResponse415|\PersonaClient\Model\InlineResponse500
      */
     public function loginSsoPost($body)
     {
@@ -831,11 +831,11 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
+     * @param  \PersonaClient\Model\LoginDataSSO $body (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\LoginResponse|\OpenAPI\Client\Model\InlineResponse400|\OpenAPI\Client\Model\InlineResponse4031|\OpenAPI\Client\Model\InlineResponse415|\OpenAPI\Client\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse4031|\PersonaClient\Model\InlineResponse415|\PersonaClient\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function loginSsoPostWithHttpInfo($body)
     {
@@ -872,68 +872,68 @@ class LoginApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\LoginResponse' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\LoginResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoginResponse', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\LoginResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\InlineResponse400' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse400', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\OpenAPI\Client\Model\InlineResponse4031' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse4031' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse4031', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse4031', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\OpenAPI\Client\Model\InlineResponse415' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse415', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\OpenAPI\Client\Model\InlineResponse500' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\InlineResponse500' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse500', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse500', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\LoginResponse';
+            $returnType = '\PersonaClient\Model\LoginResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -952,7 +952,7 @@ class LoginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\LoginResponse',
+                        '\PersonaClient\Model\LoginResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -960,7 +960,7 @@ class LoginApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse400',
+                        '\PersonaClient\Model\InlineResponse400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -968,7 +968,7 @@ class LoginApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse4031',
+                        '\PersonaClient\Model\InlineResponse4031',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -976,7 +976,7 @@ class LoginApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse415',
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -984,7 +984,7 @@ class LoginApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse500',
+                        '\PersonaClient\Model\InlineResponse500',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
+     * @param  \PersonaClient\Model\LoginDataSSO $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1019,14 +1019,14 @@ class LoginApi
      *
      * Login with the AccessToken given by the SSO auth
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
+     * @param  \PersonaClient\Model\LoginDataSSO $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function loginSsoPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\OpenAPI\Client\Model\LoginResponse';
+        $returnType = '\PersonaClient\Model\LoginResponse';
         $request = $this->loginSsoPostRequest($body);
 
         return $this->client
@@ -1066,7 +1066,7 @@ class LoginApi
     /**
      * Create request for operation 'loginSsoPost'
      *
-     * @param  \OpenAPI\Client\Model\LoginDataSSO $body (required)
+     * @param  \PersonaClient\Model\LoginDataSSO $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1165,7 +1165,7 @@ class LoginApi
      * @param  string $authorization authorization (optional)
      * @param  bool $everywhere everywhere (optional, default to false)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object[]
      */
@@ -1184,7 +1184,7 @@ class LoginApi
      * @param  string $authorization (optional)
      * @param  bool $everywhere (optional, default to false)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */

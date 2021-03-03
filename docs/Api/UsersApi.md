@@ -1,4 +1,4 @@
-# OpenAPI\Client\UsersApi
+# PersonaClient\UsersApi
 
 All URIs are relative to *http://http:/v1*
 
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 ## usersPost
 
-> \OpenAPI\Client\Model\LoginResponse usersPost($body)
+> \PersonaClient\Model\LoginResponse usersPost($body)
 
 Create a new user.
 
@@ -39,12 +39,12 @@ Create a new user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\NewUser(); // \OpenAPI\Client\Model\NewUser | 
+$body = new \PersonaClient\Model\NewUser(); // \PersonaClient\Model\NewUser | 
 
 try {
     $result = $apiInstance->usersPost($body);
@@ -60,11 +60,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\NewUser**](../Model/NewUser.md)|  |
+ **body** | [**\PersonaClient\Model\NewUser**](../Model/NewUser.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\LoginResponse**](../Model/LoginResponse.md)
+[**\PersonaClient\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## usersSearchGet
 
-> \OpenAPI\Client\Model\User[] usersSearchGet($query, $auth_user, $authorization)
+> \PersonaClient\Model\User[] usersSearchGet($query, $auth_user, $authorization)
 
 Search for users
 
@@ -93,7 +93,7 @@ Search for users
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\User[]**](../Model/User.md)
+[**\PersonaClient\Model\User[]**](../Model/User.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ No authorization required
 
 ## usersTemporaryPost
 
-> \OpenAPI\Client\Model\LoginResponse usersTemporaryPost($body)
+> \PersonaClient\Model\LoginResponse usersTemporaryPost($body)
 
 Create a new user with email.
 
@@ -151,12 +151,12 @@ Create a new user with email.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \OpenAPI\Client\Model\NewTemporaryUser(); // \OpenAPI\Client\Model\NewTemporaryUser | 
+$body = new \PersonaClient\Model\NewTemporaryUser(); // \PersonaClient\Model\NewTemporaryUser | 
 
 try {
     $result = $apiInstance->usersTemporaryPost($body);
@@ -172,11 +172,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\OpenAPI\Client\Model\NewTemporaryUser**](../Model/NewTemporaryUser.md)|  |
+ **body** | [**\PersonaClient\Model\NewTemporaryUser**](../Model/NewTemporaryUser.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\LoginResponse**](../Model/LoginResponse.md)
+[**\PersonaClient\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -256,7 +256,7 @@ No authorization required
 
 ## usersUuidGdprPut
 
-> \OpenAPI\Client\Model\User usersUuidGdprPut($uuid, $body, $auth_user, $authorization)
+> \PersonaClient\Model\User usersUuidGdprPut($uuid, $body, $auth_user, $authorization)
 
 Updates the GDPR consent settings for a given user.
 
@@ -269,13 +269,13 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$body = array(new \OpenAPI\Client\Model\array()); // \OpenAPI\Client\Model\GdprConsent[] | 
+$body = array(new \PersonaClient\Model\array()); // \PersonaClient\Model\GdprConsent[] | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -294,13 +294,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **body** | [**\OpenAPI\Client\Model\GdprConsent[]**](../Model/array.md)|  |
+ **body** | [**\PersonaClient\Model\GdprConsent[]**](../Model/array.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\User**](../Model/User.md)
+[**\PersonaClient\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -318,7 +318,7 @@ No authorization required
 
 ## usersUuidGet
 
-> \OpenAPI\Client\Model\User usersUuidGet($uuid, $auth_user, $authorization, $cache_control)
+> \PersonaClient\Model\User usersUuidGet($uuid, $auth_user, $authorization, $cache_control)
 
 Get user by UUID.
 
@@ -331,7 +331,7 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\User**](../Model/User.md)
+[**\PersonaClient\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -380,7 +380,7 @@ No authorization required
 
 ## usersUuidLegalPut
 
-> \OpenAPI\Client\Model\User usersUuidLegalPut($uuid, $body, $auth_user, $authorization)
+> \PersonaClient\Model\User usersUuidLegalPut($uuid, $body, $auth_user, $authorization)
 
 Updates the legal consent settings for a given user.
 
@@ -393,13 +393,13 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$body = array(new \OpenAPI\Client\Model\array()); // \OpenAPI\Client\Model\LegalConsent[] | 
+$body = array(new \PersonaClient\Model\array()); // \PersonaClient\Model\LegalConsent[] | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -418,13 +418,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **body** | [**\OpenAPI\Client\Model\LegalConsent[]**](../Model/array.md)|  |
+ **body** | [**\PersonaClient\Model\LegalConsent[]**](../Model/array.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\User**](../Model/User.md)
+[**\PersonaClient\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -442,7 +442,7 @@ No authorization required
 
 ## usersUuidPasswordPut
 
-> \OpenAPI\Client\Model\User usersUuidPasswordPut($uuid, $body, $auth_user, $authorization)
+> \PersonaClient\Model\User usersUuidPasswordPut($uuid, $body, $auth_user, $authorization)
 
 Set / Change user password
 
@@ -455,13 +455,13 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$body = new \OpenAPI\Client\Model\UserUpdatePassword(); // \OpenAPI\Client\Model\UserUpdatePassword | 
+$body = new \PersonaClient\Model\UserUpdatePassword(); // \PersonaClient\Model\UserUpdatePassword | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -480,13 +480,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **body** | [**\OpenAPI\Client\Model\UserUpdatePassword**](../Model/UserUpdatePassword.md)|  |
+ **body** | [**\PersonaClient\Model\UserUpdatePassword**](../Model/UserUpdatePassword.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\User**](../Model/User.md)
+[**\PersonaClient\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -504,7 +504,7 @@ No authorization required
 
 ## usersUuidPatch
 
-> \OpenAPI\Client\Model\User usersUuidPatch($uuid, $body, $auth_user, $authorization)
+> \PersonaClient\Model\User usersUuidPatch($uuid, $body, $auth_user, $authorization)
 
 Update a user
 
@@ -517,13 +517,13 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$body = new \OpenAPI\Client\Model\UserUpdate(); // \OpenAPI\Client\Model\UserUpdate | 
+$body = new \PersonaClient\Model\UserUpdate(); // \PersonaClient\Model\UserUpdate | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -542,13 +542,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **body** | [**\OpenAPI\Client\Model\UserUpdate**](../Model/UserUpdate.md)|  |
+ **body** | [**\PersonaClient\Model\UserUpdate**](../Model/UserUpdate.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\User**](../Model/User.md)
+[**\PersonaClient\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -566,7 +566,7 @@ No authorization required
 
 ## usersUuidPaymentsGet
 
-> \OpenAPI\Client\Model\SubscriptionPayments[] usersUuidPaymentsGet($uuid, $auth_user, $authorization)
+> \PersonaClient\Model\SubscriptionPayments[] usersUuidPaymentsGet($uuid, $auth_user, $authorization)
 
 Get user's subscriptions and payment events
 
@@ -579,7 +579,7 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SubscriptionPayments[]**](../Model/SubscriptionPayments.md)
+[**\PersonaClient\Model\SubscriptionPayments[]**](../Model/SubscriptionPayments.md)
 
 ### Authorization
 
@@ -626,7 +626,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoAddressChangeDelete
 
-> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoAddressChangeDelete($uuid, $subsno, $body, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoAddressChangeDelete($uuid, $subsno, $body, $auth_user, $authorization)
 
 Delete temporary address change for subscription
 
@@ -639,14 +639,14 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
 $subsno = 56; // int | 
-$body = new \OpenAPI\Client\Model\DeleteTempAddressChangeDates(); // \OpenAPI\Client\Model\DeleteTempAddressChangeDates | 
+$body = new \PersonaClient\Model\DeleteTempAddressChangeDates(); // \PersonaClient\Model\DeleteTempAddressChangeDates | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -666,13 +666,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
- **body** | [**\OpenAPI\Client\Model\DeleteTempAddressChangeDates**](../Model/DeleteTempAddressChangeDates.md)|  |
+ **body** | [**\PersonaClient\Model\DeleteTempAddressChangeDates**](../Model/DeleteTempAddressChangeDates.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+[**\PersonaClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -690,7 +690,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoAddressChangePatch
 
-> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoAddressChangePatch($uuid, $subsno, $body, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoAddressChangePatch($uuid, $subsno, $body, $auth_user, $authorization)
 
 Edit temporary address change dates of a subscription
 
@@ -703,14 +703,14 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
 $subsno = 56; // int | 
-$body = new \OpenAPI\Client\Model\TemporaryAddressChangeDates(); // \OpenAPI\Client\Model\TemporaryAddressChangeDates | 
+$body = new \PersonaClient\Model\TemporaryAddressChangeDates(); // \PersonaClient\Model\TemporaryAddressChangeDates | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -730,13 +730,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
- **body** | [**\OpenAPI\Client\Model\TemporaryAddressChangeDates**](../Model/TemporaryAddressChangeDates.md)|  |
+ **body** | [**\PersonaClient\Model\TemporaryAddressChangeDates**](../Model/TemporaryAddressChangeDates.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+[**\PersonaClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -754,7 +754,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoAddressChangePost
 
-> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoAddressChangePost($uuid, $subsno, $body, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoAddressChangePost($uuid, $subsno, $body, $auth_user, $authorization)
 
 Make a temporary address change for a subscription
 
@@ -767,14 +767,14 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
 $subsno = 56; // int | 
-$body = new \OpenAPI\Client\Model\TemporaryAddressChange(); // \OpenAPI\Client\Model\TemporaryAddressChange | 
+$body = new \PersonaClient\Model\TemporaryAddressChange(); // \PersonaClient\Model\TemporaryAddressChange | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -794,13 +794,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
- **body** | [**\OpenAPI\Client\Model\TemporaryAddressChange**](../Model/TemporaryAddressChange.md)|  |
+ **body** | [**\PersonaClient\Model\TemporaryAddressChange**](../Model/TemporaryAddressChange.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+[**\PersonaClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -818,7 +818,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoCancelPut
 
-> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoCancelPut($uuid, $subsno, $body, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoCancelPut($uuid, $subsno, $body, $auth_user, $authorization)
 
 Cancels user subscription
 
@@ -831,14 +831,14 @@ The subscription continues to be valid until the end of the billing period. Auth
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
 $subsno = 56; // int | 
-$body = new \OpenAPI\Client\Model\CancelSubscriptionReason(); // \OpenAPI\Client\Model\CancelSubscriptionReason | 
+$body = new \PersonaClient\Model\CancelSubscriptionReason(); // \PersonaClient\Model\CancelSubscriptionReason | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -858,13 +858,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
- **body** | [**\OpenAPI\Client\Model\CancelSubscriptionReason**](../Model/CancelSubscriptionReason.md)|  |
+ **body** | [**\PersonaClient\Model\CancelSubscriptionReason**](../Model/CancelSubscriptionReason.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+[**\PersonaClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -882,7 +882,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoPausePatch
 
-> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoPausePatch($uuid, $subsno, $body, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoPausePatch($uuid, $subsno, $body, $auth_user, $authorization)
 
 Edit pause duration
 
@@ -895,14 +895,14 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
 $subsno = 56; // int | 
-$body = new \OpenAPI\Client\Model\SubscriptionPauseEdit(); // \OpenAPI\Client\Model\SubscriptionPauseEdit | 
+$body = new \PersonaClient\Model\SubscriptionPauseEdit(); // \PersonaClient\Model\SubscriptionPauseEdit | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -922,13 +922,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
- **body** | [**\OpenAPI\Client\Model\SubscriptionPauseEdit**](../Model/SubscriptionPauseEdit.md)|  |
+ **body** | [**\PersonaClient\Model\SubscriptionPauseEdit**](../Model/SubscriptionPauseEdit.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+[**\PersonaClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -946,7 +946,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoPausePost
 
-> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoPausePost($uuid, $subsno, $body, $auth_user, $authorization)
 
 Pause users subscription
 
@@ -959,14 +959,14 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
 $subsno = 56; // int | 
-$body = new \OpenAPI\Client\Model\SubscriptionPauseDates(); // \OpenAPI\Client\Model\SubscriptionPauseDates | 
+$body = new \PersonaClient\Model\SubscriptionPauseDates(); // \PersonaClient\Model\SubscriptionPauseDates | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -986,13 +986,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
- **body** | [**\OpenAPI\Client\Model\SubscriptionPauseDates**](../Model/SubscriptionPauseDates.md)|  |
+ **body** | [**\PersonaClient\Model\SubscriptionPauseDates**](../Model/SubscriptionPauseDates.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+[**\PersonaClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -1010,7 +1010,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoReclamationPost
 
-> \OpenAPI\Client\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationPost($uuid, $subsno, $body, $auth_user, $authorization)
+> \PersonaClient\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationPost($uuid, $subsno, $body, $auth_user, $authorization)
 
 Create a new delivery reclamation for a subscription
 
@@ -1023,14 +1023,14 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
 $subsno = 56; // int | 
-$body = new \OpenAPI\Client\Model\NewDeliveryReclamation(); // \OpenAPI\Client\Model\NewDeliveryReclamation | 
+$body = new \PersonaClient\Model\NewDeliveryReclamation(); // \PersonaClient\Model\NewDeliveryReclamation | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -1050,13 +1050,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
  **subsno** | **int**|  |
- **body** | [**\OpenAPI\Client\Model\NewDeliveryReclamation**](../Model/NewDeliveryReclamation.md)|  |
+ **body** | [**\PersonaClient\Model\NewDeliveryReclamation**](../Model/NewDeliveryReclamation.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeliveryReclamation**](../Model/DeliveryReclamation.md)
+[**\PersonaClient\Model\DeliveryReclamation**](../Model/DeliveryReclamation.md)
 
 ### Authorization
 
@@ -1074,7 +1074,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet
 
-> \OpenAPI\Client\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $auth_user, $authorization)
+> \PersonaClient\Model\DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet($uuid, $subsno, $reclaimno, $auth_user, $authorization)
 
 Get a delivery reclamation
 
@@ -1087,7 +1087,7 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1120,7 +1120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeliveryReclamation**](../Model/DeliveryReclamation.md)
+[**\PersonaClient\Model\DeliveryReclamation**](../Model/DeliveryReclamation.md)
 
 ### Authorization
 
@@ -1138,7 +1138,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoUnpausePost
 
-> \OpenAPI\Client\Model\Subscription usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user, $authorization)
 
 Pause users subscription
 
@@ -1151,7 +1151,7 @@ Authorization header expects the following format ‘OAuth {token}’
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-$apiInstance = new OpenAPI\Client\Api\UsersApi(
+$apiInstance = new PersonaClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1182,7 +1182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Subscription**](../Model/Subscription.md)
+[**\PersonaClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 

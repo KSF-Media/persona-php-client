@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 **kind** | **string** |  | 
 **state** | **string** |  | 
 **pricegroup** | **string** |  | [optional] 
-**package** | [**\OpenAPI\Client\Model\Package**](Package.md) |  | 
-**dates** | [**\OpenAPI\Client\Model\SubscriptionDates**](SubscriptionDates.md) |  | 
+**package** | [**\PersonaClient\Model\Package**](Package.md) |  | 
+**dates** | [**\PersonaClient\Model\SubscriptionDates**](SubscriptionDates.md) |  | 
 **extsubsexists** | **bool** |  | 
-**campaign** | [**\OpenAPI\Client\Model\PackageCampaign**](PackageCampaign.md) |  | [optional] 
-**paused** | [**\OpenAPI\Client\Model\PausedSubscription[]**](PausedSubscription.md) |  | [optional] 
+**campaign** | [**\PersonaClient\Model\PackageCampaign**](PackageCampaign.md) |  | [optional] 
+**paused** | [**\PersonaClient\Model\PausedSubscription[]**](PausedSubscription.md) |  | [optional] 
 **receiver** | **string** |  | [optional] 
-**delivery_address** | [**\OpenAPI\Client\Model\DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
-**pending_address_changes** | [**\OpenAPI\Client\Model\PendingAddressChange[]**](PendingAddressChange.md) |  | [optional] 
+**delivery_address** | [**\PersonaClient\Model\DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
+**pending_address_changes** | [**\PersonaClient\Model\PendingAddressChange[]**](PendingAddressChange.md) |  | [optional] 
 **order_number** | **string** |  | [optional] 
 **payment_method** | **string** |  | [optional] 
 **payment_method_id** | **int** |  | [optional] 

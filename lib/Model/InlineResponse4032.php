@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * InlineResponse4032 Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,11 +57,11 @@ class InlineResponse4032 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'email_address_in_use' => '\OpenAPI\Client\Model\InlineResponse4032EmailAddressInUse',
+        'email_address_in_use' => '\PersonaClient\Model\InlineResponse4032EmailAddressInUse',
         'http_code' => 'int',
-        'oauth_failed' => '\OpenAPI\Client\Model\InlineResponse4032OauthFailed',
+        'oauth_failed' => '\PersonaClient\Model\InlineResponse4032OauthFailed',
         'http_status' => 'string',
-        'email_not_authorized' => '\OpenAPI\Client\Model\InlineResponse4032EmailNotAuthorized'
+        'email_not_authorized' => '\PersonaClient\Model\InlineResponse4032EmailNotAuthorized'
     ];
 
     /**
@@ -252,7 +252,7 @@ class InlineResponse4032 implements ModelInterface, ArrayAccess
     /**
      * Gets email_address_in_use
      *
-     * @return \OpenAPI\Client\Model\InlineResponse4032EmailAddressInUse|null
+     * @return \PersonaClient\Model\InlineResponse4032EmailAddressInUse|null
      */
     public function getEmailAddressInUse()
     {
@@ -262,7 +262,7 @@ class InlineResponse4032 implements ModelInterface, ArrayAccess
     /**
      * Sets email_address_in_use
      *
-     * @param \OpenAPI\Client\Model\InlineResponse4032EmailAddressInUse|null $email_address_in_use email_address_in_use
+     * @param \PersonaClient\Model\InlineResponse4032EmailAddressInUse|null $email_address_in_use email_address_in_use
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class InlineResponse4032 implements ModelInterface, ArrayAccess
     /**
      * Gets oauth_failed
      *
-     * @return \OpenAPI\Client\Model\InlineResponse4032OauthFailed|null
+     * @return \PersonaClient\Model\InlineResponse4032OauthFailed|null
      */
     public function getOauthFailed()
     {
@@ -310,7 +310,7 @@ class InlineResponse4032 implements ModelInterface, ArrayAccess
     /**
      * Sets oauth_failed
      *
-     * @param \OpenAPI\Client\Model\InlineResponse4032OauthFailed|null $oauth_failed oauth_failed
+     * @param \PersonaClient\Model\InlineResponse4032OauthFailed|null $oauth_failed oauth_failed
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class InlineResponse4032 implements ModelInterface, ArrayAccess
     /**
      * Gets email_not_authorized
      *
-     * @return \OpenAPI\Client\Model\InlineResponse4032EmailNotAuthorized|null
+     * @return \PersonaClient\Model\InlineResponse4032EmailNotAuthorized|null
      */
     public function getEmailNotAuthorized()
     {
@@ -367,7 +367,7 @@ class InlineResponse4032 implements ModelInterface, ArrayAccess
     /**
      * Sets email_not_authorized
      *
-     * @param \OpenAPI\Client\Model\InlineResponse4032EmailNotAuthorized|null $email_not_authorized email_not_authorized
+     * @param \PersonaClient\Model\InlineResponse4032EmailNotAuthorized|null $email_not_authorized email_not_authorized
      *
      * @return $this
      */

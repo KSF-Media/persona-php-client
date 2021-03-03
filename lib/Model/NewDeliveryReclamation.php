@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * NewDeliveryReclamation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'publication_date' => '\DateTime',
-        'claim' => '\OpenAPI\Client\Model\DeliveryReclamationClaim'
+        'claim' => '\PersonaClient\Model\DeliveryReclamationClaim'
     ];
 
     /**
@@ -243,7 +243,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Gets claim
      *
-     * @return \OpenAPI\Client\Model\DeliveryReclamationClaim
+     * @return \PersonaClient\Model\DeliveryReclamationClaim
      */
     public function getClaim()
     {
@@ -253,7 +253,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets claim
      *
-     * @param \OpenAPI\Client\Model\DeliveryReclamationClaim $claim claim
+     * @param \PersonaClient\Model\DeliveryReclamationClaim $claim claim
      *
      * @return $this
      */

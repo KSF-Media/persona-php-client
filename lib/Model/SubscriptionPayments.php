@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * SubscriptionPayments Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -61,7 +61,7 @@ class SubscriptionPayments implements ModelInterface, ArrayAccess
         'name' => 'string',
         'start_date' => '\DateTime',
         'last_date' => '\DateTime',
-        'payments' => '\OpenAPI\Client\Model\Payment[]'
+        'payments' => '\PersonaClient\Model\Payment[]'
     ];
 
     /**
@@ -358,7 +358,7 @@ class SubscriptionPayments implements ModelInterface, ArrayAccess
     /**
      * Gets payments
      *
-     * @return \OpenAPI\Client\Model\Payment[]
+     * @return \PersonaClient\Model\Payment[]
      */
     public function getPayments()
     {
@@ -368,7 +368,7 @@ class SubscriptionPayments implements ModelInterface, ArrayAccess
     /**
      * Sets payments
      *
-     * @param \OpenAPI\Client\Model\Payment[] $payments payments
+     * @param \PersonaClient\Model\Payment[] $payments payments
      *
      * @return $this
      */

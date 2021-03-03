@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **city** | **string** |  | [optional] 
 **country** | **string** |  | [optional] 
 **phone** | **string** |  | [optional] 
-**legal_consents** | [**\OpenAPI\Client\Model\LegalConsent[]**](LegalConsent.md) |  | 
+**legal_consents** | [**\PersonaClient\Model\LegalConsent[]**](LegalConsent.md) |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

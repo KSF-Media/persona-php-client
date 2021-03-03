@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * InlineResponse415 Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class InlineResponse415 implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'http_code' => 'int',
-        'unsupported_media_type' => '\OpenAPI\Client\Model\InlineResponse415UnsupportedMediaType',
+        'unsupported_media_type' => '\PersonaClient\Model\InlineResponse415UnsupportedMediaType',
         'http_status' => 'string'
     ];
 
@@ -264,7 +264,7 @@ class InlineResponse415 implements ModelInterface, ArrayAccess
     /**
      * Gets unsupported_media_type
      *
-     * @return \OpenAPI\Client\Model\InlineResponse415UnsupportedMediaType|null
+     * @return \PersonaClient\Model\InlineResponse415UnsupportedMediaType|null
      */
     public function getUnsupportedMediaType()
     {
@@ -274,7 +274,7 @@ class InlineResponse415 implements ModelInterface, ArrayAccess
     /**
      * Sets unsupported_media_type
      *
-     * @param \OpenAPI\Client\Model\InlineResponse415UnsupportedMediaType|null $unsupported_media_type unsupported_media_type
+     * @param \PersonaClient\Model\InlineResponse415UnsupportedMediaType|null $unsupported_media_type unsupported_media_type
      *
      * @return $this
      */

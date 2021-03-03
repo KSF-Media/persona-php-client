@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * UserUpdate Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,7 +59,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'address' => '\OpenAPI\Client\Model\UserUpdateAddress',
+        'address' => '\PersonaClient\Model\UserUpdateAddress',
         'pending_address_changes' => 'object[]'
     ];
 
@@ -291,7 +291,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \OpenAPI\Client\Model\UserUpdateAddress|null
+     * @return \PersonaClient\Model\UserUpdateAddress|null
      */
     public function getAddress()
     {
@@ -301,7 +301,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \OpenAPI\Client\Model\UserUpdateAddress|null $address address
+     * @param \PersonaClient\Model\UserUpdateAddress|null $address address
      *
      * @return $this
      */

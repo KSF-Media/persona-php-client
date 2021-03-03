@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * PendingAddressChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => '\OpenAPI\Client\Model\DeliveryAddress',
+        'address' => '\PersonaClient\Model\DeliveryAddress',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'type' => 'string'
@@ -234,7 +234,7 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \OpenAPI\Client\Model\DeliveryAddress
+     * @return \PersonaClient\Model\DeliveryAddress
      */
     public function getAddress()
     {
@@ -244,7 +244,7 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \OpenAPI\Client\Model\DeliveryAddress $address address
+     * @param \PersonaClient\Model\DeliveryAddress $address address
      *
      * @return $this
      */

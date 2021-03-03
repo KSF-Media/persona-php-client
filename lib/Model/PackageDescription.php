@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * PackageDescription Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -64,7 +64,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
         'url' => 'string',
         'days' => 'string',
         'weekdays' => 'string',
-        'frequency' => '\OpenAPI\Client\Model\DescriptionFrequency',
+        'frequency' => '\PersonaClient\Model\DescriptionFrequency',
         'includes' => 'string[]'
     ];
 
@@ -450,7 +450,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Gets frequency
      *
-     * @return \OpenAPI\Client\Model\DescriptionFrequency
+     * @return \PersonaClient\Model\DescriptionFrequency
      */
     public function getFrequency()
     {
@@ -460,7 +460,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets frequency
      *
-     * @param \OpenAPI\Client\Model\DescriptionFrequency $frequency frequency
+     * @param \PersonaClient\Model\DescriptionFrequency $frequency frequency
      *
      * @return $this
      */

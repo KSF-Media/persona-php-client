@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * Product Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,9 +59,9 @@ class Product implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'active' => '\OpenAPI\Client\Model\ActiveDays',
+        'active' => '\PersonaClient\Model\ActiveDays',
         'next_delivery' => '\DateTime',
-        'paper' => '\OpenAPI\Client\Model\Paper',
+        'paper' => '\PersonaClient\Model\Paper',
         'digital' => 'bool'
     ];
 
@@ -300,7 +300,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets active
      *
-     * @return \OpenAPI\Client\Model\ActiveDays
+     * @return \PersonaClient\Model\ActiveDays
      */
     public function getActive()
     {
@@ -310,7 +310,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets active
      *
-     * @param \OpenAPI\Client\Model\ActiveDays $active active
+     * @param \PersonaClient\Model\ActiveDays $active active
      *
      * @return $this
      */
@@ -348,7 +348,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets paper
      *
-     * @return \OpenAPI\Client\Model\Paper
+     * @return \PersonaClient\Model\Paper
      */
     public function getPaper()
     {
@@ -358,7 +358,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets paper
      *
-     * @param \OpenAPI\Client\Model\Paper $paper paper
+     * @param \PersonaClient\Model\Paper $paper paper
      *
      * @return $this
      */

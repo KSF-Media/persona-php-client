@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * InlineResponse4031 Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'http_code' => 'int',
-        'access_token_expired' => '\OpenAPI\Client\Model\InlineResponse4031AccessTokenExpired',
+        'access_token_expired' => '\PersonaClient\Model\InlineResponse4031AccessTokenExpired',
         'http_status' => 'string'
     ];
 
@@ -264,7 +264,7 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
     /**
      * Gets access_token_expired
      *
-     * @return \OpenAPI\Client\Model\InlineResponse4031AccessTokenExpired|null
+     * @return \PersonaClient\Model\InlineResponse4031AccessTokenExpired|null
      */
     public function getAccessTokenExpired()
     {
@@ -274,7 +274,7 @@ class InlineResponse4031 implements ModelInterface, ArrayAccess
     /**
      * Sets access_token_expired
      *
-     * @param \OpenAPI\Client\Model\InlineResponse4031AccessTokenExpired|null $access_token_expired access_token_expired
+     * @param \PersonaClient\Model\InlineResponse4031AccessTokenExpired|null $access_token_expired access_token_expired
      *
      * @return $this
      */

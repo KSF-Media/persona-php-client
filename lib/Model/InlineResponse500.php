@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PersonaClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PersonaClient\ObjectSerializer;
 
 /**
  * InlineResponse500 Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,7 +59,7 @@ class InlineResponse500 implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'http_code' => 'int',
         'http_status' => 'string',
-        'internal_server_error' => '\OpenAPI\Client\Model\InlineResponse500InternalServerError'
+        'internal_server_error' => '\PersonaClient\Model\InlineResponse500InternalServerError'
     ];
 
     /**
@@ -297,7 +297,7 @@ class InlineResponse500 implements ModelInterface, ArrayAccess
     /**
      * Gets internal_server_error
      *
-     * @return \OpenAPI\Client\Model\InlineResponse500InternalServerError|null
+     * @return \PersonaClient\Model\InlineResponse500InternalServerError|null
      */
     public function getInternalServerError()
     {
@@ -307,7 +307,7 @@ class InlineResponse500 implements ModelInterface, ArrayAccess
     /**
      * Sets internal_server_error
      *
-     * @param \OpenAPI\Client\Model\InlineResponse500InternalServerError|null $internal_server_error internal_server_error
+     * @param \PersonaClient\Model\InlineResponse500InternalServerError|null $internal_server_error internal_server_error
      *
      * @return $this
      */
