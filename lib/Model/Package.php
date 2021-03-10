@@ -65,6 +65,8 @@ class Package implements ModelInterface, ArrayAccess
         'offers' => '\PersonaClient\Model\PackageOffer[]',
         'campaigns' => '\PersonaClient\Model\PackageCampaign[]',
         'next_delivery' => '\DateTime',
+        'can_pause' => 'bool',
+        'can_temp_addr' => 'bool',
         'description' => '\PersonaClient\Model\PackageDescription'
     ];
 
@@ -82,6 +84,8 @@ class Package implements ModelInterface, ArrayAccess
         'offers' => null,
         'campaigns' => null,
         'next_delivery' => 'date',
+        'can_pause' => null,
+        'can_temp_addr' => null,
         'description' => null
     ];
 
@@ -120,6 +124,8 @@ class Package implements ModelInterface, ArrayAccess
         'offers' => 'offers',
         'campaigns' => 'campaigns',
         'next_delivery' => 'nextDelivery',
+        'can_pause' => 'canPause',
+        'can_temp_addr' => 'canTempAddr',
         'description' => 'description'
     ];
 
@@ -137,6 +143,8 @@ class Package implements ModelInterface, ArrayAccess
         'offers' => 'setOffers',
         'campaigns' => 'setCampaigns',
         'next_delivery' => 'setNextDelivery',
+        'can_pause' => 'setCanPause',
+        'can_temp_addr' => 'setCanTempAddr',
         'description' => 'setDescription'
     ];
 
@@ -154,6 +162,8 @@ class Package implements ModelInterface, ArrayAccess
         'offers' => 'getOffers',
         'campaigns' => 'getCampaigns',
         'next_delivery' => 'getNextDelivery',
+        'can_pause' => 'getCanPause',
+        'can_temp_addr' => 'getCanTempAddr',
         'description' => 'getDescription'
     ];
 
@@ -225,6 +235,8 @@ class Package implements ModelInterface, ArrayAccess
         $this->container['offers'] = isset($data['offers']) ? $data['offers'] : null;
         $this->container['campaigns'] = isset($data['campaigns']) ? $data['campaigns'] : null;
         $this->container['next_delivery'] = isset($data['next_delivery']) ? $data['next_delivery'] : null;
+        $this->container['can_pause'] = isset($data['can_pause']) ? $data['can_pause'] : null;
+        $this->container['can_temp_addr'] = isset($data['can_temp_addr']) ? $data['can_temp_addr'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
@@ -257,6 +269,12 @@ class Package implements ModelInterface, ArrayAccess
         }
         if ($this->container['campaigns'] === null) {
             $invalidProperties[] = "'campaigns' can't be null";
+        }
+        if ($this->container['can_pause'] === null) {
+            $invalidProperties[] = "'can_pause' can't be null";
+        }
+        if ($this->container['can_temp_addr'] === null) {
+            $invalidProperties[] = "'can_temp_addr' can't be null";
         }
         return $invalidProperties;
     }
@@ -461,6 +479,54 @@ class Package implements ModelInterface, ArrayAccess
     public function setNextDelivery($next_delivery)
     {
         $this->container['next_delivery'] = $next_delivery;
+
+        return $this;
+    }
+
+    /**
+     * Gets can_pause
+     *
+     * @return bool
+     */
+    public function getCanPause()
+    {
+        return $this->container['can_pause'];
+    }
+
+    /**
+     * Sets can_pause
+     *
+     * @param bool $can_pause can_pause
+     *
+     * @return $this
+     */
+    public function setCanPause($can_pause)
+    {
+        $this->container['can_pause'] = $can_pause;
+
+        return $this;
+    }
+
+    /**
+     * Gets can_temp_addr
+     *
+     * @return bool
+     */
+    public function getCanTempAddr()
+    {
+        return $this->container['can_temp_addr'];
+    }
+
+    /**
+     * Sets can_temp_addr
+     *
+     * @param bool $can_temp_addr can_temp_addr
+     *
+     * @return $this
+     */
+    public function setCanTempAddr($can_temp_addr)
+    {
+        $this->container['can_temp_addr'] = $can_temp_addr;
 
         return $this;
     }

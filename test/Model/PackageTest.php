@@ -135,6 +135,20 @@ class PackageTest extends TestCase
     }
 
     /**
+     * Test attribute "can_pause"
+     */
+    public function testPropertyCanPause()
+    {
+    }
+
+    /**
+     * Test attribute "can_temp_addr"
+     */
+    public function testPropertyCanTempAddr()
+    {
+    }
+
+    /**
      * Test attribute "description"
      */
     public function testPropertyDescription()
