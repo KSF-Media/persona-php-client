@@ -60,6 +60,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'address' => '\PersonaClient\Model\UserUpdateAddress',
+        'email' => 'string',
         'pending_address_changes' => 'object[]'
     ];
 
@@ -72,6 +73,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'address' => null,
+        'email' => null,
         'pending_address_changes' => null
     ];
 
@@ -105,6 +107,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'first_name' => 'firstName',
         'last_name' => 'lastName',
         'address' => 'address',
+        'email' => 'email',
         'pending_address_changes' => 'pendingAddressChanges'
     ];
 
@@ -117,6 +120,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'address' => 'setAddress',
+        'email' => 'setEmail',
         'pending_address_changes' => 'setPendingAddressChanges'
     ];
 
@@ -129,6 +133,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'address' => 'getAddress',
+        'email' => 'getEmail',
         'pending_address_changes' => 'getPendingAddressChanges'
     ];
 
@@ -195,6 +200,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
     }
 
@@ -308,6 +314,30 @@ class UserUpdate implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }
