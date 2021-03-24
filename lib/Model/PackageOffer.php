@@ -58,8 +58,8 @@ class PackageOffer implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'months' => 'int',
-        'total_price' => 'int',
-        'monthly_price' => 'int'
+        'total_price' => '\PersonaClient\Model\Price',
+        'monthly_price' => '\PersonaClient\Model\Price'
     ];
 
     /**
@@ -215,25 +215,9 @@ class PackageOffer implements ModelInterface, ArrayAccess
         if ($this->container['total_price'] === null) {
             $invalidProperties[] = "'total_price' can't be null";
         }
-        if (($this->container['total_price'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'total_price', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['total_price'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'total_price', must be bigger than or equal to -9223372036854775808.";
-        }
-
         if ($this->container['monthly_price'] === null) {
             $invalidProperties[] = "'monthly_price' can't be null";
         }
-        if (($this->container['monthly_price'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'monthly_price', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (($this->container['monthly_price'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'monthly_price', must be bigger than or equal to -9223372036854775808.";
-        }
-
         return $invalidProperties;
     }
 
@@ -262,7 +246,7 @@ class PackageOffer implements ModelInterface, ArrayAccess
     /**
      * Sets months
      *
-     * @param int $months months
+     * @param int $months Duration of the offer
      *
      * @return $this
      */
@@ -284,7 +268,7 @@ class PackageOffer implements ModelInterface, ArrayAccess
     /**
      * Gets total_price
      *
-     * @return int
+     * @return \PersonaClient\Model\Price
      */
     public function getTotalPrice()
     {
@@ -294,20 +278,12 @@ class PackageOffer implements ModelInterface, ArrayAccess
     /**
      * Sets total_price
      *
-     * @param int $total_price total_price
+     * @param \PersonaClient\Model\Price $total_price total_price
      *
      * @return $this
      */
     public function setTotalPrice($total_price)
     {
-
-        if (($total_price > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $total_price when calling PackageOffer., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($total_price < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $total_price when calling PackageOffer., must be bigger than or equal to -9223372036854775808.');
-        }
-
         $this->container['total_price'] = $total_price;
 
         return $this;
@@ -316,7 +292,7 @@ class PackageOffer implements ModelInterface, ArrayAccess
     /**
      * Gets monthly_price
      *
-     * @return int
+     * @return \PersonaClient\Model\Price
      */
     public function getMonthlyPrice()
     {
@@ -326,20 +302,12 @@ class PackageOffer implements ModelInterface, ArrayAccess
     /**
      * Sets monthly_price
      *
-     * @param int $monthly_price monthly_price
+     * @param \PersonaClient\Model\Price $monthly_price monthly_price
      *
      * @return $this
      */
     public function setMonthlyPrice($monthly_price)
     {
-
-        if (($monthly_price > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $monthly_price when calling PackageOffer., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (($monthly_price < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $monthly_price when calling PackageOffer., must be bigger than or equal to -9223372036854775808.');
-        }
-
         $this->container['monthly_price'] = $monthly_price;
 
         return $this;

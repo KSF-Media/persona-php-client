@@ -173,8 +173,23 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const TYPE_DEFINITIVE = 'Definitive';
+    const TYPE_TEMPORARY = 'Temporary';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_DEFINITIVE,
+            self::TYPE_TEMPORARY,
+        ];
+    }
     
 
     /**
@@ -216,6 +231,14 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -316,12 +339,21 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string $type Type of address change
      *
      * @return $this
      */
     public function setType($type)
     {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['type'] = $type;
 
         return $this;

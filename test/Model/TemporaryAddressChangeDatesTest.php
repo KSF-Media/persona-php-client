@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * TemporaryAddressChangeDatesTest Class Doc Comment
  *
  * @category    Class
- * @description TemporaryAddressChangeDates
+ * @description Data for changing a temporary address change.
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

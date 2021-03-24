@@ -58,7 +58,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'publication_date' => '\DateTime',
-        'claim' => '\PersonaClient\Model\DeliveryReclamationClaim'
+        'claim' => '\PersonaClient\Model\ClaimType'
     ];
 
     /**
@@ -243,7 +243,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Gets claim
      *
-     * @return \PersonaClient\Model\DeliveryReclamationClaim
+     * @return \PersonaClient\Model\ClaimType
      */
     public function getClaim()
     {
@@ -253,7 +253,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets claim
      *
-     * @param \PersonaClient\Model\DeliveryReclamationClaim $claim claim
+     * @param \PersonaClient\Model\ClaimType $claim claim
      *
      * @return $this
      */

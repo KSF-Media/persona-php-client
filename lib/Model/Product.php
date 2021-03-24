@@ -262,7 +262,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id Identifying code of the product
      *
      * @return $this
      */
@@ -286,7 +286,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name The name of the product
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets digital
      *
-     * @param bool $digital digital
+     * @param bool $digital Is the product digital?
      *
      * @return $this
      */

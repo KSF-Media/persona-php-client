@@ -74,7 +74,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'pending_address_changes' => '\PersonaClient\Model\PendingAddressChange[]',
         'order_number' => 'string',
         'payment_method' => 'string',
-        'payment_method_id' => 'int'
+        'payment_method_id' => '\PersonaClient\Model\PaymentMethodId'
     ];
 
     /**
@@ -243,8 +243,110 @@ class Subscription implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const KIND_STANDING_ORDER = 'StandingOrder';
+    const KIND_TIME_LIMITED_ORDER = 'TimeLimitedOrder';
+    const KIND_NEWS_STAND_ORDER = 'NewsStandOrder';
+    const KIND_FREE_ORDER = 'FreeOrder';
+    const KIND_TESTING1 = 'Testing1';
+    const KIND_TESTING2 = 'Testing2';
+    const STATE_UPCOMING = 'Upcoming';
+    const STATE_ACTIVE = 'Active';
+    const STATE_PAUSED = 'Paused';
+    const STATE_ENDED = 'Ended';
+    const STATE_UNPAID_AND_CANCELED = 'UnpaidAndCanceled';
+    const STATE_CANCELED = 'Canceled';
+    const STATE_CANCELED_WITH_LATE_PAYMENT = 'CanceledWithLatePayment';
+    const STATE_RESTARTED_AFTER_LATE_PAYMENT = 'RestartedAfterLatePayment';
+    const STATE_DEACTIVATED_RECENTLY = 'DeactivatedRecently';
+    const STATE_UNKNOWN = 'Unknown';
+    const PRICEGROUP_NORMAL = 'Normal';
+    const PRICEGROUP_CAMPAIGN = 'Campaign';
+    const PRICEGROUP_FLEX = 'Flex';
+    const PRICEGROUP_COMPANY = 'Company';
+    const PRICEGROUP_COMPANY_FLEX = 'CompanyFlex';
+    const PRICEGROUP_STUDENT = 'Student';
+    const PRICEGROUP_HBL365_DISCOUNT = 'HBL365Discount';
+    const PAYMENT_METHOD_PAPER_INVOICE = 'PaperInvoice';
+    const PAYMENT_METHOD_CREDIT_CARD = 'CreditCard';
+    const PAYMENT_METHOD_NET_BANK = 'NetBank';
+    const PAYMENT_METHOD_ELECTRONIC_INVOICE = 'ElectronicInvoice';
+    const PAYMENT_METHOD_DIRECT_PAYMENT = 'DirectPayment';
+    const PAYMENT_METHOD_UNKNOWN_PAYMENT_METHOD = 'UnknownPaymentMethod';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getKindAllowableValues()
+    {
+        return [
+            self::KIND_STANDING_ORDER,
+            self::KIND_TIME_LIMITED_ORDER,
+            self::KIND_NEWS_STAND_ORDER,
+            self::KIND_FREE_ORDER,
+            self::KIND_TESTING1,
+            self::KIND_TESTING2,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_UPCOMING,
+            self::STATE_ACTIVE,
+            self::STATE_PAUSED,
+            self::STATE_ENDED,
+            self::STATE_UNPAID_AND_CANCELED,
+            self::STATE_CANCELED,
+            self::STATE_CANCELED_WITH_LATE_PAYMENT,
+            self::STATE_RESTARTED_AFTER_LATE_PAYMENT,
+            self::STATE_DEACTIVATED_RECENTLY,
+            self::STATE_UNKNOWN,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPricegroupAllowableValues()
+    {
+        return [
+            self::PRICEGROUP_NORMAL,
+            self::PRICEGROUP_CAMPAIGN,
+            self::PRICEGROUP_FLEX,
+            self::PRICEGROUP_COMPANY,
+            self::PRICEGROUP_COMPANY_FLEX,
+            self::PRICEGROUP_STUDENT,
+            self::PRICEGROUP_HBL365_DISCOUNT,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPaymentMethodAllowableValues()
+    {
+        return [
+            self::PAYMENT_METHOD_PAPER_INVOICE,
+            self::PAYMENT_METHOD_CREDIT_CARD,
+            self::PAYMENT_METHOD_NET_BANK,
+            self::PAYMENT_METHOD_ELECTRONIC_INVOICE,
+            self::PAYMENT_METHOD_DIRECT_PAYMENT,
+            self::PAYMENT_METHOD_UNKNOWN_PAYMENT_METHOD,
+        ];
+    }
     
 
     /**
@@ -338,9 +440,33 @@ class Subscription implements ModelInterface, ArrayAccess
         if ($this->container['kind'] === null) {
             $invalidProperties[] = "'kind' can't be null";
         }
+        $allowedValues = $this->getKindAllowableValues();
+        if (!is_null($this->container['kind']) && !in_array($this->container['kind'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'kind', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['state'] === null) {
             $invalidProperties[] = "'state' can't be null";
         }
+        $allowedValues = $this->getStateAllowableValues();
+        if (!is_null($this->container['state']) && !in_array($this->container['state'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPricegroupAllowableValues();
+        if (!is_null($this->container['pricegroup']) && !in_array($this->container['pricegroup'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'pricegroup', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['package'] === null) {
             $invalidProperties[] = "'package' can't be null";
         }
@@ -350,12 +476,12 @@ class Subscription implements ModelInterface, ArrayAccess
         if ($this->container['extsubsexists'] === null) {
             $invalidProperties[] = "'extsubsexists' can't be null";
         }
-        if (!is_null($this->container['payment_method_id']) && ($this->container['payment_method_id'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'payment_method_id', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (!is_null($this->container['payment_method_id']) && ($this->container['payment_method_id'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'payment_method_id', must be bigger than or equal to -9223372036854775808.";
+        $allowedValues = $this->getPaymentMethodAllowableValues();
+        if (!is_null($this->container['payment_method']) && !in_array($this->container['payment_method'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'payment_method', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
         }
 
         return $invalidProperties;
@@ -386,7 +512,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets subsno
      *
-     * @param int $subsno subsno
+     * @param int $subsno Subscription Id - primary key together with extno
      *
      * @return $this
      */
@@ -418,7 +544,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets extno
      *
-     * @param int $extno extno
+     * @param int $extno Subscription Extension Id - how many times a subscription has been extended
      *
      * @return $this
      */
@@ -450,7 +576,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets cusno
      *
-     * @param int $cusno cusno
+     * @param int $cusno Customer getting the subscription
      *
      * @return $this
      */
@@ -482,7 +608,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets paycusno
      *
-     * @param int $paycusno paycusno
+     * @param int $paycusno Customer paying for the subscription
      *
      * @return $this
      */
@@ -514,12 +640,21 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets kind
      *
-     * @param string $kind kind
+     * @param string $kind Subscription kind - what kind of order is it
      *
      * @return $this
      */
     public function setKind($kind)
     {
+        $allowedValues = $this->getKindAllowableValues();
+        if (!in_array($kind, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'kind', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['kind'] = $kind;
 
         return $this;
@@ -538,12 +673,21 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param string $state state
+     * @param string $state Current state of the Subscription
      *
      * @return $this
      */
     public function setState($state)
     {
+        $allowedValues = $this->getStateAllowableValues();
+        if (!in_array($state, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['state'] = $state;
 
         return $this;
@@ -562,12 +706,21 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets pricegroup
      *
-     * @param string|null $pricegroup pricegroup
+     * @param string|null $pricegroup Pricegroup of the Subscription
      *
      * @return $this
      */
     public function setPricegroup($pricegroup)
     {
+        $allowedValues = $this->getPricegroupAllowableValues();
+        if (!is_null($pricegroup) && !in_array($pricegroup, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'pricegroup', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['pricegroup'] = $pricegroup;
 
         return $this;
@@ -634,7 +787,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets extsubsexists
      *
-     * @param bool $extsubsexists extsubsexists
+     * @param bool $extsubsexists If the extension of this subscription exists
      *
      * @return $this
      */
@@ -682,7 +835,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets paused
      *
-     * @param \PersonaClient\Model\PausedSubscription[]|null $paused paused
+     * @param \PersonaClient\Model\PausedSubscription[]|null $paused Pause periods of this subscription
      *
      * @return $this
      */
@@ -706,7 +859,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets receiver
      *
-     * @param string|null $receiver receiver
+     * @param string|null $receiver The name of subscription receiver
      *
      * @return $this
      */
@@ -754,7 +907,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets pending_address_changes
      *
-     * @param \PersonaClient\Model\PendingAddressChange[]|null $pending_address_changes pending_address_changes
+     * @param \PersonaClient\Model\PendingAddressChange[]|null $pending_address_changes Pending and ongoing temporary address changes
      *
      * @return $this
      */
@@ -778,7 +931,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets order_number
      *
-     * @param string|null $order_number order_number
+     * @param string|null $order_number Order number of subscription
      *
      * @return $this
      */
@@ -802,12 +955,21 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets payment_method
      *
-     * @param string|null $payment_method payment_method
+     * @param string|null $payment_method Payment method of subscription
      *
      * @return $this
      */
     public function setPaymentMethod($payment_method)
     {
+        $allowedValues = $this->getPaymentMethodAllowableValues();
+        if (!is_null($payment_method) && !in_array($payment_method, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'payment_method', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['payment_method'] = $payment_method;
 
         return $this;
@@ -816,7 +978,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets payment_method_id
      *
-     * @return int|null
+     * @return \PersonaClient\Model\PaymentMethodId|null
      */
     public function getPaymentMethodId()
     {
@@ -826,20 +988,12 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets payment_method_id
      *
-     * @param int|null $payment_method_id payment_method_id
+     * @param \PersonaClient\Model\PaymentMethodId|null $payment_method_id payment_method_id
      *
      * @return $this
      */
     public function setPaymentMethodId($payment_method_id)
     {
-
-        if (!is_null($payment_method_id) && ($payment_method_id > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $payment_method_id when calling Subscription., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (!is_null($payment_method_id) && ($payment_method_id < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $payment_method_id when calling Subscription., must be bigger than or equal to -9223372036854775808.');
-        }
-
         $this->container['payment_method_id'] = $payment_method_id;
 
         return $this;

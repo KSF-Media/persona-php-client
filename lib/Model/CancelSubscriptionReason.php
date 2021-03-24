@@ -36,6 +36,7 @@ use \PersonaClient\ObjectSerializer;
  * CancelSubscriptionReason Class Doc Comment
  *
  * @category Class
+ * @description Cancel reason
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -163,8 +164,35 @@ class CancelSubscriptionReason implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const REASON_PRICE = 'Price';
+    const REASON_DISTRIBUTION = 'Distribution';
+    const REASON_CONTENT = 'Content';
+    const REASON_OLD_AGE = 'OldAge';
+    const REASON_DECEASED = 'Deceased';
+    const REASON_DIGITAL = 'Digital';
+    const REASON_OTHER = 'Other';
+    const REASON_CHANGE_PRODUCT = 'ChangeProduct';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getReasonAllowableValues()
+    {
+        return [
+            self::REASON_PRICE,
+            self::REASON_DISTRIBUTION,
+            self::REASON_CONTENT,
+            self::REASON_OLD_AGE,
+            self::REASON_DECEASED,
+            self::REASON_DIGITAL,
+            self::REASON_OTHER,
+            self::REASON_CHANGE_PRODUCT,
+        ];
+    }
     
 
     /**
@@ -198,6 +226,14 @@ class CancelSubscriptionReason implements ModelInterface, ArrayAccess
         if ($this->container['reason'] === null) {
             $invalidProperties[] = "'reason' can't be null";
         }
+        $allowedValues = $this->getReasonAllowableValues();
+        if (!is_null($this->container['reason']) && !in_array($this->container['reason'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'reason', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -226,12 +262,21 @@ class CancelSubscriptionReason implements ModelInterface, ArrayAccess
     /**
      * Sets reason
      *
-     * @param string $reason reason
+     * @param string $reason Cancel reason code
      *
      * @return $this
      */
     public function setReason($reason)
     {
+        $allowedValues = $this->getReasonAllowableValues();
+        if (!in_array($reason, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'reason', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['reason'] = $reason;
 
         return $this;
@@ -250,7 +295,7 @@ class CancelSubscriptionReason implements ModelInterface, ArrayAccess
     /**
      * Sets notes
      *
-     * @param string|null $notes notes
+     * @param string|null $notes Cancel reason explanation
      *
      * @return $this
      */

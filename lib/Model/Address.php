@@ -36,6 +36,7 @@ use \PersonaClient\ObjectSerializer;
  * Address Class Doc Comment
  *
  * @category Class
+ * @description Postal address for shipping the papers.
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -265,7 +266,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets country_code
      *
-     * @param string $country_code country_code
+     * @param string $country_code Country code
      *
      * @return $this
      */
@@ -289,7 +290,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets zip_code
      *
-     * @param string|null $zip_code zip_code
+     * @param string|null $zip_code Zip code
      *
      * @return $this
      */
@@ -313,7 +314,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets city
      *
-     * @param string|null $city city
+     * @param string|null $city City
      *
      * @return $this
      */
@@ -337,7 +338,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets street_address
      *
-     * @param string $street_address street_address
+     * @param string $street_address Street address, containing all details
      *
      * @return $this
      */
@@ -361,7 +362,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets street_name
      *
-     * @param string|null $street_name street_name
+     * @param string|null $street_name Street name
      *
      * @return $this
      */
@@ -385,7 +386,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets house_no
      *
-     * @param string|null $house_no house_no
+     * @param string|null $house_no House number
      *
      * @return $this
      */
@@ -409,7 +410,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets staircase
      *
-     * @param string|null $staircase staircase
+     * @param string|null $staircase Staircase letter
      *
      * @return $this
      */
@@ -433,7 +434,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets apartment
      *
-     * @param string|null $apartment apartment
+     * @param string|null $apartment Apartment number
      *
      * @return $this
      */

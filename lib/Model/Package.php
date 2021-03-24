@@ -304,7 +304,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id Package identifier
      *
      * @return $this
      */
@@ -328,7 +328,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Package name
      *
      * @return $this
      */
@@ -376,7 +376,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets digital_only
      *
-     * @param bool $digital_only digital_only
+     * @param bool $digital_only All products in this package are digital
      *
      * @return $this
      */
@@ -400,7 +400,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets products
      *
-     * @param \PersonaClient\Model\Product[] $products products
+     * @param \PersonaClient\Model\Product[] $products The Products contained in a package
      *
      * @return $this
      */
@@ -424,7 +424,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets offers
      *
-     * @param \PersonaClient\Model\PackageOffer[] $offers offers
+     * @param \PersonaClient\Model\PackageOffer[] $offers Offers for the package
      *
      * @return $this
      */
@@ -448,7 +448,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets campaigns
      *
-     * @param \PersonaClient\Model\PackageCampaign[] $campaigns campaigns
+     * @param \PersonaClient\Model\PackageCampaign[] $campaigns Active campaigns for the package
      *
      * @return $this
      */
@@ -496,7 +496,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets can_pause
      *
-     * @param bool $can_pause can_pause
+     * @param bool $can_pause Does the package allow delivery pauses
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class Package implements ModelInterface, ArrayAccess
     /**
      * Sets can_temp_addr
      *
-     * @param bool $can_temp_addr can_temp_addr
+     * @param bool $can_temp_addr Does the package allow temporary address changes
      *
      * @return $this
      */

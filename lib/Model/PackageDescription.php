@@ -292,7 +292,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets brand
      *
-     * @param string $brand brand
+     * @param string $brand Brand name
      *
      * @return $this
      */
@@ -316,7 +316,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets brand_long
      *
-     * @param string $brand_long brand_long
+     * @param string $brand_long Brand name, long
      *
      * @return $this
      */
@@ -340,7 +340,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets desc_short
      *
-     * @param string $desc_short desc_short
+     * @param string $desc_short Short description
      *
      * @return $this
      */
@@ -364,7 +364,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets desc_long
      *
-     * @param string $desc_long desc_long
+     * @param string $desc_long Long description
      *
      * @return $this
      */
@@ -388,7 +388,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url Url for the current package
      *
      * @return $this
      */
@@ -412,7 +412,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets days
      *
-     * @param string $days days
+     * @param string $days How many days the package is active
      *
      * @return $this
      */
@@ -436,7 +436,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets weekdays
      *
-     * @param string $weekdays weekdays
+     * @param string $weekdays Weekdays for which the package is active
      *
      * @return $this
      */
@@ -484,7 +484,7 @@ class PackageDescription implements ModelInterface, ArrayAccess
     /**
      * Sets includes
      *
-     * @param string[] $includes includes
+     * @param string[] $includes Entitlements included in the package
      *
      * @return $this
      */

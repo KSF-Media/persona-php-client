@@ -36,6 +36,7 @@ use \PersonaClient\ObjectSerializer;
  * TemporaryAddressChangeDates Class Doc Comment
  *
  * @category Class
+ * @description Data for changing a temporary address change.
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

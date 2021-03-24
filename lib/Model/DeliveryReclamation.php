@@ -36,6 +36,7 @@ use \PersonaClient\ObjectSerializer;
  * DeliveryReclamation Class Doc Comment
  *
  * @category Class
+ * @description Data for a delivery reclamation.
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -183,8 +184,23 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const CLAIM_EXTENSION = 'Extension';
+    const CLAIM_NEW_DELIVERY = 'NewDelivery';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getClaimAllowableValues()
+    {
+        return [
+            self::CLAIM_EXTENSION,
+            self::CLAIM_NEW_DELIVERY,
+        ];
+    }
     
 
     /**
@@ -261,6 +277,14 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         if ($this->container['claim'] === null) {
             $invalidProperties[] = "'claim' can't be null";
         }
+        $allowedValues = $this->getClaimAllowableValues();
+        if (!is_null($this->container['claim']) && !in_array($this->container['claim'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'claim', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -289,7 +313,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets number
      *
-     * @param int $number number
+     * @param int $number The reclamation identifier
      *
      * @return $this
      */
@@ -321,7 +345,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets customer_number
      *
-     * @param int $customer_number customer_number
+     * @param int $customer_number The identifier of the customer that made reclamation
      *
      * @return $this
      */
@@ -353,7 +377,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets subscription_number
      *
-     * @param int $subscription_number subscription_number
+     * @param int $subscription_number The identifier of the subscription for which reclamation was made
      *
      * @return $this
      */
@@ -433,12 +457,21 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets claim
      *
-     * @param string $claim claim
+     * @param string $claim The type of claim for the reclamation
      *
      * @return $this
      */
     public function setClaim($claim)
     {
+        $allowedValues = $this->getClaimAllowableValues();
+        if (!in_array($claim, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'claim', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['claim'] = $claim;
 
         return $this;

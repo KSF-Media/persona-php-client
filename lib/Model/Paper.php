@@ -229,7 +229,7 @@ class Paper implements ModelInterface, ArrayAccess
     /**
      * Sets code
      *
-     * @param string $code code
+     * @param string $code Identifying code of the paper
      *
      * @return $this
      */
@@ -253,7 +253,7 @@ class Paper implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name The name of the paper
      *
      * @return $this
      */

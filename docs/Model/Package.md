@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | 
-**name** | **string** |  | 
+**id** | **string** | Package identifier | 
+**name** | **string** | Package name | 
 **paper** | [**\PersonaClient\Model\Paper**](Paper.md) |  | 
-**digital_only** | **bool** |  | 
-**products** | [**\PersonaClient\Model\Product[]**](Product.md) |  | 
-**offers** | [**\PersonaClient\Model\PackageOffer[]**](PackageOffer.md) |  | 
-**campaigns** | [**\PersonaClient\Model\PackageCampaign[]**](PackageCampaign.md) |  | 
+**digital_only** | **bool** | All products in this package are digital | 
+**products** | [**\PersonaClient\Model\Product[]**](Product.md) | The Products contained in a package | 
+**offers** | [**\PersonaClient\Model\PackageOffer[]**](PackageOffer.md) | Offers for the package | 
+**campaigns** | [**\PersonaClient\Model\PackageCampaign[]**](PackageCampaign.md) | Active campaigns for the package | 
 **next_delivery** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**can_pause** | **bool** |  | 
-**can_temp_addr** | **bool** |  | 
+**can_pause** | **bool** | Does the package allow delivery pauses | 
+**can_temp_addr** | **bool** | Does the package allow temporary address changes | 
 **description** | [**\PersonaClient\Model\PackageDescription**](PackageDescription.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * DeliveryReclamationClaimTest
+ * ClaimTypeTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace PersonaClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DeliveryReclamationClaimTest Class Doc Comment
+ * ClaimTypeTest Class Doc Comment
  *
  * @category    Class
- * @description DeliveryReclamationClaim
+ * @description ClaimType
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class DeliveryReclamationClaimTest extends TestCase
+class ClaimTypeTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class DeliveryReclamationClaimTest extends TestCase
     }
 
     /**
-     * Test "DeliveryReclamationClaim"
+     * Test "ClaimType"
      */
-    public function testDeliveryReclamationClaim()
+    public function testClaimType()
     {
     }
 }

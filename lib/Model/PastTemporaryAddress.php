@@ -36,6 +36,7 @@ use \PersonaClient\ObjectSerializer;
  * PastTemporaryAddress Class Doc Comment
  *
  * @category Class
+ * @description Data for previously used temporary addresses
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -250,7 +251,7 @@ class PastTemporaryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets country_code
      *
-     * @param string $country_code country_code
+     * @param string $country_code Country code
      *
      * @return $this
      */
@@ -274,7 +275,7 @@ class PastTemporaryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets zipcode
      *
-     * @param string $zipcode zipcode
+     * @param string $zipcode Zip code
      *
      * @return $this
      */
@@ -298,7 +299,7 @@ class PastTemporaryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets city_name
      *
-     * @param string|null $city_name city_name
+     * @param string|null $city_name City
      *
      * @return $this
      */
@@ -322,7 +323,7 @@ class PastTemporaryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets street
      *
-     * @param string $street street
+     * @param string $street Street
      *
      * @return $this
      */
@@ -346,7 +347,7 @@ class PastTemporaryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets temporary_name
      *
-     * @param string|null $temporary_name temporary_name
+     * @param string|null $temporary_name Temporary name (c/o)
      *
      * @return $this
      */

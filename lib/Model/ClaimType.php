@@ -1,6 +1,6 @@
 <?php
 /**
- * DeliveryReclamationClaim
+ * ClaimType
  *
  * PHP version 5
  *
@@ -31,14 +31,14 @@ namespace PersonaClient\Model;
 use \PersonaClient\ObjectSerializer;
 
 /**
- * DeliveryReclamationClaim Class Doc Comment
+ * ClaimType Class Doc Comment
  *
  * @category Class
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DeliveryReclamationClaim
+class ClaimType
 {
     /**
      * Possible values of this enum

@@ -183,8 +183,27 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const LENGTH_UNIT_DAY = 'Day';
+    const LENGTH_UNIT_WEEK = 'Week';
+    const LENGTH_UNIT_MONTH = 'Month';
+    const LENGTH_UNIT_YEAR = 'Year';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getLengthUnitAllowableValues()
+    {
+        return [
+            self::LENGTH_UNIT_DAY,
+            self::LENGTH_UNIT_WEEK,
+            self::LENGTH_UNIT_MONTH,
+            self::LENGTH_UNIT_YEAR,
+        ];
+    }
     
 
     /**
@@ -253,6 +272,14 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         if ($this->container['length_unit'] === null) {
             $invalidProperties[] = "'length_unit' can't be null";
         }
+        $allowedValues = $this->getLengthUnitAllowableValues();
+        if (!is_null($this->container['length_unit']) && !in_array($this->container['length_unit'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'length_unit', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -281,7 +308,7 @@ class PackageCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets no
      *
-     * @param int $no no
+     * @param int $no Campaign number
      *
      * @return $this
      */
@@ -313,7 +340,7 @@ class PackageCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param string $id Campaign id
      *
      * @return $this
      */
@@ -337,7 +364,7 @@ class PackageCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Campaign name
      *
      * @return $this
      */
@@ -361,7 +388,7 @@ class PackageCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets price_eur
      *
-     * @param double $price_eur price_eur
+     * @param double $price_eur Price of campaign in euros
      *
      * @return $this
      */
@@ -385,7 +412,7 @@ class PackageCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets length
      *
-     * @param int $length length
+     * @param int $length Length of campaign
      *
      * @return $this
      */
@@ -417,12 +444,21 @@ class PackageCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets length_unit
      *
-     * @param string $length_unit length_unit
+     * @param string $length_unit Unit of length (days, weeks, months, years)
      *
      * @return $this
      */
     public function setLengthUnit($length_unit)
     {
+        $allowedValues = $this->getLengthUnitAllowableValues();
+        if (!in_array($length_unit, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'length_unit', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['length_unit'] = $length_unit;
 
         return $this;

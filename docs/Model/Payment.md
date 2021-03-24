@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invno** | **int** |  | 
+**invno** | **int** | Payment invoice ID | 
 **date** | [**\DateTime**](\DateTime.md) |  | 
 **due_date** | [**\DateTime**](\DateTime.md) |  | 
 **expenses** | **double** |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **state** | **string** |  | 
 **disc_percent** | **double** |  | [optional] 
 **disc_amount** | **double** |  | [optional] 
-**reference** | **string** |  | [optional] 
+**reference** | **string** | Reference number | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

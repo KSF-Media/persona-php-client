@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * PastTemporaryAddressTest Class Doc Comment
  *
  * @category    Class
- * @description PastTemporaryAddress
+ * @description Data for previously used temporary addresses
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

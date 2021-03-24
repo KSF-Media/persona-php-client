@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * DeliveryReclamationTest Class Doc Comment
  *
  * @category    Class
- * @description DeliveryReclamation
+ * @description Data for a delivery reclamation.
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

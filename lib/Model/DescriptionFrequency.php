@@ -237,7 +237,7 @@ class DescriptionFrequency implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param int $amount amount
+     * @param int $amount Frequency number for the package
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class DescriptionFrequency implements ModelInterface, ArrayAccess
     /**
      * Sets unit
      *
-     * @param string $unit unit
+     * @param string $unit Unit in which the number is measured
      *
      * @return $this
      */

@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * CancelSubscriptionReasonTest Class Doc Comment
  *
  * @category    Class
- * @description CancelSubscriptionReason
+ * @description Cancel reason
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

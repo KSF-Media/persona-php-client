@@ -278,7 +278,7 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
     /**
      * Sets len_months
      *
-     * @param int|null $len_months len_months
+     * @param int|null $len_months Length of Subscription in months
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
     /**
      * Sets len_days
      *
-     * @param int|null $len_days len_days
+     * @param int|null $len_days Additional days (on top of months) for Subscription duration
      *
      * @return $this
      */

@@ -238,7 +238,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets street_address
      *
-     * @param string|null $street_address street_address
+     * @param string|null $street_address Street address, containing all details
      *
      * @return $this
      */
@@ -262,7 +262,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets zipcode
      *
-     * @param string $zipcode zipcode
+     * @param string $zipcode 
      *
      * @return $this
      */
@@ -286,7 +286,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets city
      *
-     * @param string|null $city city
+     * @param string|null $city 
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess
     /**
      * Sets temporary_name
      *
-     * @param string|null $temporary_name temporary_name
+     * @param string|null $temporary_name Temporary name (or c/o) of delivery address
      *
      * @return $this
      */

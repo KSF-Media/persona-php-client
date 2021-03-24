@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * AddressTest Class Doc Comment
  *
  * @category    Class
- * @description Address
+ * @description Postal address for shipping the papers.
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

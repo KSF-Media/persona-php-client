@@ -218,8 +218,62 @@ class Payment implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const TYPE_NORMAL_STATE = 'NormalState';
+    const TYPE_DIRECT_DEBIT = 'DirectDebit';
+    const TYPE_REMINDER1 = 'Reminder1';
+    const TYPE_REMINDER2 = 'Reminder2';
+    const TYPE_RESERVED_PAYMENT_TYPE1 = 'ReservedPaymentType1';
+    const TYPE_NONPAYMENT = 'Nonpayment';
+    const TYPE_RESERVED_PAYMENT_TYPE2 = 'ReservedPaymentType2';
+    const TYPE_REIMBURSEMENT = 'Reimbursement';
+    const STATE_PAYMENT_OPEN = 'PaymentOpen';
+    const STATE_PARTIALLY_PAID = 'PartiallyPaid';
+    const STATE_PAID = 'Paid';
+    const STATE_REMINDED = 'Reminded';
+    const STATE_FORECLOSURE = 'Foreclosure';
+    const STATE_RESERVED_PAYMENT_STATE = 'ReservedPaymentState';
+    const STATE_REIMBURSED = 'Reimbursed';
+    const STATE_CREDIT_LOSS = 'CreditLoss';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_NORMAL_STATE,
+            self::TYPE_DIRECT_DEBIT,
+            self::TYPE_REMINDER1,
+            self::TYPE_REMINDER2,
+            self::TYPE_RESERVED_PAYMENT_TYPE1,
+            self::TYPE_NONPAYMENT,
+            self::TYPE_RESERVED_PAYMENT_TYPE2,
+            self::TYPE_REIMBURSEMENT,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_PAYMENT_OPEN,
+            self::STATE_PARTIALLY_PAID,
+            self::STATE_PAID,
+            self::STATE_REMINDED,
+            self::STATE_FORECLOSURE,
+            self::STATE_RESERVED_PAYMENT_STATE,
+            self::STATE_REIMBURSED,
+            self::STATE_CREDIT_LOSS,
+        ];
+    }
     
 
     /**
@@ -296,9 +350,25 @@ class Payment implements ModelInterface, ArrayAccess
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['state'] === null) {
             $invalidProperties[] = "'state' can't be null";
         }
+        $allowedValues = $this->getStateAllowableValues();
+        if (!is_null($this->container['state']) && !in_array($this->container['state'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -327,7 +397,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets invno
      *
-     * @param int $invno invno
+     * @param int $invno Payment invoice ID
      *
      * @return $this
      */
@@ -407,7 +477,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets expenses
      *
-     * @param double $expenses expenses
+     * @param double $expenses 
      *
      * @return $this
      */
@@ -431,7 +501,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets interest
      *
-     * @param double $interest interest
+     * @param double $interest 
      *
      * @return $this
      */
@@ -455,7 +525,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets vat
      *
-     * @param double $vat vat
+     * @param double $vat 
      *
      * @return $this
      */
@@ -479,7 +549,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param double $amount amount
+     * @param double $amount 
      *
      * @return $this
      */
@@ -503,7 +573,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets open_amount
      *
-     * @param double $open_amount open_amount
+     * @param double $open_amount 
      *
      * @return $this
      */
@@ -527,12 +597,21 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string $type 
      *
      * @return $this
      */
     public function setType($type)
     {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['type'] = $type;
 
         return $this;
@@ -551,12 +630,21 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param string $state state
+     * @param string $state 
      *
      * @return $this
      */
     public function setState($state)
     {
+        $allowedValues = $this->getStateAllowableValues();
+        if (!in_array($state, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['state'] = $state;
 
         return $this;
@@ -575,7 +663,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets disc_percent
      *
-     * @param double|null $disc_percent disc_percent
+     * @param double|null $disc_percent 
      *
      * @return $this
      */
@@ -599,7 +687,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets disc_amount
      *
-     * @param double|null $disc_amount disc_amount
+     * @param double|null $disc_amount 
      *
      * @return $this
      */
@@ -623,7 +711,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets reference
      *
-     * @param string|null $reference reference
+     * @param string|null $reference Reference number
      *
      * @return $this
      */

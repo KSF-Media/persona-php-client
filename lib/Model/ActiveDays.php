@@ -274,7 +274,7 @@ class ActiveDays implements ModelInterface, ArrayAccess
     /**
      * Sets mon
      *
-     * @param bool $mon mon
+     * @param bool $mon Active on Monday
      *
      * @return $this
      */
@@ -298,7 +298,7 @@ class ActiveDays implements ModelInterface, ArrayAccess
     /**
      * Sets tue
      *
-     * @param bool $tue tue
+     * @param bool $tue Active on Tuesday
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class ActiveDays implements ModelInterface, ArrayAccess
     /**
      * Sets wed
      *
-     * @param bool $wed wed
+     * @param bool $wed Active on Wednedsday
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class ActiveDays implements ModelInterface, ArrayAccess
     /**
      * Sets thu
      *
-     * @param bool $thu thu
+     * @param bool $thu Active on Thursday
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class ActiveDays implements ModelInterface, ArrayAccess
     /**
      * Sets fri
      *
-     * @param bool $fri fri
+     * @param bool $fri Active on Friday
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class ActiveDays implements ModelInterface, ArrayAccess
     /**
      * Sets sat
      *
-     * @param bool $sat sat
+     * @param bool $sat Active on Saturday
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class ActiveDays implements ModelInterface, ArrayAccess
     /**
      * Sets sun
      *
-     * @param bool $sun sun
+     * @param bool $sun Active on Sunday
      *
      * @return $this
      */

@@ -264,7 +264,7 @@ class SubscriptionPayments implements ModelInterface, ArrayAccess
     /**
      * Sets subsno
      *
-     * @param int $subsno subsno
+     * @param int $subsno Product subsno
      *
      * @return $this
      */
@@ -296,7 +296,7 @@ class SubscriptionPayments implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Package name
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class SubscriptionPayments implements ModelInterface, ArrayAccess
     /**
      * Sets payments
      *
-     * @param \PersonaClient\Model\Payment[] $payments payments
+     * @param \PersonaClient\Model\Payment[] $payments Payments
      *
      * @return $this
      */
