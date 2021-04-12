@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**paper** | [**\PersonaClient\Model\PaperCode**](PaperCode.md) |  | [optional] 
 **publication_date** | [**\DateTime**](\DateTime.md) |  | 
-**claim** | [**\PersonaClient\Model\ClaimType**](ClaimType.md) |  | 
+**claim** | **string** | The type of claim for the reclamation | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

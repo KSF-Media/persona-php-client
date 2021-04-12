@@ -62,6 +62,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'customer_number' => 'int',
         'subscription_number' => 'int',
         'date' => '\DateTime',
+        'paper' => '\PersonaClient\Model\PaperCode',
         'publication_date' => '\DateTime',
         'claim' => 'string'
     ];
@@ -76,6 +77,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'customer_number' => null,
         'subscription_number' => null,
         'date' => 'date',
+        'paper' => null,
         'publication_date' => 'date',
         'claim' => null
     ];
@@ -111,6 +113,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'customer_number' => 'customerNumber',
         'subscription_number' => 'subscriptionNumber',
         'date' => 'date',
+        'paper' => 'paper',
         'publication_date' => 'publicationDate',
         'claim' => 'claim'
     ];
@@ -125,6 +128,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'customer_number' => 'setCustomerNumber',
         'subscription_number' => 'setSubscriptionNumber',
         'date' => 'setDate',
+        'paper' => 'setPaper',
         'publication_date' => 'setPublicationDate',
         'claim' => 'setClaim'
     ];
@@ -139,6 +143,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'customer_number' => 'getCustomerNumber',
         'subscription_number' => 'getSubscriptionNumber',
         'date' => 'getDate',
+        'paper' => 'getPaper',
         'publication_date' => 'getPublicationDate',
         'claim' => 'getClaim'
     ];
@@ -222,6 +227,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         $this->container['customer_number'] = isset($data['customer_number']) ? $data['customer_number'] : null;
         $this->container['subscription_number'] = isset($data['subscription_number']) ? $data['subscription_number'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
         $this->container['publication_date'] = isset($data['publication_date']) ? $data['publication_date'] : null;
         $this->container['claim'] = isset($data['claim']) ? $data['claim'] : null;
     }
@@ -416,6 +422,30 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets paper
+     *
+     * @return \PersonaClient\Model\PaperCode|null
+     */
+    public function getPaper()
+    {
+        return $this->container['paper'];
+    }
+
+    /**
+     * Sets paper
+     *
+     * @param \PersonaClient\Model\PaperCode|null $paper paper
+     *
+     * @return $this
+     */
+    public function setPaper($paper)
+    {
+        $this->container['paper'] = $paper;
 
         return $this;
     }

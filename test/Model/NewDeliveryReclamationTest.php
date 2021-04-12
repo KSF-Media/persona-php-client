@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * NewDeliveryReclamationTest Class Doc Comment
  *
  * @category    Class
- * @description NewDeliveryReclamation
+ * @description Data for a delivery reclamation creation.
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -75,6 +75,13 @@ class NewDeliveryReclamationTest extends TestCase
      * Test "NewDeliveryReclamation"
      */
     public function testNewDeliveryReclamation()
+    {
+    }
+
+    /**
+     * Test attribute "paper"
+     */
+    public function testPropertyPaper()
     {
     }
 

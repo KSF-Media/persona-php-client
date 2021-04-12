@@ -36,6 +36,7 @@ use \PersonaClient\ObjectSerializer;
  * NewDeliveryReclamation Class Doc Comment
  *
  * @category Class
+ * @description Data for a delivery reclamation creation.
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -57,8 +58,9 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'paper' => '\PersonaClient\Model\PaperCode',
         'publication_date' => '\DateTime',
-        'claim' => '\PersonaClient\Model\ClaimType'
+        'claim' => 'string'
     ];
 
     /**
@@ -67,6 +69,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'paper' => null,
         'publication_date' => 'date',
         'claim' => null
     ];
@@ -98,6 +101,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'paper' => 'paper',
         'publication_date' => 'publicationDate',
         'claim' => 'claim'
     ];
@@ -108,6 +112,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'paper' => 'setPaper',
         'publication_date' => 'setPublicationDate',
         'claim' => 'setClaim'
     ];
@@ -118,6 +123,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'paper' => 'getPaper',
         'publication_date' => 'getPublicationDate',
         'claim' => 'getClaim'
     ];
@@ -163,8 +169,23 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const CLAIM_EXTENSION = 'Extension';
+    const CLAIM_NEW_DELIVERY = 'NewDelivery';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getClaimAllowableValues()
+    {
+        return [
+            self::CLAIM_EXTENSION,
+            self::CLAIM_NEW_DELIVERY,
+        ];
+    }
     
 
     /**
@@ -182,6 +203,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
         $this->container['publication_date'] = isset($data['publication_date']) ? $data['publication_date'] : null;
         $this->container['claim'] = isset($data['claim']) ? $data['claim'] : null;
     }
@@ -201,6 +223,14 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         if ($this->container['claim'] === null) {
             $invalidProperties[] = "'claim' can't be null";
         }
+        $allowedValues = $this->getClaimAllowableValues();
+        if (!is_null($this->container['claim']) && !in_array($this->container['claim'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'claim', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -215,6 +245,30 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets paper
+     *
+     * @return \PersonaClient\Model\PaperCode|null
+     */
+    public function getPaper()
+    {
+        return $this->container['paper'];
+    }
+
+    /**
+     * Sets paper
+     *
+     * @param \PersonaClient\Model\PaperCode|null $paper paper
+     *
+     * @return $this
+     */
+    public function setPaper($paper)
+    {
+        $this->container['paper'] = $paper;
+
+        return $this;
+    }
 
     /**
      * Gets publication_date
@@ -243,7 +297,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Gets claim
      *
-     * @return \PersonaClient\Model\ClaimType
+     * @return string
      */
     public function getClaim()
     {
@@ -253,12 +307,21 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets claim
      *
-     * @param \PersonaClient\Model\ClaimType $claim claim
+     * @param string $claim The type of claim for the reclamation
      *
      * @return $this
      */
     public function setClaim($claim)
     {
+        $allowedValues = $this->getClaimAllowableValues();
+        if (!in_array($claim, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'claim', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['claim'] = $claim;
 
         return $this;

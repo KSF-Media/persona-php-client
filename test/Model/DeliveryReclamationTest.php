@@ -107,6 +107,13 @@ class DeliveryReclamationTest extends TestCase
     }
 
     /**
+     * Test attribute "paper"
+     */
+    public function testPropertyPaper()
+    {
+    }
+
+    /**
      * Test attribute "publication_date"
      */
     public function testPropertyPublicationDate()

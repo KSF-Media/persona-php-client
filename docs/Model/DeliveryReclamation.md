@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **customer_number** | **int** | The identifier of the customer that made reclamation | 
 **subscription_number** | **int** | The identifier of the subscription for which reclamation was made | 
 **date** | [**\DateTime**](\DateTime.md) |  | 
+**paper** | [**\PersonaClient\Model\PaperCode**](PaperCode.md) |  | [optional] 
 **publication_date** | [**\DateTime**](\DateTime.md) |  | 
 **claim** | **string** | The type of claim for the reclamation | 
 

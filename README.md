@@ -120,7 +120,6 @@ Class | Method | HTTP request | Description
  - [ActiveDays](docs/Model/ActiveDays.md)
  - [Address](docs/Model/Address.md)
  - [CancelSubscriptionReason](docs/Model/CancelSubscriptionReason.md)
- - [ClaimType](docs/Model/ClaimType.md)
  - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeleteTempAddressChangeDates](docs/Model/DeleteTempAddressChangeDates.md)
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)
