@@ -86,7 +86,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountCodeForTokenPost**](docs/Api/AccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
 *AccountApi* | [**accountForgotPassPost**](docs/Api/AccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *AccountApi* | [**accountResetForgottenPasswordPost**](docs/Api/AccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
-*AdminApi* | [**adminUuidGet**](docs/Api/AdminApi.md#adminuuidget) | **GET** /admin/{uuid} | Get user by admin credentials.
+*AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
  - [DeliveryReclamation](docs/Model/DeliveryReclamation.md)
  - [DescriptionFrequency](docs/Model/DescriptionFrequency.md)
  - [EntitlementAccess](docs/Model/EntitlementAccess.md)
+ - [FaroUser](docs/Model/FaroUser.md)
  - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
  - [GdprConsent](docs/Model/GdprConsent.md)
  - [InlineResponse400](docs/Model/InlineResponse400.md)
@@ -142,6 +143,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse415UnsupportedMediaType](docs/Model/InlineResponse415UnsupportedMediaType.md)
  - [InlineResponse500](docs/Model/InlineResponse500.md)
  - [InlineResponse500InternalServerError](docs/Model/InlineResponse500InternalServerError.md)
+ - [JanrainUser](docs/Model/JanrainUser.md)
  - [LegalConsent](docs/Model/LegalConsent.md)
  - [LoginData](docs/Model/LoginData.md)
  - [LoginDataSSO](docs/Model/LoginDataSSO.md)
@@ -160,6 +162,8 @@ Class | Method | HTTP request | Description
  - [Payment](docs/Model/Payment.md)
  - [PendingAddressChange](docs/Model/PendingAddressChange.md)
  - [Product](docs/Model/Product.md)
+ - [SearchQuery](docs/Model/SearchQuery.md)
+ - [SearchResult](docs/Model/SearchResult.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionDates](docs/Model/SubscriptionDates.md)
  - [SubscriptionPauseDates](docs/Model/SubscriptionPauseDates.md)

@@ -4,17 +4,15 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adminUuidGet**](AdminApi.md#adminUuidGet) | **GET** /admin/{uuid} | Get user by admin credentials.
+[**adminSearchPost**](AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users
 
 
 
-## adminUuidGet
+## adminSearchPost
 
-> \PersonaClient\Model\User adminUuidGet($uuid, $auth_user, $authorization, $cache_control)
+> \PersonaClient\Model\SearchResult[] adminSearchPost($body, $auth_user, $authorization)
 
-Get user by admin credentials.
-
-Authorization header expects the following format ‘OAuth {token}’
+Search for users
 
 ### Example
 
@@ -28,16 +26,15 @@ $apiInstance = new PersonaClient\Api\AdminApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$uuid = 'uuid_example'; // string | 
+$body = new \PersonaClient\Model\SearchQuery(); // \PersonaClient\Model\SearchQuery | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
-$cache_control = 'cache_control_example'; // string | 
 
 try {
-    $result = $apiInstance->adminUuidGet($uuid, $auth_user, $authorization, $cache_control);
+    $result = $apiInstance->adminSearchPost($body, $auth_user, $authorization);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdminApi->adminUuidGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminApi->adminSearchPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -47,14 +44,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | [**string**](../Model/.md)|  |
+ **body** | [**\PersonaClient\Model\SearchQuery**](../Model/SearchQuery.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
- **cache_control** | **string**|  | [optional]
 
 ### Return type
 
-[**\PersonaClient\Model\User**](../Model/User.md)
+[**\PersonaClient\Model\SearchResult[]**](../Model/SearchResult.md)
 
 ### Authorization
 
@@ -62,7 +58,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json;charset=utf-8
 - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

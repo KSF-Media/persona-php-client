@@ -116,42 +116,40 @@ class AdminApi
     }
 
     /**
-     * Operation adminUuidGet
+     * Operation adminSearchPost
      *
-     * Get user by admin credentials.
+     * Search for users
      *
-     * @param  string $uuid uuid (required)
+     * @param  \PersonaClient\Model\SearchQuery $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
-     * @param  string $cache_control cache_control (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PersonaClient\Model\User
+     * @return \PersonaClient\Model\SearchResult[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
-    public function adminUuidGet($uuid, $auth_user = null, $authorization = null, $cache_control = null)
+    public function adminSearchPost($body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->adminUuidGetWithHttpInfo($uuid, $auth_user, $authorization, $cache_control);
+        list($response) = $this->adminSearchPostWithHttpInfo($body, $auth_user, $authorization);
         return $response;
     }
 
     /**
-     * Operation adminUuidGetWithHttpInfo
+     * Operation adminSearchPostWithHttpInfo
      *
-     * Get user by admin credentials.
+     * Search for users
      *
-     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\SearchQuery $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
-     * @param  string $cache_control (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \PersonaClient\Model\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\SearchResult[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
-    public function adminUuidGetWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
+    public function adminSearchPostWithHttpInfo($body, $auth_user = null, $authorization = null)
     {
-        $request = $this->adminUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
+        $request = $this->adminSearchPostRequest($body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -184,20 +182,44 @@ class AdminApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\PersonaClient\Model\User' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\SearchResult[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\SearchResult[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PersonaClient\Model\User';
+            $returnType = '\PersonaClient\Model\SearchResult[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -216,7 +238,23 @@ class AdminApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PersonaClient\Model\User',
+                        '\PersonaClient\Model\SearchResult[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PersonaClient\Model\InlineResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PersonaClient\Model\InlineResponse415',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -227,21 +265,20 @@ class AdminApi
     }
 
     /**
-     * Operation adminUuidGetAsync
+     * Operation adminSearchPostAsync
      *
-     * Get user by admin credentials.
+     * Search for users
      *
-     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\SearchQuery $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
-     * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminUuidGetAsync($uuid, $auth_user = null, $authorization = null, $cache_control = null)
+    public function adminSearchPostAsync($body, $auth_user = null, $authorization = null)
     {
-        return $this->adminUuidGetAsyncWithHttpInfo($uuid, $auth_user, $authorization, $cache_control)
+        return $this->adminSearchPostAsyncWithHttpInfo($body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -250,22 +287,21 @@ class AdminApi
     }
 
     /**
-     * Operation adminUuidGetAsyncWithHttpInfo
+     * Operation adminSearchPostAsyncWithHttpInfo
      *
-     * Get user by admin credentials.
+     * Search for users
      *
-     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\SearchQuery $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
-     * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminUuidGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null, $cache_control = null)
+    public function adminSearchPostAsyncWithHttpInfo($body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\PersonaClient\Model\User';
-        $request = $this->adminUuidGetRequest($uuid, $auth_user, $authorization, $cache_control);
+        $returnType = '\PersonaClient\Model\SearchResult[]';
+        $request = $this->adminSearchPostRequest($body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -302,26 +338,25 @@ class AdminApi
     }
 
     /**
-     * Create request for operation 'adminUuidGet'
+     * Create request for operation 'adminSearchPost'
      *
-     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\SearchQuery $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
-     * @param  string $cache_control (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function adminUuidGetRequest($uuid, $auth_user = null, $authorization = null, $cache_control = null)
+    protected function adminSearchPostRequest($body, $auth_user = null, $authorization = null)
     {
-        // verify the required parameter 'uuid' is set
-        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $uuid when calling adminUuidGet'
+                'Missing the required parameter $body when calling adminSearchPost'
             );
         }
 
-        $resourcePath = '/admin/{uuid}';
+        $resourcePath = '/admin/search';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -336,22 +371,13 @@ class AdminApi
         if ($authorization !== null) {
             $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
         }
-        // header params
-        if ($cache_control !== null) {
-            $headerParams['Cache-Control'] = ObjectSerializer::toHeaderValue($cache_control);
-        }
 
-        // path params
-        if ($uuid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'uuid' . '}',
-                ObjectSerializer::toPathValue($uuid),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -360,7 +386,7 @@ class AdminApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json;charset=utf-8'],
-                []
+                ['application/json;charset=utf-8']
             );
         }
 
@@ -407,7 +433,7 @@ class AdminApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
