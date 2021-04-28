@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paper** | [**\PersonaClient\Model\PaperCode**](PaperCode.md) |  | [optional] 
+**paper** | **string** |  | [optional] 
 **publication_date** | [**\DateTime**](\DateTime.md) |  | 
 **claim** | **string** | The type of claim for the reclamation | 
 

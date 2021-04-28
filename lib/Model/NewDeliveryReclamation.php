@@ -58,7 +58,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paper' => '\PersonaClient\Model\PaperCode',
+        'paper' => 'string',
         'publication_date' => '\DateTime',
         'claim' => 'string'
     ];
@@ -249,7 +249,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Gets paper
      *
-     * @return \PersonaClient\Model\PaperCode|null
+     * @return string|null
      */
     public function getPaper()
     {
@@ -259,7 +259,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets paper
      *
-     * @param \PersonaClient\Model\PaperCode|null $paper paper
+     * @param string|null $paper paper
      *
      * @return $this
      */

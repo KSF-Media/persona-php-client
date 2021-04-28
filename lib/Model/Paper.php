@@ -57,7 +57,7 @@ class Paper implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => '\PersonaClient\Model\PaperCode',
+        'code' => 'string',
         'name' => 'string'
     ];
 
@@ -219,7 +219,7 @@ class Paper implements ModelInterface, ArrayAccess
     /**
      * Gets code
      *
-     * @return \PersonaClient\Model\PaperCode
+     * @return string
      */
     public function getCode()
     {
@@ -229,7 +229,7 @@ class Paper implements ModelInterface, ArrayAccess
     /**
      * Sets code
      *
-     * @param \PersonaClient\Model\PaperCode $code code
+     * @param string $code code
      *
      * @return $this
      */

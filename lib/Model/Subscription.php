@@ -74,7 +74,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'pending_address_changes' => '\PersonaClient\Model\PendingAddressChange[]',
         'order_number' => 'string',
         'payment_method' => 'string',
-        'payment_method_id' => '\PersonaClient\Model\PaymentMethodId'
+        'payment_method_id' => 'int'
     ];
 
     /**
@@ -482,6 +482,14 @@ class Subscription implements ModelInterface, ArrayAccess
                 "invalid value for 'payment_method', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
+        }
+
+        if (!is_null($this->container['payment_method_id']) && ($this->container['payment_method_id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'payment_method_id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['payment_method_id']) && ($this->container['payment_method_id'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'payment_method_id', must be bigger than or equal to -9223372036854775808.";
         }
 
         return $invalidProperties;
@@ -978,7 +986,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets payment_method_id
      *
-     * @return \PersonaClient\Model\PaymentMethodId|null
+     * @return int|null
      */
     public function getPaymentMethodId()
     {
@@ -988,12 +996,20 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets payment_method_id
      *
-     * @param \PersonaClient\Model\PaymentMethodId|null $payment_method_id payment_method_id
+     * @param int|null $payment_method_id payment_method_id
      *
      * @return $this
      */
     public function setPaymentMethodId($payment_method_id)
     {
+
+        if (!is_null($payment_method_id) && ($payment_method_id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $payment_method_id when calling Subscription., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($payment_method_id) && ($payment_method_id < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $payment_method_id when calling Subscription., must be bigger than or equal to -9223372036854775808.');
+        }
+
         $this->container['payment_method_id'] = $payment_method_id;
 
         return $this;

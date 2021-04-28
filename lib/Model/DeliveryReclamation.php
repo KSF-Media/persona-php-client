@@ -62,7 +62,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
         'customer_number' => 'int',
         'subscription_number' => 'int',
         'date' => '\DateTime',
-        'paper' => '\PersonaClient\Model\PaperCode',
+        'paper' => 'string',
         'publication_date' => '\DateTime',
         'claim' => 'string'
     ];
@@ -429,7 +429,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Gets paper
      *
-     * @return \PersonaClient\Model\PaperCode|null
+     * @return string|null
      */
     public function getPaper()
     {
@@ -439,7 +439,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets paper
      *
-     * @param \PersonaClient\Model\PaperCode|null $paper paper
+     * @param string|null $paper paper
      *
      * @return $this
      */
