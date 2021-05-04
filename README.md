@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**loginSomePost**](docs/Api/LoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
 *LoginApi* | [**loginSsoPost**](docs/Api/LoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 *LoginApi* | [**loginUuidDelete**](docs/Api/LoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
+*UsersApi* | [**usersAdminPost**](docs/Api/UsersApi.md#usersadminpost) | **POST** /users/admin | Create a new user with admin options.
 *UsersApi* | [**usersPost**](docs/Api/UsersApi.md#userspost) | **POST** /users | Create a new user.
 *UsersApi* | [**usersSearchGet**](docs/Api/UsersApi.md#userssearchget) | **GET** /users/search | Search for users
 *UsersApi* | [**usersTemporaryPost**](docs/Api/UsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
@@ -119,6 +120,7 @@ Class | Method | HTTP request | Description
 
  - [ActiveDays](docs/Model/ActiveDays.md)
  - [Address](docs/Model/Address.md)
+ - [AdminNewUser](docs/Model/AdminNewUser.md)
  - [CancelSubscriptionReason](docs/Model/CancelSubscriptionReason.md)
  - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeleteTempAddressChangeDates](docs/Model/DeleteTempAddressChangeDates.md)
