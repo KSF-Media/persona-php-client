@@ -5,6 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adminSearchPost**](AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users
+[**adminUserPost**](AdminApi.md#adminUserPost) | **POST** /admin/user | Create a new user with admin options.
 
 
 
@@ -51,6 +52,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\PersonaClient\Model\SearchResult[]**](../Model/SearchResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## adminUserPost
+
+> \PersonaClient\Model\LoginResponse adminUserPost($body, $auth_user, $authorization)
+
+Create a new user with admin options.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new PersonaClient\Api\AdminApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \PersonaClient\Model\AdminNewUser(); // \PersonaClient\Model\AdminNewUser | 
+$auth_user = 'auth_user_example'; // string | 
+$authorization = 'authorization_example'; // string | 
+
+try {
+    $result = $apiInstance->adminUserPost($body, $auth_user, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AdminApi->adminUserPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\PersonaClient\Model\AdminNewUser**](../Model/AdminNewUser.md)|  |
+ **auth_user** | [**string**](../Model/.md)|  | [optional]
+ **authorization** | **string**|  | [optional]
+
+### Return type
+
+[**\PersonaClient\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 

@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountForgotPassPost**](docs/Api/AccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *AccountApi* | [**accountResetForgottenPasswordPost**](docs/Api/AccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
+*AdminApi* | [**adminUserPost**](docs/Api/AdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
@@ -94,7 +95,6 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**loginSomePost**](docs/Api/LoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
 *LoginApi* | [**loginSsoPost**](docs/Api/LoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 *LoginApi* | [**loginUuidDelete**](docs/Api/LoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
-*UsersApi* | [**usersAdminPost**](docs/Api/UsersApi.md#usersadminpost) | **POST** /users/admin | Create a new user with admin options.
 *UsersApi* | [**usersPost**](docs/Api/UsersApi.md#userspost) | **POST** /users | Create a new user.
 *UsersApi* | [**usersSearchGet**](docs/Api/UsersApi.md#userssearchget) | **GET** /users/search | Search for users
 *UsersApi* | [**usersTemporaryPost**](docs/Api/UsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.

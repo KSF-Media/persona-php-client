@@ -73,16 +73,6 @@ class UsersApiTest extends TestCase
     }
 
     /**
-     * Test case for usersAdminPost
-     *
-     * Create a new user with admin options..
-     *
-     */
-    public function testUsersAdminPost()
-    {
-    }
-
-    /**
      * Test case for usersPost
      *
      * Create a new user..

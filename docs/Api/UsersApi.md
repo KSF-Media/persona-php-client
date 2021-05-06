@@ -4,7 +4,6 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersAdminPost**](UsersApi.md#usersAdminPost) | **POST** /users/admin | Create a new user with admin options.
 [**usersPost**](UsersApi.md#usersPost) | **POST** /users | Create a new user.
 [**usersSearchGet**](UsersApi.md#usersSearchGet) | **GET** /users/search | Search for users
 [**usersTemporaryPost**](UsersApi.md#usersTemporaryPost) | **POST** /users/temporary | Create a new user with email.
@@ -25,64 +24,6 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
 [**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
 
-
-
-## usersAdminPost
-
-> \PersonaClient\Model\LoginResponse usersAdminPost($body, $auth_user, $authorization)
-
-Create a new user with admin options.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-$apiInstance = new PersonaClient\Api\UsersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$body = new \PersonaClient\Model\AdminNewUser(); // \PersonaClient\Model\AdminNewUser | 
-$auth_user = 'auth_user_example'; // string | 
-$authorization = 'authorization_example'; // string | 
-
-try {
-    $result = $apiInstance->usersAdminPost($body, $auth_user, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->usersAdminPost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\PersonaClient\Model\AdminNewUser**](../Model/AdminNewUser.md)|  |
- **auth_user** | [**string**](../Model/.md)|  | [optional]
- **authorization** | **string**|  | [optional]
-
-### Return type
-
-[**\PersonaClient\Model\LoginResponse**](../Model/LoginResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
 
 
 ## usersPost

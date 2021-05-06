@@ -81,4 +81,14 @@ class AdminApiTest extends TestCase
     public function testAdminSearchPost()
     {
     }
+
+    /**
+     * Test case for adminUserPost
+     *
+     * Create a new user with admin options..
+     *
+     */
+    public function testAdminUserPost()
+    {
+    }
 }
