@@ -73,32 +73,22 @@ class AccountApiTest extends TestCase
     }
 
     /**
-     * Test case for accountCodeForTokenPost
+     * Test case for accountPasswordForgotPost
      *
-     * Get a password reset token.
+     * Request password reset link.
      *
      */
-    public function testAccountCodeForTokenPost()
+    public function testAccountPasswordForgotPost()
     {
     }
 
     /**
-     * Test case for accountForgotPassPost
-     *
-     * Forgot Password.
-     *
-     */
-    public function testAccountForgotPassPost()
-    {
-    }
-
-    /**
-     * Test case for accountResetForgottenPasswordPost
+     * Test case for accountPasswordResetPost
      *
      * Reset a forgotten password with a token.
      *
      */
-    public function testAccountResetForgottenPasswordPost()
+    public function testAccountPasswordResetPost()
     {
     }
 }

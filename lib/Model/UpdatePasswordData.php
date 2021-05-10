@@ -58,7 +58,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'password' => 'string',
-        'password_confirm' => 'string',
+        'confirm_password' => 'string',
         'token' => 'string'
     ];
 
@@ -69,7 +69,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'password' => null,
-        'password_confirm' => null,
+        'confirm_password' => null,
         'token' => null
     ];
 
@@ -101,7 +101,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'password' => 'password',
-        'password_confirm' => 'password_confirm',
+        'confirm_password' => 'confirmPassword',
         'token' => 'token'
     ];
 
@@ -112,7 +112,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'password' => 'setPassword',
-        'password_confirm' => 'setPasswordConfirm',
+        'confirm_password' => 'setConfirmPassword',
         'token' => 'setToken'
     ];
 
@@ -123,7 +123,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'password' => 'getPassword',
-        'password_confirm' => 'getPasswordConfirm',
+        'confirm_password' => 'getConfirmPassword',
         'token' => 'getToken'
     ];
 
@@ -188,7 +188,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['password_confirm'] = isset($data['password_confirm']) ? $data['password_confirm'] : null;
+        $this->container['confirm_password'] = isset($data['confirm_password']) ? $data['confirm_password'] : null;
         $this->container['token'] = isset($data['token']) ? $data['token'] : null;
     }
 
@@ -204,8 +204,8 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
         }
-        if ($this->container['password_confirm'] === null) {
-            $invalidProperties[] = "'password_confirm' can't be null";
+        if ($this->container['confirm_password'] === null) {
+            $invalidProperties[] = "'confirm_password' can't be null";
         }
         if ($this->container['token'] === null) {
             $invalidProperties[] = "'token' can't be null";
@@ -250,25 +250,25 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets password_confirm
+     * Gets confirm_password
      *
      * @return string
      */
-    public function getPasswordConfirm()
+    public function getConfirmPassword()
     {
-        return $this->container['password_confirm'];
+        return $this->container['confirm_password'];
     }
 
     /**
-     * Sets password_confirm
+     * Sets confirm_password
      *
-     * @param string $password_confirm password_confirm
+     * @param string $confirm_password confirm_password
      *
      * @return $this
      */
-    public function setPasswordConfirm($password_confirm)
+    public function setConfirmPassword($confirm_password)
     {
-        $this->container['password_confirm'] = $password_confirm;
+        $this->container['confirm_password'] = $confirm_password;
 
         return $this;
     }

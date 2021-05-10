@@ -65,13 +65,13 @@ $apiInstance = new PersonaClient\Api\AccountApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \PersonaClient\Model\CodeForTokenData(); // \PersonaClient\Model\CodeForTokenData | 
+$body = new \PersonaClient\Model\ForgotPasswordData(); // \PersonaClient\Model\ForgotPasswordData | 
 
 try {
-    $result = $apiInstance->accountCodeForTokenPost($body);
+    $result = $apiInstance->accountPasswordForgotPost($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountApi->accountCodeForTokenPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountApi->accountPasswordForgotPost: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -83,9 +83,8 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountApi* | [**accountCodeForTokenPost**](docs/Api/AccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
-*AccountApi* | [**accountForgotPassPost**](docs/Api/AccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
-*AccountApi* | [**accountResetForgottenPasswordPost**](docs/Api/AccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
+*AccountApi* | [**accountPasswordForgotPost**](docs/Api/AccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
+*AccountApi* | [**accountPasswordResetPost**](docs/Api/AccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *AdminApi* | [**adminUserPost**](docs/Api/AdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
@@ -122,7 +121,6 @@ Class | Method | HTTP request | Description
  - [Address](docs/Model/Address.md)
  - [AdminNewUser](docs/Model/AdminNewUser.md)
  - [CancelSubscriptionReason](docs/Model/CancelSubscriptionReason.md)
- - [CodeForTokenData](docs/Model/CodeForTokenData.md)
  - [DeleteTempAddressChangeDates](docs/Model/DeleteTempAddressChangeDates.md)
  - [DeliveryAddress](docs/Model/DeliveryAddress.md)
  - [DeliveryReclamation](docs/Model/DeliveryReclamation.md)
@@ -173,7 +171,6 @@ Class | Method | HTTP request | Description
  - [SubscriptionPayments](docs/Model/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/Model/TemporaryAddressChange.md)
  - [TemporaryAddressChangeDates](docs/Model/TemporaryAddressChangeDates.md)
- - [TokenResponse](docs/Model/TokenResponse.md)
  - [UpdatePasswordData](docs/Model/UpdatePasswordData.md)
  - [User](docs/Model/User.md)
  - [UserUpdate](docs/Model/UserUpdate.md)

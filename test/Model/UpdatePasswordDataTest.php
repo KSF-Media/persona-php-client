@@ -86,9 +86,9 @@ class UpdatePasswordDataTest extends TestCase
     }
 
     /**
-     * Test attribute "password_confirm"
+     * Test attribute "confirm_password"
      */
-    public function testPropertyPasswordConfirm()
+    public function testPropertyConfirmPassword()
     {
     }
 
