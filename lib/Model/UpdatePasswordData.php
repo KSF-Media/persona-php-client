@@ -201,12 +201,6 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['password'] === null) {
-            $invalidProperties[] = "'password' can't be null";
-        }
-        if ($this->container['confirm_password'] === null) {
-            $invalidProperties[] = "'confirm_password' can't be null";
-        }
         if ($this->container['token'] === null) {
             $invalidProperties[] = "'token' can't be null";
         }
@@ -228,7 +222,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
     /**
      * Gets password
      *
-     * @return string
+     * @return string|null
      */
     public function getPassword()
     {
@@ -238,7 +232,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
     /**
      * Sets password
      *
-     * @param string $password password
+     * @param string|null $password password
      *
      * @return $this
      */
@@ -252,7 +246,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
     /**
      * Gets confirm_password
      *
-     * @return string
+     * @return string|null
      */
     public function getConfirmPassword()
     {
@@ -262,7 +256,7 @@ class UpdatePasswordData implements ModelInterface, ArrayAccess
     /**
      * Sets confirm_password
      *
-     * @param string $confirm_password confirm_password
+     * @param string|null $confirm_password confirm_password
      *
      * @return $this
      */
