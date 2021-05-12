@@ -93,6 +93,13 @@ class PackageTest extends TestCase
     }
 
     /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
      * Test attribute "paper"
      */
     public function testPropertyPaper()
@@ -145,13 +152,6 @@ class PackageTest extends TestCase
      * Test attribute "can_temp_addr"
      */
     public function testPropertyCanTempAddr()
-    {
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
     {
     }
 }

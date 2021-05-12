@@ -59,6 +59,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
+        'description' => 'string[]',
         'paper' => '\PersonaClient\Model\Paper',
         'digital_only' => 'bool',
         'products' => '\PersonaClient\Model\Product[]',
@@ -66,8 +67,7 @@ class Package implements ModelInterface, ArrayAccess
         'campaigns' => '\PersonaClient\Model\PackageCampaign[]',
         'next_delivery' => '\DateTime',
         'can_pause' => 'bool',
-        'can_temp_addr' => 'bool',
-        'description' => '\PersonaClient\Model\PackageDescription'
+        'can_temp_addr' => 'bool'
     ];
 
     /**
@@ -78,6 +78,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'description' => null,
         'paper' => null,
         'digital_only' => null,
         'products' => null,
@@ -85,8 +86,7 @@ class Package implements ModelInterface, ArrayAccess
         'campaigns' => null,
         'next_delivery' => 'date',
         'can_pause' => null,
-        'can_temp_addr' => null,
-        'description' => null
+        'can_temp_addr' => null
     ];
 
     /**
@@ -118,6 +118,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'description' => 'description',
         'paper' => 'paper',
         'digital_only' => 'digitalOnly',
         'products' => 'products',
@@ -125,8 +126,7 @@ class Package implements ModelInterface, ArrayAccess
         'campaigns' => 'campaigns',
         'next_delivery' => 'nextDelivery',
         'can_pause' => 'canPause',
-        'can_temp_addr' => 'canTempAddr',
-        'description' => 'description'
+        'can_temp_addr' => 'canTempAddr'
     ];
 
     /**
@@ -137,6 +137,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'description' => 'setDescription',
         'paper' => 'setPaper',
         'digital_only' => 'setDigitalOnly',
         'products' => 'setProducts',
@@ -144,8 +145,7 @@ class Package implements ModelInterface, ArrayAccess
         'campaigns' => 'setCampaigns',
         'next_delivery' => 'setNextDelivery',
         'can_pause' => 'setCanPause',
-        'can_temp_addr' => 'setCanTempAddr',
-        'description' => 'setDescription'
+        'can_temp_addr' => 'setCanTempAddr'
     ];
 
     /**
@@ -156,6 +156,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'description' => 'getDescription',
         'paper' => 'getPaper',
         'digital_only' => 'getDigitalOnly',
         'products' => 'getProducts',
@@ -163,8 +164,7 @@ class Package implements ModelInterface, ArrayAccess
         'campaigns' => 'getCampaigns',
         'next_delivery' => 'getNextDelivery',
         'can_pause' => 'getCanPause',
-        'can_temp_addr' => 'getCanTempAddr',
-        'description' => 'getDescription'
+        'can_temp_addr' => 'getCanTempAddr'
     ];
 
     /**
@@ -229,6 +229,7 @@ class Package implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
         $this->container['digital_only'] = isset($data['digital_only']) ? $data['digital_only'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
@@ -237,7 +238,6 @@ class Package implements ModelInterface, ArrayAccess
         $this->container['next_delivery'] = isset($data['next_delivery']) ? $data['next_delivery'] : null;
         $this->container['can_pause'] = isset($data['can_pause']) ? $data['can_pause'] : null;
         $this->container['can_temp_addr'] = isset($data['can_temp_addr']) ? $data['can_temp_addr'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
     /**
@@ -254,6 +254,9 @@ class Package implements ModelInterface, ArrayAccess
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
         }
         if ($this->container['paper'] === null) {
             $invalidProperties[] = "'paper' can't be null";
@@ -335,6 +338,30 @@ class Package implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string[]
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string[] $description Package description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -527,30 +554,6 @@ class Package implements ModelInterface, ArrayAccess
     public function setCanTempAddr($can_temp_addr)
     {
         $this->container['can_temp_addr'] = $can_temp_addr;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return \PersonaClient\Model\PackageDescription|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param \PersonaClient\Model\PackageDescription|null $description description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
 
         return $this;
     }
