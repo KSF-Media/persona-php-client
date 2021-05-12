@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Package identifier | 
 **name** | **string** | Package name | 
-**description** | **string[]** | Package description | 
+**info** | **string[]** | Package description | 
 **paper** | [**\PersonaClient\Model\Paper**](Paper.md) |  | 
 **digital_only** | **bool** | All products in this package are digital | 
 **products** | [**\PersonaClient\Model\Product[]**](Product.md) | The Products contained in a package | 

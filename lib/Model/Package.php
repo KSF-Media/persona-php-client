@@ -59,7 +59,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'description' => 'string[]',
+        'info' => 'string[]',
         'paper' => '\PersonaClient\Model\Paper',
         'digital_only' => 'bool',
         'products' => '\PersonaClient\Model\Product[]',
@@ -78,7 +78,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'description' => null,
+        'info' => null,
         'paper' => null,
         'digital_only' => null,
         'products' => null,
@@ -118,7 +118,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'description' => 'description',
+        'info' => 'info',
         'paper' => 'paper',
         'digital_only' => 'digitalOnly',
         'products' => 'products',
@@ -137,7 +137,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'description' => 'setDescription',
+        'info' => 'setInfo',
         'paper' => 'setPaper',
         'digital_only' => 'setDigitalOnly',
         'products' => 'setProducts',
@@ -156,7 +156,7 @@ class Package implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'description' => 'getDescription',
+        'info' => 'getInfo',
         'paper' => 'getPaper',
         'digital_only' => 'getDigitalOnly',
         'products' => 'getProducts',
@@ -229,7 +229,7 @@ class Package implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['info'] = isset($data['info']) ? $data['info'] : null;
         $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
         $this->container['digital_only'] = isset($data['digital_only']) ? $data['digital_only'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
@@ -255,8 +255,8 @@ class Package implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
+        if ($this->container['info'] === null) {
+            $invalidProperties[] = "'info' can't be null";
         }
         if ($this->container['paper'] === null) {
             $invalidProperties[] = "'paper' can't be null";
@@ -343,25 +343,25 @@ class Package implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets description
+     * Gets info
      *
      * @return string[]
      */
-    public function getDescription()
+    public function getInfo()
     {
-        return $this->container['description'];
+        return $this->container['info'];
     }
 
     /**
-     * Sets description
+     * Sets info
      *
-     * @param string[] $description Package description
+     * @param string[] $info Package description
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setInfo($info)
     {
-        $this->container['description'] = $description;
+        $this->container['info'] = $info;
 
         return $this;
     }

@@ -93,9 +93,9 @@ class PackageTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "info"
      */
-    public function testPropertyDescription()
+    public function testPropertyInfo()
     {
     }
 
