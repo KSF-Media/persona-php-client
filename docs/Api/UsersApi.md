@@ -5,7 +5,6 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usersPost**](UsersApi.md#usersPost) | **POST** /users | Create a new user.
-[**usersSearchGet**](UsersApi.md#usersSearchGet) | **GET** /users/search | Search for users
 [**usersTemporaryPost**](UsersApi.md#usersTemporaryPost) | **POST** /users/temporary | Create a new user with email.
 [**usersUuidEntitlementGet**](UsersApi.md#usersUuidEntitlementGet) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 [**usersUuidGdprPut**](UsersApi.md#usersUuidGdprPut) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
@@ -73,66 +72,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
-
-
-## usersSearchGet
-
-> \PersonaClient\Model\User[] usersSearchGet($query, $auth_user, $authorization)
-
-Search for users
-
-deprecated
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-$apiInstance = new PersonaClient\Api\UsersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$query = 'query_example'; // string | 
-$auth_user = 'auth_user_example'; // string | 
-$authorization = 'authorization_example'; // string | 
-
-try {
-    $result = $apiInstance->usersSearchGet($query, $auth_user, $authorization);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->usersSearchGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**|  |
- **auth_user** | [**string**](../Model/.md)|  | [optional]
- **authorization** | **string**|  | [optional]
-
-### Return type
-
-[**\PersonaClient\Model\User[]**](../Model/User.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

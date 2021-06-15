@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **address** | [**\PersonaClient\Model\UserUpdateAddress**](UserUpdateAddress.md) |  | [optional] 
 **email** | **string** |  | [optional] 
 **pending_address_changes** | **object[]** |  | [optional] 
+**update_cusno** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

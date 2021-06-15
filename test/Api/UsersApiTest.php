@@ -83,16 +83,6 @@ class UsersApiTest extends TestCase
     }
 
     /**
-     * Test case for usersSearchGet
-     *
-     * Search for users.
-     *
-     */
-    public function testUsersSearchGet()
-    {
-    }
-
-    /**
      * Test case for usersTemporaryPost
      *
      * Create a new user with email..

@@ -112,4 +112,11 @@ class UserUpdateTest extends TestCase
     public function testPropertyPendingAddressChanges()
     {
     }
+
+    /**
+     * Test attribute "update_cusno"
+     */
+    public function testPropertyUpdateCusno()
+    {
+    }
 }

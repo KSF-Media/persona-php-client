@@ -61,7 +61,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'address' => '\PersonaClient\Model\UserUpdateAddress',
         'email' => 'string',
-        'pending_address_changes' => 'object[]'
+        'pending_address_changes' => 'object[]',
+        'update_cusno' => 'int'
     ];
 
     /**
@@ -74,7 +75,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => null,
         'address' => null,
         'email' => null,
-        'pending_address_changes' => null
+        'pending_address_changes' => null,
+        'update_cusno' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'lastName',
         'address' => 'address',
         'email' => 'email',
-        'pending_address_changes' => 'pendingAddressChanges'
+        'pending_address_changes' => 'pendingAddressChanges',
+        'update_cusno' => 'updateCusno'
     ];
 
     /**
@@ -121,7 +124,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'address' => 'setAddress',
         'email' => 'setEmail',
-        'pending_address_changes' => 'setPendingAddressChanges'
+        'pending_address_changes' => 'setPendingAddressChanges',
+        'update_cusno' => 'setUpdateCusno'
     ];
 
     /**
@@ -134,7 +138,8 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'address' => 'getAddress',
         'email' => 'getEmail',
-        'pending_address_changes' => 'getPendingAddressChanges'
+        'pending_address_changes' => 'getPendingAddressChanges',
+        'update_cusno' => 'getUpdateCusno'
     ];
 
     /**
@@ -202,6 +207,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
+        $this->container['update_cusno'] = isset($data['update_cusno']) ? $data['update_cusno'] : null;
     }
 
     /**
@@ -219,6 +225,14 @@ class UserUpdate implements ModelInterface, ArrayAccess
 
         if (!is_null($this->container['last_name']) && (mb_strlen($this->container['last_name']) < 1)) {
             $invalidProperties[] = "invalid value for 'last_name', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['update_cusno']) && ($this->container['update_cusno'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'update_cusno', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['update_cusno']) && ($this->container['update_cusno'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'update_cusno', must be bigger than or equal to -9223372036854775808.";
         }
 
         return $invalidProperties;
@@ -362,6 +376,38 @@ class UserUpdate implements ModelInterface, ArrayAccess
     public function setPendingAddressChanges($pending_address_changes)
     {
         $this->container['pending_address_changes'] = $pending_address_changes;
+
+        return $this;
+    }
+
+    /**
+     * Gets update_cusno
+     *
+     * @return int|null
+     */
+    public function getUpdateCusno()
+    {
+        return $this->container['update_cusno'];
+    }
+
+    /**
+     * Sets update_cusno
+     *
+     * @param int|null $update_cusno update_cusno
+     *
+     * @return $this
+     */
+    public function setUpdateCusno($update_cusno)
+    {
+
+        if (!is_null($update_cusno) && ($update_cusno > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $update_cusno when calling UserUpdate., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($update_cusno) && ($update_cusno < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $update_cusno when calling UserUpdate., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['update_cusno'] = $update_cusno;
 
         return $this;
     }
