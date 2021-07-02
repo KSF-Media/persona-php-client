@@ -2016,6 +2016,640 @@ class UsersApi
     }
 
     /**
+     * Operation usersUuidNewslettersGet
+     *
+     * Get newsletter subscriptions
+     *
+     * @param  string $uuid uuid (required)
+     * @param  string $auth_user auth_user (optional)
+     * @param  string $authorization authorization (optional)
+     *
+     * @throws \PersonaClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \PersonaClient\Model\NewsletterSubscriptions
+     */
+    public function usersUuidNewslettersGet($uuid, $auth_user = null, $authorization = null)
+    {
+        list($response) = $this->usersUuidNewslettersGetWithHttpInfo($uuid, $auth_user, $authorization);
+        return $response;
+    }
+
+    /**
+     * Operation usersUuidNewslettersGetWithHttpInfo
+     *
+     * Get newsletter subscriptions
+     *
+     * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \PersonaClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \PersonaClient\Model\NewsletterSubscriptions, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function usersUuidNewslettersGetWithHttpInfo($uuid, $auth_user = null, $authorization = null)
+    {
+        $request = $this->usersUuidNewslettersGetRequest($uuid, $auth_user, $authorization);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\PersonaClient\Model\NewsletterSubscriptions' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\NewsletterSubscriptions', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PersonaClient\Model\NewsletterSubscriptions',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation usersUuidNewslettersGetAsync
+     *
+     * Get newsletter subscriptions
+     *
+     * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidNewslettersGetAsync($uuid, $auth_user = null, $authorization = null)
+    {
+        return $this->usersUuidNewslettersGetAsyncWithHttpInfo($uuid, $auth_user, $authorization)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation usersUuidNewslettersGetAsyncWithHttpInfo
+     *
+     * Get newsletter subscriptions
+     *
+     * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidNewslettersGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null)
+    {
+        $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+        $request = $this->usersUuidNewslettersGetRequest($uuid, $auth_user, $authorization);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'usersUuidNewslettersGet'
+     *
+     * @param  string $uuid (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function usersUuidNewslettersGetRequest($uuid, $auth_user = null, $authorization = null)
+    {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling usersUuidNewslettersGet'
+            );
+        }
+
+        $resourcePath = '/users/{uuid}/newsletters';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
+        }
+
+        // path params
+        if ($uuid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json;charset=utf-8']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json;charset=utf-8'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation usersUuidNewslettersPut
+     *
+     * Update newsletter subscriptions
+     *
+     * @param  string $uuid uuid (required)
+     * @param  \PersonaClient\Model\NewsletterSubscriptions $body body (required)
+     * @param  string $auth_user auth_user (optional)
+     * @param  string $authorization authorization (optional)
+     *
+     * @throws \PersonaClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \PersonaClient\Model\NewsletterSubscriptions|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
+     */
+    public function usersUuidNewslettersPut($uuid, $body, $auth_user = null, $authorization = null)
+    {
+        list($response) = $this->usersUuidNewslettersPutWithHttpInfo($uuid, $body, $auth_user, $authorization);
+        return $response;
+    }
+
+    /**
+     * Operation usersUuidNewslettersPutWithHttpInfo
+     *
+     * Update newsletter subscriptions
+     *
+     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \PersonaClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \PersonaClient\Model\NewsletterSubscriptions|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function usersUuidNewslettersPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
+    {
+        $request = $this->usersUuidNewslettersPutRequest($uuid, $body, $auth_user, $authorization);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\PersonaClient\Model\NewsletterSubscriptions' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\NewsletterSubscriptions', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\PersonaClient\Model\InlineResponse400' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse400', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\PersonaClient\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PersonaClient\Model\NewsletterSubscriptions',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PersonaClient\Model\InlineResponse400',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PersonaClient\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation usersUuidNewslettersPutAsync
+     *
+     * Update newsletter subscriptions
+     *
+     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidNewslettersPutAsync($uuid, $body, $auth_user = null, $authorization = null)
+    {
+        return $this->usersUuidNewslettersPutAsyncWithHttpInfo($uuid, $body, $auth_user, $authorization)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation usersUuidNewslettersPutAsyncWithHttpInfo
+     *
+     * Update newsletter subscriptions
+     *
+     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function usersUuidNewslettersPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
+    {
+        $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+        $request = $this->usersUuidNewslettersPutRequest($uuid, $body, $auth_user, $authorization);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'usersUuidNewslettersPut'
+     *
+     * @param  string $uuid (required)
+     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  string $auth_user (optional)
+     * @param  string $authorization (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function usersUuidNewslettersPutRequest($uuid, $body, $auth_user = null, $authorization = null)
+    {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling usersUuidNewslettersPut'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling usersUuidNewslettersPut'
+            );
+        }
+
+        $resourcePath = '/users/{uuid}/newsletters';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($auth_user !== null) {
+            $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = ObjectSerializer::toHeaderValue($authorization);
+        }
+
+        // path params
+        if ($uuid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json;charset=utf-8']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json;charset=utf-8'],
+                ['application/json;charset=utf-8']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation usersUuidPasswordPut
      *
      * Set / Change user password

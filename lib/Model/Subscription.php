@@ -268,7 +268,6 @@ class Subscription implements ModelInterface, ArrayAccess
     const PRICEGROUP_HBL365_DISCOUNT = 'HBL365Discount';
     const PAYMENT_METHOD_PAPER_INVOICE = 'PaperInvoice';
     const PAYMENT_METHOD_CREDIT_CARD = 'CreditCard';
-    const PAYMENT_METHOD_EMAIL = 'Email';
     const PAYMENT_METHOD_NET_BANK = 'NetBank';
     const PAYMENT_METHOD_ELECTRONIC_INVOICE = 'ElectronicInvoice';
     const PAYMENT_METHOD_DIRECT_PAYMENT = 'DirectPayment';
@@ -342,7 +341,6 @@ class Subscription implements ModelInterface, ArrayAccess
         return [
             self::PAYMENT_METHOD_PAPER_INVOICE,
             self::PAYMENT_METHOD_CREDIT_CARD,
-            self::PAYMENT_METHOD_EMAIL,
             self::PAYMENT_METHOD_NET_BANK,
             self::PAYMENT_METHOD_ELECTRONIC_INVOICE,
             self::PAYMENT_METHOD_DIRECT_PAYMENT,

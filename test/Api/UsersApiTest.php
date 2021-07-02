@@ -133,6 +133,26 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidNewslettersGet
+     *
+     * Get newsletter subscriptions.
+     *
+     */
+    public function testUsersUuidNewslettersGet()
+    {
+    }
+
+    /**
+     * Test case for usersUuidNewslettersPut
+     *
+     * Update newsletter subscriptions.
+     *
+     */
+    public function testUsersUuidNewslettersPut()
+    {
+    }
+
+    /**
      * Test case for usersUuidPasswordPut
      *
      * Set / Change user password.
