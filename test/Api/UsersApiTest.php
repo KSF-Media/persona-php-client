@@ -183,6 +183,16 @@ class UsersApiTest extends TestCase
     }
 
     /**
+     * Test case for usersUuidScopeGet
+     *
+     * Check if user has valid token for a scope.
+     *
+     */
+    public function testUsersUuidScopeGet()
+    {
+    }
+
+    /**
      * Test case for usersUuidSubscriptionsSubsnoAddressChangeDelete
      *
      * Delete temporary address change for subscription.
