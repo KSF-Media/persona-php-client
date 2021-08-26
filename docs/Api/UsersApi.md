@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-[**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
+[**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Unpause users subscription
 
 
 
@@ -1264,9 +1264,9 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoUnpausePost
 
-> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user, $authorization)
+> \PersonaClient\Model\Subscription usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user, $authorization, $start_date, $end_date)
 
-Pause users subscription
+Unpause users subscription
 
 Authorization header expects the following format ‘OAuth {token}’
 
@@ -1286,9 +1286,11 @@ $uuid = 'uuid_example'; // string |
 $subsno = 56; // int | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
-    $result = $apiInstance->usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user, $authorization);
+    $result = $apiInstance->usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user, $authorization, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUuidSubscriptionsSubsnoUnpausePost: ', $e->getMessage(), PHP_EOL;
@@ -1305,6 +1307,8 @@ Name | Type | Description  | Notes
  **subsno** | **int**|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
 
 ### Return type
 

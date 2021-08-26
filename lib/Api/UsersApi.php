@@ -6852,40 +6852,44 @@ class UsersApi
     /**
      * Operation usersUuidSubscriptionsSubsnoUnpausePost
      *
-     * Pause users subscription
+     * Unpause users subscription
      *
      * @param  string $uuid uuid (required)
      * @param  int $subsno subsno (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \PersonaClient\Model\Subscription
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user = null, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePost($uuid, $subsno, $auth_user = null, $authorization = null, $start_date = null, $end_date = null)
     {
-        list($response) = $this->usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $auth_user, $authorization);
+        list($response) = $this->usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $auth_user, $authorization, $start_date, $end_date);
         return $response;
     }
 
     /**
      * Operation usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo
      *
-     * Pause users subscription
+     * Unpause users subscription
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \PersonaClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePostWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null, $start_date = null, $end_date = null)
     {
-        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user, $authorization, $start_date, $end_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6963,19 +6967,21 @@ class UsersApi
     /**
      * Operation usersUuidSubscriptionsSubsnoUnpausePostAsync
      *
-     * Pause users subscription
+     * Unpause users subscription
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePostAsync($uuid, $subsno, $auth_user = null, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePostAsync($uuid, $subsno, $auth_user = null, $authorization = null, $start_date = null, $end_date = null)
     {
-        return $this->usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $auth_user, $authorization)
+        return $this->usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $auth_user, $authorization, $start_date, $end_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6986,20 +6992,22 @@ class UsersApi
     /**
      * Operation usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo
      *
-     * Pause users subscription
+     * Unpause users subscription
      *
      * @param  string $uuid (required)
      * @param  int $subsno (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null)
+    public function usersUuidSubscriptionsSubsnoUnpausePostAsyncWithHttpInfo($uuid, $subsno, $auth_user = null, $authorization = null, $start_date = null, $end_date = null)
     {
         $returnType = '\PersonaClient\Model\Subscription';
-        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user, $authorization);
+        $request = $this->usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user, $authorization, $start_date, $end_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7042,11 +7050,13 @@ class UsersApi
      * @param  int $subsno (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user = null, $authorization = null)
+    protected function usersUuidSubscriptionsSubsnoUnpausePostRequest($uuid, $subsno, $auth_user = null, $authorization = null, $start_date = null, $end_date = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
@@ -7075,6 +7085,14 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($start_date !== null) {
+            $queryParams['startDate'] = ObjectSerializer::toQueryValue($start_date);
+        }
+        // query params
+        if ($end_date !== null) {
+            $queryParams['endDate'] = ObjectSerializer::toQueryValue($end_date);
+        }
         // header params
         if ($auth_user !== null) {
             $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);

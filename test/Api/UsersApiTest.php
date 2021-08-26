@@ -275,7 +275,7 @@ class UsersApiTest extends TestCase
     /**
      * Test case for usersUuidSubscriptionsSubsnoUnpausePost
      *
-     * Pause users subscription.
+     * Unpause users subscription.
      *
      */
     public function testUsersUuidSubscriptionsSubsnoUnpausePost()
