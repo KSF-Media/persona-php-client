@@ -692,7 +692,7 @@ No authorization required
 
 ## usersUuidScopeGet
 
-> usersUuidScopeGet($uuid, $authorization, $scope)
+> int usersUuidScopeGet($uuid, $authorization, $scope)
 
 Check if user has valid token for a scope
 
@@ -715,7 +715,8 @@ $authorization = 'authorization_example'; // string |
 $scope = 'scope_example'; // string | 
 
 try {
-    $apiInstance->usersUuidScopeGet($uuid, $authorization, $scope);
+    $result = $apiInstance->usersUuidScopeGet($uuid, $authorization, $scope);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUuidScopeGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -733,7 +734,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**int**
 
 ### Authorization
 
@@ -742,7 +743,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)

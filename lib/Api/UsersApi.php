@@ -3638,11 +3638,12 @@ class UsersApi
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return int
      */
     public function usersUuidScopeGet($uuid, $authorization = null, $scope = null)
     {
-        $this->usersUuidScopeGetWithHttpInfo($uuid, $authorization, $scope);
+        list($response) = $this->usersUuidScopeGetWithHttpInfo($uuid, $authorization, $scope);
+        return $response;
     }
 
     /**
@@ -3656,7 +3657,7 @@ class UsersApi
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidScopeGetWithHttpInfo($uuid, $authorization = null, $scope = null)
     {
@@ -3690,10 +3691,46 @@ class UsersApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('int' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'int', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'int';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'int',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -3735,14 +3772,25 @@ class UsersApi
      */
     public function usersUuidScopeGetAsyncWithHttpInfo($uuid, $authorization = null, $scope = null)
     {
-        $returnType = '';
+        $returnType = 'int';
         $request = $this->usersUuidScopeGetRequest($uuid, $authorization, $scope);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3810,11 +3858,11 @@ class UsersApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json;charset=utf-8']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json;charset=utf-8'],
                 []
             );
         }
