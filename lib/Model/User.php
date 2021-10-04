@@ -61,6 +61,7 @@ class User implements ModelInterface, ArrayAccess
         'email' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
+        'phone' => 'string',
         'address' => '\PersonaClient\Model\Address',
         'cusno' => 'int',
         'subs' => '\PersonaClient\Model\Subscription[]',
@@ -81,6 +82,7 @@ class User implements ModelInterface, ArrayAccess
         'email' => null,
         'first_name' => null,
         'last_name' => null,
+        'phone' => null,
         'address' => null,
         'cusno' => null,
         'subs' => null,
@@ -122,6 +124,7 @@ class User implements ModelInterface, ArrayAccess
         'email' => 'email',
         'first_name' => 'firstName',
         'last_name' => 'lastName',
+        'phone' => 'phone',
         'address' => 'address',
         'cusno' => 'cusno',
         'subs' => 'subs',
@@ -142,6 +145,7 @@ class User implements ModelInterface, ArrayAccess
         'email' => 'setEmail',
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
+        'phone' => 'setPhone',
         'address' => 'setAddress',
         'cusno' => 'setCusno',
         'subs' => 'setSubs',
@@ -162,6 +166,7 @@ class User implements ModelInterface, ArrayAccess
         'email' => 'getEmail',
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
+        'phone' => 'getPhone',
         'address' => 'getAddress',
         'cusno' => 'getCusno',
         'subs' => 'getSubs',
@@ -236,6 +241,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['cusno'] = isset($data['cusno']) ? $data['cusno'] : null;
         $this->container['subs'] = isset($data['subs']) ? $data['subs'] : null;
@@ -394,6 +400,30 @@ class User implements ModelInterface, ArrayAccess
     public function setLastName($last_name)
     {
         $this->container['last_name'] = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
 
         return $this;
     }

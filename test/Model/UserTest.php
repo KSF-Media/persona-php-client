@@ -107,6 +107,13 @@ class UserTest extends TestCase
     }
 
     /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+    }
+
+    /**
      * Test attribute "address"
      */
     public function testPropertyAddress()

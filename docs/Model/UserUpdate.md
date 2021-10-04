@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **last_name** | **string** |  | [optional] 
 **address** | [**\PersonaClient\Model\UserUpdateAddress**](UserUpdateAddress.md) |  | [optional] 
 **email** | **string** |  | [optional] 
+**phone** | **string** |  | [optional] 
 **pending_address_changes** | **object[]** |  | [optional] 
 **update_cusno** | **int** |  | [optional] 
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **email** | **string** |  | 
 **first_name** | **string** |  | [optional] 
 **last_name** | **string** |  | [optional] 
+**phone** | **string** |  | [optional] 
 **address** | [**\PersonaClient\Model\Address**](Address.md) |  | [optional] 
 **cusno** | **int** |  | 
 **subs** | [**\PersonaClient\Model\Subscription[]**](Subscription.md) |  | 

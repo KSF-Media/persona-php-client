@@ -107,6 +107,13 @@ class UserUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+    }
+
+    /**
      * Test attribute "pending_address_changes"
      */
     public function testPropertyPendingAddressChanges()

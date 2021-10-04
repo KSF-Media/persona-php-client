@@ -61,6 +61,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'address' => '\PersonaClient\Model\UserUpdateAddress',
         'email' => 'string',
+        'phone' => 'string',
         'pending_address_changes' => 'object[]',
         'update_cusno' => 'int'
     ];
@@ -75,6 +76,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => null,
         'address' => null,
         'email' => null,
+        'phone' => null,
         'pending_address_changes' => null,
         'update_cusno' => null
     ];
@@ -110,6 +112,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'lastName',
         'address' => 'address',
         'email' => 'email',
+        'phone' => 'phone',
         'pending_address_changes' => 'pendingAddressChanges',
         'update_cusno' => 'updateCusno'
     ];
@@ -124,6 +127,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'address' => 'setAddress',
         'email' => 'setEmail',
+        'phone' => 'setPhone',
         'pending_address_changes' => 'setPendingAddressChanges',
         'update_cusno' => 'setUpdateCusno'
     ];
@@ -138,6 +142,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'address' => 'getAddress',
         'email' => 'getEmail',
+        'phone' => 'getPhone',
         'pending_address_changes' => 'getPendingAddressChanges',
         'update_cusno' => 'getUpdateCusno'
     ];
@@ -206,6 +211,7 @@ class UserUpdate implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['pending_address_changes'] = isset($data['pending_address_changes']) ? $data['pending_address_changes'] : null;
         $this->container['update_cusno'] = isset($data['update_cusno']) ? $data['update_cusno'] : null;
     }
@@ -225,6 +231,10 @@ class UserUpdate implements ModelInterface, ArrayAccess
 
         if (!is_null($this->container['last_name']) && (mb_strlen($this->container['last_name']) < 1)) {
             $invalidProperties[] = "invalid value for 'last_name', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['phone']) && (mb_strlen($this->container['phone']) < 1)) {
+            $invalidProperties[] = "invalid value for 'phone', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['update_cusno']) && ($this->container['update_cusno'] > 9223372036854775807)) {
@@ -352,6 +362,35 @@ class UserUpdate implements ModelInterface, ArrayAccess
     public function setEmail($email)
     {
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string|null
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string|null $phone phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+
+        if (!is_null($phone) && (mb_strlen($phone) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $phone when calling UserUpdate., must be bigger than or equal to 1.');
+        }
+
+        $this->container['phone'] = $phone;
 
         return $this;
     }
