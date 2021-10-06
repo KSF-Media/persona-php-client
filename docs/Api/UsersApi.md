@@ -692,7 +692,7 @@ No authorization required
 
 ## usersUuidScopeGet
 
-> int usersUuidScopeGet($uuid, $authorization, $scope)
+> int usersUuidScopeGet($uuid, $scope, $authorization)
 
 Check if user has valid token for a scope
 
@@ -711,11 +711,11 @@ $apiInstance = new PersonaClient\Api\UsersApi(
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$authorization = 'authorization_example'; // string | 
 $scope = 'scope_example'; // string | 
+$authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->usersUuidScopeGet($uuid, $authorization, $scope);
+    $result = $apiInstance->usersUuidScopeGet($uuid, $scope, $authorization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUuidScopeGet: ', $e->getMessage(), PHP_EOL;
@@ -729,8 +729,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
+ **scope** | **string**|  |
  **authorization** | **string**|  | [optional]
- **scope** | **string**|  | [optional]
 
 ### Return type
 

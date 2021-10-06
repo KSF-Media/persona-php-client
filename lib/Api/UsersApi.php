@@ -3633,16 +3633,16 @@ class UsersApi
      * Check if user has valid token for a scope
      *
      * @param  string $uuid uuid (required)
+     * @param  string $scope scope (required)
      * @param  string $authorization authorization (optional)
-     * @param  string $scope scope (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
-    public function usersUuidScopeGet($uuid, $authorization = null, $scope = null)
+    public function usersUuidScopeGet($uuid, $scope, $authorization = null)
     {
-        list($response) = $this->usersUuidScopeGetWithHttpInfo($uuid, $authorization, $scope);
+        list($response) = $this->usersUuidScopeGetWithHttpInfo($uuid, $scope, $authorization);
         return $response;
     }
 
@@ -3652,16 +3652,16 @@ class UsersApi
      * Check if user has valid token for a scope
      *
      * @param  string $uuid (required)
+     * @param  string $scope (required)
      * @param  string $authorization (optional)
-     * @param  string $scope (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUuidScopeGetWithHttpInfo($uuid, $authorization = null, $scope = null)
+    public function usersUuidScopeGetWithHttpInfo($uuid, $scope, $authorization = null)
     {
-        $request = $this->usersUuidScopeGetRequest($uuid, $authorization, $scope);
+        $request = $this->usersUuidScopeGetRequest($uuid, $scope, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3742,15 +3742,15 @@ class UsersApi
      * Check if user has valid token for a scope
      *
      * @param  string $uuid (required)
+     * @param  string $scope (required)
      * @param  string $authorization (optional)
-     * @param  string $scope (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidScopeGetAsync($uuid, $authorization = null, $scope = null)
+    public function usersUuidScopeGetAsync($uuid, $scope, $authorization = null)
     {
-        return $this->usersUuidScopeGetAsyncWithHttpInfo($uuid, $authorization, $scope)
+        return $this->usersUuidScopeGetAsyncWithHttpInfo($uuid, $scope, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3764,16 +3764,16 @@ class UsersApi
      * Check if user has valid token for a scope
      *
      * @param  string $uuid (required)
+     * @param  string $scope (required)
      * @param  string $authorization (optional)
-     * @param  string $scope (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUuidScopeGetAsyncWithHttpInfo($uuid, $authorization = null, $scope = null)
+    public function usersUuidScopeGetAsyncWithHttpInfo($uuid, $scope, $authorization = null)
     {
         $returnType = 'int';
-        $request = $this->usersUuidScopeGetRequest($uuid, $authorization, $scope);
+        $request = $this->usersUuidScopeGetRequest($uuid, $scope, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3813,18 +3813,24 @@ class UsersApi
      * Create request for operation 'usersUuidScopeGet'
      *
      * @param  string $uuid (required)
+     * @param  string $scope (required)
      * @param  string $authorization (optional)
-     * @param  string $scope (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUuidScopeGetRequest($uuid, $authorization = null, $scope = null)
+    protected function usersUuidScopeGetRequest($uuid, $scope, $authorization = null)
     {
         // verify the required parameter 'uuid' is set
         if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $uuid when calling usersUuidScopeGet'
+            );
+        }
+        // verify the required parameter 'scope' is set
+        if ($scope === null || (is_array($scope) && count($scope) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $scope when calling usersUuidScopeGet'
             );
         }
 
