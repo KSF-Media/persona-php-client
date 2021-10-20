@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **invno** | **int** | Payment invoice ID | 
-**date** | [**\DateTime**](\DateTime.md) |  | 
-**due_date** | [**\DateTime**](\DateTime.md) |  | 
+**date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**due_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **expenses** | **double** |  | 
 **interest** | **double** |  | 
 **vat** | **double** |  | 

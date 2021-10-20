@@ -326,12 +326,6 @@ class Payment implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'invno', must be bigger than or equal to -9223372036854775808.";
         }
 
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ($this->container['due_date'] === null) {
-            $invalidProperties[] = "'due_date' can't be null";
-        }
         if ($this->container['expenses'] === null) {
             $invalidProperties[] = "'expenses' can't be null";
         }
@@ -419,7 +413,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDate()
     {
@@ -429,7 +423,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param \DateTime $date date
+     * @param \DateTime|null $date date
      *
      * @return $this
      */
@@ -443,7 +437,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Gets due_date
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDueDate()
     {
@@ -453,7 +447,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets due_date
      *
-     * @param \DateTime $due_date due_date
+     * @param \DateTime|null $due_date due_date
      *
      * @return $this
      */
