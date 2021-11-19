@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountPasswordResetPost**](docs/Api/AccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *AdminApi* | [**adminUserPost**](docs/Api/AdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
+*EntitlementsApi* | [**entitlementsAllowGet**](docs/Api/EntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements

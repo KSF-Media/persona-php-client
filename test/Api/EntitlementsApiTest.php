@@ -73,6 +73,16 @@ class EntitlementsApiTest extends TestCase
     }
 
     /**
+     * Test case for entitlementsAllowGet
+     *
+     * Check if global entitlements are enabled.
+     *
+     */
+    public function testEntitlementsAllowGet()
+    {
+    }
+
+    /**
      * Test case for entitlementsAllowPost
      *
      * .
