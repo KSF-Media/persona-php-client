@@ -57,7 +57,8 @@ class ForgotPasswordData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'email' => 'string'
+        'email' => 'string',
+        'redir' => 'bool'
     ];
 
     /**
@@ -66,7 +67,8 @@ class ForgotPasswordData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'email' => null
+        'email' => null,
+        'redir' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class ForgotPasswordData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email' => 'email'
+        'email' => 'email',
+        'redir' => 'redir'
     ];
 
     /**
@@ -105,7 +108,8 @@ class ForgotPasswordData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email' => 'setEmail'
+        'email' => 'setEmail',
+        'redir' => 'setRedir'
     ];
 
     /**
@@ -114,7 +118,8 @@ class ForgotPasswordData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email' => 'getEmail'
+        'email' => 'getEmail',
+        'redir' => 'getRedir'
     ];
 
     /**
@@ -178,6 +183,7 @@ class ForgotPasswordData implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['redir'] = isset($data['redir']) ? $data['redir'] : null;
     }
 
     /**
@@ -227,6 +233,30 @@ class ForgotPasswordData implements ModelInterface, ArrayAccess
     public function setEmail($email)
     {
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets redir
+     *
+     * @return bool|null
+     */
+    public function getRedir()
+    {
+        return $this->container['redir'];
+    }
+
+    /**
+     * Sets redir
+     *
+     * @param bool|null $redir redir
+     *
+     * @return $this
+     */
+    public function setRedir($redir)
+    {
+        $this->container['redir'] = $redir;
 
         return $this;
     }

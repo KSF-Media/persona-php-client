@@ -65,13 +65,14 @@ $apiInstance = new PersonaClient\Api\AccountApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \PersonaClient\Model\ForgotPasswordData(); // \PersonaClient\Model\ForgotPasswordData | 
+$email = 'email_example'; // string | 
+$redir = True; // bool | 
 
 try {
-    $result = $apiInstance->accountPasswordForgotPost($body);
+    $result = $apiInstance->accountPasswordForgotGet($email, $redir);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountApi->accountPasswordForgotPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountApi->accountPasswordForgotGet: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -83,6 +84,7 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**accountPasswordForgotGet**](docs/Api/AccountApi.md#accountpasswordforgotget) | **GET** /account/password/forgot | Request password reset link
 *AccountApi* | [**accountPasswordForgotPost**](docs/Api/AccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
 *AccountApi* | [**accountPasswordResetPost**](docs/Api/AccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users

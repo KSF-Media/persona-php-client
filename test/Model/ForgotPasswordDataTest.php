@@ -84,4 +84,11 @@ class ForgotPasswordDataTest extends TestCase
     public function testPropertyEmail()
     {
     }
+
+    /**
+     * Test attribute "redir"
+     */
+    public function testPropertyRedir()
+    {
+    }
 }

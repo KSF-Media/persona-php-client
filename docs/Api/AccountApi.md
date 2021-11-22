@@ -4,9 +4,66 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**accountPasswordForgotGet**](AccountApi.md#accountPasswordForgotGet) | **GET** /account/password/forgot | Request password reset link
 [**accountPasswordForgotPost**](AccountApi.md#accountPasswordForgotPost) | **POST** /account/password/forgot | Request password reset link
 [**accountPasswordResetPost**](AccountApi.md#accountPasswordResetPost) | **POST** /account/password/reset | Reset a forgotten password with a token
 
+
+
+## accountPasswordForgotGet
+
+> object[] accountPasswordForgotGet($email, $redir)
+
+Request password reset link
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new PersonaClient\Api\AccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$email = 'email_example'; // string | 
+$redir = True; // bool | 
+
+try {
+    $result = $apiInstance->accountPasswordForgotGet($email, $redir);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountApi->accountPasswordForgotGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**|  |
+ **redir** | **bool**|  | [optional]
+
+### Return type
+
+**object[]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 
 ## accountPasswordForgotPost

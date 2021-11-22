@@ -73,6 +73,16 @@ class AccountApiTest extends TestCase
     }
 
     /**
+     * Test case for accountPasswordForgotGet
+     *
+     * Request password reset link.
+     *
+     */
+    public function testAccountPasswordForgotGet()
+    {
+    }
+
+    /**
      * Test case for accountPasswordForgotPost
      *
      * Request password reset link.
