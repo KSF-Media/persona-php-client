@@ -125,7 +125,7 @@ class EntitlementsApi
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return string
+     * @return string[]
      */
     public function entitlementsAllowGet($auth_user = null, $authorization = null)
     {
@@ -143,7 +143,7 @@ class EntitlementsApi
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function entitlementsAllowGetWithHttpInfo($auth_user = null, $authorization = null)
     {
@@ -180,20 +180,20 @@ class EntitlementsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('string' === '\SplFileObject') {
+                    if ('string[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'string', []),
+                        ObjectSerializer::deserialize($content, 'string[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = 'string';
+            $returnType = 'string[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -212,7 +212,7 @@ class EntitlementsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'string',
+                        'string[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -256,7 +256,7 @@ class EntitlementsApi
      */
     public function entitlementsAllowGetAsyncWithHttpInfo($auth_user = null, $authorization = null)
     {
-        $returnType = 'string';
+        $returnType = 'string[]';
         $request = $this->entitlementsAllowGetRequest($auth_user, $authorization);
 
         return $this->client

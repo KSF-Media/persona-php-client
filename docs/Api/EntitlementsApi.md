@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## entitlementsAllowGet
 
-> string entitlementsAllowGet($auth_user, $authorization)
+> string[] entitlementsAllowGet($auth_user, $authorization)
 
 Check if global entitlements are enabled
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+**string[]**
 
 ### Authorization
 
