@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## entitlementsAllowGet
 
-> string[] entitlementsAllowGet($auth_user, $authorization)
+> string[] entitlementsAllowGet($auth_user, $authorization, $ip, $paper)
 
 Check if global entitlements are enabled
 
@@ -31,9 +31,11 @@ $apiInstance = new PersonaClient\Api\EntitlementsApi(
 );
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
+$ip = 'ip_example'; // string | 
+$paper = 'paper_example'; // string | 
 
 try {
-    $result = $apiInstance->entitlementsAllowGet($auth_user, $authorization);
+    $result = $apiInstance->entitlementsAllowGet($auth_user, $authorization, $ip, $paper);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EntitlementsApi->entitlementsAllowGet: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +50,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
+ **ip** | **string**|  | [optional]
+ **paper** | **string**|  | [optional]
 
 ### Return type
 

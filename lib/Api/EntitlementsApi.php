@@ -122,14 +122,16 @@ class EntitlementsApi
      *
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
+     * @param  string $ip ip (optional)
+     * @param  string $paper paper (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string[]
      */
-    public function entitlementsAllowGet($auth_user = null, $authorization = null)
+    public function entitlementsAllowGet($auth_user = null, $authorization = null, $ip = null, $paper = null)
     {
-        list($response) = $this->entitlementsAllowGetWithHttpInfo($auth_user, $authorization);
+        list($response) = $this->entitlementsAllowGetWithHttpInfo($auth_user, $authorization, $ip, $paper);
         return $response;
     }
 
@@ -140,14 +142,16 @@ class EntitlementsApi
      *
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  string $ip (optional)
+     * @param  string $paper (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function entitlementsAllowGetWithHttpInfo($auth_user = null, $authorization = null)
+    public function entitlementsAllowGetWithHttpInfo($auth_user = null, $authorization = null, $ip = null, $paper = null)
     {
-        $request = $this->entitlementsAllowGetRequest($auth_user, $authorization);
+        $request = $this->entitlementsAllowGetRequest($auth_user, $authorization, $ip, $paper);
 
         try {
             $options = $this->createHttpClientOption();
@@ -229,13 +233,15 @@ class EntitlementsApi
      *
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  string $ip (optional)
+     * @param  string $paper (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function entitlementsAllowGetAsync($auth_user = null, $authorization = null)
+    public function entitlementsAllowGetAsync($auth_user = null, $authorization = null, $ip = null, $paper = null)
     {
-        return $this->entitlementsAllowGetAsyncWithHttpInfo($auth_user, $authorization)
+        return $this->entitlementsAllowGetAsyncWithHttpInfo($auth_user, $authorization, $ip, $paper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -250,14 +256,16 @@ class EntitlementsApi
      *
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  string $ip (optional)
+     * @param  string $paper (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function entitlementsAllowGetAsyncWithHttpInfo($auth_user = null, $authorization = null)
+    public function entitlementsAllowGetAsyncWithHttpInfo($auth_user = null, $authorization = null, $ip = null, $paper = null)
     {
         $returnType = 'string[]';
-        $request = $this->entitlementsAllowGetRequest($auth_user, $authorization);
+        $request = $this->entitlementsAllowGetRequest($auth_user, $authorization, $ip, $paper);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -298,11 +306,13 @@ class EntitlementsApi
      *
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
+     * @param  string $ip (optional)
+     * @param  string $paper (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function entitlementsAllowGetRequest($auth_user = null, $authorization = null)
+    protected function entitlementsAllowGetRequest($auth_user = null, $authorization = null, $ip = null, $paper = null)
     {
 
         $resourcePath = '/entitlements/allow';
@@ -312,6 +322,14 @@ class EntitlementsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($ip !== null) {
+            $queryParams['ip'] = ObjectSerializer::toQueryValue($ip);
+        }
+        // query params
+        if ($paper !== null) {
+            $queryParams['paper'] = ObjectSerializer::toQueryValue($paper);
+        }
         // header params
         if ($auth_user !== null) {
             $headerParams['AuthUser'] = ObjectSerializer::toHeaderValue($auth_user);
