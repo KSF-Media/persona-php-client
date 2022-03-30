@@ -62,7 +62,9 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         'name' => 'string',
         'price_eur' => 'double',
         'length' => 'int',
-        'length_unit' => 'string'
+        'length_unit' => 'string',
+        'start_day' => '\DateTime',
+        'end_day' => '\DateTime'
     ];
 
     /**
@@ -76,7 +78,9 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         'name' => null,
         'price_eur' => 'double',
         'length' => null,
-        'length_unit' => null
+        'length_unit' => null,
+        'start_day' => 'date',
+        'end_day' => 'date'
     ];
 
     /**
@@ -111,7 +115,9 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         'name' => 'name',
         'price_eur' => 'priceEur',
         'length' => 'length',
-        'length_unit' => 'lengthUnit'
+        'length_unit' => 'lengthUnit',
+        'start_day' => 'startDay',
+        'end_day' => 'endDay'
     ];
 
     /**
@@ -125,7 +131,9 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'price_eur' => 'setPriceEur',
         'length' => 'setLength',
-        'length_unit' => 'setLengthUnit'
+        'length_unit' => 'setLengthUnit',
+        'start_day' => 'setStartDay',
+        'end_day' => 'setEndDay'
     ];
 
     /**
@@ -139,7 +147,9 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'price_eur' => 'getPriceEur',
         'length' => 'getLength',
-        'length_unit' => 'getLengthUnit'
+        'length_unit' => 'getLengthUnit',
+        'start_day' => 'getStartDay',
+        'end_day' => 'getEndDay'
     ];
 
     /**
@@ -227,6 +237,8 @@ class PackageCampaign implements ModelInterface, ArrayAccess
         $this->container['price_eur'] = isset($data['price_eur']) ? $data['price_eur'] : null;
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['length_unit'] = isset($data['length_unit']) ? $data['length_unit'] : null;
+        $this->container['start_day'] = isset($data['start_day']) ? $data['start_day'] : null;
+        $this->container['end_day'] = isset($data['end_day']) ? $data['end_day'] : null;
     }
 
     /**
@@ -460,6 +472,54 @@ class PackageCampaign implements ModelInterface, ArrayAccess
             );
         }
         $this->container['length_unit'] = $length_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_day
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDay()
+    {
+        return $this->container['start_day'];
+    }
+
+    /**
+     * Sets start_day
+     *
+     * @param \DateTime|null $start_day start_day
+     *
+     * @return $this
+     */
+    public function setStartDay($start_day)
+    {
+        $this->container['start_day'] = $start_day;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_day
+     *
+     * @return \DateTime|null
+     */
+    public function getEndDay()
+    {
+        return $this->container['end_day'];
+    }
+
+    /**
+     * Sets end_day
+     *
+     * @param \DateTime|null $end_day end_day
+     *
+     * @return $this
+     */
+    public function setEndDay($end_day)
+    {
+        $this->container['end_day'] = $end_day;
 
         return $this;
     }

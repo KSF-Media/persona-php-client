@@ -119,4 +119,18 @@ class PackageCampaignTest extends TestCase
     public function testPropertyLengthUnit()
     {
     }
+
+    /**
+     * Test attribute "start_day"
+     */
+    public function testPropertyStartDay()
+    {
+    }
+
+    /**
+     * Test attribute "end_day"
+     */
+    public function testPropertyEndDay()
+    {
+    }
 }

@@ -58,7 +58,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'end_date' => '\DateTime',
+        'sleep_type' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'start_date' => 'date',
-        'end_date' => 'date'
+        'end_date' => 'date',
+        'sleep_type' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'start_date' => 'startDate',
-        'end_date' => 'endDate'
+        'end_date' => 'endDate',
+        'sleep_type' => 'sleepType'
     ];
 
     /**
@@ -109,7 +112,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
+        'sleep_type' => 'setSleepType'
     ];
 
     /**
@@ -119,7 +123,8 @@ class PausedSubscription implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
+        'sleep_type' => 'getSleepType'
     ];
 
     /**
@@ -163,8 +168,25 @@ class PausedSubscription implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const SLEEP_TYPE_PAUSE = 'Pause';
+    const SLEEP_TYPE_REBATE = 'Rebate';
+    const SLEEP_TYPE_UNKNOWN_SLEEP_TYPE = 'UnknownSleepType';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSleepTypeAllowableValues()
+    {
+        return [
+            self::SLEEP_TYPE_PAUSE,
+            self::SLEEP_TYPE_REBATE,
+            self::SLEEP_TYPE_UNKNOWN_SLEEP_TYPE,
+        ];
+    }
     
 
     /**
@@ -184,6 +206,7 @@ class PausedSubscription implements ModelInterface, ArrayAccess
     {
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['sleep_type'] = isset($data['sleep_type']) ? $data['sleep_type'] : null;
     }
 
     /**
@@ -201,6 +224,17 @@ class PausedSubscription implements ModelInterface, ArrayAccess
         if ($this->container['end_date'] === null) {
             $invalidProperties[] = "'end_date' can't be null";
         }
+        if ($this->container['sleep_type'] === null) {
+            $invalidProperties[] = "'sleep_type' can't be null";
+        }
+        $allowedValues = $this->getSleepTypeAllowableValues();
+        if (!is_null($this->container['sleep_type']) && !in_array($this->container['sleep_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'sleep_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -260,6 +294,39 @@ class PausedSubscription implements ModelInterface, ArrayAccess
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets sleep_type
+     *
+     * @return string
+     */
+    public function getSleepType()
+    {
+        return $this->container['sleep_type'];
+    }
+
+    /**
+     * Sets sleep_type
+     *
+     * @param string $sleep_type Type of subscription pause
+     *
+     * @return $this
+     */
+    public function setSleepType($sleep_type)
+    {
+        $allowedValues = $this->getSleepTypeAllowableValues();
+        if (!in_array($sleep_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'sleep_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['sleep_type'] = $sleep_type;
 
         return $this;
     }

@@ -91,4 +91,11 @@ class PausedSubscriptionTest extends TestCase
     public function testPropertyEndDate()
     {
     }
+
+    /**
+     * Test attribute "sleep_type"
+     */
+    public function testPropertySleepType()
+    {
+    }
 }
