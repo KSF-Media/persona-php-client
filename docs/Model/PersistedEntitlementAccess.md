@@ -1,9 +1,10 @@
-# # EntitlementAccess
+# # PersistedEntitlementAccess
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
 **start_at** | **string** |  | 
 **end_at** | **string** |  | 
 **only_to_products** | **string[]** |  | [optional] 

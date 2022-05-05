@@ -89,8 +89,9 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountPasswordResetPost**](docs/Api/AccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *AdminApi* | [**adminUserPost**](docs/Api/AdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
+*EntitlementsApi* | [**entitlementsAllowDelete**](docs/Api/EntitlementsApi.md#entitlementsallowdelete) | **DELETE** /entitlements/allow | Remove an entitlement
 *EntitlementsApi* | [**entitlementsAllowGet**](docs/Api/EntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled
-*EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
+*EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | Add an entitlement for all users
 *EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /login | Login with email and password
@@ -165,6 +166,7 @@ Class | Method | HTTP request | Description
  - [PausedSubscription](docs/Model/PausedSubscription.md)
  - [Payment](docs/Model/Payment.md)
  - [PendingAddressChange](docs/Model/PendingAddressChange.md)
+ - [PersistedEntitlementAccess](docs/Model/PersistedEntitlementAccess.md)
  - [Product](docs/Model/Product.md)
  - [SearchQuery](docs/Model/SearchQuery.md)
  - [SearchResult](docs/Model/SearchResult.md)

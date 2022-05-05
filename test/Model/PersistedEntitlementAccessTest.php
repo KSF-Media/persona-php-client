@@ -1,6 +1,6 @@
 <?php
 /**
- * EntitlementAccessTest
+ * PersistedEntitlementAccessTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace PersonaClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EntitlementAccessTest Class Doc Comment
+ * PersistedEntitlementAccessTest Class Doc Comment
  *
  * @category    Class
- * @description EntitlementAccess
+ * @description PersistedEntitlementAccess
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EntitlementAccessTest extends TestCase
+class PersistedEntitlementAccessTest extends TestCase
 {
 
     /**
@@ -72,9 +72,16 @@ class EntitlementAccessTest extends TestCase
     }
 
     /**
-     * Test "EntitlementAccess"
+     * Test "PersistedEntitlementAccess"
      */
-    public function testEntitlementAccess()
+    public function testPersistedEntitlementAccess()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
     {
     }
 

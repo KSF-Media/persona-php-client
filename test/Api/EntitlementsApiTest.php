@@ -73,6 +73,16 @@ class EntitlementsApiTest extends TestCase
     }
 
     /**
+     * Test case for entitlementsAllowDelete
+     *
+     * Remove an entitlement.
+     *
+     */
+    public function testEntitlementsAllowDelete()
+    {
+    }
+
+    /**
      * Test case for entitlementsAllowGet
      *
      * Check if global entitlements are enabled.
@@ -85,7 +95,7 @@ class EntitlementsApiTest extends TestCase
     /**
      * Test case for entitlementsAllowPost
      *
-     * .
+     * Add an entitlement for all users.
      *
      */
     public function testEntitlementsAllowPost()

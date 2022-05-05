@@ -1,6 +1,6 @@
 <?php
 /**
- * EntitlementAccess
+ * PersistedEntitlementAccess
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \PersonaClient\ObjectSerializer;
 
 /**
- * EntitlementAccess Class Doc Comment
+ * PersistedEntitlementAccess Class Doc Comment
  *
  * @category Class
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class EntitlementAccess implements ModelInterface, ArrayAccess
+class PersistedEntitlementAccess implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'EntitlementAccess';
+    protected static $openAPIModelName = 'PersistedEntitlementAccess';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,6 +57,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
         'start_at' => 'string',
         'end_at' => 'string',
         'only_to_products' => 'string[]'
@@ -68,6 +69,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'id' => 'int64',
         'start_at' => 'yyyy-mm-ddThh:MM:ssZ',
         'end_at' => 'yyyy-mm-ddThh:MM:ssZ',
         'only_to_products' => null
@@ -100,6 +102,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'start_at' => 'startAt',
         'end_at' => 'endAt',
         'only_to_products' => 'onlyToProducts'
@@ -111,6 +114,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'start_at' => 'setStartAt',
         'end_at' => 'setEndAt',
         'only_to_products' => 'setOnlyToProducts'
@@ -122,6 +126,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'start_at' => 'getStartAt',
         'end_at' => 'getEndAt',
         'only_to_products' => 'getOnlyToProducts'
@@ -187,6 +192,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
         $this->container['end_at'] = isset($data['end_at']) ? $data['end_at'] : null;
         $this->container['only_to_products'] = isset($data['only_to_products']) ? $data['only_to_products'] : null;
@@ -200,6 +206,14 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['id']) && ($this->container['id'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'id', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['id']) && ($this->container['id'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to -9223372036854775808.";
+        }
 
         if ($this->container['start_at'] === null) {
             $invalidProperties[] = "'start_at' can't be null";
@@ -221,6 +235,38 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+
+        if (!is_null($id) && ($id > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling PersistedEntitlementAccess., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($id) && ($id < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $id when calling PersistedEntitlementAccess., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets start_at
