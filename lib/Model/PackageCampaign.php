@@ -456,7 +456,7 @@ class PackageCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets length_unit
      *
-     * @param string $length_unit Unit of length (days, weeks, months, years)
+     * @param string $length_unit length_unit
      *
      * @return $this
      */

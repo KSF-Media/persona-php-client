@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **delivery_address** | [**\PersonaClient\Model\DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
 **pending_address_changes** | [**\PersonaClient\Model\PendingAddressChange[]**](PendingAddressChange.md) | Pending and ongoing temporary address changes | [optional] 
 **order_number** | **string** | Order number of subscription | [optional] 
-**payment_method** | **string** | Payment method of subscription | [optional] 
+**payment_method** | **string** |  | [optional] 
 **payment_method_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

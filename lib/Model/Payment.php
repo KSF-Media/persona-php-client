@@ -591,7 +591,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type 
+     * @param string $type type
      *
      * @return $this
      */
@@ -624,7 +624,7 @@ class Payment implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param string $state 
+     * @param string $state state
      *
      * @return $this
      */

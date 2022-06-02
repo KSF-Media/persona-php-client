@@ -487,7 +487,7 @@ class DeliveryReclamation implements ModelInterface, ArrayAccess
     /**
      * Sets claim
      *
-     * @param string $claim The type of claim for the reclamation
+     * @param string $claim claim
      *
      * @return $this
      */

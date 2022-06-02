@@ -339,7 +339,7 @@ class PendingAddressChange implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type Type of address change
+     * @param string $type type
      *
      * @return $this
      */

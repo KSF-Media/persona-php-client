@@ -965,7 +965,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets payment_method
      *
-     * @param string|null $payment_method Payment method of subscription
+     * @param string|null $payment_method payment_method
      *
      * @return $this
      */

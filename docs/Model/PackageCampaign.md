@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **string** | Campaign name | 
 **price_eur** | **double** | Price of campaign in euros | 
 **length** | **int** | Length of campaign | 
-**length_unit** | **string** | Unit of length (days, weeks, months, years) | 
+**length_unit** | **string** |  | 
 **start_day** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **end_day** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
