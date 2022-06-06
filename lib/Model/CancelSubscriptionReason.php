@@ -262,7 +262,7 @@ class CancelSubscriptionReason implements ModelInterface, ArrayAccess
     /**
      * Sets reason
      *
-     * @param string $reason Cancel reason code
+     * @param string $reason reason
      *
      * @return $this
      */

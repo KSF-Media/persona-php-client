@@ -168,16 +168,9 @@ class PausedSubscription implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const SLEEP_TYPE_UPCOMING = 'Upcoming';
-    const SLEEP_TYPE_ACTIVE = 'Active';
-    const SLEEP_TYPE_PAUSED = 'Paused';
-    const SLEEP_TYPE_ENDED = 'Ended';
-    const SLEEP_TYPE_UNPAID_AND_CANCELED = 'UnpaidAndCanceled';
-    const SLEEP_TYPE_CANCELED = 'Canceled';
-    const SLEEP_TYPE_CANCELED_WITH_LATE_PAYMENT = 'CanceledWithLatePayment';
-    const SLEEP_TYPE_RESTARTED_AFTER_LATE_PAYMENT = 'RestartedAfterLatePayment';
-    const SLEEP_TYPE_DEACTIVATED_RECENTLY = 'DeactivatedRecently';
-    const SLEEP_TYPE_UNKNOWN = 'Unknown';
+    const SLEEP_TYPE_PAUSE = 'Pause';
+    const SLEEP_TYPE_REBATE = 'Rebate';
+    const SLEEP_TYPE_UNKNOWN_SLEEP_TYPE = 'UnknownSleepType';
     
 
     
@@ -189,16 +182,9 @@ class PausedSubscription implements ModelInterface, ArrayAccess
     public function getSleepTypeAllowableValues()
     {
         return [
-            self::SLEEP_TYPE_UPCOMING,
-            self::SLEEP_TYPE_ACTIVE,
-            self::SLEEP_TYPE_PAUSED,
-            self::SLEEP_TYPE_ENDED,
-            self::SLEEP_TYPE_UNPAID_AND_CANCELED,
-            self::SLEEP_TYPE_CANCELED,
-            self::SLEEP_TYPE_CANCELED_WITH_LATE_PAYMENT,
-            self::SLEEP_TYPE_RESTARTED_AFTER_LATE_PAYMENT,
-            self::SLEEP_TYPE_DEACTIVATED_RECENTLY,
-            self::SLEEP_TYPE_UNKNOWN,
+            self::SLEEP_TYPE_PAUSE,
+            self::SLEEP_TYPE_REBATE,
+            self::SLEEP_TYPE_UNKNOWN_SLEEP_TYPE,
         ];
     }
     

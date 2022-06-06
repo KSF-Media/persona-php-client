@@ -650,7 +650,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets kind
      *
-     * @param string $kind Subscription kind - what kind of order is it
+     * @param string $kind kind
      *
      * @return $this
      */
@@ -683,7 +683,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param string $state Current state of the Subscription
+     * @param string $state state
      *
      * @return $this
      */
@@ -716,7 +716,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets pricegroup
      *
-     * @param string|null $pricegroup Pricegroup of the Subscription
+     * @param string|null $pricegroup pricegroup
      *
      * @return $this
      */

@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **extno** | **int** | Subscription Extension Id - how many times a subscription has been extended | 
 **cusno** | **int** | Customer getting the subscription | 
 **paycusno** | **int** | Customer paying for the subscription | 
-**kind** | **string** | Subscription kind - what kind of order is it | 
-**state** | **string** | Current state of the Subscription | 
-**pricegroup** | **string** | Pricegroup of the Subscription | [optional] 
+**kind** | **string** |  | 
+**state** | **string** |  | 
+**pricegroup** | **string** |  | [optional] 
 **package** | [**\PersonaClient\Model\Package**](Package.md) |  | 
 **dates** | [**\PersonaClient\Model\SubscriptionDates**](SubscriptionDates.md) |  | 
 **extsubsexists** | **bool** | If the extension of this subscription exists | 
