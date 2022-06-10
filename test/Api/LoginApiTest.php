@@ -73,6 +73,16 @@ class LoginApiTest extends TestCase
     }
 
     /**
+     * Test case for loginIpGet
+     *
+     * Login with IP.
+     *
+     */
+    public function testLoginIpGet()
+    {
+    }
+
+    /**
      * Test case for loginPost
      *
      * Login with email and password.
