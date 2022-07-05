@@ -74,7 +74,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'pending_address_changes' => '\PersonaClient\Model\PendingAddressChange[]',
         'order_number' => 'string',
         'payment_method' => 'string',
-        'payment_method_id' => 'int'
+        'payment_method_id' => 'int',
+        'delivery_trouble_end' => 'string'
     ];
 
     /**
@@ -100,7 +101,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'pending_address_changes' => null,
         'order_number' => null,
         'payment_method' => null,
-        'payment_method_id' => null
+        'payment_method_id' => null,
+        'delivery_trouble_end' => 'yyyy-mm-ddThh:MM:ssZ'
     ];
 
     /**
@@ -147,7 +149,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'pending_address_changes' => 'pendingAddressChanges',
         'order_number' => 'orderNumber',
         'payment_method' => 'paymentMethod',
-        'payment_method_id' => 'paymentMethodId'
+        'payment_method_id' => 'paymentMethodId',
+        'delivery_trouble_end' => 'deliveryTroubleEnd'
     ];
 
     /**
@@ -173,7 +176,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'pending_address_changes' => 'setPendingAddressChanges',
         'order_number' => 'setOrderNumber',
         'payment_method' => 'setPaymentMethod',
-        'payment_method_id' => 'setPaymentMethodId'
+        'payment_method_id' => 'setPaymentMethodId',
+        'delivery_trouble_end' => 'setDeliveryTroubleEnd'
     ];
 
     /**
@@ -199,7 +203,8 @@ class Subscription implements ModelInterface, ArrayAccess
         'pending_address_changes' => 'getPendingAddressChanges',
         'order_number' => 'getOrderNumber',
         'payment_method' => 'getPaymentMethod',
-        'payment_method_id' => 'getPaymentMethodId'
+        'payment_method_id' => 'getPaymentMethodId',
+        'delivery_trouble_end' => 'getDeliveryTroubleEnd'
     ];
 
     /**
@@ -384,6 +389,7 @@ class Subscription implements ModelInterface, ArrayAccess
         $this->container['order_number'] = isset($data['order_number']) ? $data['order_number'] : null;
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['payment_method_id'] = isset($data['payment_method_id']) ? $data['payment_method_id'] : null;
+        $this->container['delivery_trouble_end'] = isset($data['delivery_trouble_end']) ? $data['delivery_trouble_end'] : null;
     }
 
     /**
@@ -1013,6 +1019,30 @@ class Subscription implements ModelInterface, ArrayAccess
         }
 
         $this->container['payment_method_id'] = $payment_method_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_trouble_end
+     *
+     * @return string|null
+     */
+    public function getDeliveryTroubleEnd()
+    {
+        return $this->container['delivery_trouble_end'];
+    }
+
+    /**
+     * Sets delivery_trouble_end
+     *
+     * @param string|null $delivery_trouble_end delivery_trouble_end
+     *
+     * @return $this
+     */
+    public function setDeliveryTroubleEnd($delivery_trouble_end)
+    {
+        $this->container['delivery_trouble_end'] = $delivery_trouble_end;
 
         return $this;
     }

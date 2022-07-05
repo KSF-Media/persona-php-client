@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **order_number** | **string** | Order number of subscription | [optional] 
 **payment_method** | **string** |  | [optional] 
 **payment_method_id** | **int** |  | [optional] 
+**delivery_trouble_end** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
