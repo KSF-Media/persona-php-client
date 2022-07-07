@@ -75,7 +75,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'order_number' => 'string',
         'payment_method' => 'string',
         'payment_method_id' => 'int',
-        'delivery_trouble_end' => 'string'
+        'delivery_trouble_end' => '\DateTime'
     ];
 
     /**
@@ -102,7 +102,7 @@ class Subscription implements ModelInterface, ArrayAccess
         'order_number' => null,
         'payment_method' => null,
         'payment_method_id' => null,
-        'delivery_trouble_end' => 'yyyy-mm-ddThh:MM:ssZ'
+        'delivery_trouble_end' => 'date-time'
     ];
 
     /**
@@ -1026,7 +1026,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets delivery_trouble_end
      *
-     * @return string|null
+     * @return \DateTime|null
      */
     public function getDeliveryTroubleEnd()
     {
@@ -1036,7 +1036,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets delivery_trouble_end
      *
-     * @param string|null $delivery_trouble_end delivery_trouble_end
+     * @param \DateTime|null $delivery_trouble_end delivery_trouble_end
      *
      * @return $this
      */
