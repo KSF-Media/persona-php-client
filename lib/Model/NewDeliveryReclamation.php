@@ -60,7 +60,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'paper' => 'string',
         'publication_date' => '\DateTime',
-        'claim' => 'string'
+        'claim' => 'string',
+        'door_code' => 'string'
     ];
 
     /**
@@ -71,7 +72,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'paper' => null,
         'publication_date' => 'date',
-        'claim' => null
+        'claim' => null,
+        'door_code' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'paper' => 'paper',
         'publication_date' => 'publicationDate',
-        'claim' => 'claim'
+        'claim' => 'claim',
+        'door_code' => 'doorCode'
     ];
 
     /**
@@ -114,7 +117,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     protected static $setters = [
         'paper' => 'setPaper',
         'publication_date' => 'setPublicationDate',
-        'claim' => 'setClaim'
+        'claim' => 'setClaim',
+        'door_code' => 'setDoorCode'
     ];
 
     /**
@@ -125,7 +129,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     protected static $getters = [
         'paper' => 'getPaper',
         'publication_date' => 'getPublicationDate',
-        'claim' => 'getClaim'
+        'claim' => 'getClaim',
+        'door_code' => 'getDoorCode'
     ];
 
     /**
@@ -206,6 +211,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
         $this->container['publication_date'] = isset($data['publication_date']) ? $data['publication_date'] : null;
         $this->container['claim'] = isset($data['claim']) ? $data['claim'] : null;
+        $this->container['door_code'] = isset($data['door_code']) ? $data['door_code'] : null;
     }
 
     /**
@@ -323,6 +329,30 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
             );
         }
         $this->container['claim'] = $claim;
+
+        return $this;
+    }
+
+    /**
+     * Gets door_code
+     *
+     * @return string|null
+     */
+    public function getDoorCode()
+    {
+        return $this->container['door_code'];
+    }
+
+    /**
+     * Sets door_code
+     *
+     * @param string|null $door_code Door code for possible redelivery
+     *
+     * @return $this
+     */
+    public function setDoorCode($door_code)
+    {
+        $this->container['door_code'] = $door_code;
 
         return $this;
     }
