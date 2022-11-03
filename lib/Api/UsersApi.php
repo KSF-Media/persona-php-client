@@ -2026,7 +2026,7 @@ class UsersApi
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PersonaClient\Model\NewsletterSubscriptions
+     * @return \PersonaClient\Model\Newsletter[]
      */
     public function usersUuidNewslettersGet($uuid, $auth_user = null, $authorization = null)
     {
@@ -2045,7 +2045,7 @@ class UsersApi
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \PersonaClient\Model\NewsletterSubscriptions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Newsletter[], HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidNewslettersGetWithHttpInfo($uuid, $auth_user = null, $authorization = null)
     {
@@ -2082,20 +2082,20 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\PersonaClient\Model\NewsletterSubscriptions' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Newsletter[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\NewsletterSubscriptions', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Newsletter[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+            $returnType = '\PersonaClient\Model\Newsletter[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2114,7 +2114,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PersonaClient\Model\NewsletterSubscriptions',
+                        '\PersonaClient\Model\Newsletter[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2160,7 +2160,7 @@ class UsersApi
      */
     public function usersUuidNewslettersGetAsyncWithHttpInfo($uuid, $auth_user = null, $authorization = null)
     {
-        $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+        $returnType = '\PersonaClient\Model\Newsletter[]';
         $request = $this->usersUuidNewslettersGetRequest($uuid, $auth_user, $authorization);
 
         return $this->client
@@ -2311,13 +2311,13 @@ class UsersApi
      * Update newsletter subscriptions
      *
      * @param  string $uuid uuid (required)
-     * @param  \PersonaClient\Model\NewsletterSubscriptions $body body (required)
+     * @param  \PersonaClient\Model\Newsletter[] $body body (required)
      * @param  string $auth_user auth_user (optional)
      * @param  string $authorization authorization (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \PersonaClient\Model\NewsletterSubscriptions|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
+     * @return \PersonaClient\Model\Newsletter[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415
      */
     public function usersUuidNewslettersPut($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -2331,13 +2331,13 @@ class UsersApi
      * Update newsletter subscriptions
      *
      * @param  string $uuid (required)
-     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  \PersonaClient\Model\Newsletter[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \PersonaClient\Model\NewsletterSubscriptions|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PersonaClient\Model\Newsletter[]|\PersonaClient\Model\InlineResponse400|\PersonaClient\Model\InlineResponse415, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUuidNewslettersPutWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
@@ -2374,14 +2374,14 @@ class UsersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\PersonaClient\Model\NewsletterSubscriptions' === '\SplFileObject') {
+                    if ('\PersonaClient\Model\Newsletter[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\NewsletterSubscriptions', []),
+                        ObjectSerializer::deserialize($content, '\PersonaClient\Model\Newsletter[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2411,7 +2411,7 @@ class UsersApi
                     ];
             }
 
-            $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+            $returnType = '\PersonaClient\Model\Newsletter[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2430,7 +2430,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PersonaClient\Model\NewsletterSubscriptions',
+                        '\PersonaClient\Model\Newsletter[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2462,7 +2462,7 @@ class UsersApi
      * Update newsletter subscriptions
      *
      * @param  string $uuid (required)
-     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  \PersonaClient\Model\Newsletter[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2485,7 +2485,7 @@ class UsersApi
      * Update newsletter subscriptions
      *
      * @param  string $uuid (required)
-     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  \PersonaClient\Model\Newsletter[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *
@@ -2494,7 +2494,7 @@ class UsersApi
      */
     public function usersUuidNewslettersPutAsyncWithHttpInfo($uuid, $body, $auth_user = null, $authorization = null)
     {
-        $returnType = '\PersonaClient\Model\NewsletterSubscriptions';
+        $returnType = '\PersonaClient\Model\Newsletter[]';
         $request = $this->usersUuidNewslettersPutRequest($uuid, $body, $auth_user, $authorization);
 
         return $this->client
@@ -2535,7 +2535,7 @@ class UsersApi
      * Create request for operation 'usersUuidNewslettersPut'
      *
      * @param  string $uuid (required)
-     * @param  \PersonaClient\Model\NewsletterSubscriptions $body (required)
+     * @param  \PersonaClient\Model\Newsletter[] $body (required)
      * @param  string $auth_user (optional)
      * @param  string $authorization (optional)
      *

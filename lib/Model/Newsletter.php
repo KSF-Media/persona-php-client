@@ -1,6 +1,6 @@
 <?php
 /**
- * NewsletterSubscriptions
+ * Newsletter
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \PersonaClient\ObjectSerializer;
 
 /**
- * NewsletterSubscriptions Class Doc Comment
+ * Newsletter Class Doc Comment
  *
  * @category Class
  * @package  PersonaClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class NewsletterSubscriptions implements ModelInterface, ArrayAccess
+class Newsletter implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NewsletterSubscriptions';
+    protected static $openAPIModelName = 'Newsletter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'norden' => 'bool',
-        'daily' => 'bool',
-        'kultur' => 'bool'
+        'list_id' => 'string',
+        'paper' => 'string',
+        'subscriptions' => 'map[string,\PersonaClient\Model\NewsletterSubscription[]]'
     ];
 
     /**
@@ -68,9 +68,9 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'norden' => null,
-        'daily' => null,
-        'kultur' => null
+        'list_id' => null,
+        'paper' => null,
+        'subscriptions' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'norden' => 'norden',
-        'daily' => 'daily',
-        'kultur' => 'kultur'
+        'list_id' => 'listId',
+        'paper' => 'paper',
+        'subscriptions' => 'subscriptions'
     ];
 
     /**
@@ -111,9 +111,9 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'norden' => 'setNorden',
-        'daily' => 'setDaily',
-        'kultur' => 'setKultur'
+        'list_id' => 'setListId',
+        'paper' => 'setPaper',
+        'subscriptions' => 'setSubscriptions'
     ];
 
     /**
@@ -122,9 +122,9 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'norden' => 'getNorden',
-        'daily' => 'getDaily',
-        'kultur' => 'getKultur'
+        'list_id' => 'getListId',
+        'paper' => 'getPaper',
+        'subscriptions' => 'getSubscriptions'
     ];
 
     /**
@@ -187,9 +187,9 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['norden'] = isset($data['norden']) ? $data['norden'] : null;
-        $this->container['daily'] = isset($data['daily']) ? $data['daily'] : null;
-        $this->container['kultur'] = isset($data['kultur']) ? $data['kultur'] : null;
+        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
+        $this->container['paper'] = isset($data['paper']) ? $data['paper'] : null;
+        $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
     }
 
     /**
@@ -201,6 +201,15 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['list_id'] === null) {
+            $invalidProperties[] = "'list_id' can't be null";
+        }
+        if ($this->container['paper'] === null) {
+            $invalidProperties[] = "'paper' can't be null";
+        }
+        if ($this->container['subscriptions'] === null) {
+            $invalidProperties[] = "'subscriptions' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -217,73 +226,73 @@ class NewsletterSubscriptions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets norden
+     * Gets list_id
      *
-     * @return bool|null
+     * @return string
      */
-    public function getNorden()
+    public function getListId()
     {
-        return $this->container['norden'];
+        return $this->container['list_id'];
     }
 
     /**
-     * Sets norden
+     * Sets list_id
      *
-     * @param bool|null $norden norden
+     * @param string $list_id list_id
      *
      * @return $this
      */
-    public function setNorden($norden)
+    public function setListId($list_id)
     {
-        $this->container['norden'] = $norden;
+        $this->container['list_id'] = $list_id;
 
         return $this;
     }
 
     /**
-     * Gets daily
+     * Gets paper
      *
-     * @return bool|null
+     * @return string
      */
-    public function getDaily()
+    public function getPaper()
     {
-        return $this->container['daily'];
+        return $this->container['paper'];
     }
 
     /**
-     * Sets daily
+     * Sets paper
      *
-     * @param bool|null $daily daily
+     * @param string $paper paper
      *
      * @return $this
      */
-    public function setDaily($daily)
+    public function setPaper($paper)
     {
-        $this->container['daily'] = $daily;
+        $this->container['paper'] = $paper;
 
         return $this;
     }
 
     /**
-     * Gets kultur
+     * Gets subscriptions
      *
-     * @return bool|null
+     * @return map[string,\PersonaClient\Model\NewsletterSubscription[]]
      */
-    public function getKultur()
+    public function getSubscriptions()
     {
-        return $this->container['kultur'];
+        return $this->container['subscriptions'];
     }
 
     /**
-     * Sets kultur
+     * Sets subscriptions
      *
-     * @param bool|null $kultur kultur
+     * @param map[string,\PersonaClient\Model\NewsletterSubscription[]] $subscriptions subscriptions
      *
      * @return $this
      */
-    public function setKultur($kultur)
+    public function setSubscriptions($subscriptions)
     {
-        $this->container['kultur'] = $kultur;
+        $this->container['subscriptions'] = $subscriptions;
 
         return $this;
     }

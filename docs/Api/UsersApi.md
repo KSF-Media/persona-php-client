@@ -386,7 +386,7 @@ No authorization required
 
 ## usersUuidNewslettersGet
 
-> \PersonaClient\Model\NewsletterSubscriptions usersUuidNewslettersGet($uuid, $auth_user, $authorization)
+> \PersonaClient\Model\Newsletter[] usersUuidNewslettersGet($uuid, $auth_user, $authorization)
 
 Get newsletter subscriptions
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\PersonaClient\Model\NewsletterSubscriptions**](../Model/NewsletterSubscriptions.md)
+[**\PersonaClient\Model\Newsletter[]**](../Model/Newsletter.md)
 
 ### Authorization
 
@@ -446,7 +446,7 @@ No authorization required
 
 ## usersUuidNewslettersPut
 
-> \PersonaClient\Model\NewsletterSubscriptions usersUuidNewslettersPut($uuid, $body, $auth_user, $authorization)
+> \PersonaClient\Model\Newsletter[] usersUuidNewslettersPut($uuid, $body, $auth_user, $authorization)
 
 Update newsletter subscriptions
 
@@ -465,7 +465,7 @@ $apiInstance = new PersonaClient\Api\UsersApi(
     new GuzzleHttp\Client()
 );
 $uuid = 'uuid_example'; // string | 
-$body = new \PersonaClient\Model\NewsletterSubscriptions(); // \PersonaClient\Model\NewsletterSubscriptions | 
+$body = array(new \PersonaClient\Model\array()); // \PersonaClient\Model\Newsletter[] | 
 $auth_user = 'auth_user_example'; // string | 
 $authorization = 'authorization_example'; // string | 
 
@@ -484,13 +484,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**string**](../Model/.md)|  |
- **body** | [**\PersonaClient\Model\NewsletterSubscriptions**](../Model/NewsletterSubscriptions.md)|  |
+ **body** | [**\PersonaClient\Model\Newsletter[]**](../Model/array.md)|  |
  **auth_user** | [**string**](../Model/.md)|  | [optional]
  **authorization** | **string**|  | [optional]
 
 ### Return type
 
-[**\PersonaClient\Model\NewsletterSubscriptions**](../Model/NewsletterSubscriptions.md)
+[**\PersonaClient\Model\Newsletter[]**](../Model/Newsletter.md)
 
 ### Authorization
 

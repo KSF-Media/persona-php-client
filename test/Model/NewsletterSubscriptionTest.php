@@ -1,6 +1,6 @@
 <?php
 /**
- * NewsletterSubscriptionsTest
+ * NewsletterSubscriptionTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace PersonaClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * NewsletterSubscriptionsTest Class Doc Comment
+ * NewsletterSubscriptionTest Class Doc Comment
  *
  * @category    Class
- * @description NewsletterSubscriptions
+ * @description NewsletterSubscription
  * @package     PersonaClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class NewsletterSubscriptionsTest extends TestCase
+class NewsletterSubscriptionTest extends TestCase
 {
 
     /**
@@ -72,30 +72,30 @@ class NewsletterSubscriptionsTest extends TestCase
     }
 
     /**
-     * Test "NewsletterSubscriptions"
+     * Test "NewsletterSubscription"
      */
-    public function testNewsletterSubscriptions()
+    public function testNewsletterSubscription()
     {
     }
 
     /**
-     * Test attribute "norden"
+     * Test attribute "list_name"
      */
-    public function testPropertyNorden()
+    public function testPropertyListName()
     {
     }
 
     /**
-     * Test attribute "daily"
+     * Test attribute "id"
      */
-    public function testPropertyDaily()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "kultur"
+     * Test attribute "subscribed"
      */
-    public function testPropertyKultur()
+    public function testPropertySubscribed()
     {
     }
 }
