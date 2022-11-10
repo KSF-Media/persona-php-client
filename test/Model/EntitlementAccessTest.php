@@ -98,4 +98,11 @@ class EntitlementAccessTest extends TestCase
     public function testPropertyOnlyToProducts()
     {
     }
+
+    /**
+     * Test attribute "by_package_id"
+     */
+    public function testPropertyByPackageId()
+    {
+    }
 }

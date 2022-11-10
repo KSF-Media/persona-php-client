@@ -59,7 +59,8 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'start_at' => 'string',
         'end_at' => 'string',
-        'only_to_products' => 'string[]'
+        'only_to_products' => 'string[]',
+        'by_package_id' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'start_at' => 'yyyy-mm-ddThh:MM:ssZ',
         'end_at' => 'yyyy-mm-ddThh:MM:ssZ',
-        'only_to_products' => null
+        'only_to_products' => null,
+        'by_package_id' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'start_at' => 'startAt',
         'end_at' => 'endAt',
-        'only_to_products' => 'onlyToProducts'
+        'only_to_products' => 'onlyToProducts',
+        'by_package_id' => 'byPackageId'
     ];
 
     /**
@@ -113,7 +116,8 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     protected static $setters = [
         'start_at' => 'setStartAt',
         'end_at' => 'setEndAt',
-        'only_to_products' => 'setOnlyToProducts'
+        'only_to_products' => 'setOnlyToProducts',
+        'by_package_id' => 'setByPackageId'
     ];
 
     /**
@@ -124,7 +128,8 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     protected static $getters = [
         'start_at' => 'getStartAt',
         'end_at' => 'getEndAt',
-        'only_to_products' => 'getOnlyToProducts'
+        'only_to_products' => 'getOnlyToProducts',
+        'by_package_id' => 'getByPackageId'
     ];
 
     /**
@@ -190,6 +195,7 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
         $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
         $this->container['end_at'] = isset($data['end_at']) ? $data['end_at'] : null;
         $this->container['only_to_products'] = isset($data['only_to_products']) ? $data['only_to_products'] : null;
+        $this->container['by_package_id'] = isset($data['by_package_id']) ? $data['by_package_id'] : null;
     }
 
     /**
@@ -290,6 +296,30 @@ class EntitlementAccess implements ModelInterface, ArrayAccess
     public function setOnlyToProducts($only_to_products)
     {
         $this->container['only_to_products'] = $only_to_products;
+
+        return $this;
+    }
+
+    /**
+     * Gets by_package_id
+     *
+     * @return string|null
+     */
+    public function getByPackageId()
+    {
+        return $this->container['by_package_id'];
+    }
+
+    /**
+     * Sets by_package_id
+     *
+     * @param string|null $by_package_id by_package_id
+     *
+     * @return $this
+     */
+    public function setByPackageId($by_package_id)
+    {
+        $this->container['by_package_id'] = $by_package_id;
 
         return $this;
     }
