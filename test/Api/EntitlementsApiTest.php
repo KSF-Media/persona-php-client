@@ -121,4 +121,14 @@ class EntitlementsApiTest extends TestCase
     public function testEntitlementsGet()
     {
     }
+
+    /**
+     * Test case for entitlementsGlobalGet
+     *
+     * Lists all past and future global entitlements.
+     *
+     */
+    public function testEntitlementsGlobalGet()
+    {
+    }
 }

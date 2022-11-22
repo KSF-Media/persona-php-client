@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/Api/EntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | Add an entitlement for all users
 *EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
+*EntitlementsApi* | [**entitlementsGlobalGet**](docs/Api/EntitlementsApi.md#entitlementsglobalget) | **GET** /entitlements/global | Lists all past and future global entitlements
 *LoginApi* | [**loginIpGet**](docs/Api/LoginApi.md#loginipget) | **GET** /login/ip | Login with IP
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /login | Login with email and password
 *LoginApi* | [**loginSomePost**](docs/Api/LoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
