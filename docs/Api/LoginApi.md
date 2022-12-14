@@ -49,8 +49,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_real_ip** | **string**|  | [optional]
- **paper** | **string**|  | [optional]
+ **x_real_ip** | **string**|  |
+ **paper** | **string**|  |
 
 ### Return type
 

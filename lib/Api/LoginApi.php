@@ -120,14 +120,14 @@ class LoginApi
      *
      * Login with IP
      *
-     * @param  string $x_real_ip x_real_ip (optional)
-     * @param  string $paper paper (optional)
+     * @param  string $x_real_ip x_real_ip (required)
+     * @param  string $paper paper (required)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse403|\PersonaClient\Model\InlineResponse500
      */
-    public function loginIpGet($x_real_ip = null, $paper = null)
+    public function loginIpGet($x_real_ip, $paper)
     {
         list($response) = $this->loginIpGetWithHttpInfo($x_real_ip, $paper);
         return $response;
@@ -138,14 +138,14 @@ class LoginApi
      *
      * Login with IP
      *
-     * @param  string $x_real_ip (optional)
-     * @param  string $paper (optional)
+     * @param  string $x_real_ip (required)
+     * @param  string $paper (required)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \PersonaClient\Model\LoginResponse|\PersonaClient\Model\InlineResponse403|\PersonaClient\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginIpGetWithHttpInfo($x_real_ip = null, $paper = null)
+    public function loginIpGetWithHttpInfo($x_real_ip, $paper)
     {
         $request = $this->loginIpGetRequest($x_real_ip, $paper);
 
@@ -267,13 +267,13 @@ class LoginApi
      *
      * Login with IP
      *
-     * @param  string $x_real_ip (optional)
-     * @param  string $paper (optional)
+     * @param  string $x_real_ip (required)
+     * @param  string $paper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginIpGetAsync($x_real_ip = null, $paper = null)
+    public function loginIpGetAsync($x_real_ip, $paper)
     {
         return $this->loginIpGetAsyncWithHttpInfo($x_real_ip, $paper)
             ->then(
@@ -288,13 +288,13 @@ class LoginApi
      *
      * Login with IP
      *
-     * @param  string $x_real_ip (optional)
-     * @param  string $paper (optional)
+     * @param  string $x_real_ip (required)
+     * @param  string $paper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginIpGetAsyncWithHttpInfo($x_real_ip = null, $paper = null)
+    public function loginIpGetAsyncWithHttpInfo($x_real_ip, $paper)
     {
         $returnType = '\PersonaClient\Model\LoginResponse';
         $request = $this->loginIpGetRequest($x_real_ip, $paper);
@@ -336,14 +336,26 @@ class LoginApi
     /**
      * Create request for operation 'loginIpGet'
      *
-     * @param  string $x_real_ip (optional)
-     * @param  string $paper (optional)
+     * @param  string $x_real_ip (required)
+     * @param  string $paper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginIpGetRequest($x_real_ip = null, $paper = null)
+    protected function loginIpGetRequest($x_real_ip, $paper)
     {
+        // verify the required parameter 'x_real_ip' is set
+        if ($x_real_ip === null || (is_array($x_real_ip) && count($x_real_ip) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $x_real_ip when calling loginIpGet'
+            );
+        }
+        // verify the required parameter 'paper' is set
+        if ($paper === null || (is_array($paper) && count($paper) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $paper when calling loginIpGet'
+            );
+        }
 
         $resourcePath = '/login/ip';
         $formParams = [];
