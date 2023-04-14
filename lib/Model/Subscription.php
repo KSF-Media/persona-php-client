@@ -277,6 +277,7 @@ class Subscription implements ModelInterface, ArrayAccess
     const PAYMENT_METHOD_NET_BANK = 'NetBank';
     const PAYMENT_METHOD_ELECTRONIC_INVOICE = 'ElectronicInvoice';
     const PAYMENT_METHOD_DIRECT_PAYMENT = 'DirectPayment';
+    const PAYMENT_METHOD_KLARNA = 'Klarna';
     const PAYMENT_METHOD_UNKNOWN_PAYMENT_METHOD = 'UnknownPaymentMethod';
     
 
@@ -351,6 +352,7 @@ class Subscription implements ModelInterface, ArrayAccess
             self::PAYMENT_METHOD_NET_BANK,
             self::PAYMENT_METHOD_ELECTRONIC_INVOICE,
             self::PAYMENT_METHOD_DIRECT_PAYMENT,
+            self::PAYMENT_METHOD_KLARNA,
             self::PAYMENT_METHOD_UNKNOWN_PAYMENT_METHOD,
         ];
     }

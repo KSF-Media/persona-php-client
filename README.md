@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountPasswordForgotPost**](docs/Api/AccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
 *AccountApi* | [**accountPasswordResetPost**](docs/Api/AccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
+*AdminApi* | [**adminTransferPassiveSubscribersListidPost**](docs/Api/AdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
 *AdminApi* | [**adminUserPost**](docs/Api/AdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
 *EntitlementsApi* | [**entitlementsAllowDelete**](docs/Api/EntitlementsApi.md#entitlementsallowdelete) | **DELETE** /entitlements/allow | Remove an entitlement
 *EntitlementsApi* | [**entitlementsAllowGet**](docs/Api/EntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled

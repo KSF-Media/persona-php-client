@@ -83,6 +83,16 @@ class AdminApiTest extends TestCase
     }
 
     /**
+     * Test case for adminTransferPassiveSubscribersListidPost
+     *
+     * Transfers passive customers from Kayak to Mailchimp.
+     *
+     */
+    public function testAdminTransferPassiveSubscribersListidPost()
+    {
+    }
+
+    /**
      * Test case for adminUserPost
      *
      * Create a new user with admin options..
