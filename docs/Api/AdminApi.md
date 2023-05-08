@@ -70,7 +70,7 @@ No authorization required
 
 ## adminTransferPassiveSubscribersListidPost
 
-> adminTransferPassiveSubscribersListidPost($listid, $auth_user, $authorization)
+> object adminTransferPassiveSubscribersListidPost($listid, $auth_user, $authorization)
 
 Transfers passive customers from Kayak to Mailchimp
 
@@ -93,7 +93,8 @@ $auth_user = 'auth_user_example'; // string |
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $apiInstance->adminTransferPassiveSubscribersListidPost($listid, $auth_user, $authorization);
+    $result = $apiInstance->adminTransferPassiveSubscribersListidPost($listid, $auth_user, $authorization);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdminApi->adminTransferPassiveSubscribersListidPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -111,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -120,7 +121,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
