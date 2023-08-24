@@ -310,8 +310,8 @@ class AccountApi
                 'Missing the required parameter $email when calling accountPasswordForgotGet'
             );
         }
-        if (!preg_match("/^[a-zA-Z0-9.!#$%&'*+\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/", $email)) {
-            throw new \InvalidArgumentException("invalid value for \"email\" when calling AccountApi.accountPasswordForgotGet, must conform to the pattern /^[a-zA-Z0-9.!#$%&'*+\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.");
+        if (!preg_match("/^[a-zåäöA-ZÅÄÖ0-9.!#$%&'*+\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/", $email)) {
+            throw new \InvalidArgumentException("invalid value for \"email\" when calling AccountApi.accountPasswordForgotGet, must conform to the pattern /^[a-zåäöA-ZÅÄÖ0-9.!#$%&'*+\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.");
         }
 
 
