@@ -79,16 +79,16 @@ class SubscriptionDatesTest extends TestCase
     }
 
     /**
-     * Test attribute "len_months"
+     * Test attribute "len_days"
      */
-    public function testPropertyLenMonths()
+    public function testPropertyLenDays()
     {
     }
 
     /**
-     * Test attribute "len_days"
+     * Test attribute "len_months"
      */
-    public function testPropertyLenDays()
+    public function testPropertyLenMonths()
     {
     }
 

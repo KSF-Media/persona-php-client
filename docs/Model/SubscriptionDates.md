@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**len_months** | **int** | Length of Subscription in months | [optional] 
 **len_days** | **int** | Additional days (on top of months) for Subscription duration | [optional] 
+**len_months** | **int** | Length of Subscription in months | [optional] 
 **start** | [**\DateTime**](\DateTime.md) |  | 
 **end** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **unpaid_break** | [**\DateTime**](\DateTime.md) |  | [optional] 

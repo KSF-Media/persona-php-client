@@ -57,8 +57,8 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'len_months' => 'int',
         'len_days' => 'int',
+        'len_months' => 'int',
         'start' => '\DateTime',
         'end' => '\DateTime',
         'unpaid_break' => '\DateTime',
@@ -73,8 +73,8 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'len_months' => null,
         'len_days' => null,
+        'len_months' => null,
         'start' => 'date',
         'end' => 'date',
         'unpaid_break' => 'date',
@@ -110,8 +110,8 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'len_months' => 'lenMonths',
         'len_days' => 'lenDays',
+        'len_months' => 'lenMonths',
         'start' => 'start',
         'end' => 'end',
         'unpaid_break' => 'unpaidBreak',
@@ -126,8 +126,8 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'len_months' => 'setLenMonths',
         'len_days' => 'setLenDays',
+        'len_months' => 'setLenMonths',
         'start' => 'setStart',
         'end' => 'setEnd',
         'unpaid_break' => 'setUnpaidBreak',
@@ -142,8 +142,8 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'len_months' => 'getLenMonths',
         'len_days' => 'getLenDays',
+        'len_months' => 'getLenMonths',
         'start' => 'getStart',
         'end' => 'getEnd',
         'unpaid_break' => 'getUnpaidBreak',
@@ -212,8 +212,8 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['len_months'] = isset($data['len_months']) ? $data['len_months'] : null;
         $this->container['len_days'] = isset($data['len_days']) ? $data['len_days'] : null;
+        $this->container['len_months'] = isset($data['len_months']) ? $data['len_months'] : null;
         $this->container['start'] = isset($data['start']) ? $data['start'] : null;
         $this->container['end'] = isset($data['end']) ? $data['end'] : null;
         $this->container['unpaid_break'] = isset($data['unpaid_break']) ? $data['unpaid_break'] : null;
@@ -231,20 +231,20 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['len_months']) && ($this->container['len_months'] > 9223372036854775807)) {
-            $invalidProperties[] = "invalid value for 'len_months', must be smaller than or equal to 9223372036854775807.";
-        }
-
-        if (!is_null($this->container['len_months']) && ($this->container['len_months'] < -9223372036854775808)) {
-            $invalidProperties[] = "invalid value for 'len_months', must be bigger than or equal to -9223372036854775808.";
-        }
-
         if (!is_null($this->container['len_days']) && ($this->container['len_days'] > 9223372036854775807)) {
             $invalidProperties[] = "invalid value for 'len_days', must be smaller than or equal to 9223372036854775807.";
         }
 
         if (!is_null($this->container['len_days']) && ($this->container['len_days'] < -9223372036854775808)) {
             $invalidProperties[] = "invalid value for 'len_days', must be bigger than or equal to -9223372036854775808.";
+        }
+
+        if (!is_null($this->container['len_months']) && ($this->container['len_months'] > 9223372036854775807)) {
+            $invalidProperties[] = "invalid value for 'len_months', must be smaller than or equal to 9223372036854775807.";
+        }
+
+        if (!is_null($this->container['len_months']) && ($this->container['len_months'] < -9223372036854775808)) {
+            $invalidProperties[] = "invalid value for 'len_months', must be bigger than or equal to -9223372036854775808.";
         }
 
         if ($this->container['start'] === null) {
@@ -264,38 +264,6 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets len_months
-     *
-     * @return int|null
-     */
-    public function getLenMonths()
-    {
-        return $this->container['len_months'];
-    }
-
-    /**
-     * Sets len_months
-     *
-     * @param int|null $len_months Length of Subscription in months
-     *
-     * @return $this
-     */
-    public function setLenMonths($len_months)
-    {
-
-        if (!is_null($len_months) && ($len_months > 9223372036854775807)) {
-            throw new \InvalidArgumentException('invalid value for $len_months when calling SubscriptionDates., must be smaller than or equal to 9223372036854775807.');
-        }
-        if (!is_null($len_months) && ($len_months < -9223372036854775808)) {
-            throw new \InvalidArgumentException('invalid value for $len_months when calling SubscriptionDates., must be bigger than or equal to -9223372036854775808.');
-        }
-
-        $this->container['len_months'] = $len_months;
-
-        return $this;
-    }
 
     /**
      * Gets len_days
@@ -325,6 +293,38 @@ class SubscriptionDates implements ModelInterface, ArrayAccess
         }
 
         $this->container['len_days'] = $len_days;
+
+        return $this;
+    }
+
+    /**
+     * Gets len_months
+     *
+     * @return int|null
+     */
+    public function getLenMonths()
+    {
+        return $this->container['len_months'];
+    }
+
+    /**
+     * Sets len_months
+     *
+     * @param int|null $len_months Length of Subscription in months
+     *
+     * @return $this
+     */
+    public function setLenMonths($len_months)
+    {
+
+        if (!is_null($len_months) && ($len_months > 9223372036854775807)) {
+            throw new \InvalidArgumentException('invalid value for $len_months when calling SubscriptionDates., must be smaller than or equal to 9223372036854775807.');
+        }
+        if (!is_null($len_months) && ($len_months < -9223372036854775808)) {
+            throw new \InvalidArgumentException('invalid value for $len_months when calling SubscriptionDates., must be bigger than or equal to -9223372036854775808.');
+        }
+
+        $this->container['len_months'] = $len_months;
 
         return $this;
     }
