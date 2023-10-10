@@ -96,6 +96,9 @@ Class | Method | HTTP request | Description
 *EntitlementsApi* | [**entitlementsAllowUuidPost**](docs/Api/EntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *EntitlementsApi* | [**entitlementsGlobalGet**](docs/Api/EntitlementsApi.md#entitlementsglobalget) | **GET** /entitlements/global | Lists all past and future global entitlements
+*IdentificationApi* | [**identificationLoginGet**](docs/Api/IdentificationApi.md#identificationloginget) | **GET** /identification/login | Authenticate with OpenID Connect
+*IdentificationApi* | [**identificationLoginReturnGet**](docs/Api/IdentificationApi.md#identificationloginreturnget) | **GET** /identification/login/return | Redirect endpoint for OpenID Connect
+*IdentificationApi* | [**identificationUserStampUuidPost**](docs/Api/IdentificationApi.md#identificationuserstampuuidpost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 *LoginApi* | [**loginIpGet**](docs/Api/LoginApi.md#loginipget) | **GET** /login/ip | Login with IP
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /login | Login with email and password
 *LoginApi* | [**loginSomePost**](docs/Api/LoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
