@@ -73,36 +73,6 @@ class AdminApiTest extends TestCase
     }
 
     /**
-     * Test case for adminFreePassDelete
-     *
-     * Revokes an existing free pass.
-     *
-     */
-    public function testAdminFreePassDelete()
-    {
-    }
-
-    /**
-     * Test case for adminFreePassPost
-     *
-     * Creates a free pass to an article.
-     *
-     */
-    public function testAdminFreePassPost()
-    {
-    }
-
-    /**
-     * Test case for adminFreePassesGet
-     *
-     * Lists all free passes.
-     *
-     */
-    public function testAdminFreePassesGet()
-    {
-    }
-
-    /**
      * Test case for adminSearchPost
      *
      * Search for users.

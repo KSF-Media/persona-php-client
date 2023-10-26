@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**entitlementsAllowGet**](EntitlementsApi.md#entitlementsAllowGet) | **GET** /entitlements/allow | Check if global entitlements are enabled
 [**entitlementsAllowPost**](EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | Add an entitlement for all users
 [**entitlementsAllowUuidPost**](EntitlementsApi.md#entitlementsAllowUuidPost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
-[**entitlementsFreePassGet**](EntitlementsApi.md#entitlementsFreePassGet) | **GET** /entitlements/free-pass | Verify given free pass hash
 [**entitlementsGet**](EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 [**entitlementsGlobalGet**](EntitlementsApi.md#entitlementsGlobalGet) | **GET** /entitlements/global | Lists all past and future global entitlements
 
@@ -243,64 +242,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
-
-
-## entitlementsFreePassGet
-
-> bool entitlementsFreePassGet($auth_user, $authorization, $free_pass_hash)
-
-Verify given free pass hash
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-$apiInstance = new PersonaClient\Api\EntitlementsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$auth_user = 'auth_user_example'; // string | 
-$authorization = 'authorization_example'; // string | 
-$free_pass_hash = 'free_pass_hash_example'; // string | 
-
-try {
-    $result = $apiInstance->entitlementsFreePassGet($auth_user, $authorization, $free_pass_hash);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling EntitlementsApi->entitlementsFreePassGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **auth_user** | [**string**](../Model/.md)|  | [optional]
- **authorization** | **string**|  | [optional]
- **free_pass_hash** | **string**|  | [optional]
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
