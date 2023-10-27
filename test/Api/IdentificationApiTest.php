@@ -83,6 +83,16 @@ class IdentificationApiTest extends TestCase
     }
 
     /**
+     * Test case for identificationLoginMonitorGet
+     *
+     * Get token for off band response login flow monitor.
+     *
+     */
+    public function testIdentificationLoginMonitorGet()
+    {
+    }
+
+    /**
      * Test case for identificationLoginReturnGet
      *
      * Redirect endpoint for OpenID Connect.

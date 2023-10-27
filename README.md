@@ -97,6 +97,7 @@ Class | Method | HTTP request | Description
 *EntitlementsApi* | [**entitlementsGet**](docs/Api/EntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *EntitlementsApi* | [**entitlementsGlobalGet**](docs/Api/EntitlementsApi.md#entitlementsglobalget) | **GET** /entitlements/global | Lists all past and future global entitlements
 *IdentificationApi* | [**identificationLoginGet**](docs/Api/IdentificationApi.md#identificationloginget) | **GET** /identification/login | Authenticate with OpenID Connect
+*IdentificationApi* | [**identificationLoginMonitorGet**](docs/Api/IdentificationApi.md#identificationloginmonitorget) | **GET** /identification/login/monitor | Get token for off band response login flow monitor
 *IdentificationApi* | [**identificationLoginReturnGet**](docs/Api/IdentificationApi.md#identificationloginreturnget) | **GET** /identification/login/return | Redirect endpoint for OpenID Connect
 *IdentificationApi* | [**identificationUserStampUuidPost**](docs/Api/IdentificationApi.md#identificationuserstampuuidpost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 *LoginApi* | [**loginIpGet**](docs/Api/LoginApi.md#loginipget) | **GET** /login/ip | Login with IP
