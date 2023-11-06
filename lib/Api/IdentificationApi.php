@@ -120,14 +120,15 @@ class IdentificationApi
      *
      * Authenticate with OpenID Connect
      *
+     * @param  string $monitor monitor (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function identificationLoginGet()
+    public function identificationLoginGet($monitor = null)
     {
-        $this->identificationLoginGetWithHttpInfo();
+        $this->identificationLoginGetWithHttpInfo($monitor);
     }
 
     /**
@@ -135,14 +136,15 @@ class IdentificationApi
      *
      * Authenticate with OpenID Connect
      *
+     * @param  string $monitor (optional)
      *
      * @throws \PersonaClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function identificationLoginGetWithHttpInfo()
+    public function identificationLoginGetWithHttpInfo($monitor = null)
     {
-        $request = $this->identificationLoginGetRequest();
+        $request = $this->identificationLoginGetRequest($monitor);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,13 +188,14 @@ class IdentificationApi
      *
      * Authenticate with OpenID Connect
      *
+     * @param  string $monitor (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function identificationLoginGetAsync()
+    public function identificationLoginGetAsync($monitor = null)
     {
-        return $this->identificationLoginGetAsyncWithHttpInfo()
+        return $this->identificationLoginGetAsyncWithHttpInfo($monitor)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -205,14 +208,15 @@ class IdentificationApi
      *
      * Authenticate with OpenID Connect
      *
+     * @param  string $monitor (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function identificationLoginGetAsyncWithHttpInfo()
+    public function identificationLoginGetAsyncWithHttpInfo($monitor = null)
     {
         $returnType = '';
-        $request = $this->identificationLoginGetRequest();
+        $request = $this->identificationLoginGetRequest($monitor);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -240,11 +244,12 @@ class IdentificationApi
     /**
      * Create request for operation 'identificationLoginGet'
      *
+     * @param  string $monitor (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function identificationLoginGetRequest()
+    protected function identificationLoginGetRequest($monitor = null)
     {
 
         $resourcePath = '/identification/login';
@@ -254,6 +259,10 @@ class IdentificationApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($monitor !== null) {
+            $queryParams['monitor'] = ObjectSerializer::toQueryValue($monitor);
+        }
 
 
         // body params

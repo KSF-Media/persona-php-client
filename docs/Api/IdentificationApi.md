@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## identificationLoginGet
 
-> identificationLoginGet()
+> identificationLoginGet($monitor)
 
 Authenticate with OpenID Connect
 
@@ -29,9 +29,10 @@ $apiInstance = new PersonaClient\Api\IdentificationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$monitor = 'monitor_example'; // string | 
 
 try {
-    $apiInstance->identificationLoginGet();
+    $apiInstance->identificationLoginGet($monitor);
 } catch (Exception $e) {
     echo 'Exception when calling IdentificationApi->identificationLoginGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -40,7 +41,10 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **monitor** | **string**|  | [optional]
 
 ### Return type
 
