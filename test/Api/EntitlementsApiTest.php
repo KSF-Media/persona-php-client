@@ -113,6 +113,16 @@ class EntitlementsApiTest extends TestCase
     }
 
     /**
+     * Test case for entitlementsFreePassGet
+     *
+     * Verify given free pass hash.
+     *
+     */
+    public function testEntitlementsFreePassGet()
+    {
+    }
+
+    /**
      * Test case for entitlementsGet
      *
      * List all entitlements.
