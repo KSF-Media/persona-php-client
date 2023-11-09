@@ -83,12 +83,12 @@ class AdminApiTest extends TestCase
     }
 
     /**
-     * Test case for adminFreePassPost
+     * Test case for adminFreePassPut
      *
      * Creates a free pass to an article.
      *
      */
-    public function testAdminFreePassPost()
+    public function testAdminFreePassPut()
     {
     }
 

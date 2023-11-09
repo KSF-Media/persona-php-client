@@ -5,7 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adminFreePassDelete**](AdminApi.md#adminFreePassDelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
-[**adminFreePassPost**](AdminApi.md#adminFreePassPost) | **POST** /admin/free-pass | Creates a free pass to an article
+[**adminFreePassPut**](AdminApi.md#adminFreePassPut) | **PUT** /admin/free-pass | Creates a free pass to an article
 [**adminFreePassesGet**](AdminApi.md#adminFreePassesGet) | **GET** /admin/free-passes | Lists all free passes
 [**adminSearchPost**](AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users
 [**adminTransferPassiveSubscribersListidPost**](AdminApi.md#adminTransferPassiveSubscribersListidPost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
@@ -72,9 +72,9 @@ No authorization required
 [[Back to README]](../../README.md)
 
 
-## adminFreePassPost
+## adminFreePassPut
 
-> string adminFreePassPost($body, $auth_user, $authorization)
+> string adminFreePassPut($body, $auth_user, $authorization)
 
 Creates a free pass to an article
 
@@ -97,10 +97,10 @@ $auth_user = 'auth_user_example'; // string |
 $authorization = 'authorization_example'; // string | 
 
 try {
-    $result = $apiInstance->adminFreePassPost($body, $auth_user, $authorization);
+    $result = $apiInstance->adminFreePassPut($body, $auth_user, $authorization);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdminApi->adminFreePassPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminApi->adminFreePassPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

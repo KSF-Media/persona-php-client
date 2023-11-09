@@ -88,7 +88,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountPasswordForgotPost**](docs/Api/AccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
 *AccountApi* | [**accountPasswordResetPost**](docs/Api/AccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminFreePassDelete**](docs/Api/AdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
-*AdminApi* | [**adminFreePassPost**](docs/Api/AdminApi.md#adminfreepasspost) | **POST** /admin/free-pass | Creates a free pass to an article
+*AdminApi* | [**adminFreePassPut**](docs/Api/AdminApi.md#adminfreepassput) | **PUT** /admin/free-pass | Creates a free pass to an article
 *AdminApi* | [**adminFreePassesGet**](docs/Api/AdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
 *AdminApi* | [**adminSearchPost**](docs/Api/AdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *AdminApi* | [**adminTransferPassiveSubscribersListidPost**](docs/Api/AdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp

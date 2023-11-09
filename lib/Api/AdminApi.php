@@ -353,7 +353,7 @@ class AdminApi
     }
 
     /**
-     * Operation adminFreePassPost
+     * Operation adminFreePassPut
      *
      * Creates a free pass to an article
      *
@@ -365,14 +365,14 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function adminFreePassPost($body, $auth_user = null, $authorization = null)
+    public function adminFreePassPut($body, $auth_user = null, $authorization = null)
     {
-        list($response) = $this->adminFreePassPostWithHttpInfo($body, $auth_user, $authorization);
+        list($response) = $this->adminFreePassPutWithHttpInfo($body, $auth_user, $authorization);
         return $response;
     }
 
     /**
-     * Operation adminFreePassPostWithHttpInfo
+     * Operation adminFreePassPutWithHttpInfo
      *
      * Creates a free pass to an article
      *
@@ -384,9 +384,9 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function adminFreePassPostWithHttpInfo($body, $auth_user = null, $authorization = null)
+    public function adminFreePassPutWithHttpInfo($body, $auth_user = null, $authorization = null)
     {
-        $request = $this->adminFreePassPostRequest($body, $auth_user, $authorization);
+        $request = $this->adminFreePassPutRequest($body, $auth_user, $authorization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -462,7 +462,7 @@ class AdminApi
     }
 
     /**
-     * Operation adminFreePassPostAsync
+     * Operation adminFreePassPutAsync
      *
      * Creates a free pass to an article
      *
@@ -473,9 +473,9 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminFreePassPostAsync($body, $auth_user = null, $authorization = null)
+    public function adminFreePassPutAsync($body, $auth_user = null, $authorization = null)
     {
-        return $this->adminFreePassPostAsyncWithHttpInfo($body, $auth_user, $authorization)
+        return $this->adminFreePassPutAsyncWithHttpInfo($body, $auth_user, $authorization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -484,7 +484,7 @@ class AdminApi
     }
 
     /**
-     * Operation adminFreePassPostAsyncWithHttpInfo
+     * Operation adminFreePassPutAsyncWithHttpInfo
      *
      * Creates a free pass to an article
      *
@@ -495,10 +495,10 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function adminFreePassPostAsyncWithHttpInfo($body, $auth_user = null, $authorization = null)
+    public function adminFreePassPutAsyncWithHttpInfo($body, $auth_user = null, $authorization = null)
     {
         $returnType = 'string';
-        $request = $this->adminFreePassPostRequest($body, $auth_user, $authorization);
+        $request = $this->adminFreePassPutRequest($body, $auth_user, $authorization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -535,7 +535,7 @@ class AdminApi
     }
 
     /**
-     * Create request for operation 'adminFreePassPost'
+     * Create request for operation 'adminFreePassPut'
      *
      * @param  \PersonaClient\Model\FreePassInput $body (required)
      * @param  string $auth_user (optional)
@@ -544,12 +544,12 @@ class AdminApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function adminFreePassPostRequest($body, $auth_user = null, $authorization = null)
+    protected function adminFreePassPutRequest($body, $auth_user = null, $authorization = null)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling adminFreePassPost'
+                'Missing the required parameter $body when calling adminFreePassPut'
             );
         }
 
@@ -630,7 +630,7 @@ class AdminApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
