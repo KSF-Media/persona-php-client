@@ -61,9 +61,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
         'email' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
-        'middle_name' => 'string',
-        'consent' => '\PersonaClient\Model\GdprConsent[]',
-        'legal' => '\PersonaClient\Model\LegalConsent[]',
         'cusno' => 'string',
         'other_cusnos' => 'string[]'
     ];
@@ -78,9 +75,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
         'email' => null,
         'first_name' => null,
         'last_name' => null,
-        'middle_name' => null,
-        'consent' => null,
-        'legal' => null,
         'cusno' => null,
         'other_cusnos' => null
     ];
@@ -116,9 +110,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
         'email' => 'email',
         'first_name' => 'firstName',
         'last_name' => 'lastName',
-        'middle_name' => 'middleName',
-        'consent' => 'consent',
-        'legal' => 'legal',
         'cusno' => 'cusno',
         'other_cusnos' => 'otherCusnos'
     ];
@@ -133,9 +124,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
         'email' => 'setEmail',
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'middle_name' => 'setMiddleName',
-        'consent' => 'setConsent',
-        'legal' => 'setLegal',
         'cusno' => 'setCusno',
         'other_cusnos' => 'setOtherCusnos'
     ];
@@ -150,9 +138,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
         'email' => 'getEmail',
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'middle_name' => 'getMiddleName',
-        'consent' => 'getConsent',
-        'legal' => 'getLegal',
         'cusno' => 'getCusno',
         'other_cusnos' => 'getOtherCusnos'
     ];
@@ -221,9 +206,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['middle_name'] = isset($data['middle_name']) ? $data['middle_name'] : null;
-        $this->container['consent'] = isset($data['consent']) ? $data['consent'] : null;
-        $this->container['legal'] = isset($data['legal']) ? $data['legal'] : null;
         $this->container['cusno'] = isset($data['cusno']) ? $data['cusno'] : null;
         $this->container['other_cusnos'] = isset($data['other_cusnos']) ? $data['other_cusnos'] : null;
     }
@@ -239,12 +221,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
 
         if ($this->container['uuid'] === null) {
             $invalidProperties[] = "'uuid' can't be null";
-        }
-        if ($this->container['consent'] === null) {
-            $invalidProperties[] = "'consent' can't be null";
-        }
-        if ($this->container['legal'] === null) {
-            $invalidProperties[] = "'legal' can't be null";
         }
         return $invalidProperties;
     }
@@ -353,78 +329,6 @@ class JanrainUser implements ModelInterface, ArrayAccess
     public function setLastName($last_name)
     {
         $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets middle_name
-     *
-     * @return string|null
-     */
-    public function getMiddleName()
-    {
-        return $this->container['middle_name'];
-    }
-
-    /**
-     * Sets middle_name
-     *
-     * @param string|null $middle_name middle_name
-     *
-     * @return $this
-     */
-    public function setMiddleName($middle_name)
-    {
-        $this->container['middle_name'] = $middle_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets consent
-     *
-     * @return \PersonaClient\Model\GdprConsent[]
-     */
-    public function getConsent()
-    {
-        return $this->container['consent'];
-    }
-
-    /**
-     * Sets consent
-     *
-     * @param \PersonaClient\Model\GdprConsent[] $consent consent
-     *
-     * @return $this
-     */
-    public function setConsent($consent)
-    {
-        $this->container['consent'] = $consent;
-
-        return $this;
-    }
-
-    /**
-     * Gets legal
-     *
-     * @return \PersonaClient\Model\LegalConsent[]
-     */
-    public function getLegal()
-    {
-        return $this->container['legal'];
-    }
-
-    /**
-     * Sets legal
-     *
-     * @param \PersonaClient\Model\LegalConsent[] $legal legal
-     *
-     * @return $this
-     */
-    public function setLegal($legal)
-    {
-        $this->container['legal'] = $legal;
 
         return $this;
     }

@@ -86,13 +86,6 @@ class LoginResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "sso_code"
-     */
-    public function testPropertySsoCode()
-    {
-    }
-
-    /**
      * Test attribute "uuid"
      */
     public function testPropertyUuid()

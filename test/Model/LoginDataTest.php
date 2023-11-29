@@ -91,11 +91,4 @@ class LoginDataTest extends TestCase
     public function testPropertyPassword()
     {
     }
-
-    /**
-     * Test attribute "merge_token"
-     */
-    public function testPropertyMergeToken()
-    {
-    }
 }

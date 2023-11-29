@@ -58,7 +58,6 @@ class LoginResponse implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'token' => 'string',
-        'sso_code' => 'string',
         'uuid' => 'string',
         'is_admin' => 'bool'
     ];
@@ -70,7 +69,6 @@ class LoginResponse implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'token' => null,
-        'sso_code' => null,
         'uuid' => 'uuid',
         'is_admin' => null
     ];
@@ -103,7 +101,6 @@ class LoginResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'token' => 'token',
-        'sso_code' => 'ssoCode',
         'uuid' => 'uuid',
         'is_admin' => 'isAdmin'
     ];
@@ -115,7 +112,6 @@ class LoginResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'token' => 'setToken',
-        'sso_code' => 'setSsoCode',
         'uuid' => 'setUuid',
         'is_admin' => 'setIsAdmin'
     ];
@@ -127,7 +123,6 @@ class LoginResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'token' => 'getToken',
-        'sso_code' => 'getSsoCode',
         'uuid' => 'getUuid',
         'is_admin' => 'getIsAdmin'
     ];
@@ -193,7 +188,6 @@ class LoginResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['sso_code'] = isset($data['sso_code']) ? $data['sso_code'] : null;
         $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['is_admin'] = isset($data['is_admin']) ? $data['is_admin'] : null;
     }
@@ -251,30 +245,6 @@ class LoginResponse implements ModelInterface, ArrayAccess
     public function setToken($token)
     {
         $this->container['token'] = $token;
-
-        return $this;
-    }
-
-    /**
-     * Gets sso_code
-     *
-     * @return string|null
-     */
-    public function getSsoCode()
-    {
-        return $this->container['sso_code'];
-    }
-
-    /**
-     * Sets sso_code
-     *
-     * @param string|null $sso_code sso_code
-     *
-     * @return $this
-     */
-    public function setSsoCode($sso_code)
-    {
-        $this->container['sso_code'] = $sso_code;
 
         return $this;
     }

@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **string** |  | 
-**sso_code** | **string** |  | [optional] 
 **uuid** | **string** |  | 
 **is_admin** | **bool** |  | 
 

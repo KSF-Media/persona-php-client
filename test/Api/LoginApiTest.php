@@ -93,19 +93,9 @@ class LoginApiTest extends TestCase
     }
 
     /**
-     * Test case for loginSomePost
-     *
-     * Login with social media.
-     *
-     */
-    public function testLoginSomePost()
-    {
-    }
-
-    /**
      * Test case for loginSsoPost
      *
-     * Login with the AccessToken given by the SSO auth.
+     * Disabled. Always returns 403..
      *
      */
     public function testLoginSsoPost()

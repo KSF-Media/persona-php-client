@@ -58,8 +58,7 @@ class LoginData implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'username' => 'string',
-        'password' => 'string',
-        'merge_token' => 'string'
+        'password' => 'string'
     ];
 
     /**
@@ -69,8 +68,7 @@ class LoginData implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'username' => null,
-        'password' => null,
-        'merge_token' => null
+        'password' => null
     ];
 
     /**
@@ -101,8 +99,7 @@ class LoginData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'username' => 'username',
-        'password' => 'password',
-        'merge_token' => 'mergeToken'
+        'password' => 'password'
     ];
 
     /**
@@ -112,8 +109,7 @@ class LoginData implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'username' => 'setUsername',
-        'password' => 'setPassword',
-        'merge_token' => 'setMergeToken'
+        'password' => 'setPassword'
     ];
 
     /**
@@ -123,8 +119,7 @@ class LoginData implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'username' => 'getUsername',
-        'password' => 'getPassword',
-        'merge_token' => 'getMergeToken'
+        'password' => 'getPassword'
     ];
 
     /**
@@ -189,7 +184,6 @@ class LoginData implements ModelInterface, ArrayAccess
     {
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['merge_token'] = isset($data['merge_token']) ? $data['merge_token'] : null;
     }
 
     /**
@@ -266,30 +260,6 @@ class LoginData implements ModelInterface, ArrayAccess
     public function setPassword($password)
     {
         $this->container['password'] = $password;
-
-        return $this;
-    }
-
-    /**
-     * Gets merge_token
-     *
-     * @return string|null
-     */
-    public function getMergeToken()
-    {
-        return $this->container['merge_token'];
-    }
-
-    /**
-     * Sets merge_token
-     *
-     * @param string|null $merge_token merge_token
-     *
-     * @return $this
-     */
-    public function setMergeToken($merge_token)
-    {
-        $this->container['merge_token'] = $merge_token;
 
         return $this;
     }

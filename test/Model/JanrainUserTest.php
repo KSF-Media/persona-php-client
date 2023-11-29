@@ -107,27 +107,6 @@ class JanrainUserTest extends TestCase
     }
 
     /**
-     * Test attribute "middle_name"
-     */
-    public function testPropertyMiddleName()
-    {
-    }
-
-    /**
-     * Test attribute "consent"
-     */
-    public function testPropertyConsent()
-    {
-    }
-
-    /**
-     * Test attribute "legal"
-     */
-    public function testPropertyLegal()
-    {
-    }
-
-    /**
      * Test attribute "cusno"
      */
     public function testPropertyCusno()

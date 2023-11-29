@@ -8,9 +8,6 @@ Name | Type | Description | Notes
 **email** | **string** |  | [optional] 
 **first_name** | **string** |  | [optional] 
 **last_name** | **string** |  | [optional] 
-**middle_name** | **string** |  | [optional] 
-**consent** | [**\PersonaClient\Model\GdprConsent[]**](GdprConsent.md) |  | 
-**legal** | [**\PersonaClient\Model\LegalConsent[]**](LegalConsent.md) |  | 
 **cusno** | **string** |  | [optional] 
 **other_cusnos** | **string[]** |  | [optional] 
 
