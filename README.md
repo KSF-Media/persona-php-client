@@ -60,19 +60,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new PersonaClient\Api\AdminApi(
+$apiInstance = new PersonaClient\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $body = 'body_example'; // string | 
-$auth_user = 'auth_user_example'; // string | 
-$authorization = 'authorization_example'; // string | 
 
 try {
-    $apiInstance->adminFreePassDelete($body, $auth_user, $authorization);
+    $apiInstance->accountPasswordCheckTokenPost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling AdminApi->adminFreePassDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountApi->accountPasswordCheckTokenPost: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -84,6 +82,9 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**accountPasswordCheckTokenPost**](docs/Api/AccountApi.md#accountpasswordchecktokenpost) | **POST** /account/password/check-token | Validate password reset token
+*AccountApi* | [**accountPasswordForgotPost**](docs/Api/AccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
+*AccountApi* | [**accountPasswordResetPost**](docs/Api/AccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminFreePassDelete**](docs/Api/AdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
 *AdminApi* | [**adminFreePassPut**](docs/Api/AdminApi.md#adminfreepassput) | **PUT** /admin/free-pass | Creates a free pass to an article
 *AdminApi* | [**adminFreePassesGet**](docs/Api/AdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
@@ -139,6 +140,7 @@ Class | Method | HTTP request | Description
  - [DeliveryReclamation](docs/Model/DeliveryReclamation.md)
  - [EntitlementAccess](docs/Model/EntitlementAccess.md)
  - [FaroUser](docs/Model/FaroUser.md)
+ - [ForgotPasswordData](docs/Model/ForgotPasswordData.md)
  - [FreePass](docs/Model/FreePass.md)
  - [FreePassInput](docs/Model/FreePassInput.md)
  - [GdprConsent](docs/Model/GdprConsent.md)
@@ -181,6 +183,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionPayments](docs/Model/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/Model/TemporaryAddressChange.md)
  - [TemporaryAddressChangeDates](docs/Model/TemporaryAddressChangeDates.md)
+ - [UpdatePasswordData](docs/Model/UpdatePasswordData.md)
  - [User](docs/Model/User.md)
  - [UserUpdate](docs/Model/UserUpdate.md)
  - [UserUpdateAddress](docs/Model/UserUpdateAddress.md)
