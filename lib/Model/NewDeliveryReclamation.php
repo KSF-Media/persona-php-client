@@ -61,7 +61,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         'paper' => 'string',
         'publication_date' => '\DateTime',
         'claim' => 'string',
-        'door_code' => 'string'
+        'door_code' => 'string',
+        'reason' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         'paper' => null,
         'publication_date' => 'date',
         'claim' => null,
-        'door_code' => null
+        'door_code' => null,
+        'reason' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         'paper' => 'paper',
         'publication_date' => 'publicationDate',
         'claim' => 'claim',
-        'door_code' => 'doorCode'
+        'door_code' => 'doorCode',
+        'reason' => 'reason'
     ];
 
     /**
@@ -118,7 +121,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         'paper' => 'setPaper',
         'publication_date' => 'setPublicationDate',
         'claim' => 'setClaim',
-        'door_code' => 'setDoorCode'
+        'door_code' => 'setDoorCode',
+        'reason' => 'setReason'
     ];
 
     /**
@@ -130,7 +134,8 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         'paper' => 'getPaper',
         'publication_date' => 'getPublicationDate',
         'claim' => 'getClaim',
-        'door_code' => 'getDoorCode'
+        'door_code' => 'getDoorCode',
+        'reason' => 'getReason'
     ];
 
     /**
@@ -176,6 +181,10 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
 
     const CLAIM_EXTENSION = 'Extension';
     const CLAIM_NEW_DELIVERY = 'NewDelivery';
+    const REASON_MISSING_DELIVERY = 'MissingDelivery';
+    const REASON_WRONG_PAPER = 'WrongPaper';
+    const REASON_DAMAGED_PAPER = 'DamagedPaper';
+    const REASON_OLDER_RECLAMATION = 'OlderReclamation';
     
 
     
@@ -189,6 +198,21 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         return [
             self::CLAIM_EXTENSION,
             self::CLAIM_NEW_DELIVERY,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getReasonAllowableValues()
+    {
+        return [
+            self::REASON_MISSING_DELIVERY,
+            self::REASON_WRONG_PAPER,
+            self::REASON_DAMAGED_PAPER,
+            self::REASON_OLDER_RECLAMATION,
         ];
     }
     
@@ -212,6 +236,7 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         $this->container['publication_date'] = isset($data['publication_date']) ? $data['publication_date'] : null;
         $this->container['claim'] = isset($data['claim']) ? $data['claim'] : null;
         $this->container['door_code'] = isset($data['door_code']) ? $data['door_code'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
     }
 
     /**
@@ -233,6 +258,14 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
         if (!is_null($this->container['claim']) && !in_array($this->container['claim'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'claim', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getReasonAllowableValues();
+        if (!is_null($this->container['reason']) && !in_array($this->container['reason'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'reason', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -353,6 +386,39 @@ class NewDeliveryReclamation implements ModelInterface, ArrayAccess
     public function setDoorCode($door_code)
     {
         $this->container['door_code'] = $door_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     *
+     * @return string|null
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     *
+     * @param string|null $reason reason
+     *
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $allowedValues = $this->getReasonAllowableValues();
+        if (!is_null($reason) && !in_array($reason, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'reason', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['reason'] = $reason;
 
         return $this;
     }

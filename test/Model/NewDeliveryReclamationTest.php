@@ -105,4 +105,11 @@ class NewDeliveryReclamationTest extends TestCase
     public function testPropertyDoorCode()
     {
     }
+
+    /**
+     * Test attribute "reason"
+     */
+    public function testPropertyReason()
+    {
+    }
 }
