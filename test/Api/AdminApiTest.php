@@ -131,4 +131,14 @@ class AdminApiTest extends TestCase
     public function testAdminUserPost()
     {
     }
+
+    /**
+     * Test case for adminUserUuidDelete
+     *
+     * Delete user.
+     *
+     */
+    public function testAdminUserUuidDelete()
+    {
+    }
 }
